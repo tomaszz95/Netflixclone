@@ -1,0 +1,68 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+button {
+    font: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+ul,
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+input,
+label {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --primary: #1b263b;
+    --secondary: #304a68;
+    --lighter-main: #4b698b;
+    --text: #e0e1dd;
+    --hightlight: #05c715;
+    --complementary: #25ffff;
+    --red: #ff4e4e;
+    --orange: #e79e17;
+    --warning: #e2df23;
+    --pure-white: #ffffff;
+    --pure-black: #000000;
+    --size-s: 0.25rem;
+    --size-xs: 0.5rem;
+    --size-xxs: 0.75rem;
+    --size-xxxs: 1rem;
+    --size-m: 1.25rem;
+    --size-xm: 1.5rem;
+    --size-xxm: 1.75rem;
+    --size-xxxm: 2rem;
+    --size-l: 2.25rem;
+    --size-xl: 2.5rem;
+    --size-xxl: 2.75rem;
+    --size-xxxl: 3rem;
+    --size-vl: 3.25rem;
+    --size-xvl: 3.5rem;
+    --size-xxvl: 3.75rem;
+    --size-xxxvl: 4rem;
+}
