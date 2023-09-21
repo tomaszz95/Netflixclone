@@ -7,7 +7,6 @@
 }
 
 html {
-    font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
@@ -38,17 +37,10 @@ a {
 }
 
 :root {
-    --primary: #1b263b;
-    --secondary: #304a68;
-    --lighter-main: #4b698b;
-    --text: #e0e1dd;
-    --hightlight: #05c715;
-    --complementary: #25ffff;
-    --red: #ff4e4e;
-    --orange: #e79e17;
-    --warning: #e2df23;
-    --pure-white: #ffffff;
-    --pure-black: #000000;
+    --greylish: rgb(242, 242, 242);
+    --call-to-action: rgb(229, 21, 19);
+    --pure-white: rgb(255, 255, 255);
+    --pure-black: rgb(0, 0, 0);
     --size-s: 0.25rem;
     --size-xs: 0.5rem;
     --size-xxs: 0.75rem;
@@ -65,4 +57,8 @@ a {
     --size-xvl: 3.5rem;
     --size-xxvl: 3.75rem;
     --size-xxxvl: 4rem;
+}
+
+.closeModalClass {
+    display: block;
 }

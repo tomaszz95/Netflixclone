@@ -1,5 +1,11 @@
+import CookiesModal from '../components/cookies/CookiesModal'
+
 const HomePage = () => {
-    return <div>Something</div>
+    return (
+        <>
+            <CookiesModal />
+        </>
+    )
 }
 
 export default HomePage

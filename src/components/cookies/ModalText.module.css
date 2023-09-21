@@ -1,0 +1,41 @@
+.textBox {
+    padding-right: 1.5em;
+    margin-bottom: 1em;
+    font-size: 0.875rem;
+}
+
+.text {
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.text a {
+    font-weight: 600;
+    color: var(--pure-black);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.text a:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.desktopText {
+    display: none;
+}
+
+@media (min-width: 786px) {
+    .textBox {
+        margin-bottom: 1.2em;
+        font-size: var(--size-xxxs);
+    }
+
+    .mobileText {
+        display: none;
+    }
+
+    .desktopText {
+        display: block;
+    }
+}
