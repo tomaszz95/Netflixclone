@@ -38,9 +38,11 @@ a {
 
 :root {
     --greylish: rgb(242, 242, 242);
+    --dark-grey: rgb(202, 193, 193);
     --call-to-action: rgb(229, 21, 19);
     --pure-white: rgb(255, 255, 255);
     --pure-black: rgb(0, 0, 0);
+    --light-black: rgb(51, 51, 51);
     --size-s: 0.25rem;
     --size-xs: 0.5rem;
     --size-xxs: 0.75rem;
@@ -61,4 +63,15 @@ a {
 
 .closeModalClass {
     display: block;
+}
+
+.openCookieText {
+    display: block !important;
+}
+
+.accordionItemFocus {
+    background-color: var(--pure-white) !important;
+    border-top: 1px solid var(--pure-black) !important;
+    border-bottom: 1px solid var(--pure-black) !important;
+    border-left: 10px solid var(--call-to-action) !important;
 }

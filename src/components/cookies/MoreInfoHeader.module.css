@@ -1,0 +1,41 @@
+.infoHeader {
+    top: 0;
+    width: 100%;
+    padding: 1.2em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.infoHeaderBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 2em;
+}
+
+.infoHeaderBox h2 {
+    display: block;
+    color: var(--light-black);
+    line-height: 1.2;
+    font-size: var(--size-m);
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.infoHeaderBox button {
+    display: flex;
+    justify-content: center;
+    margin-left: 1em;
+    background-color: var(--pure-white);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.infoHeaderBox button:hover {
+    background-color: rgb(228, 228, 228);
+}

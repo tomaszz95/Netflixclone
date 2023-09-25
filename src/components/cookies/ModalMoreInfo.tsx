@@ -7,12 +7,14 @@ type ComponentType = { onCloseMoreInfo: () => void; onSavePreferences: () => voi
 
 const ModalMoreInfo: React.FC<ComponentType> = ({ onCloseMoreInfo, onSavePreferences }) => {
     return (
-        <div className="infoBox">
+        <div className={styles.infoBox}>
             <MoreInfoHeader onCloseMoreInfo={onCloseMoreInfo} />
             <MoreInfoAccordion />
-            <button type="button" onClick={onSavePreferences} className={styles.saveBtn}>
-                Save settings
-            </button>
+            <div className={styles.buttonBox}>
+                <button type="button" onClick={onSavePreferences} className={styles.saveBtn}>
+                    Save settings
+                </button>
+            </div>
         </div>
     )
 }

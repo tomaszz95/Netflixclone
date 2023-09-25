@@ -6,7 +6,7 @@ type ComponentType = { onCloseMoreInfo: () => void }
 
 const MoreInfoHeader: React.FC<ComponentType> = ({ onCloseMoreInfo }) => {
     return (
-        <div className="infoHeader">
+        <div className={styles.infoHeader}>
             <Image
                 src="/photos/netflixLogo.png"
                 alt="Netflix Logo"
@@ -15,7 +15,7 @@ const MoreInfoHeader: React.FC<ComponentType> = ({ onCloseMoreInfo }) => {
                 priority={true}
                 className={styles.netflixLogo}
             />
-            <div className="infoHeaderBox">
+            <div className={styles.infoHeaderBox}>
                 <h2>Privacy preference center</h2>
                 <button
                     onClick={onCloseMoreInfo}

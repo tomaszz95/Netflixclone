@@ -1,0 +1,25 @@
+.infoBox {
+    position: relative;
+}
+
+.buttonBox {
+    border-top: 1px solid var(--dark-grey);
+    padding: 0.8em 1em;
+}
+
+.saveBtn {
+    display: block;
+    margin: 1em auto;
+    width: 100%;
+    padding: 0.8em 1em;
+    font-size: 0.85rem;
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.saveBtn:hover {
+    background-color: rgb(189, 26, 23);
+}

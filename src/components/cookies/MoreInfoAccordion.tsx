@@ -1,8 +1,27 @@
+import { useState } from 'react'
+
+import styles from './MoreInfoAccordion.module.css'
+
 const MoreInfoAccordion = () => {
+    const [activeAccordion, setActiveAccordion] = useState(0)
+
+    const openCookieText = (index: number) => {
+        if (activeAccordion === index) {
+            setActiveAccordion(index)
+        } else {
+            setActiveAccordion(index)
+        }
+    }
+   
     return (
-        <div className="accordion">
-            <button className="accordionItem">General description</button>
-            <div className="accordionText">
+        <div className={styles.accordion}>
+            <button
+                className={`${styles.accordionItem} ${activeAccordion === 0 ? 'accordionItemFocus' : ''}`}
+                onClick={() => openCookieText(0)}
+            >
+                General description
+            </button>
+            <div className={`${styles.accordionText} ${activeAccordion === 0 ? 'openCookieText' : ''}`}>
                 <h3>General description</h3>
                 <p>
                     This cookie management tool allows you to determine who uses cookies to collect data from your
@@ -39,8 +58,13 @@ const MoreInfoAccordion = () => {
                 </p>
             </div>
 
-            <button className="accordionItem">Necessary cookies</button>
-            <div className="accordionText">
+            <button
+                className={`${styles.accordionItem} ${activeAccordion === 1 ? 'accordionItemFocus' : ''}`}
+                onClick={() => openCookieText(1)}
+            >
+                Necessary cookies
+            </button>
+            <div className={`${styles.accordionText} ${activeAccordion === 1 ? 'openCookieText' : ''}`}>
                 <h3>Necessary cookies</h3>
                 <p>
                     Such cookies are necessary to operate our website and service on the Internet. For example, we and
@@ -56,8 +80,13 @@ const MoreInfoAccordion = () => {
                 </p>
             </div>
 
-            <button className="accordionItem">Our analytical and functional cookies</button>
-            <div className="accordionText">
+            <button
+                className={`${styles.accordionItem} ${activeAccordion === 2 ? 'accordionItemFocus' : ''}`}
+                onClick={() => openCookieText(2)}
+            >
+                Our analytical and functional cookies
+            </button>
+            <div className={`${styles.accordionText} ${activeAccordion === 2 ? 'openCookieText' : ''}`}>
                 <h3>Our analytical and functional cookies</h3>
                 <p>
                     These types of cookies allow us to personalize and improve your experience when using Netflix. For
@@ -75,27 +104,30 @@ const MoreInfoAccordion = () => {
                 </p>
             </div>
 
-            <button className="accordionItem">Analytical and third-party functional cookies</button>
-            <div className="accordionText">
+            <button
+                className={`${styles.accordionItem} ${activeAccordion === 3 ? 'accordionItemFocus' : ''}`}
+                onClick={() => openCookieText(3)}
+            >
+                Analytical and third-party functional cookies
+            </button>
+            <div className={`${styles.accordionText} ${activeAccordion === 3 ? 'openCookieText' : ''}`}>
                 <h3>Analytical and third-party functional cookies</h3>
                 <p>
-                    These types of cookies allow us to personalize and improve your experience when using Netflix. For
-                    example, they help us remember User preferences. Thanks to such cookies, the User does not have to
-                    re-enter previously provided information (e.g. during registration). We also use such files to
-                    collect information (e.g., about popular pages, success rates, viewing patterns, click-through
-                    rates, etc.) about our users' use of Netflix, so that we can improve and customize our website and
-                    service and perform market analysis. If such cookies are deleted, it may result in reduced
-                    functionality of our service.
-                </p>
-                <br />
-                <p>
-                    Duration: most cookies are session cookies (active until you close your browser) or active for one
-                    day only. Some cookies are active for a longer period of time - from 3 to 12 months.
+                    These cookies, installed by other parties, help to customize and improve our service. Cookies of
+                    this kind are only found on the Tudum portal (our official fan portal). We use these cookies to
+                    provide you with what other entities offer, such as displaying social media content. For more
+                    information on how other entities use cookies, see the privacy notices on their sites. If such
+                    cookies are deleted, it may result in reduced functionality of our service.
                 </p>
             </div>
 
-            <button className="accordionItem">Advertising cookies</button>
-            <div className="accordionText">
+            <button
+                className={`${styles.accordionItem} ${activeAccordion === 4 ? 'accordionItemFocus' : ''}`}
+                onClick={() => openCookieText(4)}
+            >
+                Advertising cookies
+            </button>
+            <div className={`${styles.accordionText} ${activeAccordion === 4 ? 'openCookieText' : ''}`}>
                 <h3>Advertising cookies</h3>
                 <p>
                     Such cookies use information about your use of this site or app and other sites and apps, and about
