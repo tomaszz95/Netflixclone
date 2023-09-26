@@ -21,5 +21,26 @@
 }
 
 .saveBtn:hover {
-    background-color: rgb(189, 26, 23);
+    background-color: rgb(236, 68, 65);
+}
+
+@media (min-width: 768px) {
+    .infoBox {
+        width: 100%;
+        height: 100%;
+        max-width: 720px;
+        max-height: 630px;
+        background-color: var(--pure-white);
+    }
+
+    .buttonBox {
+        padding: 1em;
+    }
+
+    .saveBtn {
+        margin: 1em 0;
+        width: 200px;
+        padding: 0.8em 1em;
+        font-size: var(--size-xxxs);
+    }
 }

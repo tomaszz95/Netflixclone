@@ -39,3 +39,11 @@
 .infoHeaderBox button:hover {
     background-color: rgb(228, 228, 228);
 }
+
+@media (min-width: 786px) {
+    .infoHeaderBox h2 {
+        line-height: 1.4;
+        font-size: var(--size-xm);
+        margin-right: 5em;
+    }
+}

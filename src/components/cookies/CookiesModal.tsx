@@ -79,11 +79,13 @@ const CookiesModal = () => {
             ) : (
                 <></>
             )}
-            {moreInfoOpen ? (
-                <ModalMoreInfo onCloseMoreInfo={closeMoreInfo} onSavePreferences={savePreferences} />
-            ) : (
-                <></>
-            )}
+            <div className={styles.moreInfoModal}>
+                {moreInfoOpen ? (
+                    <ModalMoreInfo onCloseMoreInfo={closeMoreInfo} onSavePreferences={savePreferences} />
+                ) : (
+                    <></>
+                )}
+            </div>
         </>
     )
 }
