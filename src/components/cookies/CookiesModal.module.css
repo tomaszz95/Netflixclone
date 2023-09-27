@@ -26,7 +26,7 @@
 }
 
 .button:hover {
-    background-color: rgb(189, 26, 23);
+    background-color: var(--call-to-action-hover);
 }
 
 .acceptBtn,
@@ -54,6 +54,11 @@
 
 .closeBtn:hover {
     background-color: rgb(228, 228, 228);
+}
+
+.moreInfoModal {
+    min-height: 100vh;
+    background-color: var(--pure-white);
 }
 
 @media (min-width: 422px) {

@@ -1,0 +1,39 @@
+.header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+    z-index: 50;
+    border-bottom: none;
+}
+
+.headerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select {
+    margin-right: 1em;
+    background-color: var(--light-black);
+    color: var(--pure-white);
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+.signBtn {
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    font-size: 0.85rem;
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.signBtn:hover {
+    background-color: var(--call-to-action-hover);
+}

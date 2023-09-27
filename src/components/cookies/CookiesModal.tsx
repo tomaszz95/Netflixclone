@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import ModalText from './ModalText'
 import ModalMoreInfo from './ModalMoreInfo'
+import CookiesPortal from './CookiesPortal'
 
 import styles from './CookiesModal.module.css'
 
@@ -31,7 +32,7 @@ const CookiesModal = () => {
     }
 
     return (
-        <>
+        <CookiesPortal>
             {!modalIsClosed ? (
                 <div className={styles.modal}>
                     <div>
@@ -79,14 +80,15 @@ const CookiesModal = () => {
             ) : (
                 <></>
             )}
-            <div className={styles.moreInfoModal}>
-                {moreInfoOpen ? (
+
+            {moreInfoOpen ? (
+                <div className={styles.moreInfoModal}>
                     <ModalMoreInfo onCloseMoreInfo={closeMoreInfo} onSavePreferences={savePreferences} />
-                ) : (
-                    <></>
-                )}
-            </div>
-        </>
+                </div>
+            ) : (
+                <></>
+            )}
+        </CookiesPortal>
     )
 }
 

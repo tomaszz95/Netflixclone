@@ -1,5 +1,6 @@
 .infoBox {
     position: relative;
+    background-color: var(--pure-white);
 }
 
 .buttonBox {
