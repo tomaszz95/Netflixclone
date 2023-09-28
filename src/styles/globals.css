@@ -44,7 +44,8 @@ a {
     --pure-white: rgb(255, 255, 255);
     --pure-black: rgb(0, 0, 0);
     --light-black: rgb(22, 21, 21);
-    --lighter-black: rgb(75, 73, 73);
+    --lighter-black: rgb(65, 62, 62);
+    --light-blue: rgb(0, 113, 235);
     --size-s: 0.25rem;
     --size-xs: 0.5rem;
     --size-xxs: 0.75rem;

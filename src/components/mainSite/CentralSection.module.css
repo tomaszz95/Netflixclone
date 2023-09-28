@@ -1,0 +1,141 @@
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3em 1.5em;
+    text-align: center;
+    color: var(--pure-white);
+    background-color: var(--pure-black);
+}
+
+.sectionBox {
+    margin-bottom: 1em;
+}
+
+.sectionBox h2 {
+    font-size: var(--size-xxxm);
+    margin-bottom: 0.6em;
+}
+
+.sectionBox p {
+    font-size: 1.15em;
+    margin-bottom: 1em;
+}
+
+.imageBox {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    height: 100%;
+    max-height: 480px;
+}
+
+.image {
+    width: 100%;
+}
+
+.video,
+.videoSecond {
+    position: absolute;
+    display: block;
+    top: 21%;
+    width: 100%;
+}
+
+.video video,
+.videoSecond video {
+    width: 72%;
+}
+
+.stranger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 65px;
+    width: 90%;
+    max-width: 380px;
+    background-color: var(--pure-black);
+    border: 3px solid var(--lighter-black);
+    border-radius: 12px;
+}
+
+.strangerBox {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0.3em;
+    text-align: left;
+}
+
+.strangerBox img {
+    height: 100%;
+    margin-right: 1em;
+}
+
+.strangerText {
+    display: flex;
+    flex-direction: column;
+}
+
+.strangerText p {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+.strangerText span {
+    font-size: var(--size-xxs);
+    color: var(--light-blue);
+}
+
+.animation {
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    background: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif') center
+        center no-repeat;
+    background-size: 100%;
+    margin-right: 0.5em;
+}
+
+.videoSecond {
+    top: 11%;
+}
+
+.videoSecond video {
+    width: 61%;
+}
+
+@media (min-width: 576px) {
+    .stranger {
+        height: 80px;
+    }
+
+    .strangerBox {
+        padding: 0.5em;
+    }
+
+    .strangerBox img {
+        margin-right: 1.2em;
+    }
+
+    .strangerText p {
+        font-size: var(--size-xxxs);
+    }
+
+    .strangerText span {
+        font-size: 0.875rem;
+    }
+
+    .animation {
+        height: 4.5rem;
+        width: 4.5rem;
+        margin-right: 0.8em;
+    }
+}
