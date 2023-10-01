@@ -1,0 +1,82 @@
+.membershipBox p {
+    font-size: var(--size-m);
+    font-weight: 400;
+    margin-bottom: 0.8em;
+    padding: 0 1em;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputBox input {
+    width: 80%;
+    padding: 0.8em;
+    margin-bottom: 1.4em;
+    background-color: rgba(24, 23, 23, 0.8);
+    border: 2px solid var(--lighter-black);
+    border-radius: 5px;
+}
+
+.inputBox input:focus {
+    outline: none;
+    border: 2px solid var(--pure-white);
+}
+
+.inputBox button {
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    font-size: var(--size-m);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.inputBox button:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+@media (min-width: 786px) {
+    .inputBox {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .membershipBox p {
+        font-size: var(--size-xm);
+    }
+
+    .membershipBox input {
+        width: 80%;
+        padding: 1em;
+        margin-bottom: 0;
+        background-color: rgba(24, 23, 23, 0.8);
+        border: 2px solid var(--lighter-black);
+        border-radius: 5px;
+    }
+
+    .membershipBox input:focus {
+        outline: none;
+        border: 2px solid var(--pure-white);
+    }
+
+    .membershipBox button {
+        border-radius: 5px;
+        padding: 0.5em 1em;
+        font-size: var(--size-m);
+        background-color: var(--call-to-action);
+        color: var(--pure-white);
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+    }
+
+    .membershipBox button:hover {
+        background-color: var(--call-to-action-hover);
+    }
+}

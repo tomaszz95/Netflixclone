@@ -1,6 +1,7 @@
-import CentralSection from './CentralSection'
 import HeaderSection from './HeaderSection'
 import HeroSection from './HeroSection'
+import CentralSection from './CentralSection'
+import QuestionSection from './QuestionSection'
 
 import styles from './MainView.module.css'
 
@@ -16,6 +17,7 @@ const MainView = () => {
                 <CentralSection sectionCount="2" />
                 <CentralSection sectionCount="3" />
                 <CentralSection sectionCount="4" />
+                <QuestionSection />
             </main>
         </>
     )
