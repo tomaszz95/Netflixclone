@@ -1,3 +1,14 @@
 .header {
     position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main {
+    background-color: var(--pure-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

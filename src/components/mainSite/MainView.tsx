@@ -13,10 +13,10 @@ const MainView = () => {
                 <HeroSection />
             </header>
             <main className={styles.main}>
-                <CentralSection sectionCount="1" />
-                <CentralSection sectionCount="2" />
-                <CentralSection sectionCount="3" />
-                <CentralSection sectionCount="4" />
+                <CentralSection sectionCount="1" imgDirection="right" />
+                <CentralSection sectionCount="2" imgDirection="left" />
+                <CentralSection sectionCount="3" imgDirection="right" />
+                <CentralSection sectionCount="4" imgDirection="left" />
                 <QuestionSection />
             </main>
         </>

@@ -10,8 +10,8 @@ const HeroSection = () => {
             <Image
                 src="/photos/header.jpg"
                 alt="Netflix hero image with most known films and series in the background"
-                width="500"
-                height="500"
+                width="1800"
+                height="1800"
                 priority={true}
                 className={styles.heroImage}
             />
@@ -20,7 +20,7 @@ const HeroSection = () => {
                     <h1>The biggest local and international hits. The best stories. All streaming here.</h1>
                     <p>Watch anywhere. Cancel anytime.</p>
                 </div>
-                <MembershipEmail/>
+                <MembershipEmail />
             </div>
         </section>
     )

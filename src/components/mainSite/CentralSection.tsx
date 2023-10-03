@@ -26,18 +26,21 @@ const sectionData: sectionMainDataObj = {
     },
 }
 
-type ComponentType = { sectionCount: string }
+type ComponentType = { sectionCount: string; imgDirection: string }
 
-const CentralSection: React.FC<ComponentType> = ({ sectionCount }) => {
+const CentralSection: React.FC<ComponentType> = ({ sectionCount, imgDirection }) => {
     const section = sectionData[sectionCount]
     let insideBox
-
+    let boxClass
+    let imgClass
     if (sectionCount === '1') {
         insideBox = (
             <div className={styles.video}>
                 <video src={section.video} autoPlay playsInline muted loop></video>
             </div>
         )
+        boxClass = 'left'
+        imgClass = 'right'
     } else if (sectionCount === '2') {
         insideBox = (
             <div className={styles.stranger}>
@@ -51,25 +54,33 @@ const CentralSection: React.FC<ComponentType> = ({ sectionCount }) => {
                 <div className={styles.animation}></div>
             </div>
         )
+        boxClass = 'right'
+        imgClass = 'left'
     } else if (sectionCount === '3') {
         insideBox = (
             <div className={styles.videoSecond}>
                 <video src={section.video} autoPlay playsInline muted loop></video>
             </div>
         )
+        boxClass = 'left'
+        imgClass = 'right'
     } else if (sectionCount === '4') {
         insideBox = <div></div>
+        boxClass = 'right'
+        imgClass = 'left'
     }
 
     return (
         <section className={styles.section}>
-            <div className={styles.sectionBox}>
-                <h2>{section.title}</h2>
-                <p>{section.text}</p>
-            </div>
-            <div className={styles.imageBox}>
-                <img src={section.image} alt={section.title} className={styles.image} />
-                {insideBox}
+            <div className={styles.container}>
+                <div className={`${styles.sectionBox} ${boxClass}`}>
+                    <h2>{section.title}</h2>
+                    <p>{section.text}</p>
+                </div>
+                <div className={`${styles.imageBox} ${imgClass}`}>
+                    <img src={section.image} alt={section.title} className={styles.image} />
+                    {insideBox}
+                </div>
             </div>
         </section>
     )

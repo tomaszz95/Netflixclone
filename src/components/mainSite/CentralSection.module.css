@@ -2,11 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    width: 100%;
     padding: 3em 1.5em;
+}
+
+.container {
+    max-width: 1600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
     color: var(--pure-white);
-    background-color: var(--pure-black);
 }
 
 .sectionBox {
@@ -16,6 +23,7 @@
 .sectionBox h2 {
     font-size: var(--size-xxxm);
     margin-bottom: 0.6em;
+    font-weight: 900;
 }
 
 .sectionBox p {
@@ -137,5 +145,58 @@
         height: 4.5rem;
         width: 4.5rem;
         margin-right: 0.8em;
+    }
+}
+
+@media (min-width: 786px) {
+    .container {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .sectionBox {
+        margin-bottom: 0;
+        padding: 1em 2em 1em 1em;
+        width: 50%;
+    }
+
+    .sectionBox h2 {
+        font-size: var(--size-xl);
+    }
+
+    .sectionBox p {
+        font-size: var(--size-xm);
+        margin-bottom: 0;
+    }
+
+    .imageBox {
+        width: 50%;
+    }
+
+    .video {
+        left: 13%;
+    }
+
+    .videoSecond {
+        left: 19%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 3em;
+    }
+
+    .sectionBox {
+        padding: 1em 2.5em 1em;
+    }
+
+    .sectionBox h2 {
+        font-size: var(--size-xvl);
+        margin-bottom: 0.4em;
+    }
+
+    .sectionBox p {
+        font-size: var(--size-xxm);
     }
 }

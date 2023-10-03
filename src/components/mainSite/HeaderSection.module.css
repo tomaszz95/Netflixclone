@@ -4,9 +4,15 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1400px;
     padding: 1em;
     z-index: 50;
     border-bottom: none;
+}
+
+.header img {
+    width: 100px;
+    height: 40px;
 }
 
 .headerBox {
@@ -36,4 +42,24 @@
 
 .signBtn:hover {
     background-color: var(--call-to-action-hover);
+}
+
+@media (min-width: 1200px) {
+    .header {
+        padding: 1.7em;
+    }
+    .header img {
+        scale: 2.2;
+    }
+
+    .select {
+        margin-right: 2em;
+        padding: 0.65em 1em;
+        font-size: var(--size-xxxs);
+    }
+
+    .signBtn {
+        padding: 0.4em 1em;
+        font-size: var(--size-m);
+    }
 }
