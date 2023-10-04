@@ -2,6 +2,7 @@ import HeaderSection from './HeaderSection'
 import HeroSection from './HeroSection'
 import CentralSection from './CentralSection'
 import QuestionSection from './QuestionSection'
+import FooterSection from './FooterSection'
 
 import styles from './MainView.module.css'
 
@@ -19,6 +20,9 @@ const MainView = () => {
                 <CentralSection sectionCount="4" imgDirection="left" />
                 <QuestionSection />
             </main>
+            <footer className={styles.footer}>
+                <FooterSection />
+            </footer>
         </>
     )
 }

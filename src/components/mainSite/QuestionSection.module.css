@@ -1,6 +1,13 @@
 .questions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 3em 1.5em;
+}
+
+.container {
     max-width: 1500px;
-    padding: 3em 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +22,7 @@
 }
 
 @media (min-width: 786px) {
-    .questions {
+    .container {
         padding: 4em 2em;
     }
 
@@ -28,7 +35,7 @@
 }
 
 @media (min-width: 1200px) {
-    .questions {
+    .container {
         max-width: 1550px;
     }
 
