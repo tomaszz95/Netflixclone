@@ -11,8 +11,8 @@
 }
 
 .header img {
-    width: 100px;
-    height: 40px;
+    width: auto;
+    height: auto;
 }
 
 .headerBox {
@@ -38,6 +38,7 @@
     letter-spacing: 0.5px;
     font-weight: 500;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 .signBtn:hover {
@@ -48,8 +49,9 @@
     .header {
         padding: 4em;
     }
+
     .header img {
-        scale: 2.2;
+        scale: 2;
     }
 
     .select {

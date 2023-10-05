@@ -15,9 +15,9 @@ const HeaderSection = () => {
                     <option value="Polish">Polish</option>
                     <option value="English">English</option>
                 </select>
-                <button role="button" aria-label="Sign In button" className={styles.signBtn}>
+                <a role="button" aria-label="Link to sign in page" className={styles.signBtn} href="/login">
                     Sign In
-                </button>
+                </a>
             </div>
         </section>
     )
