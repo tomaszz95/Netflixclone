@@ -1,0 +1,102 @@
+.content {
+    color: var(--pure-white);
+    padding: 0.8em;
+}
+
+.title {
+    font-size: var(--size-xxxm);
+    font-weight: 600;
+    margin-bottom: 0.8em;
+}
+
+.form {
+    width: 100%;
+}
+
+.formBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.8em;
+}
+
+.emailInput,
+.passwordInput {
+    background-color: var(--grey);
+    border-radius: 5px;
+    border: none;
+    color: var(--pure-white);
+    padding: 1.4em 1em 0.7em;
+    font-weight: 600;
+}
+
+.emailLabel,
+.passwordLabel {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 100%;
+    color: var(--light-grey);
+    font-size: var(--size-xxxs);
+    transition:
+        transform 0.2s,
+        top 0.2s,
+        left 0.2s,
+        background-color 0.2s;
+}
+
+.emailInput:focus + .emailLabel,
+.passwordInput:focus + .passwordLabel,
+.notEmpty + .emailLabel,
+.notEmpty + .passwordLabel {
+    transform: scale(0.75);
+    top: 2%;
+    left: -8%;
+}
+
+.emailInput:focus,
+.passwordInput:focus {
+    background-color: rgb(73, 71, 71);
+    outline: none;
+}
+
+.emailInput.wrongInput,
+.passwordInput.wrongInput {
+    border-bottom: 2px solid var(--error-color);
+}
+
+.error {
+    color: var(--error-color);
+    font-size: 0.825rem;
+    margin-top: 0.5em;
+}
+
+.sumbitBtn {
+    width: 100%;
+    margin-top: 0.8em;
+    border-radius: 5px;
+    padding: 0.9em;
+    font-size: var(--size-xxxs);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.sumbitBtn:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+@media (min-width: 786px) {
+    .sumbitBtn {
+        padding: 0.5em 1em;
+        font-size: var(--size-m);
+    }
+}
+
+@media (min-width: 1200px) {
+    .sumbitBtn button {
+        padding: 0.5em;
+        font-size: var(--size-xxm);
+    }
+}

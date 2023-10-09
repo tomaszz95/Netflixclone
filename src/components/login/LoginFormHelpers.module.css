@@ -1,0 +1,111 @@
+.rememberBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.6em;
+}
+
+.rememberForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rememberInput {
+    position: relative;
+}
+
+.rememberInput:after {
+    position: absolute;
+    content: '';
+    border-radius: 2px;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border: none;
+    background-color: rgb(105, 102, 102);
+    transition: background-color 0.2s;
+    pointer-events: none;
+}
+
+.rememberInput:before {
+    position: absolute;
+    content: '\002714';
+    top: -5px;
+    left: 0px;
+    font-size: 1.1rem;
+    color: var(--pure-black);
+    z-index: 100;
+    opacity: 0;
+}
+
+.rememberInput:checked.rememberInput:before {
+    opacity: 1;
+}
+
+.rememberInput:focus.rememberInput:after {
+    background-color: var(--pure-white);
+}
+
+.rememberLabel {
+    color: var(--dark-grey);
+    font-size: 0.825rem;
+    margin-left: 0.5em;
+}
+
+.rememberLink {
+    color: var(--dark-grey);
+    font-size: 0.825rem;
+    margin-left: 0.5em;
+}
+
+.rememberLink:hover {
+    text-decoration: underline;
+}
+
+.help {
+    margin-top: 1em;
+    color: var(--light-grey);
+}
+
+.signUp {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8em;
+}
+
+.signUp p {
+    color: rgb(115, 115, 115);
+    margin-right: 0.4em;
+}
+
+.signUp a {
+    color: var(--pure-white);
+}
+
+.signUp a:hover,
+.signCaptcha button:hover,
+.captchaText a:hover {
+    text-decoration: underline;
+}
+
+.signCaptcha,
+.captchaText {
+    font-size: 0.825rem;
+}
+
+.signCaptcha button {
+    background-color: transparent;
+    border: none;
+    color: var(--light-blue);
+}
+
+.captchaText {
+    margin-top: 1em;
+    opacity: 0;
+}
+
+.captchaText a {
+    color: var(--light-blue);
+}

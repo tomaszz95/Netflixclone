@@ -47,6 +47,7 @@ const MembershipEmail = () => {
                     type="email"
                     placeholder="Email address"
                     autoComplete="email"
+                    spellCheck="false"
                     minLength={5}
                     maxLength={50}
                     ref={inputElement}

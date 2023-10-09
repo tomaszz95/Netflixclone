@@ -34,8 +34,8 @@
 }
 
 .accordionIcon img {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
 }
 
 .accordionText {
@@ -61,6 +61,11 @@
         margin-bottom: 0.7em;
     }
 
+    .accordionIcon img {
+        width: 50px;
+        height: 50px;
+    }
+
     .accordionItem {
         font-size: var(--size-m);
     }
@@ -73,6 +78,11 @@
 @media (min-width: 1200px) {
     .accordionBox {
         margin-bottom: 0.8em;
+    }
+
+    .accordionIcon img {
+        width: 45px;
+        height: 45px;
     }
 
     .accordionItem {
