@@ -1,5 +1,56 @@
+.loginBox {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .login {
+    width: 100%;
     padding: 0.5em;
     border-bottom: 2px solid var(--light-grey);
     background-color: var(--pure-black);
+}
+
+@media (min-width: 450px) {
+    .login img {
+        width: 180px;
+        height: 75px;
+    }
+}
+
+@media (min-width: 786px) {
+    .loginBox {
+        min-height: 100vh;
+        background-image: url('../../../public/photos/header.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .login {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1em;
+        border-bottom: none;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .login img {
+        width: 220px;
+        height: 95px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .login {
+        padding: 0.6em;
+    }
+
+    .login img {
+        margin-left: 3em;
+        width: 220px;
+        height: 95px;
+    }
 }

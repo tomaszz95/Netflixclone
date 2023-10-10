@@ -109,3 +109,9 @@
 .captchaText a {
     color: var(--light-blue);
 }
+
+@media (min-width: 1200px) {
+    .rememberBox {
+        margin-top: 0.8em;
+    }
+}

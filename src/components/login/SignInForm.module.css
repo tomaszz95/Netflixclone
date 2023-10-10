@@ -88,15 +88,34 @@
 }
 
 @media (min-width: 786px) {
+    .content {
+        align-self: center;
+        justify-self: center;
+        width: 450px;
+        height: 660px;
+        background-color: rgba(0, 0, 0, 0.75);
+        border-radius: 5px;
+        padding: 3em 4em;
+        margin-bottom: 8em;
+    }
+
+    .title {
+        font-size: var(--size-l);
+    }
+
+    .formBox {
+        margin-bottom: 1em;
+    }
+
     .sumbitBtn {
         padding: 0.5em 1em;
-        font-size: var(--size-m);
+        font-size: 1.2rem;
     }
 }
 
 @media (min-width: 1200px) {
-    .sumbitBtn button {
-        padding: 0.5em;
-        font-size: var(--size-xxm);
+    .content {
+        padding: 3em 4.5em;
+        margin-bottom: 9.5em;
     }
 }
