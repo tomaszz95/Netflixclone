@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from 'react'
+import { useState, useRef } from 'react'
 
 import styles from './MembershipEmail.module.css'
 

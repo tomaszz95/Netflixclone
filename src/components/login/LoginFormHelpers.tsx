@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import styles from './LoginFormHelpers.module.css'
 
 const LoginFormHelpers = () => {
+    const [isVisible, setIsVisible] = useState(false)
+
     return (
         <>
             <div className={styles.rememberBox}>
@@ -22,10 +25,19 @@ const LoginFormHelpers = () => {
                 <div className={styles.signCaptcha}>
                     <p>
                         This page is protected by Google reCAPTCHA to ensure you're not a bot.{' '}
-                        <button aria-label="Learn more about google reCaptcha">Learn more.</button>
+                        {!isVisible && (
+                            <button
+                                aria-label="Learn more about google reCaptcha"
+                                onClick={() => {
+                                    setIsVisible(true)
+                                }}
+                            >
+                                Learn more.
+                            </button>
+                        )}
                     </p>
                 </div>
-                <p className={styles.captchaText}>
+                <p className={`${styles.captchaText} ${isVisible ? styles.captchaVisible : ''}`}>
                     The information collected by Google reCAPTCHA is subject to the Google{' '}
                     <a href="https://policies.google.com/privacy" target="_blank">
                         Privacy Policy

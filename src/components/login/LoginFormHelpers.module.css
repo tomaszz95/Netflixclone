@@ -93,6 +93,7 @@
 .signCaptcha,
 .captchaText {
     font-size: 0.825rem;
+    transition: opacity 0.3s;
 }
 
 .signCaptcha button {
@@ -104,14 +105,24 @@
 .captchaText {
     margin-top: 1em;
     opacity: 0;
+    pointer-events: none;
 }
 
 .captchaText a {
     color: var(--light-blue);
 }
 
+.captchaVisible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 @media (min-width: 1200px) {
     .rememberBox {
         margin-top: 0.8em;
+    }
+
+    .help {
+        margin-top: 4em;
     }
 }
