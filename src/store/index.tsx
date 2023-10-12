@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import loginData from './login-slice'
+import registerEmailSlice from './registerEmail-slice'
 
 const store = configureStore({
     reducer: {
-        loginData: loginData.reducer,
+        registerEmail: registerEmailSlice.reducer,
     },
 })
 

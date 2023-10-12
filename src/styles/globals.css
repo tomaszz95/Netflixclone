@@ -44,6 +44,7 @@ a {
     --call-to-action: rgb(229, 21, 19);
     --call-to-action-hover: rgba(197, 17, 14, 0.904);
     --pure-white: rgb(255, 255, 255);
+    --dirty-white: rgb(243, 243, 243);
     --pure-black: rgb(0, 0, 0);
     --light-black: rgb(22, 21, 21);
     --lighter-black: rgb(65, 62, 62);

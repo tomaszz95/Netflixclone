@@ -1,4 +1,9 @@
 import { useState, useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
+import Router from 'next/router'
+
+import { registerEmailActions } from '../../store/registerEmail-slice'
 
 import styles from './MembershipEmail.module.css'
 
@@ -7,6 +12,8 @@ const MembershipEmail = () => {
     const [isValid, setIsValid] = useState(false)
     const [isFirstTry, setIsFirstTry] = useState(true)
     const inputElement = useRef<HTMLInputElement | null>(null)
+
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     const isInputValid = () => {
         setIsFirstTry(false)
@@ -19,23 +26,41 @@ const MembershipEmail = () => {
             /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(inputElement.current.value)
         ) {
             setIsValid(true)
+            return true
         } else {
             setIsValid(false)
+            return false
         }
     }
 
     const focusInput = () => {
-        if (inputElement.current !== undefined && inputElement.current !== null) {
-            inputElement.current.focus()
-        }
+        const isValidNow = isInputValid()
 
-        isInputValid()
+        if (!isValidNow) {
+            if (inputElement.current !== undefined && inputElement.current !== null) {
+                inputElement.current.focus()
+            }
+        } else {
+            dispatch(registerEmailActions.setEmail(inputEmail))
+
+            Router.push(`/signup/registration`)
+        }
     }
 
     const changeInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputEmail(e.target.value)
         if (!isFirstTry) {
             isInputValid()
+        }
+    }
+
+    const setRegistrationMail = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        const isValidNow = isInputValid()
+
+        if (e.key === 'Enter' && isValidNow) {
+            dispatch(registerEmailActions.setEmail(inputEmail))
+
+            Router.push(`/signup/registration`)
         }
     }
 
@@ -54,6 +79,7 @@ const MembershipEmail = () => {
                     className={!isFirstTry && isValid ? styles.valid : !isFirstTry && !isValid ? styles.error : ''}
                     onChange={changeInputValue}
                     value={inputEmail}
+                    onKeyDown={setRegistrationMail}
                 />
                 <button type="button" aria-label="Get started button" onClick={focusInput}>
                     Get Started &gt;
