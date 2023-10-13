@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import ModalText from './ModalText'
 import ModalMoreInfo from './ModalMoreInfo'
 import CookiesPortal from './CookiesPortal'
+import { createCookies, getCookies } from '../helpers/localStorageFunctions'
 
 import styles from './CookiesModal.module.css'
 
@@ -11,9 +12,28 @@ const CookiesModal = () => {
     const [modalIsClosed, setModalIsClosed] = useState(false)
     const [moreInfoOpen, setMoreInfoOpen] = useState(false)
 
-    const closeModal = () => {
+    useEffect(() => {
+        const isCookie = getCookies('cookies')
+
+        if (isCookie === 'accept') {
+            setModalIsClosed(true)
+            setMoreInfoOpen(false)
+        } else if (isCookie === 'reject') {
+            setModalIsClosed(false)
+            setMoreInfoOpen(false)
+        }
+    }, [])
+
+    const rejectCookies = () => {
         setModalIsClosed(true)
         setMoreInfoOpen(false)
+        createCookies('cookies', 'reject')
+    }
+
+    const acceptCookies = () => {
+        setModalIsClosed(true)
+        setMoreInfoOpen(false)
+        createCookies('cookies', 'accept')
     }
 
     const openMoreInfo = () => {
@@ -26,11 +46,6 @@ const CookiesModal = () => {
         setMoreInfoOpen(false)
     }
 
-    const savePreferences = () => {
-        setModalIsClosed(true)
-        setMoreInfoOpen(false)
-    }
-
     return (
         <CookiesPortal>
             {!modalIsClosed ? (
@@ -40,14 +55,14 @@ const CookiesModal = () => {
                         <div className="buttonBox">
                             <button
                                 role="button"
-                                onClick={closeModal}
+                                onClick={acceptCookies}
                                 className={`${styles.button} ${styles.acceptBtn}`}
                             >
                                 Accept
                             </button>
                             <button
                                 role="button"
-                                onClick={closeModal}
+                                onClick={rejectCookies}
                                 className={`${styles.button} ${styles.rejectBtn}`}
                             >
                                 Reject
@@ -62,7 +77,7 @@ const CookiesModal = () => {
                         </div>
                     </div>
                     <button
-                        onClick={closeModal}
+                        onClick={rejectCookies}
                         role="button"
                         aria-label="Close cookies info"
                         className={styles.closeBtn}
@@ -83,7 +98,7 @@ const CookiesModal = () => {
 
             {moreInfoOpen ? (
                 <div className={styles.moreInfoModal}>
-                    <ModalMoreInfo onCloseMoreInfo={closeMoreInfo} onSavePreferences={savePreferences} />
+                    <ModalMoreInfo onCloseMoreInfo={closeMoreInfo} onAcceptCookies={acceptCookies} />
                 </div>
             ) : (
                 <></>

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import styles from './SignupLayout.module.css'
 
 type ChildrenLayoutType = {
@@ -16,13 +14,7 @@ const SignupLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
             <header className={styles.header}>
                 <div className={styles.headerContainer}>
                     <a href="/">
-                        <Image
-                            src="/photos/netflixLogo.png"
-                            alt="Netflix Logo"
-                            width="280"
-                            height="80"
-                            priority={true}
-                        />
+                        <img src="/photos/netflixLogo.png" alt="Netflix Logo" />
                     </a>
                     <a href="/login" className={styles.loginLink}>
                         Sign In

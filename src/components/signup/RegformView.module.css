@@ -1,0 +1,237 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2.5em 2.4em 5em;
+    margin-bottom: 5em;
+    max-width: 480px;
+    max-height: 660px;
+}
+
+.step {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.2em;
+}
+
+.title {
+    margin-bottom: 0.5em;
+    font-size: var(--size-xxxm);
+    font-weight: 600;
+    line-height: 34px;
+}
+
+.text {
+    font-size: 1.05rem;
+}
+
+.form {
+    width: 100%;
+}
+
+.formBox {
+    width: 100%;
+    margin: 1em 0;
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.emailInput,
+.passwordInput {
+    border-radius: 5px;
+    background-color: var(--pure-white);
+    border: 1px solid var(--light-grey);
+    color: var(--grey);
+    padding: 1.4em 1em 0.7em;
+    font-weight: 500;
+}
+
+.emailLabel,
+.passwordLabel {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 100%;
+    color: var(--light-grey);
+    font-size: var(--size-xxxs);
+    transition:
+        transform 0.2s,
+        top 0.2s,
+        left 0.2s;
+}
+
+.emailInput:focus + .emailLabel,
+.passwordInput:focus + .passwordLabel,
+.notEmpty + .emailLabel,
+.notEmpty + .passwordLabel {
+    transform: scale(0.75);
+    top: 3%;
+    left: -8%;
+}
+
+.emailInput:focus,
+.passwordInput:focus {
+    border: 1px solid var(--grey);
+    outline: none;
+}
+
+.emailInput.wrongInput,
+.passwordInput.wrongInput {
+    border: 1px solid var(--call-to-action-hover);
+}
+
+.emailInput.valid,
+.passwordInput.valid {
+    border: 1px solid var(--darker-green);
+}
+
+.error.wrongInput {
+    display: flex;
+}
+
+.error {
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0.5em;
+    display: none;
+}
+
+.error img {
+    margin-right: 0.5em;
+}
+
+.error span {
+    color: var(--call-to-action-hover);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.submitBtn {
+    width: 100%;
+    margin-top: 0.8em;
+    border-radius: 5px;
+    padding: 0.7em;
+    font-size: var(--size-xm);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+.newsletterForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletterInput {
+    position: relative;
+    margin-bottom: 0.6em;
+}
+
+.newsletterInput::after {
+    position: absolute;
+    content: '';
+    border-radius: 2px;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--light-grey);
+    background-color: var(--pure-white);
+    transition: background-color 0.2s;
+    pointer-events: none;
+}
+
+.newsletterInput::before {
+    position: absolute;
+    content: '\002714';
+    top: -2px;
+    left: 2px;
+    font-size: 0.8rem;
+    color: var(--pure-white);
+    z-index: 100;
+    opacity: 0;
+}
+
+.newsletterInput:checked.newsletterInput::before {
+    opacity: 1;
+}
+
+.newsletterInput:checked.newsletterInput::after {
+    background-color: var(--darker-green);
+}
+
+.newsletterInput:focus.newsletterInput::after {
+    border: 1px solid var(--darker-green);
+}
+
+.newsletterLabel {
+    color: var(--pure-black);
+    font-size: 0.85rem;
+    margin-left: 0.6em;
+}
+
+@media (min-width: 786px) {
+    .container {
+        margin-bottom: 0;
+        max-width: 500px;
+        max-height: 700px;
+    }
+
+    .step {
+        font-size: 1rem;
+    }
+
+    .title {
+        font-size: var(--size-l);
+        line-height: 38px;
+    }
+
+    .text {
+        font-size: 1.2rem;
+    }
+
+    .emailLabel,
+    .passwordLabel {
+        top: 26%;
+        font-size: var(--size-m);
+    }
+
+    .emailInput:focus + .emailLabel,
+    .passwordInput:focus + .passwordLabel,
+    .notEmpty + .emailLabel,
+    .notEmpty + .passwordLabel {
+        top: 2%;
+    }
+
+    .error span {
+        font-size: 0.9rem;
+    }
+
+    .newsletterInput::after {
+        width: 18px;
+        height: 18px;
+    }
+
+    .newsletterInput::before {
+        top: -1px;
+        left: 4px;
+    }
+
+    .newsletterLabel {
+        margin-left: 1em;
+        font-size: var(--size-xxxs);
+    }
+}

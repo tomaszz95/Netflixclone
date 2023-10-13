@@ -3,15 +3,15 @@ import MoreInfoAccordion from './MoreInfoAccordion'
 
 import styles from './ModalMoreInfo.module.css'
 
-type ComponentType = { onCloseMoreInfo: () => void; onSavePreferences: () => void }
+type ComponentType = { onCloseMoreInfo: () => void; onAcceptCookies: () => void }
 
-const ModalMoreInfo: React.FC<ComponentType> = ({ onCloseMoreInfo, onSavePreferences }) => {
+const ModalMoreInfo: React.FC<ComponentType> = ({ onCloseMoreInfo, onAcceptCookies }) => {
     return (
         <div className={styles.infoBox}>
             <MoreInfoHeader onCloseMoreInfo={onCloseMoreInfo} />
             <MoreInfoAccordion />
             <div className={styles.buttonBox}>
-                <button type="button" onClick={onSavePreferences} className={styles.saveBtn}>
+                <button type="button" onClick={onAcceptCookies} className={styles.saveBtn}>
                     Save settings
                 </button>
             </div>
