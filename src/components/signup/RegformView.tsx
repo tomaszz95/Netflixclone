@@ -1,5 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Router from 'next/router'
+
+import { createCookies, getCookies } from '../helpers/localStorageFunctions'
 
 import styles from './RegformView.module.css'
 
@@ -14,6 +16,14 @@ const RegformView = () => {
 
     const emailInputElement = useRef<HTMLInputElement | null>(null)
     const passwordInputElement = useRef<HTMLInputElement | null>(null)
+
+    useEffect(() => {
+        const cookie = getCookies('signUpEmailBegin')
+
+        if (cookie !== null) {
+            setInputEmail(cookie)
+        }
+    }, [])
 
     const isEmailValidFunc = () => {
         setIsFirstEmailTry(false)
@@ -69,7 +79,8 @@ const RegformView = () => {
         const isPasswordValidNow = isPasswordValidFunc()
 
         if (isEmailValidNow && isPasswordValidNow) {
-            console.log('ta')
+            Router.push(`/signup/plan`)
+            createCookies('signUpEmail', inputEmail)
         }
     }
 
@@ -156,15 +167,7 @@ const RegformView = () => {
                     </label>
                 </div>
             </form>
-            <button
-                type="submit"
-                aria-label="Next step"
-                className={styles.submitBtn}
-                onClick={() => {
-                    submitData()
-                    Router.push(`/signup/plan`)
-                }}
-            >
+            <button type="submit" aria-label="Next step" className={styles.submitBtn} onClick={() => submitData()}>
                 Next
             </button>
         </div>

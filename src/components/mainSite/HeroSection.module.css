@@ -45,6 +45,10 @@
     padding: 0 1em;
 }
 
+.welcomeText {
+    margin-top: 1.5em;
+}
+
 @media (min-width: 786px) {
     .heroSection {
         height: 700px;

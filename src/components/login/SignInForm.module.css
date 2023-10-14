@@ -70,15 +70,23 @@
     border-bottom: 2px solid var(--error-color);
 }
 
-.error.wrongInput {
+.error.wrongInput,
+.errorGeneral.wrongInput {
     display: block;
 }
 
-.error {
+.error,
+.errorGeneral {
     color: var(--error-color);
     font-size: 0.825rem;
     margin-top: 0.5em;
     display: none;
+}
+
+.errorGeneral {
+    margin-top: 0.8em;
+    font-size: 1rem;
+    text-align: center;
 }
 
 .sumbitBtn {

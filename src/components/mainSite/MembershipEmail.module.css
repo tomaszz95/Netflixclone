@@ -32,9 +32,9 @@
     border: 2px solid var(--pure-white);
 }
 
-.inputBox button {
+.button {
     border-radius: 5px;
-    padding: 0.5em 1em;
+    padding: 0.55em 1.2em;
     font-size: var(--size-m);
     background-color: var(--call-to-action);
     color: var(--pure-white);
@@ -43,7 +43,12 @@
     transition: background-color 0.3s;
 }
 
-.inputBox button:hover {
+.buttonFinish {
+    font-size: var(--size-xm);
+    margin-top: 0.5em;
+}
+
+.button:hover {
     background-color: var(--call-to-action-hover);
 }
 
@@ -69,10 +74,9 @@
         margin: 0 1em;
     }
 
-    .membershipBox button {
+    .buttonSign {
         width: 33%;
-        padding: 0.5em 1em;
-        font-size: var(--size-m);
+        padding: 0.6em 1.4em;
     }
 }
 
@@ -87,9 +91,15 @@
         font-size: 1.15rem;
     }
 
-    .membershipBox button {
+    .buttonSign {
         width: 35%;
-        padding: 0.5em;
+        padding: 0.7em;
+        font-size: var(--size-xm);
+    }
+
+    .buttonFinish {
         font-size: var(--size-xxm);
+        margin-top: 0.5em;
+        padding: 0.6em 1.4em;
     }
 }

@@ -1,5 +1,9 @@
 import { useState, useRef } from 'react'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import Router from 'next/router'
+import auth from '../../../firebase'
 
+import { createCookies } from '../helpers/localStorageFunctions'
 import LoginFormHelpers from './LoginFormHelpers'
 
 import styles from './SignInForm.module.css'
@@ -8,6 +12,7 @@ const SignInForm = () => {
     const [inputEmail, setInputEmail] = useState('')
     const [isEmailValid, setIsEmailValid] = useState(false)
     const [isFirstEmailTry, setIsFirstEmailTry] = useState(true)
+    const [firebaseError, setFirebaseError] = useState('')
 
     const [inputPassword, setInputPassword] = useState('')
     const [isPasswordValid, setIsPasswordValid] = useState(false)
@@ -65,14 +70,37 @@ const SignInForm = () => {
         }
     }
 
-    const submitData = (e: React.MouseEvent) => {
+    const submitData = async (e: React.MouseEvent) => {
         e.preventDefault()
 
         const isEmailValidNow = isEmailValidFunc()
         const isPasswordValidNow = isPasswordValidFunc()
 
         if (isEmailValidNow && isPasswordValidNow) {
-            console.log('ta')
+            signInWithEmailAndPassword(auth, inputEmail, inputPassword)
+                .then((userCredential) => {
+                    const userEmail = userCredential.user.email
+                    if (userEmail) {
+                        createCookies('loginUserEmail', userEmail)
+                        Router.push(`/`)
+                    }
+                })
+                .catch((error) => {
+                    if (!error.code) {
+                        const errorMessage = error.message.charAt(0).toUpperCase() + error.message.slice(1)
+
+                        setFirebaseError(errorMessage)
+                        return
+                    }
+
+                    if (error.code.includes('credentials')) {
+                        setFirebaseError('Please enter a valid credentials!')
+                    } else if (error.code.includes('many')) {
+                        setFirebaseError('Too many requests, try again later!')
+                    } else if (error.code.includes('internal-error')) {
+                        setFirebaseError('Our server have some problems. Please try again later.')
+                    }
+                })
         }
     }
 
@@ -135,6 +163,9 @@ const SignInForm = () => {
                 <button type="submit" className={styles.sumbitBtn} onClick={submitData}>
                     Sign In
                 </button>
+                <span className={`${styles.errorGeneral} ${firebaseError !== '' ? styles.wrongInput : ''}`}>
+                    {firebaseError}
+                </span>
             </form>
             <LoginFormHelpers />
         </div>
