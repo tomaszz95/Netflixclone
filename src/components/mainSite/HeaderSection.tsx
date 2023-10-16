@@ -1,25 +1,23 @@
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import Image from 'next/image'
-
-import { getCookies } from '../helpers/localStorageFunctions'
+import Link from 'next/link'
 
 import styles from './HeaderSection.module.css'
 
 const HeaderSection = () => {
     const [isLogged, setIsLogged] = useState(false)
+    const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
 
     const changeLanguage = () => {
         console.log('Should change language.. In progress')
     }
 
     useEffect(() => {
-        const cookieLogin = getCookies('loginUserEmail')
-        const cookieSignUp = getCookies('signUpEmail')
-
-        if (cookieLogin !== null || !cookieSignUp !== null) {
+        if (loginEmailsData.signUpEmail !== null || loginEmailsData.signInEmail !== null) {
             setIsLogged(true)
         }
-    }, [])
+    }, [loginEmailsData])
 
     return (
         <section className={styles.header}>
@@ -30,13 +28,13 @@ const HeaderSection = () => {
                     <option value="English">English</option>
                 </select>
                 {isLogged ? (
-                    <a role="button" aria-label="Click to sign out" className={styles.signBtn} href="/logout">
+                    <Link role="button" aria-label="Click to sign out" className={styles.signBtn} href="/logout">
                         Sign Out
-                    </a>
+                    </Link>
                 ) : (
-                    <a role="button" aria-label="Link to sign in page" className={styles.signBtn} href="/login">
+                    <Link role="button" aria-label="Link to sign in page" className={styles.signBtn} href="/login">
                         Sign In
-                    </a>
+                    </Link>
                 )}
             </div>
         </section>

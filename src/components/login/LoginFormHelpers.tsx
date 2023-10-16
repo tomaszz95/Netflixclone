@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './LoginFormHelpers.module.css'
+import Link from 'next/link'
 
 const LoginFormHelpers = () => {
     const [isVisible, setIsVisible] = useState(false)
@@ -20,7 +21,7 @@ const LoginFormHelpers = () => {
             <div className={styles.help}>
                 <div className={styles.signUp}>
                     <p>New to Netflix?</p>
-                    <a href="/">Sign up now.</a>
+                    <Link href="/">Sign up now.</Link>
                 </div>
                 <div className={styles.signCaptcha}>
                     <p>
@@ -39,13 +40,13 @@ const LoginFormHelpers = () => {
                 </div>
                 <p className={`${styles.captchaText} ${isVisible ? styles.captchaVisible : ''}`}>
                     The information collected by Google reCAPTCHA is subject to the Google{' '}
-                    <a href="https://policies.google.com/privacy" target="_blank">
+                    <Link href="https://policies.google.com/privacy" target="_blank">
                         Privacy Policy
-                    </a>{' '}
+                    </Link>{' '}
                     and{' '}
-                    <a href="https://policies.google.com/terms" target="_blank">
+                    <Link href="https://policies.google.com/terms" target="_blank">
                         Terms of Service
-                    </a>
+                    </Link>
                     , and is used for providing, maintaining, and improving the reCAPTCHA service and for general
                     security purposes (it is not used for personalized advertising by Google).
                 </p>

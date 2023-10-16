@@ -1,9 +1,12 @@
 import { useState, useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import Router from 'next/router'
+
 import auth from '../../../firebase'
 
-import { createCookies } from '../helpers/localStorageFunctions'
+import { loginEmailsActions } from '../store/login-emails'
 import LoginFormHelpers from './LoginFormHelpers'
 
 import styles from './SignInForm.module.css'
@@ -20,6 +23,8 @@ const SignInForm = () => {
 
     const emailInputElement = useRef<HTMLInputElement | null>(null)
     const passwordInputElement = useRef<HTMLInputElement | null>(null)
+
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     const isEmailValidFunc = () => {
         setIsFirstEmailTry(false)
@@ -81,7 +86,9 @@ const SignInForm = () => {
                 .then((userCredential) => {
                     const userEmail = userCredential.user.email
                     if (userEmail) {
-                        createCookies('loginUserEmail', userEmail)
+                        dispatch(
+                            loginEmailsActions.createEmailsCookie({ emailFunction: 'signInEmail', email: userEmail }),
+                        )
                         Router.push(`/`)
                     }
                 })

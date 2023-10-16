@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import Image from 'next/image'
 
 import MembershipEmail from './MembershipEmail'
-import { getCookies } from '../helpers/localStorageFunctions'
 
 import styles from './HeroSection.module.css'
 
 const HeroSection = () => {
     const [isRegistering, setIsRegistering] = useState(false)
+    const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
 
     useEffect(() => {
-        const cookieLogin = getCookies('loginUserEmail')
-        const cookieSignUp = getCookies('signUpEmail')
-
-        if (cookieLogin !== null || !cookieSignUp !== null) {
+        if (
+            loginEmailsData.startSignUpEmail !== null ||
+            loginEmailsData.signUpEmail !== null ||
+            loginEmailsData.signInEmail !== null
+        ) {
             setIsRegistering(true)
         }
-    }, [])
+    }, [loginEmailsData])
 
     return (
         <section className={styles.heroSection}>

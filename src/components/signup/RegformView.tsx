@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
 import Router from 'next/router'
 
-import { createCookies, getCookies } from '../helpers/localStorageFunctions'
+import { loginEmailsActions } from '../store/login-emails'
 
 import styles from './RegformView.module.css'
 
@@ -17,13 +19,14 @@ const RegformView = () => {
     const emailInputElement = useRef<HTMLInputElement | null>(null)
     const passwordInputElement = useRef<HTMLInputElement | null>(null)
 
-    useEffect(() => {
-        const cookie = getCookies('signUpEmailBegin')
+    const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
-        if (cookie !== null) {
-            setInputEmail(cookie)
+    useEffect(() => {
+        if (loginEmailsData.startSignUpEmail !== null) {
+            setInputEmail(loginEmailsData.startSignUpEmail)
         }
-    }, [])
+    }, [loginEmailsData])
 
     const isEmailValidFunc = () => {
         setIsFirstEmailTry(false)
@@ -80,7 +83,7 @@ const RegformView = () => {
 
         if (isEmailValidNow && isPasswordValidNow) {
             Router.push(`/signup/plan`)
-            createCookies('signUpEmail', inputEmail)
+            dispatch(loginEmailsActions.createEmailsCookie({ emailFunction: 'signUpEmail', email: inputEmail }))
         }
     }
 

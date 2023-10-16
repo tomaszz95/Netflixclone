@@ -4,7 +4,7 @@ import Image from 'next/image'
 import ModalText from './ModalText'
 import ModalMoreInfo from './ModalMoreInfo'
 import CookiesPortal from './CookiesPortal'
-import { createCookies, getCookies } from '../helpers/localStorageFunctions'
+import { createCookie, getCookie } from '../helpers/localStorageFunctions'
 
 import styles from './CookiesModal.module.css'
 
@@ -13,7 +13,7 @@ const CookiesModal = () => {
     const [moreInfoOpen, setMoreInfoOpen] = useState(false)
 
     useEffect(() => {
-        const isCookie = getCookies('cookies')
+        const isCookie = getCookie('cookies')
 
         if (isCookie === 'accept') {
             setModalIsClosed(true)
@@ -27,13 +27,13 @@ const CookiesModal = () => {
     const rejectCookies = () => {
         setModalIsClosed(true)
         setMoreInfoOpen(false)
-        createCookies('cookies', 'reject')
+        createCookie('cookies', 'reject')
     }
 
     const acceptCookies = () => {
         setModalIsClosed(true)
         setMoreInfoOpen(false)
-        createCookies('cookies', 'accept')
+        createCookie('cookies', 'accept')
     }
 
     const openMoreInfo = () => {

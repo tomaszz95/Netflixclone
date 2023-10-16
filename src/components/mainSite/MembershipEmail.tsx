@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
 import Router from 'next/router'
 
-import { getCookies, createCookies } from '../helpers/localStorageFunctions'
-
+import { loginEmailsActions } from '../store/login-emails'
 import styles from './MembershipEmail.module.css'
 
 const MembershipEmail = () => {
@@ -13,18 +14,22 @@ const MembershipEmail = () => {
     const [buttonText, setButtonText] = useState('')
     const inputElement = useRef<HTMLInputElement | null>(null)
 
-    useEffect(() => {
-        const cookieLogin = getCookies('loginUserEmail')
-        const cookieSignUp = getCookies('signUpEmail')
+    const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
-        if (cookieLogin !== null) {
+    useEffect(() => {
+        if (loginEmailsData.signUpEmail !== null || loginEmailsData.signInEmail !== null) {
             setIsRegistering(true)
             setButtonText('Restart Your Membership')
-        } else if (cookieLogin == null && cookieSignUp !== null) {
+        } else if (
+            loginEmailsData.startSignUpEmail !== null &&
+            loginEmailsData.signUpEmail === null &&
+            loginEmailsData.signInEmail === null
+        ) {
             setIsRegistering(true)
             setButtonText('Finish Sign Up')
         }
-    }, [])
+    }, [loginEmailsData])
 
     const isInputValid = () => {
         setIsFirstTry(false)
@@ -52,7 +57,7 @@ const MembershipEmail = () => {
                 inputElement.current.focus()
             }
         } else {
-            createCookies('signUpEmailBegin', inputEmail)
+            dispatch(loginEmailsActions.createEmailsCookie({ emailFunction: 'startSignUpEmail', email: inputEmail }))
             Router.push(`/signup/registration`)
         }
     }
@@ -68,7 +73,7 @@ const MembershipEmail = () => {
         const isValidNow = isInputValid()
 
         if (e.key === 'Enter' && isValidNow) {
-            createCookies('signUpEmailBegin', inputEmail)
+            dispatch(loginEmailsActions.createEmailsCookie({ emailFunction: 'startSignUpEmail', email: inputEmail }))
             Router.push(`/signup/registration`)
         }
     }
@@ -79,7 +84,13 @@ const MembershipEmail = () => {
                 <button
                     type="button"
                     aria-label="Go back to register"
-                    onClick={() => Router.push(`/signup/plan`)}
+                    onClick={() => {
+                        if (buttonText === 'Finish Sign Up') {
+                            Router.push(`/signup/regform`)
+                        } else if (buttonText === 'Restart Your Membership') {
+                            Router.push(`/signup/plan`)
+                        }
+                    }}
                     className={`${styles.button} ${styles.buttonFinish}`}
                 >
                     {buttonText} &gt;

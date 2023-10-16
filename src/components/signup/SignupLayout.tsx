@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import styles from './SignupLayout.module.css'
 
 type ChildrenLayoutType = {
@@ -13,12 +15,12 @@ const SignupLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
         <main className={styles.main}>
             <header className={styles.header}>
                 <div className={styles.headerContainer}>
-                    <a href="/">
+                    <Link href="/">
                         <img src="/photos/netflixLogo.png" alt="Netflix Logo" />
-                    </a>
-                    <a href="/login" className={styles.loginLink}>
+                    </Link>
+                    <Link href="/login" className={styles.loginLink}>
                         Sign In
-                    </a>
+                    </Link>
                 </div>
             </header>
             <section className={styles.section}>{children}</section>

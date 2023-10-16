@@ -1,13 +1,15 @@
-export function createCookies(cookieName: string, value: string) {
+export function createCookie(cookieName: string, value: string) {
     localStorage.setItem(cookieName, value)
+
+    return cookieName
 }
 
-export function getCookies(cookieName: string) {
+export function getCookie(cookieName: string) {
     const cookie = localStorage.getItem(cookieName)
 
     return cookie
 }
 
-export function deleteCookies(cookieName: string) {
+export function deleteCookie(cookieName: string) {
     localStorage.removeItem(cookieName)
 }

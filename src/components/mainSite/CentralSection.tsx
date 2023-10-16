@@ -26,13 +26,14 @@ const sectionData: sectionMainDataObj = {
     },
 }
 
-type ComponentType = { sectionCount: string; imgDirection: string }
+type ComponentType = { sectionCount: string }
 
-const CentralSection: React.FC<ComponentType> = ({ sectionCount, imgDirection }) => {
+const CentralSection: React.FC<ComponentType> = ({ sectionCount }) => {
     const section = sectionData[sectionCount]
     let insideBox
     let boxClass
     let imgClass
+
     if (sectionCount === '1') {
         insideBox = (
             <div className={styles.video}>
