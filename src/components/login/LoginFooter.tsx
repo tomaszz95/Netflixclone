@@ -1,6 +1,8 @@
-import styles from './SignInFooter.module.css'
+import styles from './LoginFooter.module.css'
 
-const SignInFooter = () => {
+type ComponentType = { isLoginPage: boolean }
+
+const LoginFooter: React.FC<ComponentType> = ({ isLoginPage }) => {
     const changeLanguage = () => {
         console.log('Should change language.. In progress')
     }
@@ -20,7 +22,11 @@ const SignInFooter = () => {
                     <a href="#">Corporate Information</a>
                     <a href="#">Ad Choices</a>
                 </div>
-                <select name="language" className={styles.select} onChange={changeLanguage}>
+                <select
+                    name="language"
+                    className={`${styles.select} ${isLoginPage ? styles.loginBg : styles.logoutBg}`}
+                    onChange={changeLanguage}
+                >
                     <option value="Polish">Polish</option>
                     <option value="English">English</option>
                 </select>
@@ -29,4 +35,4 @@ const SignInFooter = () => {
     )
 }
 
-export default SignInFooter
+export default LoginFooter

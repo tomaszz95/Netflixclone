@@ -49,6 +49,7 @@ a {
     --light-black: rgb(22, 21, 21);
     --lighter-black: rgb(65, 62, 62);
     --light-blue: rgb(0, 113, 235);
+    --lighter-blue: rgb(0, 128, 255);
     --success-color: rgb(13, 218, 13);
     --darker-green: hwb(150 15% 31%);
     --error-color: rgb(232, 124, 3);

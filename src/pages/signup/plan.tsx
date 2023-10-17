@@ -1,5 +1,5 @@
 import PlanView from '../../components/signup/PlanView'
-import SignupLayout from '../../components/signup/SignupLayout'
+import SignupLayout from '../../components/layouts/SignupLayout'
 
 const PlanPage = () => {
     return (

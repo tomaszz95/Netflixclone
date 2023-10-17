@@ -51,7 +51,7 @@
 
 @media (min-width: 786px) {
     .heroSection {
-        height: 700px;
+        height: 650px;
     }
 
     .heroShadow {
@@ -64,7 +64,7 @@
 
     .heroContent {
         position: absolute;
-        top: 22%;
+        top: 25%;
     }
 
     .heroText h1 {
@@ -91,7 +91,7 @@
 
     .heroContent {
         position: absolute;
-        top: 30%;
+        top: 28%;
         max-width: 1400px;
     }
 

@@ -47,7 +47,7 @@
 
 @media (min-width: 1200px) {
     .header {
-        padding: 4em;
+        padding: 3em 4em;
     }
 
     .header img {

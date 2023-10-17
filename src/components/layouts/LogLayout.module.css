@@ -1,0 +1,105 @@
+.loginBox {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0.5em;
+    border-bottom: 2px solid var(--light-grey);
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loginLink {
+    border-radius: 5px;
+    padding: 0.6em 1.2em;
+    margin-right: 0.5em;
+    font-size: var(--size-xxxs);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.loginLink:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+.loginBg {
+    background-color: var(--pure-black);
+}
+
+.logoutBg {
+    background-color: var(--dirty-white);
+}
+
+@media (min-width: 450px) {
+    .login img {
+        width: 180px;
+        height: 75px;
+    }
+}
+
+@media (min-width: 786px) {
+    .loginBox {
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .loginBg {
+        background-image: url('../../../public/photos/header.jpg');
+    }
+
+    .logoutBg {
+        background-image: url('../../../public/photos/loginTheCrown.jpg');
+    }
+
+    .login {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1em;
+        border-bottom: none;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .login img {
+        width: 220px;
+        height: 95px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .login {
+        padding: 0.6em;
+    }
+
+    .login img {
+        margin-left: 3em;
+        width: 220px;
+        height: 95px;
+    }
+
+    .loginLink {
+        margin-right: 3em;
+    }
+
+    .content {
+        max-width: 1500px;
+    }
+}
