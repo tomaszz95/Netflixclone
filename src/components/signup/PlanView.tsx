@@ -24,7 +24,7 @@ const PlanView = () => {
                 type="submit"
                 aria-label="Next step"
                 className={styles.button}
-                onClick={() => Router.push(`/signup/regform`)}
+                onClick={() => Router.push(`/signup/planform`)}
             >
                 Next
             </button>

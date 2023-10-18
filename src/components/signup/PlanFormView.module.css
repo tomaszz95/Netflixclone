@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin-bottom: 5em;
+    max-width: 1100px;
+}
+
+.textBox {
+    padding: 1em;
+    margin-top: 0.5em;
+}
+
+.textBox p {
+    font-size: 0.875rem;
+    margin-bottom: 0.6em;
+}
+
+.textBox a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    display: block;
+    max-width: 440px;
+    width: 100%;
+    border-radius: 4px;
+    margin: 0.8em auto 0;
+    padding: 0.7em 1em;
+    font-size: var(--size-xm);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+@media (min-width: 786px) {
+    .button {
+        margin-top: 1.2em;
+    }
+}

@@ -34,7 +34,7 @@ const loginEmailsSlice = createSlice({
                 signUpEmail: cookieSignUpEmail,
                 signInEmail: cookieSignInEmail,
             }
-
+    
             return emailObject
         },
 

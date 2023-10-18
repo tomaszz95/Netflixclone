@@ -1,0 +1,54 @@
+.container {
+    padding: 0.5em;
+}
+
+.inputs {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.6em;
+}
+
+.label {
+    position: relative;
+    min-width: 33.3333%;
+    padding: 1.6em 1em;
+    text-align: center;
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 600;
+    font-size: 1.05rem;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.label.chosen {
+    opacity: 1;
+}
+
+.input {
+    display: none;
+    pointer-events: none;
+}
+
+.labelText {
+    pointer-events: none;
+}
+
+.labelText::after {
+    display: block;
+    position: absolute;
+    top: 98%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 18px solid var(--call-to-action);
+    content: '';
+    opacity: 0;
+    transform: opacity 0.2s;
+}
+
+.label.chosen .labelText::after {
+    opacity: 1;
+}

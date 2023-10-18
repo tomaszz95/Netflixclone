@@ -4,7 +4,7 @@ type ComponentType = { isLoginPage: boolean }
 
 const LoginFooter: React.FC<ComponentType> = ({ isLoginPage }) => {
     const changeLanguage = () => {
-        console.log('Should change language.. In progress')
+        console.log('This select should change language..')
     }
 
     return (

@@ -2,7 +2,7 @@ import styles from './FooterSection.module.css'
 
 const FooterSection = () => {
     const changeLanguage = () => {
-        console.log('Should change language.. In progress')
+        console.log('This select should change language..')
     }
 
     return (

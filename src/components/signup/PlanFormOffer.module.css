@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+}
+
+.step {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.87rem;
+    margin-bottom: 0.4em;
+}
+
+.title {
+    margin-bottom: 0.4em;
+    font-size: var(--size-xxxm);
+    font-weight: 600;
+}
+
+.box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.checkSign {
+    margin-right: 0.8em;
+}
+
+.text {
+    font-size: 1.125rem;
+}
+
+@media (min-width: 786px) {
+    .step {
+        font-size: var(--size-xxxs);
+    }
+
+    .title {
+        text-align: center;
+        font-size: var(--size-l);
+    }
+
+    .text {
+        font-size: var(--size-m);
+    }
+}

@@ -1,27 +1,16 @@
-import { useState } from 'react'
 import Router from 'next/router'
-import { signOut } from 'firebase/auth'
-
-import auth from '../../../firebase'
-import { deleteCookie } from '../helpers/localStorageFunctions'
+import { useEffect } from 'react'
 
 import styles from './LogoutView.module.css'
 
 const LogoutView = () => {
-    const [error, setError] = useState(false)
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            Router.push('/')
+        }, 30000)
 
-    const logoutHandler = async () => {
-        signOut(auth)
-            .then(() => {
-                Router.push(`/`)
-                deleteCookie('signInEmail')
-                deleteCookie('signUpEmail')
-                deleteCookie('startSignUpEmail')
-            })
-            .catch((error) => {
-                setError(true)
-            })
-    }
+        return () => clearTimeout(timer)
+    })
 
     return (
         <div className={styles.wrapper}>
@@ -36,11 +25,10 @@ const LogoutView = () => {
                     type="submit"
                     className={styles.logoutBtn}
                     onClick={() => Router.push(`/`)}
-                    aria-label="Click to Sign In"
+                    aria-label="Click to go to homepage"
                 >
                     Go Now
                 </button>
-                {error && <span className={styles.error}>Something went wrong..</span>}
             </div>
         </div>
     )
