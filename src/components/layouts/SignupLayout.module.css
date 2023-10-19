@@ -14,7 +14,7 @@
 }
 
 .headerContainer {
-    padding: 0.8em;
+    padding: 0.4em;
     width: 100%;
     max-width: 1500px;
     display: flex;
@@ -47,11 +47,12 @@
 }
 
 .footer {
+    margin-top: 5em;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.3em 1.3em 3em;
+    padding: 1.3em 1.3em 1.5em;
     background-color: var(--dirty-white);
     border-top: 1px solid var(--dark-grey);
 }
@@ -126,8 +127,6 @@
     }
 
     .footer {
-        position: sticky;
-        bottom: 0;
         justify-content: center;
         align-items: center;
         padding: 2em 5em;

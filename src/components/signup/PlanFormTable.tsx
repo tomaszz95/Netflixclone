@@ -1,55 +1,59 @@
-import { useState } from 'react'
-
 import styles from './PlanFormTable.module.css'
 
-const PlanFormTable = () => {
-    const [selectedPlan, setSelectedPlan] = useState('premium')
+type ComponentType = { type: string }
 
-    const handlePlanChange = (plan: string) => {
-        setSelectedPlan(plan)
-    }
-
+const PlanFormTable: React.FC<ComponentType> = ({ type }) => {
     return (
-        <div className={styles.container}>
-            <div className={styles.inputs}>
-                <label htmlFor="basic" className={`${styles.label} ${selectedPlan === 'basic' ? styles.chosen : ''}`}>
-                    <input
-                        type="radio"
-                        id="basic"
-                        checked={selectedPlan === 'basic'}
-                        onChange={() => handlePlanChange('basic')}
-                        className={styles.input}
-                    />
-                    <span className={styles.labelText}>Basic</span>
-                </label>
-                <label
-                    htmlFor="standard"
-                    className={`${styles.label} ${selectedPlan === 'standard' ? styles.chosen : ''}`}
-                >
-                    <input
-                        type="radio"
-                        id="standard"
-                        checked={selectedPlan === 'standard'}
-                        onChange={() => handlePlanChange('standard')}
-                        className={styles.input}
-                    />
-                    <span className={styles.labelText}>Standard</span>
-                </label>
-                <label
-                    htmlFor="premium"
-                    className={`${styles.label} ${selectedPlan === 'premium' ? styles.chosen : ''}`}
-                >
-                    <input
-                        type="radio"
-                        id="premium"
-                        checked={selectedPlan === 'premium'}
-                        onChange={() => handlePlanChange('premium')}
-                        className={styles.input}
-                    />
-                    <span className={styles.labelText}>Premium</span>
-                </label>
-            </div>
-        </div>
+        <table className={styles.table}>
+            <tbody
+                className={`${styles.tableBody} ${
+                    type === 'basic' ? styles.basic : type === 'standard' ? styles.standard : styles.premium
+                }`}
+            >
+                <tr className={styles.tableRow}>
+                    <th className={styles.tableHeading}>Monthly price</th>
+                    <td className={`${styles.tableCell} ${styles.tableBasic}`}>29 zł</td>
+                    <td className={`${styles.tableCell} ${styles.tableStandard}`}>43 zł</td>
+                    <td className={`${styles.tableCell} ${styles.tablePremium}`}>60 zł</td>
+                </tr>
+                <tr className={styles.tableRow}>
+                    <th className={styles.tableHeading}>Video quality</th>
+                    <td className={`${styles.tableCell} ${styles.tableBasic}`}>Good</td>
+                    <td className={`${styles.tableCell} ${styles.tableStandard}`}>Better</td>
+                    <td className={`${styles.tableCell} ${styles.tablePremium}`}>720p</td>
+                </tr>
+                <tr className={styles.tableRow}>
+                    <th className={styles.tableHeading}>Resolution</th>
+                    <td className={`${styles.tableCell} ${styles.tableBasic}`}>29 zł</td>
+                    <td className={`${styles.tableCell} ${styles.tableStandard}`}>43 zł</td>
+                    <td className={`${styles.tableCell} ${styles.tablePremium}`}>1080p</td>
+                </tr>
+                <tr className={styles.tableRow}>
+                    <th className={styles.tableHeading}>Watch on your TV, computer, mobile phone and tablet</th>
+                    <td className={`${styles.tableCell} ${styles.tableBasic}`}>
+                        {type === 'basic' ? (
+                            <img src="/icons/checkSign.png" alt="" className={styles.checkSign} />
+                        ) : (
+                            <img src="/icons/checkSignInactive.png" alt="" className={styles.checkSign} />
+                        )}
+                    </td>
+                    <td className={`${styles.tableCell} ${styles.tableStandard}`}>
+                        {type === 'standard' ? (
+                            <img src="/icons/checkSign.png" alt="" className={styles.checkSign} />
+                        ) : (
+                            <img src="/icons/checkSignInactive.png" alt="" className={styles.checkSign} />
+                        )}
+                    </td>
+                    <td className={`${styles.tableCell} ${styles.tablePremium}`}>
+                        {type === 'premium' ? (
+                            <img src="/icons/checkSign.png" alt="" className={styles.checkSign} />
+                        ) : (
+                            <img src="/icons/checkSignInactive.png" alt="" className={styles.checkSign} />
+                        )}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     )
 }
 

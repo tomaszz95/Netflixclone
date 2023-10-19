@@ -7,8 +7,7 @@
 }
 
 .textBox {
-    padding: 1em;
-    margin-top: 0.5em;
+    padding: 0 1em;
 }
 
 .textBox p {
@@ -25,7 +24,7 @@
     max-width: 440px;
     width: 100%;
     border-radius: 4px;
-    margin: 0.8em auto 0;
+    margin: 1em auto 0;
     padding: 0.7em 1em;
     font-size: var(--size-xm);
     background-color: var(--call-to-action);
