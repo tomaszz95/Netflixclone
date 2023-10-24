@@ -13,11 +13,13 @@ const AcceptTerms = () => {
                 <p className={styles.acceptError}>
                     You must acknowledge that you have read and agree to the Terms of Use to continue.
                 </p>
-                <input type="checkbox" className={styles.acceptInput} />
-                <p className={styles.acceptText}>
-                    You agree that your membership will begin immediately, and acknowledge that you will therefore lose
-                    your right of withdrawal.
-                </p>
+                <div className={styles.acceptContainer}>
+                    <input type="checkbox" className={styles.acceptInput} />
+                    <p className={styles.acceptText}>
+                        You agree that your membership will begin immediately, and acknowledge that you will therefore
+                        lose your right of withdrawal.
+                    </p>
+                </div>
             </div>
         </>
     )

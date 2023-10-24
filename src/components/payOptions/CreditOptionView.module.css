@@ -1,0 +1,106 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 550px;
+    padding: 2em;
+}
+
+.step {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+.title {
+    margin-bottom: 0.6em;
+    font-size: var(--size-xxxm);
+    font-weight: 600;
+}
+
+.formBox,
+.cardNumberBox {
+    width: 100%;
+}
+
+.formBox input {
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--grey);
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 0.3rem;
+}
+
+.cardNumberContainer,
+.cardCVVContainer {
+    position: relative;
+}
+
+.cardNumberIcon {
+    position: absolute;
+    right: 0;
+    top: 53%;
+    transform: translate(-50%, -50%);
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    color: var(--call-to-action-hover);
+    font-weight: 500;
+    font-size: 0.825rem;
+    margin: 0.5em 0;
+}
+
+.cardExpirationContainer {
+    display: flex;
+}
+
+.error img,
+.cardBoxExpiration {
+    margin-right: 0.3em;
+}
+
+.cardBoxCVV {
+    margin-left: 0.3em;
+}
+
+.cardBoxExpiration,
+.cardBoxCVV {
+    width: 50%;
+}
+
+.botCheck {
+    font-size: 0.85rem;
+    line-height: 17px;
+    color: var(--light-grey);
+    margin-top: 1em;
+}
+
+.botCheck a {
+    color: var(--light-blue);
+}
+
+.botLink {
+    display: block;
+}
+
+.botCheck a:hover {
+    text-decoration: underline;
+}
+
+.botCheckHidden {
+    margin-top: 2em;
+}
+
+@media (min-width: 786px) {
+    .step {
+        font-size: var(--size-xxxs);
+    }
+
+    .title {
+        font-size: var(--size-l);
+    }
+}

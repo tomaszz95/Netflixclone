@@ -1,0 +1,43 @@
+.terms,
+.acceptText {
+    font-size: 0.85rem;
+    line-height: 17px;
+    color: var(--light-grey);
+    margin-bottom: 0.5em;
+}
+
+.terms a {
+    color: var(--light-blue);
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.acceptBox {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.acceptError {
+    color: var(--call-to-action-hover);
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+.acceptContainer {
+    display: flex;
+    align-items: center;
+}
+
+.acceptInput {
+    min-width: 28px;
+    min-height: 28px;
+    margin-right: 0.6em;
+}
+
+.acceptText {
+    margin-bottom: 0;
+}

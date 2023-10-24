@@ -1,0 +1,48 @@
+.chosenPlan {
+    margin: 0.4em 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    width: 100%;
+    background-color: var(--dirty-white);
+    border-radius: 5px;
+}
+
+.chosenBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.chosenCash {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.chosenType {
+    margin-top: 0.2em;
+    font-size: 0.9rem;
+}
+
+.chosenButton {
+    color: var(--light-blue);
+    font-weight: 600;
+}
+
+.chosenButton:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 786px) {
+    .chosenCash {
+        font-size: 1.1rem;
+    }
+
+    .chosenType {
+        font-size: 1rem;
+    }
+
+    .chosenButton {
+        font-size: 1.1rem;
+    }
+}

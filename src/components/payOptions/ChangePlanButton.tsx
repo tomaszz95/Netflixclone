@@ -1,3 +1,5 @@
+import Router from 'next/router'
+
 import styles from './ChangePlanButton.module.css'
 
 const ChangePlanButton = () => {
@@ -7,7 +9,9 @@ const ChangePlanButton = () => {
                 <span className={styles.chosenCash}>43zł/month</span>
                 <span className={styles.chosenType}>Standard</span>
             </div>
-            <button className={styles.chosenButton}>Change</button>
+            <button className={styles.chosenButton} onClick={() => Router.push('/signup/planform')}>
+                Change
+            </button>
         </div>
     )
 }
