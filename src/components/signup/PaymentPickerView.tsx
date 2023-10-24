@@ -1,8 +1,18 @@
 import Router from 'next/router'
+import { useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
+
+import { paymentActions } from '../store/payment'
 
 import styles from './PaymentPickerView.module.css'
 
 const PaymentPickerView = () => {
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
+
+    const paymentChooseHandler = (chosenPayment: string) => {
+        dispatch(paymentActions.changeHowToPayValue(chosenPayment))
+    }
+
     return (
         <div className={styles.container}>
             <img src="/icons/lockIcon.png" alt="" className={styles.lockIcon} />
@@ -11,7 +21,7 @@ const PaymentPickerView = () => {
             <p className={styles.text}>Your payment is encrypted and you can change how you pay anytime.</p>
             <p className={styles.textBold}>Secure for peace of mind.</p>
             <p className={styles.textBold}>Cancel easily online.</p>
-            <div>
+            <div className={styles.encryptedBox}>
                 <p className={styles.encrypted}>End-to-end encrypted</p>
                 <img src="/icons/lockIcon2.png" alt="" className={styles.lockIconEncrypted} />
             </div>
@@ -19,7 +29,10 @@ const PaymentPickerView = () => {
                 type="submit"
                 aria-label="Click to pay by card or debit card"
                 className={styles.button}
-                onClick={() => Router.push(`/signup/planform`)}
+                onClick={() => {
+                    paymentChooseHandler('card')
+                    Router.push(`/signup/creditoption`)
+                }}
             >
                 <div className={styles.buttonBox}>
                     <p className={styles.buttonText}>Credit or Debit Card</p>
@@ -33,18 +46,21 @@ const PaymentPickerView = () => {
                             alt=""
                         />
                         <img
-                            src="https://assets.nflxext.com/siteui/acquisition/payment/ffe/paymentpicker/MASTERCARD.png"
+                            src="https://assets.nflxext.com/siteui/acquisition/payment/ffe/paymentpicker/AMEX.png"
                             alt=""
                         />
                     </div>
                 </div>
-                <span>&gt;</span>
+                <span className={styles.buttonIcon}>&gt;</span>
             </button>
             <button
                 type="submit"
                 aria-label="Click to pay by mobile bill"
                 className={styles.button}
-                onClick={() => Router.push(`/signup/planform`)}
+                onClick={() => {
+                    paymentChooseHandler('mobileBill')
+                    Router.push(`/signup/dcboption`)
+                }}
             >
                 <div className={styles.buttonBox}>
                     <p className={styles.buttonText}>Add to mobile bill</p>
@@ -55,13 +71,16 @@ const PaymentPickerView = () => {
                         />
                     </div>
                 </div>
-                <span>&gt;</span>
+                <span className={styles.buttonIcon}>&gt;</span>
             </button>
             <button
                 type="submit"
                 aria-label="Click to pay by PayPal"
                 className={styles.button}
-                onClick={() => Router.push(`/signup/planform`)}
+                onClick={() => {
+                    paymentChooseHandler('paypal')
+                    Router.push(`/signup/paypaloption`)
+                }}
             >
                 <div className={styles.buttonBox}>
                     <p className={styles.buttonText}>PayPal</p>
@@ -72,13 +91,16 @@ const PaymentPickerView = () => {
                         />
                     </div>
                 </div>
-                <span>&gt;</span>
+                <span className={styles.buttonIcon}>&gt;</span>
             </button>
             <button
                 type="submit"
                 aria-label="Click to pay by Gift Code"
                 className={styles.button}
-                onClick={() => Router.push(`/signup/planform`)}
+                onClick={() => {
+                    paymentChooseHandler('giftCode')
+                    Router.push(`/signup/giftoption`)
+                }}
             >
                 <div className={styles.buttonBox}>
                     <p className={styles.buttonText}>Gift Code</p>
@@ -89,7 +111,7 @@ const PaymentPickerView = () => {
                         />
                     </div>
                 </div>
-                <span>&gt;</span>
+                <span className={styles.buttonIcon}>&gt;</span>
             </button>
         </div>
     )

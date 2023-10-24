@@ -1,0 +1,134 @@
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.lockIcon {
+    margin: 0.8em 0;
+}
+
+.step {
+    margin-top: 1.4em;
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.87rem;
+    margin-bottom: 0.4em;
+}
+
+.title {
+    margin-bottom: 0.3em;
+    font-size: var(--size-xxxm);
+    font-weight: 600;
+}
+
+.text,
+.textBold {
+    font-size: 1.125rem;
+}
+
+.text {
+    margin-bottom: 0.8em;
+}
+
+.textBold {
+    font-weight: 600;
+}
+
+.encryptedBox {
+    margin-top: 1.5em;
+    font-size: 0.875rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.encrypted {
+    margin-right: 0.2em;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0.2em 0 0.4em;
+    padding: 1em;
+    background-color: transparent;
+    border: 2px solid var(--dark-grey);
+    border-radius: 5px;
+}
+
+.buttonBox {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 24px;
+}
+
+.buttonText {
+    margin-right: 1em;
+}
+
+.buttonImages {
+    display: flex;
+    align-items: center;
+}
+
+.buttonIcon {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-left: 2em;
+}
+
+@media (min-width: 786px) {
+    .container {
+        align-items: center;
+    }
+
+    .lockIcon {
+        margin: 0.4em 0 1.5em;
+    }
+
+    .step {
+        font-size: var(--size-xxxs);
+    }
+
+    .title {
+        text-align: center;
+        font-size: var(--size-l);
+    }
+
+    .text,
+    .textBold {
+        text-align: center;
+        padding: 0 4em;
+        font-size: var(--size-m);
+    }
+
+    .encrypted {
+        margin-right: 0.4em;
+    }
+
+    .button {
+        width: 100%;
+        margin: 0.2em 0 0.4em;
+        padding: 1em;
+        background-color: transparent;
+        border: 2px solid var(--dark-grey);
+        border-radius: 5px;
+    }
+
+    .buttonText {
+        font-size: 1.2rem;
+    }
+
+    .buttonIcon {
+        font-size: 2rem;
+    }
+}

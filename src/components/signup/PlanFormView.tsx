@@ -25,6 +25,7 @@ const PlanFormView = () => {
                     userEmail: loginEmailsData.signInEmail,
                     userSubscriptionType: selectedPlan,
                     userPaid: false,
+                    howToPay: '',
                 }),
             )
         } else if (loginEmailsData.signUpEmail !== null) {
@@ -33,6 +34,7 @@ const PlanFormView = () => {
                     userEmail: loginEmailsData.signUpEmail,
                     userSubscriptionType: selectedPlan,
                     userPaid: false,
+                    howToPay: '',
                 }),
             )
         }
