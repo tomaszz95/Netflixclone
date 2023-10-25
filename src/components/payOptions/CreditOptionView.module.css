@@ -25,16 +25,19 @@
 }
 
 .formBox input {
+    position: relative;
     border-radius: 5px;
     background-color: transparent;
     border: 1px solid var(--grey);
     width: 100%;
-    padding: 0.8em;
-    margin-top: 0.3rem;
+    padding: 1.4em 0.9em 0.6em;
+    margin-top: 0.5rem;
 }
 
 .cardNumberContainer,
-.cardCVVContainer {
+.cardCVVContainer,
+.cardBoxFirstName,
+.cardBoxLastName {
     position: relative;
 }
 
@@ -52,6 +55,7 @@
     font-weight: 500;
     font-size: 0.825rem;
     margin: 0.5em 0;
+    display: none;
 }
 
 .cardExpirationContainer {
@@ -69,14 +73,31 @@
 
 .cardBoxExpiration,
 .cardBoxCVV {
+    position: relative;
     width: 50%;
+}
+
+.submitBtn {
+    width: 100%;
+    margin-top: 0.8em;
+    border-radius: 5px;
+    padding: 0.6em;
+    font-size: var(--size-xm);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: var(--call-to-action-hover);
 }
 
 .botCheck {
     font-size: 0.85rem;
     line-height: 17px;
     color: var(--light-grey);
-    margin-top: 1em;
+    margin-top: 1.5em;
 }
 
 .botCheck a {
@@ -85,14 +106,86 @@
 
 .botLink {
     display: block;
+    background-color: transparent;
+    color: var(--light-blue);
 }
 
-.botCheck a:hover {
+.botLink:hover {
     text-decoration: underline;
 }
 
 .botCheckHidden {
+    display: block;
     margin-top: 2em;
+}
+
+.cardNumberLabel,
+.cardExpirationDateLabel,
+.cardCVVLabel,
+.cardFirstNameLabel,
+.cardLastNameLabel {
+    position: absolute;
+    top: 38%;
+    left: 5%;
+    width: 100%;
+    color: var(--light-grey);
+    font-size: var(--size-xxxs);
+    transition:
+        transform 0.2s,
+        top 0.2s,
+        left 0.2s;
+}
+
+.cardExpirationDateLabel,
+.cardCVVLabel {
+    left: 10%;
+}
+
+.cardNumberInput:focus + .cardNumberLabel,
+.cardExpirationDateInput:focus + .cardExpirationDateLabel,
+.cardCVVInput:focus + .cardCVVLabel,
+.cardFirstNameInput:focus + .cardFirstNameLabel,
+.cardLastNameInput:focus + .cardLastNameLabel,
+.notEmpty + .cardNumberLabel,
+.notEmpty + .cardExpirationDateLabel,
+.notEmpty + .cardCVVLabel,
+.notEmpty + .cardFirstNameLabel,
+.notEmpty + .cardLastNameLabel {
+    transform: scale(0.75);
+    top: 15%;
+    left: -8%;
+}
+
+.cardExpirationDateInput:focus + .cardExpirationDateLabel,
+.cardCVVInput:focus + .cardCVVLabel,
+.notEmpty + .cardExpirationDateLabel,
+.notEmpty + .cardCVVLabel {
+    left: -3%;
+}
+
+.cardNumberInput:focus,
+.cardExpirationDateInput:focus,
+.cardCVVInput:focus,
+.cardFirstNameInput:focus,
+.cardLastNameInput:focus {
+    border: 1px solid var(--lighter-black);
+    outline: none;
+}
+
+.cardNumberInput.wrongInput,
+.cardExpirationDateInput.wrongInput,
+.cardCVVInput.wrongInput,
+.cardFirstNameInput.wrongInput,
+.cardLastNameInput.wrongInput {
+    border: 1px solid var(--call-to-action-hover);
+}
+
+.cardNumberInput.valid,
+.cardExpirationDateInput.valid,
+.cardCVVInput.valid,
+.cardFirstNameInput.valid,
+.cardLastNameInput.valid {
+    border: 1px solid var(--darker-green);
 }
 
 @media (min-width: 786px) {

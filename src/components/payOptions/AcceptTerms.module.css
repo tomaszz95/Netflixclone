@@ -22,7 +22,8 @@
 }
 
 .acceptError {
-    color: var(--call-to-action-hover);
+    display: block;
+    color: var(--call-to-action);
     font-weight: 500;
     margin-bottom: 1em;
 }
