@@ -1,0 +1,141 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    max-width: 550px;
+    padding: 2em;
+}
+
+.step {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.title {
+    margin-bottom: 0.4em;
+    font-size: var(--size-xxxm);
+    font-weight: 600;
+}
+
+.cardForm {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+.cardForm input {
+    position: relative;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--grey);
+    width: 100%;
+    padding: 1.4em 0.9em 0.6em;
+    margin-top: 0.5rem;
+}
+
+.giftNumberLabel {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    width: 100%;
+    color: var(--light-grey);
+    font-size: var(--size-xxxs);
+    transition:
+        transform 0.2s,
+        top 0.2s,
+        left 0.2s;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    color: var(--call-to-action-hover);
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-top: 0.4em;
+    display: none;
+}
+
+.error.wrongInput {
+    display: flex;
+}
+
+.submitBtn {
+    width: 100%;
+    margin-top: 0.8em;
+    border-radius: 5px;
+    padding: 0.6em;
+    font-size: var(--size-xm);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+.giftNumberInput:focus + .giftNumberLabel,
+.notEmpty + .giftNumberLabel {
+    transform: scale(0.75);
+    top: 18%;
+    left: -8%;
+}
+
+.giftNumberInput:focus {
+    border: 1px solid var(--lighter-black);
+    outline: none;
+}
+
+.giftNumberInput.wrongInput {
+    border: 1px solid var(--call-to-action-hover);
+}
+
+.giftNumberInput.valid {
+    border: 1px solid var(--darker-green);
+}
+
+.botCheck {
+    font-size: 0.85rem;
+    line-height: 17px;
+    color: var(--light-grey);
+    margin-top: 1.5em;
+}
+
+.botCheck a {
+    color: var(--light-blue);
+}
+
+.botLink {
+    display: block;
+    background-color: transparent;
+    color: var(--light-blue);
+}
+
+.botLink:hover {
+    text-decoration: underline;
+}
+
+.botCheckHidden {
+    display: block;
+    margin-top: 2em;
+}
+
+@media (min-width: 786px) {
+    .step {
+        font-size: var(--size-xxxs);
+    }
+
+    .title {
+        font-size: var(--size-l);
+    }
+
+    .error {
+        font-size: 1rem;
+        margin-top: 0.2em;
+    }
+}

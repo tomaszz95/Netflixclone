@@ -101,7 +101,7 @@ const MobileView = () => {
                             maxLength={15}
                         />
                         <label htmlFor="telNumber" className={styles.telNumberLabel}>
-                            MobileNumber
+                            Mobile number
                         </label>
                     </div>
                     <div
