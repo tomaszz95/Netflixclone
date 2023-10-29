@@ -35,9 +35,10 @@
 }
 
 .cardNumberContainer,
+.cardBoxExpirationContainer,
 .cardCVVContainer,
-.cardBoxFirstName,
-.cardBoxLastName {
+.cardBoxFirstNameContainer,
+.cardBoxLastNameContainer {
     position: relative;
 }
 
@@ -186,6 +187,10 @@
 .cardFirstNameInput.valid,
 .cardLastNameInput.valid {
     border: 1px solid var(--darker-green);
+}
+
+.error.wrongInput {
+    display: flex;
 }
 
 @media (min-width: 786px) {

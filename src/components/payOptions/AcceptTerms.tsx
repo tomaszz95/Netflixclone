@@ -1,26 +1,12 @@
-import { useState } from 'react'
-
 import styles from './AcceptTerms.module.css'
 
 type ComponentType = {
-    onCheckIfChecked: (isChecked: boolean) =>void
+    onAcceptTermsHandler: () => void
+    isTermsChecked: boolean
+    isFirstTimeChecked: boolean
 }
 
-const AcceptTerms: React.FC<ComponentType> = ({ onCheckIfChecked }) => {
-    const [isChecked, setIsChecked] = useState(false)
-    const [isFirstTime, setIsFirstTime] = useState(true)
-
-    const acceptTermsHandler = () => {
-        if (isFirstTime) {
-            setIsChecked(!isChecked)
-            setIsFirstTime(false)
-        } else {
-            setIsChecked(!isChecked)
-        }
-
-        onCheckIfChecked(!isChecked)
-    }
-
+const AcceptTerms: React.FC<ComponentType> = ({ onAcceptTermsHandler, isTermsChecked, isFirstTimeChecked }) => {
     return (
         <>
             <p className={styles.terms}>
@@ -30,13 +16,13 @@ const AcceptTerms: React.FC<ComponentType> = ({ onCheckIfChecked }) => {
                 until you cancel. You may cancel at any time to avoid future charges.
             </p>
             <div className={styles.acceptBox}>
-                {!isFirstTime && !isChecked && (
+                {!isFirstTimeChecked && !isTermsChecked && (
                     <span className={styles.acceptError}>
                         You must acknowledge that you have read and agree to the Terms of Use to continue.
                     </span>
                 )}
                 <div className={styles.acceptContainer}>
-                    <input type="checkbox" className={styles.acceptInput} onChange={acceptTermsHandler} />
+                    <input type="checkbox" className={styles.acceptInput} onChange={onAcceptTermsHandler} />
                     <p className={styles.acceptText}>
                         You agree that your membership will begin immediately, and acknowledge that you will therefore
                         lose your right of withdrawal.

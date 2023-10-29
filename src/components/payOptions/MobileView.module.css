@@ -1,0 +1,128 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 550px;
+    padding: 2em;
+}
+
+.step {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.title {
+    margin-bottom: 0.4em;
+    font-size: var(--size-xxxm);
+    font-weight: 600;
+}
+
+.icon {
+    margin-bottom: 1em;
+}
+
+.text {
+    margin-bottom: 0.8em;
+}
+
+.formBox {
+    margin: 0.4em 0 0.8em;
+    width: 100%;
+}
+
+.cardBoxMobileContainer {
+    position: relative;
+    width: 100%;
+}
+
+.formBox input {
+    position: relative;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--grey);
+    width: 100%;
+    padding: 1.4em 0.9em 0.6em;
+    margin-top: 0.5rem;
+}
+
+.telNumberLabel {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    width: 100%;
+    color: var(--light-grey);
+    font-size: var(--size-xxxs);
+    transition:
+        transform 0.2s,
+        top 0.2s,
+        left 0.2s;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    color: var(--call-to-action-hover);
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-top: 0.4em;
+    display: none;
+}
+
+.error.wrongInput {
+    display: flex;
+}
+
+.submitBtn {
+    width: 100%;
+    margin-top: 0.8em;
+    border-radius: 5px;
+    padding: 0.6em;
+    font-size: var(--size-xm);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+.telNumberInput:focus + .telNumberLabel,
+.notEmpty + .telNumberLabel {
+    transform: scale(0.75);
+    top: 18%;
+    left: -8%;
+}
+
+.telNumberInput:focus {
+    border: 1px solid var(--lighter-black);
+    outline: none;
+}
+
+.telNumberInput.wrongInput {
+    border: 1px solid var(--call-to-action-hover);
+}
+
+.telNumberInput.valid {
+    border: 1px solid var(--darker-green);
+}
+
+.textBottom {
+    display: block;
+    width: 100%;
+    margin-top: 0.8em;
+    text-align: center;
+}
+
+@media (min-width: 786px) {
+    .step {
+        font-size: var(--size-xxxs);
+    }
+
+    .title {
+        font-size: var(--size-l);
+    }
+}

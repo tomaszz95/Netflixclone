@@ -11,6 +11,8 @@ import styles from './CreditOptionView.module.css'
 const CreditOptionView = () => {
     const [showBotText, setShowBotText] = useState(false)
     const [isTermsChecked, setIsTermsChecked] = useState(false)
+    const [isFirstTimeChecked, setIsFirstTimeChecked] = useState(true)
+
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     const [cardNumberInput, setCardNumberInput] = useState({ cardNumber: '', isFirstTry: true, isValid: false })
@@ -30,10 +32,6 @@ const CreditOptionView = () => {
 
     const showBotTextHandler = () => {
         setShowBotText(true)
-    }
-
-    const isTermsCheckedHandler = (isChecked: boolean) => {
-        setIsTermsChecked(isChecked)
     }
 
     const isCardNumberValid = (inputValue: string) => {
@@ -136,6 +134,17 @@ const CreditOptionView = () => {
             // Router.push(`/signup/plan`)
             dispatch(paymentActions.changeIfUserPayedValue(true))
         }
+
+        setIsFirstTimeChecked(false)
+    }
+
+    const acceptTermsHandler = () => {
+        if (isFirstTimeChecked) {
+            setIsTermsChecked(!isTermsChecked)
+            setIsFirstTimeChecked(false)
+        } else {
+            setIsTermsChecked(!isTermsChecked)
+        }
     }
 
     return (
@@ -175,35 +184,45 @@ const CreditOptionView = () => {
                         </label>
                         <img src="/icons/cardIcon.png" alt="" className={styles.cardNumberIcon} />
                     </div>
-                    <div className={styles.error}>
+                    <div
+                        className={`${styles.error} ${
+                            !cardNumberInput.isFirstTry && !cardNumberInput.isValid ? styles.wrongInput : ''
+                        }`}
+                    >
                         <img src="/icons/xicon.png" alt="" />
                         <p>Please enter a card number.</p>
                     </div>
                 </div>
                 <div className={styles.cardExpirationContainer}>
                     <div className={styles.cardBoxExpiration}>
-                        <input
-                            pattern="^(0[1-9]|1[0-2])/\d{2}$"
-                            type="text"
-                            id="expirationDate"
-                            maxLength={5}
-                            className={`${styles.cardExpirationDateInput} ${
-                                expirationDateInput.expirationDate !== '' ? styles.notEmpty : ''
-                            } ${
-                                !expirationDateInput.isFirstTry && !expirationDateInput.isValid
-                                    ? styles.wrongInput
-                                    : !expirationDateInput.isFirstTry && expirationDateInput.isValid
-                                    ? styles.valid
-                                    : ''
+                        <div className={styles.cardBoxExpirationContainer}>
+                            <input
+                                pattern="^(0[1-9]|1[0-2])/\d{2}$"
+                                type="text"
+                                id="expirationDate"
+                                maxLength={5}
+                                className={`${styles.cardExpirationDateInput} ${
+                                    expirationDateInput.expirationDate !== '' ? styles.notEmpty : ''
+                                } ${
+                                    !expirationDateInput.isFirstTry && !expirationDateInput.isValid
+                                        ? styles.wrongInput
+                                        : !expirationDateInput.isFirstTry && expirationDateInput.isValid
+                                        ? styles.valid
+                                        : ''
+                                }`}
+                                ref={expirationDateInputElement}
+                                onChange={changeInputsValue}
+                                value={expirationDateInput.expirationDate}
+                            />
+                            <label htmlFor="expirationDate" className={styles.cardExpirationDateLabel}>
+                                Expiration date
+                            </label>
+                        </div>
+                        <div
+                            className={`${styles.error} ${
+                                !expirationDateInput.isFirstTry && !expirationDateInput.isValid ? styles.wrongInput : ''
                             }`}
-                            ref={expirationDateInputElement}
-                            onChange={changeInputsValue}
-                            value={expirationDateInput.expirationDate}
-                        />
-                        <label htmlFor="expirationDate" className={styles.cardExpirationDateLabel}>
-                            Expiration date
-                        </label>
-                        <div className={styles.error}>
+                        >
                             <img src="/icons/xicon.png" alt="" />
                             <p>Please enter an expiration date.</p>
                         </div>
@@ -230,66 +249,86 @@ const CreditOptionView = () => {
                             </label>
                             <img src="/icons/questionIcon.png" alt="" className={styles.cardNumberIcon} />
                         </div>
-                        <div className={styles.error}>
+                        <div
+                            className={`${styles.error} ${
+                                !cvvInput.isFirstTry && !cvvInput.isValid ? styles.wrongInput : ''
+                            }`}
+                        >
                             <img src="/icons/xicon.png" alt="" />
                             <p>Please enter a CVV.</p>
                         </div>
                     </div>
                 </div>
                 <div className={styles.cardBoxFirstName}>
-                    <input
-                        type="text"
-                        id="firstName"
-                        className={`${styles.cardFirstNameInput} ${
-                            firstNameInput.firstName !== '' ? styles.notEmpty : ''
-                        } ${
-                            !firstNameInput.isFirstTry && !firstNameInput.isValid
-                                ? styles.wrongInput
-                                : !firstNameInput.isFirstTry && firstNameInput.isValid
-                                ? styles.valid
-                                : ''
+                    <div className={styles.cardBoxFirstNameContainer}>
+                        <input
+                            type="text"
+                            id="firstName"
+                            className={`${styles.cardFirstNameInput} ${
+                                firstNameInput.firstName !== '' ? styles.notEmpty : ''
+                            } ${
+                                !firstNameInput.isFirstTry && !firstNameInput.isValid
+                                    ? styles.wrongInput
+                                    : !firstNameInput.isFirstTry && firstNameInput.isValid
+                                    ? styles.valid
+                                    : ''
+                            }`}
+                            ref={firstNameInputElement}
+                            onChange={changeInputsValue}
+                            maxLength={50}
+                            value={firstNameInput.firstName}
+                        />
+                        <label htmlFor="firstName" className={styles.cardFirstNameLabel}>
+                            First name
+                        </label>
+                    </div>
+                    <div
+                        className={`${styles.error} ${
+                            !firstNameInput.isFirstTry && !firstNameInput.isValid ? styles.wrongInput : ''
                         }`}
-                        ref={firstNameInputElement}
-                        onChange={changeInputsValue}
-                        maxLength={50}
-                        value={firstNameInput.firstName}
-                    />
-                    <label htmlFor="firstName" className={styles.cardFirstNameLabel}>
-                        First name
-                    </label>
-                    <div className={styles.error}>
+                    >
                         <img src="/icons/xicon.png" alt="" />
                         <p>Please enter a first name.</p>
                     </div>
                 </div>
                 <div className={styles.cardBoxLastName}>
-                    <input
-                        type="text"
-                        id="lastName"
-                        className={`${styles.cardLastNameInput} ${
-                            lastNameInput.lastName !== '' ? styles.notEmpty : ''
-                        } ${
-                            !lastNameInput.isFirstTry && !lastNameInput.isValid
-                                ? styles.wrongInput
-                                : !lastNameInput.isFirstTry && lastNameInput.isValid
-                                ? styles.valid
-                                : ''
+                    <div className={styles.cardBoxLastNameContainer}>
+                        <input
+                            type="text"
+                            id="lastName"
+                            className={`${styles.cardLastNameInput} ${
+                                lastNameInput.lastName !== '' ? styles.notEmpty : ''
+                            } ${
+                                !lastNameInput.isFirstTry && !lastNameInput.isValid
+                                    ? styles.wrongInput
+                                    : !lastNameInput.isFirstTry && lastNameInput.isValid
+                                    ? styles.valid
+                                    : ''
+                            }`}
+                            ref={lastNameInputElement}
+                            onChange={changeInputsValue}
+                            value={lastNameInput.lastName}
+                        />
+                        <label htmlFor="lastName" className={styles.cardLastNameLabel}>
+                            Last name
+                        </label>
+                    </div>
+                    <div
+                        className={`${styles.error} ${
+                            !lastNameInput.isFirstTry && !lastNameInput.isValid ? styles.wrongInput : ''
                         }`}
-                        ref={lastNameInputElement}
-                        onChange={changeInputsValue}
-                        value={lastNameInput.lastName}
-                    />
-                    <label htmlFor="lastName" className={styles.cardLastNameLabel}>
-                        Last name
-                    </label>
-                    <div className={styles.error}>
+                    >
                         <img src="/icons/xicon.png" alt="" />
                         <p>Please enter a last name.</p>
                     </div>
                 </div>
             </form>
             <ChangePlanButton />
-            <AcceptTerms onCheckIfChecked={isTermsCheckedHandler} />
+            <AcceptTerms
+                onAcceptTermsHandler={acceptTermsHandler}
+                isTermsChecked={isTermsChecked}
+                isFirstTimeChecked={isFirstTimeChecked}
+            />
             <button
                 type="submit"
                 aria-label="Start paid membership button"
