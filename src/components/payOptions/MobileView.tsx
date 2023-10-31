@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
+import Router from 'next/router'
 
 import AcceptTerms from './AcceptTerms'
 import ChangePlanButton from './ChangePlanButton'
@@ -49,8 +50,7 @@ const MobileView = () => {
         setPhoneNumberInput({ ...isPhoneNumberValidNow, phoneNumber: phoneNumberInput.phoneNumber })
 
         if (isTermsChecked && isPhoneNumberValidNow.isValid) {
-            console.log('payed')
-            // Router.push(`/signup/plan`)
+            Router.push(`/simpleSetup/orderfinal`)
             dispatch(paymentActions.changeIfUserPayedValue(true))
         }
 

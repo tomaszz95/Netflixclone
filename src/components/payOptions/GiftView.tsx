@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
+import Router from 'next/router'
 
 import ChangePlanButton from './ChangePlanButton'
 
@@ -40,8 +41,7 @@ const GiftView = () => {
         setGiftNumberInput({ ...isGiftNumberValidNow, giftNumber: giftNumberInput.giftNumber })
 
         if (isGiftNumberValidNow.isValid) {
-            console.log('payed')
-            // Router.push(`/signup/plan`)
+            Router.push(`/simpleSetup/orderfinal`)
             dispatch(paymentActions.changeIfUserPayedValue(true))
         }
     }

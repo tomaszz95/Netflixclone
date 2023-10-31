@@ -1,13 +1,17 @@
 import Router from 'next/router'
+import { useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
 
 import ChangePlanButton from './ChangePlanButton'
 
+import { paymentActions } from '../store/payment'
 import styles from './PaypalView.module.css'
 
 const PaypalView = () => {
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
     const submitClick = () => {
-        console.log('direct to paypal')
-        Router.push(`https://www.paypal.com/signin`)
+        Router.push(`/simpleSetup/orderfinal`)
+        dispatch(paymentActions.changeIfUserPayedValue(true))
     }
 
     return (

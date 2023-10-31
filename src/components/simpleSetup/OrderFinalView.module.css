@@ -7,43 +7,27 @@
     padding: 2em;
 }
 
-.step {
-    color: var(--grey);
-    font-weight: 500;
-    font-size: 0.875rem;
-}
-
 .title {
-    margin-bottom: 0.2em;
+    margin-bottom: 0.4em;
     font-size: var(--size-xxxm);
     font-weight: 600;
 }
 
 .text {
-    margin: 0.8em 0;
+    margin-bottom: 0.8em;
 }
 
-.text span {
-    font-weight: 600;
-}
-
-.submitBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.submitLink {
     width: 100%;
     margin-top: 0.8em;
     border-radius: 5px;
     padding: 0.6em;
-    font-size: var(--size-xm);
+    font-size: var(--size-m);
     background-color: var(--call-to-action);
     color: var(--pure-white);
     font-weight: 500;
     transition: background-color 0.3s;
-}
-
-.submitBtn:hover {
-    background-color: var(--call-to-action-hover);
+    text-align: center;
 }
 
 @media (min-width: 786px) {
@@ -53,9 +37,5 @@
 
     .title {
         font-size: var(--size-l);
-    }
-
-    .text {
-        font-size: 1.1rem;
     }
 }
