@@ -1,10 +1,29 @@
+import { useState } from 'react'
+import Router from 'next/router'
+
 import NewProfileInput from './NewProfilesInput'
 
+import { initialInputNamesValues } from '../helpers/siteText'
 import styles from './NewProfilesView.module.css'
 
 const NewProfilesView = () => {
+    const [inputNames, setInputNames] = useState(initialInputNamesValues)
+
+    const checkInput = (id: string, inputValue: string): void => {
+        const inputsArray = inputNames.map((inputItem) => {
+            if (inputItem.id === id) {
+                return { id: id, value: inputValue }
+            } else {
+                return inputItem
+            }
+        })
+
+        setInputNames(inputsArray)
+    }
+
     const submitData = () => {
-        console.log('ta')
+        console.log(inputNames)
+        Router.push('/simpleSetup/secondarylanguages')
     }
 
     return (
@@ -22,25 +41,44 @@ const NewProfilesView = () => {
             <div className={styles.inputContent}>
                 <div className={styles.inputOwner}>
                     <span className={styles.inputTitle}>Your profile</span>
-                    <NewProfileInput id="ownerInput" icon="lala" />
+                    <NewProfileInput id="ownerInput" icon="/icons/userSetupIcon.png" checkInputHandler={checkInput} />
                 </div>
                 <div className={styles.inputAdditional}>
                     <span className={styles.inputTitle}>Add profiles?</span>
-                    <NewProfileInput id="personInput1" icon="lala" />
-                    <NewProfileInput id="personInput2" icon="lala" />
-                    <NewProfileInput id="personInput3" icon="lala" />
-                    <NewProfileInput id="personInput4" icon="lala" />
+                    <NewProfileInput
+                        id="personInput1"
+                        icon="/icons/adduserSetupIcon.png"
+                        checkInputHandler={checkInput}
+                    />
+                    <NewProfileInput
+                        id="personInput2"
+                        icon="/icons/adduserSetupIcon.png"
+                        checkInputHandler={checkInput}
+                    />
+                    <NewProfileInput
+                        id="personInput3"
+                        icon="/icons/adduserSetupIcon.png"
+                        checkInputHandler={checkInput}
+                    />
+                    <NewProfileInput
+                        id="personInput4"
+                        icon="/icons/adduserSetupIcon.png"
+                        checkInputHandler={checkInput}
+                    />
                 </div>
+                <p className={styles.warning}>
+                    Only people who live with you may use your account. Learn more by reading our regulations.
+                </p>
+                <button
+                    type="submit"
+                    aria-label="Go next after choosing people"
+                    className={styles.submitBtn}
+                    onClick={submitData}
+                    disabled={inputNames[0].value === ''}
+                >
+                    Next
+                </button>
             </div>
-            <p className={styles.warning}>Only people who live with you may use your account.</p>
-            <button
-                type="submit"
-                aria-label="Go next after choosing people"
-                className={styles.submitBtn}
-                onClick={submitData}
-            >
-                Next
-            </button>
         </div>
     )
 }

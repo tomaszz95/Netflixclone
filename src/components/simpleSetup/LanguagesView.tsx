@@ -1,43 +1,7 @@
 import { useState } from 'react'
 
+import { inputsLanguagesData } from '../helpers/siteText'
 import styles from './LanguagesView.module.css'
-
-const inputsLanguagesData = [
-    'Bahasa Melayu',
-    'čeština',
-    'Dansk',
-    'Deutsch',
-    'English',
-    'español',
-    'Filipino',
-    'français',
-    'hrvatski',
-    'Indonesia',
-    'Italiano',
-    'Magyar',
-    'Nederlands',
-    'norsk Bokmål',
-    'polski',
-    'português',
-    'română',
-    'suomi',
-    'svenska',
-    'Tiếng Việt',
-    'Türkçe',
-    'Ελληνικά',
-    'русский',
-    'українська',
-    'עברית',
-    'العربية',
-    'हिन्दी',
-    'தமிழ்',
-    'తెలుగు',
-    'ไทย',
-    '한국어',
-    '中文',
-    '日本語',
-    '粵語',
-]
 
 const LanguagesView = () => {
     const [selectedLanguages, setSelectedLanguages] = useState(['English'])
@@ -66,7 +30,7 @@ const LanguagesView = () => {
                 </div>
                 <ul className={styles.inputs}>
                     {inputsLanguagesData.map((language) => (
-                        <li>
+                        <li key={language}>
                             <input type="checkbox" id={language} onChange={addLanguage} className={styles.input} />
                             <label htmlFor={language} className={styles.label}>
                                 {language.charAt(0).toUpperCase()}

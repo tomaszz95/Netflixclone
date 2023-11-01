@@ -17,6 +17,11 @@ const DeviceSurveyView = () => {
         }
     }
 
+    const submitData = () => {
+        console.log(selectedDevice)
+        Router.push('/simpleSetup/newprofiles')
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.textBox}>
@@ -44,9 +49,7 @@ const DeviceSurveyView = () => {
                     type="submit"
                     aria-label="Go next after choosing device button"
                     className={styles.submitBtn}
-                    onClick={() => {
-                        Router.push('/simpleSetup/newprofiles')
-                    }}
+                    onClick={submitData}
                     disabled={selectedDevice.length === 0}
                 >
                     Next

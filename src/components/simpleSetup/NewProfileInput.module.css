@@ -1,0 +1,58 @@
+.inputBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 0.6em;
+}
+
+.inputForm {
+    position: relative;
+    width: 100%;
+}
+
+.inputIcon {
+    margin-right: 1em;
+    width: 40px;
+}
+
+.inputFormInput {
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--grey);
+    width: 100%;
+    padding: 1.2em 0.9em 0.6em;
+    margin-top: 0.5rem;
+}
+
+.inputFormLabel {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    width: 100%;
+    color: var(--light-grey);
+    font-size: var(--size-xxxs);
+    transition:
+        transform 0.2s,
+        top 0.2s,
+        left 0.2s;
+}
+
+.inputFormInput:focus + .inputFormLabel,
+.notEmpty + .inputFormLabel {
+    transform: scale(0.75);
+    top: 18%;
+    left: -8%;
+}
+
+.inputFormInput:focus {
+    border: 1px solid var(--lighter-black);
+    outline: none;
+}
+
+.inputFormInput.wrongInput {
+    border: 1px solid var(--call-to-action-hover);
+}
+
+.notEmpty.inputFormInput {
+    border: 1px solid var(--darker-green);
+}

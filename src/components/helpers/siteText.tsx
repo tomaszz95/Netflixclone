@@ -66,3 +66,63 @@ export const inputsDeviceSurveyData = [
     { id: 'cable', icon: '/icons/cableSetupIcon.png', title: 'Cable Set Top Box', text: 'From your cable provider' },
     { id: 'else', icon: '', title: 'Something Else', text: 'Enjoy Netflix with other internet-connected devices' },
 ]
+
+export const initialInputNamesValues = [
+    {
+        id: 'ownerInput',
+        value: '',
+    },
+    {
+        id: 'personInput1',
+        value: '',
+    },
+    {
+        id: 'personInput2',
+        value: '',
+    },
+    {
+        id: 'personInput3',
+        value: '',
+    },
+    {
+        id: 'personInput4',
+        value: '',
+    },
+]
+
+export const inputsLanguagesData = [
+    'Bahasa Melayu',
+    'čeština',
+    'Dansk',
+    'Deutsch',
+    'English',
+    'español',
+    'Filipino',
+    'français',
+    'hrvatski',
+    'Indonesia',
+    'Italiano',
+    'Magyar',
+    'Nederlands',
+    'norsk Bokmål',
+    'polski',
+    'português',
+    'română',
+    'suomi',
+    'svenska',
+    'Tiếng Việt',
+    'Türkçe',
+    'Ελληνικά',
+    'русский',
+    'українська',
+    'עברית',
+    'العربية',
+    'हिन्दी',
+    'தமிழ்',
+    'తెలుగు',
+    'ไทย',
+    '한국어',
+    '中文',
+    '日本語',
+    '粵語',
+]
