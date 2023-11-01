@@ -34,7 +34,7 @@ const HeaderSection = () => {
         <section className={styles.header}>
             <Image src="/photos/netflixLogo.png" alt="Netflix Logo" width="100" height="50" priority={true} />
             <div className={styles.headerBox}>
-                <select name="language" className={styles.select} onChange={changeLanguage}>
+                <select name="language" className={styles.select} onChange={changeLanguage} defaultValue="English">
                     <option value="Polish">Polish</option>
                     <option value="English">English</option>
                 </select>

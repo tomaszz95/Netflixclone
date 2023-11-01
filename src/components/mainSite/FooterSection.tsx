@@ -1,5 +1,7 @@
 import styles from './FooterSection.module.css'
 
+import { footerMainSiteLinks } from '../helpers/siteText'
+
 const FooterSection = () => {
     const changeLanguage = () => {
         console.log('This select should change language..')
@@ -11,27 +13,13 @@ const FooterSection = () => {
                 Question? Contact us.
             </a>
             <div className={styles.links}>
-                <a href="#">FAQ</a>
-                <a href="#">Help Center</a>
-                <a href="#">Account</a>
-                <a href="#">Media Center</a>
-                <a href="#">Investor Relations</a>
-                <a href="#">Jobs</a>
-                <a href="#">Redeem Gift Cards</a>
-                <a href="#">Buy Gift Cards</a>
-                <a href="#">Ways to Watch</a>
-                <a href="#">Terms of Use</a>
-                <a href="#">Privacy</a>
-                <a href="#">Cookie Preferences</a>
-                <a href="#">Corporate Information</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Speed Test</a>
-                <a href="#">Legal Guarantee</a>
-                <a href="#">Legal Notices</a>
-                <a href="#">Only on Netflix</a>
-                <a href="#">Ad Choices</a>
+                {footerMainSiteLinks.map((link) => (
+                    <a href="#" key={link}>
+                        {link}
+                    </a>
+                ))}
             </div>
-            <select name="language" className={styles.select} onChange={changeLanguage}>
+            <select name="language" className={styles.select} onChange={changeLanguage} defaultValue="English">
                 <option value="Polish">Polish</option>
                 <option value="English">English</option>
             </select>

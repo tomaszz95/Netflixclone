@@ -1,28 +1,20 @@
 import { useState } from 'react'
+import Router from 'next/router'
 
 import DeviceSurveyInput from './DeviceSurveyInput'
-
-import styles from './DeviceSurvey.module.css'
-
-const inputsProfileData = [
-    { id: 'tv', icon: '', title: 'TV', text: 'Smart or internet connected TVs' },
-    { id: 'phone', icon: '', title: 'Phone or Tablet', text: 'Download the Netflix app to enjoy' },
-    { id: 'computer', icon: '', title: 'Computer', text: 'Desktop or laptop' },
-    { id: 'console', icon: '', title: 'Game Console', text: 'Connected to the internet' },
-    { id: 'streaming', icon: '', title: 'Streaming Device', text: 'Connects your TV to the internet' },
-    { id: 'cable', icon: '', title: 'Cable Set Top Box', text: 'From your cable provider' },
-    { id: 'else', icon: '', title: 'Something Else', text: 'Enjoy Netflix with other internet-connected devices' },
-]
+import { inputsDeviceSurveyData } from '../helpers/siteText'
+import styles from './DeviceSurveyView.module.css'
 
 const DeviceSurveyView = () => {
-    const [selectedDevice, setSelectedDevice] = useState('computer')
+    const [selectedDevice, setSelectedDevice] = useState(['computer'])
 
     const checkInput = (id: string) => {
-        setSelectedDevice(id)
-    }
-
-    const submitData = () => {
-        console.log('ta')
+        if (selectedDevice.includes(id)) {
+            const newArray = selectedDevice.filter((device) => device !== id)
+            setSelectedDevice(newArray)
+        } else {
+            setSelectedDevice([...selectedDevice, id])
+        }
     }
 
     return (
@@ -34,9 +26,9 @@ const DeviceSurveyView = () => {
                     You can watch Netflix on any of these devices. <span>Select all that apply.</span>
                 </p>
             </div>
-            <div className={styles.container}>
+            <div className={styles.inputsContainer}>
                 <div className={styles.inputs}>
-                    {inputsProfileData.map((input) => (
+                    {inputsDeviceSurveyData.map((input) => (
                         <DeviceSurveyInput
                             id={input.id}
                             icon={input.icon}
@@ -52,7 +44,10 @@ const DeviceSurveyView = () => {
                     type="submit"
                     aria-label="Go next after choosing device button"
                     className={styles.submitBtn}
-                    onClick={submitData}
+                    onClick={() => {
+                        Router.push('/simpleSetup/newprofiles')
+                    }}
+                    disabled={selectedDevice.length === 0}
                 >
                     Next
                 </button>

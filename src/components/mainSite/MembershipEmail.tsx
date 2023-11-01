@@ -15,21 +15,26 @@ const MembershipEmail = () => {
     const inputElement = useRef<HTMLInputElement | null>(null)
 
     const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
+    const paymentData = useSelector<any, any>((state) => state.payment)
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     useEffect(() => {
-        if (loginEmailsData.signUpEmail !== null || loginEmailsData.signInEmail !== null) {
+        if (loginEmailsData.signUpEmail !== null || (loginEmailsData.signInEmail !== null && !paymentData.userPaid)) {
             setIsRegistering(true)
             setButtonText('Restart Your Membership')
         } else if (
             loginEmailsData.startSignUpEmail !== null &&
             loginEmailsData.signUpEmail === null &&
-            loginEmailsData.signInEmail === null
+            loginEmailsData.signInEmail === null &&
+            !paymentData.userPaid
         ) {
             setIsRegistering(true)
             setButtonText('Finish Sign Up')
+        } else if (paymentData.userPaid) {
+            setIsRegistering(true)
+            setButtonText('Complete the initial settings')
         }
-    }, [loginEmailsData])
+    }, [loginEmailsData, paymentData])
 
     const isInputValid = () => {
         setIsFirstTry(false)
@@ -89,6 +94,8 @@ const MembershipEmail = () => {
                             Router.push(`/signup/regform`)
                         } else if (buttonText === 'Restart Your Membership') {
                             Router.push(`/signup/plan`)
+                        } else if (buttonText === 'Complete the initial settings') {
+                            Router.push(`/simpleSetup/orderfinal`)
                         }
                     }}
                     className={`${styles.button} ${styles.buttonFinish}`}

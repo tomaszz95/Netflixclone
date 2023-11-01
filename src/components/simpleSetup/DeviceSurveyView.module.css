@@ -1,0 +1,112 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 1500px;
+    padding: 1.5em;
+}
+
+.step {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+.textBox {
+    width: 100%;
+}
+
+.title {
+    margin-bottom: 0.4em;
+    font-size: var(--size-xxxm);
+    font-weight: 700;
+}
+
+.text span {
+    font-weight: 700;
+}
+
+.inputsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.inputs {
+    max-width: 750px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submitBtn {
+    max-width: 300px;
+    width: 100%;
+    margin-top: 3em;
+    border-radius: 5px;
+    padding: 0.6em;
+    font-size: var(--size-m);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 500;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.submitBtn:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+.submitBtn:disabled {
+    background-color: var(--light-grey);
+}
+
+@media (min-width: 786px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 1450px;
+        width: 100%;
+        padding: 2em;
+    }
+
+    .textBox {
+        padding-right: 3em;
+        width: 550px;
+    }
+
+    .step {
+        font-size: var(--size-xxxs);
+    }
+
+    .title {
+        font-size: var(--size-xl);
+    }
+
+    .text {
+        font-size: var(--size-m);
+    }
+
+    .text span {
+        display: block;
+    }
+
+    .inputsContainer {
+        margin-top: 0;
+        width: 700px;
+    }
+
+    .submitBtn {
+        margin-top: 2.5em;
+        padding: 0.5em;
+        font-size: var(--size-xm);
+        align-self: flex-end;
+    }
+}

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
 
 import ReactProviderCookiesData from '../helpers/ReactProviderCookiesData'
 import { deleteCookie } from '../helpers/localStorageFunctions'
@@ -14,9 +15,15 @@ type ChildrenLayoutType = {
 
 const SignupLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
     const [logOutButton, setLogOutButton] = useState(true)
+    const [showLanguageSelect, setShowLanguageSelect] = useState(true)
     const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
+    const router = useRouter()
 
     useEffect(() => {
+        if (router.pathname.includes('simpleSetup')) {
+            setShowLanguageSelect(false)
+        }
+
         if (loginEmailsData.signUpEmail !== null || loginEmailsData.signInEmail !== null) {
             setLogOutButton(true)
         } else {
@@ -71,10 +78,17 @@ const SignupLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
                             <a href="#">Corporate Information</a>
                             <a href="#">Ad Choices</a>
                         </div>
-                        <select name="language" className={styles.select} onChange={changeLanguage}>
-                            <option value="Polish">Polish</option>
-                            <option value="English">English</option>
-                        </select>
+                        {showLanguageSelect && (
+                            <select
+                                name="language"
+                                className={styles.select}
+                                onChange={changeLanguage}
+                                defaultValue="English"
+                            >
+                                <option value="Polish">Polish</option>
+                                <option value="English">English</option>
+                            </select>
+                        )}
                     </div>
                 </footer>
             </main>

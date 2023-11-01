@@ -1,35 +1,11 @@
 import styles from './CentralSection.module.css'
-import { sectionMainDataObj } from '../helpers/types'
 
-const sectionData: sectionMainDataObj = {
-    '1': {
-        title: 'Enjoy on your TV',
-        text: 'Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.',
-        image: '/photos/tv.png',
-        video: 'https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v',
-    },
-    '2': {
-        title: 'Download your shows to watch offline',
-        text: 'Save your favorites easily and always have something to watch.',
-        image: '/photos/mobile.jpg',
-    },
-    '3': {
-        title: 'Watch everywhere',
-        text: 'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.',
-        image: '/photos/device.png',
-        video: 'https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v',
-    },
-    '4': {
-        title: 'Create profiles for kids',
-        text: 'Send kids on adventures with their favorite characters in a space mode just for them - free with your membership.',
-        image: '/photos/kids.png',
-    },
-}
+import { mainSiteSectionData } from '../helpers/siteText'
 
 type ComponentType = { sectionCount: string }
 
 const CentralSection: React.FC<ComponentType> = ({ sectionCount }) => {
-    const section = sectionData[sectionCount]
+    const section = mainSiteSectionData[sectionCount]
     let insideBox
     let boxClass
     let imgClass

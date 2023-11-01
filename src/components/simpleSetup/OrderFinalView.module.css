@@ -10,7 +10,7 @@
 .title {
     margin-bottom: 0.4em;
     font-size: var(--size-xxxm);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .text {
@@ -28,6 +28,10 @@
     font-weight: 500;
     transition: background-color 0.3s;
     text-align: center;
+}
+
+.submitLink:hover {
+    background-color: var(--call-to-action-hover);
 }
 
 @media (min-width: 786px) {

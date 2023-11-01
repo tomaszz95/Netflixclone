@@ -26,6 +26,7 @@ const LoginFooter: React.FC<ComponentType> = ({ isLoginPage }) => {
                     name="language"
                     className={`${styles.select} ${isLoginPage ? styles.loginBg : styles.logoutBg}`}
                     onChange={changeLanguage}
+                    defaultValue="English"
                 >
                     <option value="Polish">Polish</option>
                     <option value="English">English</option>
