@@ -20,14 +20,14 @@
     background-color: transparent;
     border: 1px solid var(--grey);
     width: 100%;
-    padding: 1.2em 0.9em 0.6em;
+    padding: 1.2em 4% 0.6em;
     margin-top: 0.5rem;
 }
 
 .inputFormLabel {
     position: absolute;
     top: 40%;
-    left: 5%;
+    left: 4%;
     width: 100%;
     color: var(--light-grey);
     font-size: var(--size-xxxs);
@@ -41,7 +41,7 @@
 .notEmpty + .inputFormLabel {
     transform: scale(0.75);
     top: 18%;
-    left: -8%;
+    left: -9%;
 }
 
 .inputFormInput:focus {
@@ -55,4 +55,31 @@
 
 .notEmpty.inputFormInput {
     border: 1px solid var(--darker-green);
+}
+
+@media (min-width: 786px) {
+    .inputBox {
+        margin-top: 1em;
+    }
+
+    .inputIcon {
+        margin-right: 1.2em;
+        width: 44px;
+    }
+
+    .inputFormInput {
+        padding: 1.4em 4% 0.6em;
+    }
+
+    .inputFormLabel {
+        top: 36%;
+        font-size: 1.1rem;
+    }
+
+    .inputFormInput:focus + .inputFormLabel,
+    .notEmpty + .inputFormLabel {
+        transform: scale(0.75);
+        top: 18%;
+        left: -9%;
+    }
 }
