@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Router from 'next/router'
 
 import { inputsLanguagesData } from '../helpers/siteText'
 import styles from './LanguagesView.module.css'
@@ -7,11 +8,17 @@ const LanguagesView = () => {
     const [selectedLanguages, setSelectedLanguages] = useState(['English'])
 
     const addLanguage = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.id)
+        if (selectedLanguages.includes(e.target.id)) {
+            const newArray = selectedLanguages.filter((language) => language !== e.target.id)
+            setSelectedLanguages(newArray)
+        } else {
+            setSelectedLanguages([...selectedLanguages, e.target.id])
+        }
     }
 
     const submitData = () => {
-        console.log('ta')
+        console.log(selectedLanguages)
+        Router.push('/simpleSetup/choosemovies')
     }
 
     return (
@@ -23,14 +30,14 @@ const LanguagesView = () => {
                     Letting us know helps set up your audio and subtitles. <span>You can always change these.</span>
                 </p>
             </div>
-            <div className={styles.container}>
+            <div className={styles.languageContainer}>
                 <div className={styles.firstLanguage}>
-                    <img src="" alt="" />
+                    <img src="/icons/checkSignBlack.png" alt="" />
                     <span>English</span>
                 </div>
                 <ul className={styles.inputs}>
                     {inputsLanguagesData.map((language) => (
-                        <li key={language}>
+                        <li key={language} className={styles.inputsItem}>
                             <input type="checkbox" id={language} onChange={addLanguage} className={styles.input} />
                             <label htmlFor={language} className={styles.label}>
                                 {language.charAt(0).toUpperCase()}
@@ -39,14 +46,16 @@ const LanguagesView = () => {
                         </li>
                     ))}
                 </ul>
-                <button
-                    type="submit"
-                    aria-label="Go next after choosing languages"
-                    className={styles.submitBtn}
-                    onClick={submitData}
-                >
-                    Next
-                </button>
+                <div className={styles.submitBtnBox}>
+                    <button
+                        type="submit"
+                        aria-label="Go next after choosing languages"
+                        className={styles.submitBtn}
+                        onClick={submitData}
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
         </div>
     )

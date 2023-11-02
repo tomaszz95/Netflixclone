@@ -1,0 +1,178 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 1500px;
+    padding: 1.5em;
+}
+
+.textBox {
+    width: 100%;
+}
+
+.step {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+.title {
+    margin-bottom: 0.4em;
+    font-size: var(--size-xxxm);
+    font-weight: 700;
+}
+
+.text span {
+    font-weight: 700;
+}
+
+.languageContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.firstLanguage {
+    background-color: var(--greylish);
+    padding: 0.5em 1em 0.5em 0.4em;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.firstLanguage img {
+    margin-right: 0.6em;
+    width: 25px;
+}
+
+.firstLanguage span {
+    font-weight: 700;
+}
+
+.inputs {
+    padding: 0 0.5em;
+    width: 100%;
+    margin-bottom: 3em;
+}
+
+.inputsItem {
+    display: flex;
+    align-items: center;
+    margin-top: 0.8em;
+}
+
+.input {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.8em;
+}
+
+.submitBtnBox {
+    position: sticky;
+    border: 1px solid var(--pure-white);
+    background-color: var(--pure-white);
+    padding: 1em;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.submitBtn {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    padding: 0.6em;
+    font-size: var(--size-m);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+@media (min-width: 786px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 1450px;
+        width: 100%;
+        padding: 2em;
+    }
+
+    .textBox {
+        padding-right: 3em;
+        width: 700px;
+    }
+
+    .step {
+        font-size: var(--size-xxxs);
+    }
+
+    .title {
+        font-size: var(--size-xl);
+    }
+
+    .text {
+        font-size: var(--size-m);
+    }
+
+    .text span {
+        display: block;
+    }
+
+    .languageContainer {
+        margin-top: 0;
+        width: 700px;
+    }
+
+    .firstLanguage {
+        font-size: 1.15rem;
+    }
+
+    .firstLanguage img {
+        width: 28px;
+    }
+
+    .inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 0.6em;
+        margin-bottom: 1em;
+        font-size: 1.15rem;
+    }
+
+    .inputsItem {
+        margin-top: 0.8em;
+    }
+
+    .input {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.8em;
+    }
+
+    .submitBtnBox {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        padding: 0;
+    }
+
+    .submitBtn {
+        margin-top: 1.5em;
+        padding: 0.5em;
+        font-size: var(--size-xm);
+    }
+}
