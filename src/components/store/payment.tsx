@@ -6,6 +6,10 @@ type initialType = {
     userSubscriptionType: null | string
     userPaid: boolean
     howToPay: string
+    selectedDevices: string[]
+    selectedLanguages: string[]
+    selectedNames: string[]
+    selectedMovies: string[]
 }
 
 const initialState: initialType = {
@@ -13,6 +17,10 @@ const initialState: initialType = {
     userSubscriptionType: null,
     userPaid: false,
     howToPay: '',
+    selectedDevices: [],
+    selectedLanguages: [],
+    selectedNames: [],
+    selectedMovies: [],
 }
 
 const paymentSlice = createSlice({
@@ -43,19 +51,10 @@ const paymentSlice = createSlice({
                 userSubscriptionType: userSubscriptionTypeNew,
                 userPaid: userPaidNow,
                 howToPay: howToPayNow,
-            }
-
-            createCookie('payment', JSON.stringify(userObject))
-
-            return userObject
-        },
-        
-        changeHowToPayValue(state, action) {
-            const howToPayNow = action.payload
-
-            const userObject: initialType = {
-                ...state,
-                howToPay: howToPayNow,
+                selectedDevices: [],
+                selectedLanguages: [],
+                selectedNames: [],
+                selectedMovies: [],
             }
 
             createCookie('payment', JSON.stringify(userObject))
@@ -63,12 +62,13 @@ const paymentSlice = createSlice({
             return userObject
         },
 
-        changeIfUserPayedValue(state, action) {
-            const userPaidNow = action.payload
+        changePaymentValue(state, action) {
+            const valueName = action.payload.name
+            const value = action.payload.value
 
             const userObject: initialType = {
                 ...state,
-                userPaid: userPaidNow,
+                [valueName]: value,
             }
 
             createCookie('payment', JSON.stringify(userObject))

@@ -5,18 +5,30 @@ import SignupLayout from '../../components/layouts/SignupLayout'
 import ChooseMoviesView from '../../components/simpleSetup/ChooseMoviesView'
 
 const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData }) => {
-    const [fetchedContentObjects, setfetchedContentObjects] = useState([])
+    const [fetchedContentObjects, setfetchedContentObjects] = useState<string[]>([])
 
     useEffect(() => {
+        let linksArray: string[] = []
+
         for (const key in moviesData.results) {
             if (moviesData.results.hasOwnProperty(key)) {
                 const movie = moviesData.results[key]
                 const posterPath = movie.poster_path
-                console.log(posterPath)
-                // https://image.tmdb.org/t/p/original/[poster_path]
+                linksArray.push(posterPath)
             }
         }
+
+        for (const key in seriesData.results) {
+            if (seriesData.results.hasOwnProperty(key)) {
+                const series = seriesData.results[key]
+                const posterPath = series.poster_path
+                linksArray.push(posterPath)
+            }
+        }
+
+        setfetchedContentObjects(linksArray)
     }, [])
+
     return (
         <SignupLayout>
             <ChooseMoviesView fetchedContent={fetchedContentObjects} />

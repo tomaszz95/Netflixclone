@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import Router from 'next/router'
+import { useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
 
 import NewProfileInput from './NewProfilesInput'
 
+import { paymentActions } from '../store/payment'
 import { initialInputNamesValues } from '../helpers/siteText'
 import styles from './NewProfilesView.module.css'
 
 const NewProfilesView = () => {
     const [inputNames, setInputNames] = useState(initialInputNamesValues)
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     const checkInput = (id: string, inputValue: string): void => {
         const inputsArray = inputNames.map((inputItem) => {
@@ -22,7 +26,15 @@ const NewProfilesView = () => {
     }
 
     const submitData = () => {
-        console.log(inputNames)
+        const inputsArray = inputNames.map((inputItem) => {
+            if (inputItem.value !== '') {
+                return inputItem.value
+            } else {
+                return null
+            }
+        })
+
+        dispatch(paymentActions.changePaymentValue({ name: 'selectedNames', value: inputsArray }))
         Router.push('/simpleSetup/secondarylanguages')
     }
 

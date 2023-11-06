@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import Router from 'next/router'
+import { useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
 
 import DeviceSurveyInput from './DeviceSurveyInput'
+
+import { paymentActions } from '../store/payment'
 import { inputsDeviceSurveyData } from '../helpers/siteText'
 import styles from './DeviceSurveyView.module.css'
 
 const DeviceSurveyView = () => {
     const [selectedDevice, setSelectedDevice] = useState(['computer'])
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     const checkInput = (id: string) => {
         if (selectedDevice.includes(id)) {
@@ -18,7 +23,7 @@ const DeviceSurveyView = () => {
     }
 
     const submitData = () => {
-        console.log(selectedDevice)
+        dispatch(paymentActions.changePaymentValue({ name: 'selectedDevices', value: selectedDevice }))
         Router.push('/simpleSetup/newprofiles')
     }
 

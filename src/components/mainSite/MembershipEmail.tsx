@@ -19,7 +19,10 @@ const MembershipEmail = () => {
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     useEffect(() => {
-        if (loginEmailsData.signUpEmail !== null || (loginEmailsData.signInEmail !== null && !paymentData.userPaid)) {
+        if (
+            loginEmailsData.signUpEmail !== null ||
+            (loginEmailsData.signInEmail !== null && (paymentData === null || !paymentData.userPaid))
+        ) {
             setIsRegistering(true)
             setButtonText('Restart Your Membership')
         } else if (

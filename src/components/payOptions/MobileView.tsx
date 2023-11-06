@@ -51,7 +51,7 @@ const MobileView = () => {
 
         if (isTermsChecked && isPhoneNumberValidNow.isValid) {
             Router.push(`/simpleSetup/orderfinal`)
-            dispatch(paymentActions.changeIfUserPayedValue(true))
+            dispatch(paymentActions.changePaymentValue({ name: 'userPaid', value: true }))
         }
 
         setIsFirstTimeChecked(false)

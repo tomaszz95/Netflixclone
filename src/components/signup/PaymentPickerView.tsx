@@ -10,7 +10,7 @@ const PaymentPickerView = () => {
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     const paymentChooseHandler = (chosenPayment: string) => {
-        dispatch(paymentActions.changeHowToPayValue(chosenPayment))
+        dispatch(paymentActions.changePaymentValue({ name: 'howToPay', value: chosenPayment }))
     }
 
     return (

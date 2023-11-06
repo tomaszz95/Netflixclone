@@ -42,7 +42,7 @@ const GiftView = () => {
 
         if (isGiftNumberValidNow.isValid) {
             Router.push(`/simpleSetup/orderfinal`)
-            dispatch(paymentActions.changeIfUserPayedValue(true))
+            dispatch(paymentActions.changePaymentValue({ name: 'userPaid', value: true }))
         }
     }
 

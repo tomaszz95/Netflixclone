@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import Router from 'next/router'
+import { useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
 
+import { paymentActions } from '../store/payment'
 import { inputsLanguagesData } from '../helpers/siteText'
 import styles from './LanguagesView.module.css'
 
 const LanguagesView = () => {
     const [selectedLanguages, setSelectedLanguages] = useState(['English'])
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     const addLanguage = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (selectedLanguages.includes(e.target.id)) {
@@ -17,7 +21,7 @@ const LanguagesView = () => {
     }
 
     const submitData = () => {
-        console.log(selectedLanguages)
+        dispatch(paymentActions.changePaymentValue({ name: 'selectedLanguages', value: selectedLanguages }))
         Router.push('/simpleSetup/choosemovies')
     }
 
