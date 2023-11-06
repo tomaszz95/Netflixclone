@@ -1,20 +1,21 @@
 import { useEffect, useState } from 'react'
 
-import { fetchedContentType } from '../../components/helpers/types'
+import { fetchedContentType, fetchedMoviesPropsData } from '../../components/helpers/types'
 import SignupLayout from '../../components/layouts/SignupLayout'
 import ChooseMoviesView from '../../components/simpleSetup/ChooseMoviesView'
 
 const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData }) => {
-    const [fetchedContentObjects, setfetchedContentObjects] = useState<string[]>([])
+    const [fetchedContentObjects, setfetchedContentObjects] = useState<fetchedMoviesPropsData[]>([])
 
     useEffect(() => {
-        let linksArray: string[] = []
+        let linksArray: fetchedMoviesPropsData[] = []
 
         for (const key in moviesData.results) {
             if (moviesData.results.hasOwnProperty(key)) {
                 const movie = moviesData.results[key]
                 const posterPath = movie.poster_path
-                linksArray.push(posterPath)
+                const movieTitle = movie.title
+                linksArray.push({ posterPath, movieTitle })
             }
         }
 
@@ -22,7 +23,8 @@ const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData
             if (seriesData.results.hasOwnProperty(key)) {
                 const series = seriesData.results[key]
                 const posterPath = series.poster_path
-                linksArray.push(posterPath)
+                const movieTitle = series.name
+                linksArray.push({ posterPath, movieTitle })
             }
         }
 

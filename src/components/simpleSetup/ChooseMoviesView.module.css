@@ -1,0 +1,196 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 1500px;
+    padding: 1.5em;
+}
+
+.textBox {
+    width: 100%;
+}
+
+.step {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+.title {
+    margin-bottom: 0.4em;
+    font-size: var(--size-xxxm);
+    font-weight: 700;
+}
+
+.text span {
+    font-weight: 700;
+}
+
+.moviesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.moviesBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.2em;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 3em;
+}
+
+.inputsItem {
+    position: relative;
+    height: 100%;
+    width: 30%;
+    cursor: pointer;
+}
+
+.input {
+    display: none;
+}
+
+.label {
+    display: block;
+    width: 100%;
+}
+
+.loading {
+    padding: 2em;
+    display: block;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.posterImg {
+    border-radius: 3px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.checkedBox {
+    position: absolute;
+    width: 100%;
+    height: 98%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.checked.checkedBox {
+    opacity: 1;
+}
+
+.thumbIcon {
+    width: 28px;
+}
+
+.submitBtnBox {
+    position: sticky;
+    border: 1px solid var(--pure-white);
+    background-color: var(--pure-white);
+    padding: 1em;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.submitBtn {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    padding: 0.6em;
+    font-size: var(--size-m);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+.submitBtn:disabled {
+    background-color: var(--light-grey);
+}
+
+@media (min-width: 786px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 1450px;
+        width: 100%;
+        padding: 2em;
+    }
+
+    .textBox {
+        padding-right: 3em;
+        width: 700px;
+    }
+
+    .step {
+        font-size: var(--size-xxxs);
+    }
+
+    .title {
+        font-size: var(--size-xl);
+    }
+
+    .text {
+        font-size: var(--size-m);
+    }
+
+    .text span {
+        display: block;
+    }
+
+    .moviesContainer {
+        margin-top: 0;
+        width: 800px;
+    }
+
+    .moviesBox {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        margin-bottom: 1em;
+    }
+
+    .inputsItem {
+        width: 100%;
+    }
+
+    .loading {
+        font-size: 2.5rem;
+    }
+
+    .submitBtnBox {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        padding: 0;
+    }
+
+    .submitBtn {
+        margin-top: 1.5em;
+        padding: 0.5em;
+        font-size: var(--size-xm);
+    }
+}

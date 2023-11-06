@@ -57,3 +57,5 @@ export type seriesDataType = {
     vote_average: number
     vote_count: number
 }
+
+export type fetchedMoviesPropsData = { posterPath: string; movieTitle: string }

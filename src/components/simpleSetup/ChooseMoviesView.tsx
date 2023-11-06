@@ -3,28 +3,24 @@ import Router from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
+import { paymentActions } from '../store/payment'
+import { fetchedMoviesPropsData } from '../helpers/types'
 import styles from './ChooseMoviesView.module.css'
 
-type ComponentType = {
-    fetchedContent: string[] | []
-}
-
-const ChooseMoviesView: React.FC<ComponentType> = ({ fetchedContent }) => {
+const ChooseMoviesView: React.FC<{ fetchedContent: fetchedMoviesPropsData[] }> = ({ fetchedContent }) => {
     const [selectedName, setSelectedName] = useState('')
-    const [selectedMovies, setSelectedMovies] = useState([''])
+    const [selectedMovies, setSelectedMovies] = useState<string[]>([])
 
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
-    const paymentData = useSelector<any, any>((state) => state.payment)
+    const selectedNames = useSelector<any, any>((state) => state.payment.selectedNames)
 
     useEffect(() => {
-        if (paymentData.selectedNames.length > 0) {
-            const selectedName = `${paymentData.selectedNames[0]
-                .charAt(0)
-                .toUpperCase()}${paymentData.selectedNames[0].slice(1)}`
+        if (selectedNames.length > 0) {
+            const selectedName = `${selectedNames[0].charAt(0).toUpperCase()}${selectedNames[0].slice(1)}`
 
             setSelectedName(selectedName)
         }
-    }, [paymentData])
+    }, [selectedNames])
 
     const addMovie = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (selectedMovies.includes(e.target.id)) {
@@ -36,8 +32,8 @@ const ChooseMoviesView: React.FC<ComponentType> = ({ fetchedContent }) => {
     }
 
     const submitData = () => {
-        console.log(selectedMovies)
-        Router.push('/simpleSetup/chooseMovies')
+        dispatch(paymentActions.changePaymentValue({ name: 'selectedMovies', value: selectedMovies }))
+        Router.push('/profilgate')
     }
 
     return (
@@ -49,28 +45,50 @@ const ChooseMoviesView: React.FC<ComponentType> = ({ fetchedContent }) => {
                     This helps us to find TV shows and movies you'll love. <span>Select the ones you like.</span>
                 </p>
             </div>
-            <div className={styles.moviesContainer}>
-                <ul className={styles.moviesBox}>
-                    {fetchedContent.map((movieLink) => (
-                        <li key={movieLink} className={styles.inputsItem}>
-                            <input type="checkbox" id={movieLink} onChange={addMovie} className={styles.input} />
-                            <label htmlFor={movieLink} className={styles.label}>
-                                <img src={`https://image.tmdb.org/t/p/original/${movieLink}`} alt="Poster of movie" />
-                            </label>
-                        </li>
-                    ))}
-                </ul>
-                <div className={styles.submitBtnBox}>
-                    <button
-                        type="submit"
-                        aria-label="Go next after choosing 3 movies"
-                        className={styles.submitBtn}
-                        onClick={submitData}
-                    >
-                        Pick 3 to Continue
-                    </button>
+            {fetchedContent.length === 0 ? (
+                <p className={styles.loading}>Loading...</p>
+            ) : (
+                <div className={styles.moviesContainer}>
+                    <ul className={styles.moviesBox}>
+                        {fetchedContent.map((movieLink) => (
+                            <li key={movieLink.movieTitle} className={styles.inputsItem}>
+                                <input
+                                    type="checkbox"
+                                    id={movieLink.movieTitle}
+                                    onChange={addMovie}
+                                    className={styles.input}
+                                />
+                                <label htmlFor={movieLink.movieTitle} className={styles.label}>
+                                    <img
+                                        src={`https://image.tmdb.org/t/p/original/${movieLink.posterPath}`}
+                                        alt="Poster of movie"
+                                        className={styles.posterImg}
+                                    />
+                                    <div
+                                        className={`${styles.checkedBox} ${
+                                            selectedMovies.includes(movieLink.movieTitle) ? styles.checked : ''
+                                        }`}
+                                    >
+                                        <img src="/icons/thumbIcon.png" alt="" className={styles.thumbIcon} />
+                                    </div>
+                                </label>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className={styles.submitBtnBox}>
+                        <button
+                            type="submit"
+                            aria-label="Go next after choosing 3 movies"
+                            className={styles.submitBtn}
+                            onClick={submitData}
+                            disabled={selectedMovies.length < 3}
+                        >
+                            Pick 3 to Continue
+                        </button>
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     )
 }
