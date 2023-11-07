@@ -1,3 +1,7 @@
+import { useEffect } from 'react'
+import Router from 'next/router'
+import { useSelector } from 'react-redux'
+
 import HeaderSection from './HeaderSection'
 import HeroSection from './HeroSection'
 import CentralSection from './CentralSection'
@@ -7,6 +11,14 @@ import FooterSection from './FooterSection'
 import styles from './MainView.module.css'
 
 const MainView = () => {
+    const isFullySet = useSelector<any, any>((state) => state.payment.isFullySet)
+
+    useEffect(() => {
+        if (isFullySet) {
+            Router.push('/profilgate')
+        }
+    }, [isFullySet])
+
     return (
         <>
             <header className={styles.header}>

@@ -33,6 +33,7 @@ const ChooseMoviesView: React.FC<{ fetchedContent: fetchedMoviesPropsData[] }> =
 
     const submitData = () => {
         dispatch(paymentActions.changePaymentValue({ name: 'selectedMovies', value: selectedMovies }))
+        dispatch(paymentActions.changePaymentValue({ name: 'isFullySet', value: true }))
         Router.push('/profilgate')
     }
 

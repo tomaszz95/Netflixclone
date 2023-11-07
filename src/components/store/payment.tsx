@@ -10,6 +10,7 @@ type initialType = {
     selectedLanguages: string[]
     selectedNames: string[]
     selectedMovies: string[]
+    isFullySet: boolean
 }
 
 const initialState: initialType = {
@@ -21,6 +22,7 @@ const initialState: initialType = {
     selectedLanguages: [],
     selectedNames: [],
     selectedMovies: [],
+    isFullySet: false,
 }
 
 const paymentSlice = createSlice({
@@ -55,6 +57,7 @@ const paymentSlice = createSlice({
                 selectedLanguages: [],
                 selectedNames: [],
                 selectedMovies: [],
+                isFullySet: false,
             }
 
             createCookie('payment', JSON.stringify(userObject))
