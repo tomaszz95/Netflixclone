@@ -1,7 +1,7 @@
 import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 import AddProfileView from '../../components/profile/AddProfileView'
 
-const ProfilGateSite = () => {
+const AddProfileSite = () => {
     return (
         <ReactProviderCookiesData>
             <AddProfileView />
@@ -9,4 +9,4 @@ const ProfilGateSite = () => {
     )
 }
 
-export default ProfilGateSite
+export default AddProfileSite
