@@ -1,0 +1,192 @@
+.container {
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    padding: 2em;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.title {
+    margin-bottom: 0.4em;
+    font-size: var(--size-l);
+    color: var(--pure-white);
+}
+
+.text {
+    margin-bottom: 0.8em;
+    font-size: 0.87rem;
+    color: var(--light-grey);
+}
+
+.line {
+    margin: 1em 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--light-grey);
+}
+
+.inputBox {
+    display: flex;
+}
+
+.inputBoxIcon {
+    width: 100px;
+    border-radius: 5px;
+    margin-right: 1.2em;
+}
+
+.inputContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputNameBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+.inputName {
+    border: 1px solid transparent;
+    color: var(--pure-white);
+    padding: 0.4em 0.6em;
+    background-color: var(--light-grey);
+    margin-bottom: 0.4em;
+    transition: border 0.3s;
+}
+
+.inputName::placeholder {
+    color: var(--pure-white);
+}
+
+.inputName.emptyError {
+    border: 1px solid var(--call-to-action);
+}
+
+.inputName.emptyError + .error {
+    opacity: 1;
+}
+
+.error {
+    font-size: 0.87rem;
+    color: var(--call-to-action);
+    opacity: 0;
+}
+
+.inputIsKidBox {
+    display: flex;
+    align-items: center;
+}
+
+.inputKid {
+    margin-right: 0.4em;
+    width: 16px;
+    height: 16px;
+}
+
+.inputKidLabel {
+    color: var(--pure-white);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    margin-top: 1em;
+    width: 100%;
+    max-width: 180px;
+    border-radius: 3px;
+    padding: 0.6em 1em;
+    font-size: var(--size-xxxs);
+    background-color: transparent;
+    color: var(--light-grey);
+    font-weight: 600;
+    border: 1px solid var(--light-grey);
+    transition:
+        border 0.3s,
+        color 0.3s,
+        background-color 0.3s;
+}
+
+.buttonContinue {
+    margin-right: 1.5em;
+    background-color: var(--pure-white);
+    color: rgb(20, 20, 20);
+}
+
+.buttonContinue:hover {
+    color: var(--pure-white);
+    background-color: var(--call-to-action);
+    border: 1px solid var(--call-to-action);
+}
+
+.buttonCancel:hover {
+    color: var(--pure-white);
+    border: 1px solid var(--pure-white);
+}
+
+@media (min-width: 786px) {
+    .box {
+        max-width: 600px;
+    }
+
+    .title {
+        font-size: var(--size-xxl);
+    }
+
+    .text {
+        margin-bottom: 0.2em;
+        font-size: var(--size-m);
+    }
+
+    .inputBox {
+        width: 100%;
+        margin: 0.4em 0;
+    }
+
+    .inputContent {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .inputNameBox {
+        width: 80%;
+        margin-bottom: 0em;
+    }
+
+    .inputName {
+        margin-top: 1.6em;
+        width: 100%;
+    }
+
+    .error {
+        font-size: 0.95rem;
+    }
+
+    .inputIsKidBox {
+        width: 20%;
+        justify-content: center;
+    }
+
+    .inputKid {
+        width: 28px;
+        height: 28px;
+    }
+}

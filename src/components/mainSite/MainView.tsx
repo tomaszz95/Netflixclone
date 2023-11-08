@@ -11,13 +11,14 @@ import FooterSection from './FooterSection'
 import styles from './MainView.module.css'
 
 const MainView = () => {
-    const isFullySet = useSelector<any, any>((state) => state.payment.isFullySet)
+    const paymentData = useSelector<any, any>((state) => state.payment)
 
     useEffect(() => {
-        if (isFullySet) {
+        if (!paymentData || !paymentData.isFullySet) return
+        if (paymentData.isFullySet) {
             Router.push('/profilgate')
         }
-    }, [isFullySet])
+    }, [paymentData])
 
     return (
         <>
