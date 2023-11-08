@@ -1,10 +1,10 @@
 import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
-import AddProfileView from '../../components/profile/AddProfileView'
+import ManageProfilesView from '../../components/profile/ManageProfilesView'
 
 const ProfilGateSite = () => {
     return (
         <ReactProviderCookiesData>
-            <AddProfileView />
+            <ManageProfilesView />
         </ReactProviderCookiesData>
     )
 }

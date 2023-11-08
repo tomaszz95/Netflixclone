@@ -1,0 +1,144 @@
+.container {
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8em;
+    max-width: 600px;
+}
+
+.title {
+    margin-bottom: 0.8em;
+    font-size: var(--size-xxxm);
+    color: var(--pure-white);
+    font-weight: 600;
+}
+
+.listLink,
+.addProfileLink {
+    width: 24%;
+}
+
+.listItem,
+.addProfileItem {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.editBcg {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 78%;
+    width: 100%;
+    pointer-events: none;
+    border-radius: 5px;
+}
+
+
+.listItem .listItemImg {
+    border-radius: 5px;
+    width: 100%;
+    border: 3px solid transparent;
+    transition: border 0.3s;
+    border-radius: 5px;
+}
+
+.editBcg img {
+    pointer-events: none;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.listLink:hover .listItem .listItemImg {
+    border: 3px solid var(--pure-white);
+}
+
+.listItem span,
+.addProfileItem span {
+    margin-top: 0.4em;
+    transition: color 0.3s;
+    text-align: center;
+    color: var(--light-grey);
+}
+
+.listLink:hover .listItem span,
+.addProfileLink:hover .addProfileItem span {
+    color: var(--pure-white);
+}
+
+.addProfileItem div {
+    transition: background-color 0.3s;
+}
+
+.addProfileItem:hover.addProfileItem div {
+    border-radius: 5px;
+    background-color: var(--pure-white);
+    height: 100%;
+}
+
+.addProfileItem img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.submitBtn {
+    margin-top: 3em;
+    width: 100%;
+    max-width: 140px;
+    border-radius: 3px;
+    font-weight: 600;
+    padding: 0.6em;
+    font-size: var(--size-xxxs);
+    background-color: var(--pure-white);
+    color: var(--light-grey);
+    transition:
+        color 0.3s,
+        background-color 0.3s;
+}
+
+.submitBtn:hover {
+    color: var(--pure-white);
+    background-color: var(--call-to-action);
+}
+
+@media (min-width: 450px) {
+    .editBcg {
+        height: 82%;
+    }
+}
+
+@media (min-width: 600px) {
+    .editBcg {
+        height: 144px;
+    }
+}
+
+@media (min-width: 786px) {
+    .title {
+        font-size: var(--size-xxl);
+    }
+
+    .submitBtn {
+        margin-top: 4em;
+        font-size: var(--size-m);
+    }
+}
