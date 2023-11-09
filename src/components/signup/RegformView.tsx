@@ -1,8 +1,11 @@
 import { useState, useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 import Router from 'next/router'
 
+import auth from '../../../firebase'
+import { isLoggedInActions } from '../store/loggedin'
 import { loginEmailsActions } from '../store/login-emails'
 
 import styles from './RegformView.module.css'
@@ -11,10 +14,12 @@ const RegformView = () => {
     const [inputEmail, setInputEmail] = useState('')
     const [isEmailValid, setIsEmailValid] = useState(false)
     const [isFirstEmailTry, setIsFirstEmailTry] = useState(true)
+    const [emailError, setEmailError] = useState('Email is required.')
 
     const [inputPassword, setInputPassword] = useState('')
     const [isPasswordValid, setIsPasswordValid] = useState(false)
     const [isFirstPasswordTry, setIsFirstPasswordTry] = useState(true)
+    const [passwordError, setPasswordError] = useState('Password is required.')
 
     const emailInputElement = useRef<HTMLInputElement | null>(null)
     const passwordInputElement = useRef<HTMLInputElement | null>(null)
@@ -52,8 +57,8 @@ const RegformView = () => {
         if (
             passwordInputElement.current !== null &&
             passwordInputElement.current.value !== '' &&
-            passwordInputElement.current.value.length < 60 &&
-            passwordInputElement.current.value.length > 4
+            passwordInputElement.current.value.length < 30 &&
+            passwordInputElement.current.value.length > 5
         ) {
             setIsPasswordValid(true)
             return true
@@ -66,6 +71,7 @@ const RegformView = () => {
     const changeInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.type === 'email') {
             setInputEmail(e.target.value)
+            setEmailError('Please enter a valid e-mail address.')
         } else if (e.target.type === 'password') {
             setInputPassword(e.target.value)
         }
@@ -82,8 +88,26 @@ const RegformView = () => {
         const isPasswordValidNow = isPasswordValidFunc()
 
         if (isEmailValidNow && isPasswordValidNow) {
-            Router.push(`/signup/plan`)
-            dispatch(loginEmailsActions.createEmailsCookie({ emailFunction: 'signUpEmail', email: inputEmail }))
+            createUserWithEmailAndPassword(auth, inputEmail, inputPassword)
+                .then((userCredential) => {
+                    Router.push(`/signup/plan`)
+                    dispatch(isLoggedInActions.createLoggedCookie('true'))
+                    dispatch(loginEmailsActions.createEmailsCookie({ emailFunction: 'signUpEmail', email: inputEmail }))
+                })
+                .catch((error) => {
+                    const errorCode = error.code
+                    console.log(errorCode)
+                    if (errorCode === 'auth/weak-password') {
+                        setPasswordError('Password should be at least 6 characters long.')
+                        setIsPasswordValid(false)
+                    } else if (errorCode === 'auth/invalid-email') {
+                        setEmailError('Please enter a valid e-mail address.')
+                        setIsEmailValid(false)
+                    } else if (errorCode === 'auth/email-already-in-use') {
+                        setEmailError('This e-mail is already in use!')
+                        setIsEmailValid(false)
+                    }
+                })
         }
     }
 
@@ -122,7 +146,7 @@ const RegformView = () => {
                     </div>
                     <div className={`${styles.error} ${!isFirstEmailTry && !isEmailValid ? styles.wrongInput : ''}`}>
                         <img src="/icons/xicon.png" alt="" />
-                        <span>Email is required.</span>
+                        <span>{emailError}</span>
                     </div>
                 </div>
                 <div className={styles.formBox}>
@@ -139,8 +163,8 @@ const RegformView = () => {
                                     ? styles.valid
                                     : ''
                             }`}
-                            minLength={4}
-                            maxLength={60}
+                            minLength={6}
+                            maxLength={30}
                             ref={passwordInputElement}
                             onChange={changeInputValue}
                             value={inputPassword}
@@ -155,7 +179,7 @@ const RegformView = () => {
                         }`}
                     >
                         <img src="/icons/xicon.png" alt="" />
-                        <span>Password is required.</span>
+                        <span>{passwordError}</span>
                     </span>
                 </div>
                 <div className={styles.newsletterBox}>

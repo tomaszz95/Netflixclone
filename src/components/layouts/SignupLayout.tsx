@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
 import { useRouter } from 'next/router'
 
+import { isLoggedInActions } from '../store/loggedin'
 import ReactProviderCookiesData from '../helpers/ReactProviderCookiesData'
 import { deleteCookie } from '../helpers/localStorageFunctions'
 import auth from '../../../firebase'
@@ -18,6 +20,7 @@ const SignupLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
     const [showLanguageSelect, setShowLanguageSelect] = useState(true)
     const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
     const router = useRouter()
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     useEffect(() => {
         if (router.pathname.includes('simpleSetup')) {
@@ -38,6 +41,7 @@ const SignupLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
     const logoutHandler = () => {
         signOut(auth)
 
+        dispatch(isLoggedInActions.createLoggedCookie('false'))
         deleteCookie('signInEmail')
         deleteCookie('signUpEmail')
         deleteCookie('startSignUpEmail')

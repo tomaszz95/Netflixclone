@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { isLoggedInActions } from '../store/loggedin'
 import { deleteCookie } from '../helpers/localStorageFunctions'
 import auth from '../../../firebase'
 import { signOut } from 'firebase/auth'
@@ -10,21 +12,22 @@ import styles from './HeaderSection.module.css'
 
 const HeaderSection = () => {
     const [isLogged, setIsLogged] = useState(false)
-    const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
-
+    const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
     const changeLanguage = () => {
         console.log('This select should change language..')
     }
 
     useEffect(() => {
-        if (loginEmailsData.signUpEmail !== null || loginEmailsData.signInEmail !== null) {
+        if (isLoggedIn === 'true') {
             setIsLogged(true)
         }
-    }, [loginEmailsData])
+    }, [isLoggedIn])
 
     const logoutHandler = () => {
         signOut(auth)
 
+        dispatch(isLoggedInActions.createLoggedCookie('false'))
         deleteCookie('signInEmail')
         deleteCookie('signUpEmail')
         deleteCookie('startSignUpEmail')

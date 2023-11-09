@@ -15,26 +15,32 @@ const MembershipEmail = () => {
     const inputElement = useRef<HTMLInputElement | null>(null)
 
     const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
+    const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
     const paymentData = useSelector<any, any>((state) => state.payment)
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     useEffect(() => {
-        if ((loginEmailsData.signUpEmail !== null || loginEmailsData.signInEmail !== null) && paymentData === null) {
+        if (
+            (loginEmailsData.signUpEmail !== null || loginEmailsData.signInEmail !== null) &&
+            paymentData === null &&
+            isLoggedIn === 'true'
+        ) {
             setIsRegistering(true)
             setButtonText('Restart Your Membership')
         } else if (
             loginEmailsData.startSignUpEmail !== null &&
             loginEmailsData.signUpEmail === null &&
-            loginEmailsData.signInEmail === null
+            loginEmailsData.signInEmail === null &&
+            isLoggedIn === 'false'
         ) {
             setIsRegistering(true)
             setButtonText('Finish Sign Up')
-        } else if (paymentData !== null && paymentData.userPaid) {
+        } else if (paymentData !== null && paymentData.userPaid && isLoggedIn === 'true') {
             setIsRegistering(true)
             setButtonText('Complete the initial settings')
         } else if (
             (paymentData !== null && !paymentData.userPaid && loginEmailsData.signUpEmail !== null) ||
-            loginEmailsData.signInEmail !== null
+            (loginEmailsData.signInEmail !== null && isLoggedIn === 'true')
         ) {
             setIsRegistering(true)
             setButtonText('Choose your plan')

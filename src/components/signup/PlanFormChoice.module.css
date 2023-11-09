@@ -63,10 +63,12 @@
         margin-top: 1em;
         padding: 0.5em 1em;
     }
-
+    
     .inputs {
+        padding-right: 1em;
         grid-template-columns: 1fr 90px 90px 90px;
-        gap: 3em;
+        gap: 4.9rem;
+        
     }
 
     .label {
@@ -94,6 +96,8 @@
 @media (min-width: 992px) {
     .inputs {
         grid-template-columns: 1fr 120px 120px 120px;
+        gap: 3rem;
+        padding-right: 0;
     }
 
     .label {

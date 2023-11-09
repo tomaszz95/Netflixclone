@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import Router from 'next/router'
 import { useSelector } from 'react-redux'
+import Router from 'next/router'
 
 import HeaderSection from './HeaderSection'
 import HeroSection from './HeroSection'
@@ -11,14 +11,14 @@ import FooterSection from './FooterSection'
 import styles from './MainView.module.css'
 
 const MainView = () => {
-    const paymentData = useSelector<any, any>((state) => state.payment)
+    const paymentsData = useSelector<any, any>((state) => state.payment)
+    const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
 
     useEffect(() => {
-        if (!paymentData || !paymentData.isFullySet) return
-        if (paymentData.isFullySet) {
+        if (isLoggedIn === 'true' && paymentsData && paymentsData.isFullySet) {
             Router.push('/profilgate')
         }
-    }, [paymentData])
+    }, [paymentsData, isLoggedIn])
 
     return (
         <>
