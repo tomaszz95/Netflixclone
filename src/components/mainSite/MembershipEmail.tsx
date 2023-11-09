@@ -32,7 +32,10 @@ const MembershipEmail = () => {
         } else if (paymentData !== null && paymentData.userPaid) {
             setIsRegistering(true)
             setButtonText('Complete the initial settings')
-        } else if (paymentData !== null && !paymentData.userPaid) {
+        } else if (
+            (paymentData !== null && !paymentData.userPaid && loginEmailsData.signUpEmail !== null) ||
+            loginEmailsData.signInEmail !== null
+        ) {
             setIsRegistering(true)
             setButtonText('Choose your plan')
         }
