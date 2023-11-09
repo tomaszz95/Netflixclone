@@ -21,7 +21,9 @@ const MembershipEmail = () => {
     useEffect(() => {
         if (
             loginEmailsData.signUpEmail !== null ||
-            (loginEmailsData.signInEmail !== null && (paymentData === null || !paymentData.userPaid))
+            loginEmailsData.signInEmail !== null ||
+            paymentData === null ||
+            !paymentData.userPaid
         ) {
             setIsRegistering(true)
             setButtonText('Restart Your Membership')
