@@ -19,25 +19,22 @@ const MembershipEmail = () => {
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     useEffect(() => {
-        if (
-            loginEmailsData.signUpEmail !== null ||
-            loginEmailsData.signInEmail !== null ||
-            paymentData === null ||
-            !paymentData.userPaid
-        ) {
+        if ((loginEmailsData.signUpEmail !== null || loginEmailsData.signInEmail !== null) && paymentData === null) {
             setIsRegistering(true)
             setButtonText('Restart Your Membership')
         } else if (
             loginEmailsData.startSignUpEmail !== null &&
             loginEmailsData.signUpEmail === null &&
-            loginEmailsData.signInEmail === null &&
-            !paymentData.userPaid
+            loginEmailsData.signInEmail === null
         ) {
             setIsRegistering(true)
             setButtonText('Finish Sign Up')
-        } else if (paymentData.userPaid) {
+        } else if (paymentData !== null && paymentData.userPaid) {
             setIsRegistering(true)
             setButtonText('Complete the initial settings')
+        } else if (paymentData !== null && !paymentData.userPaid) {
+            setIsRegistering(true)
+            setButtonText('Choose your plan')
         }
     }, [loginEmailsData, paymentData])
 
@@ -101,6 +98,8 @@ const MembershipEmail = () => {
                             Router.push(`/signup/plan`)
                         } else if (buttonText === 'Complete the initial settings') {
                             Router.push(`/simpleSetup/orderfinal`)
+                        } else if (buttonText === 'Choose your plan') {
+                            Router.push(`/signup/paymentPicker`)
                         }
                     }}
                     className={`${styles.button} ${styles.buttonFinish}`}
