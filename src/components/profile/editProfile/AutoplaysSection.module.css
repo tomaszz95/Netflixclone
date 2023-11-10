@@ -1,0 +1,49 @@
+.autoplaysBox {
+    margin: 0.4em 0;
+}
+
+.autoplaysBoxSpan {
+    display: block;
+    color: var(--dark-grey);
+    margin-bottom: 0.3em;
+}
+
+.autoplaysBoxContent {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+.autoplaysBoxInput {
+    width: 25px;
+    height: 25px;
+    margin-right: 0.4em;
+}
+
+.autoplaysBoxLabel {
+    font-size: 0.8rem;
+}
+
+@media (min-width: 786px) {
+    .autoplaysBox {
+        margin: 0.6em 0;
+    }
+
+    .autoplaysBoxSpan {
+        margin-bottom: 0.4em;
+    }
+
+    .autoplaysBoxContent {
+        margin-top: 0.6em;
+    }
+
+    .autoplaysBoxInput {
+        width: 30px;
+        height: 30px;
+        margin-right: 0.6em;
+    }
+
+    .autoplaysBoxLabel {
+        font-size: 0.9rem;
+    }
+}

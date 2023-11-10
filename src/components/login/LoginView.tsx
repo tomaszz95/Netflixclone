@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useState, useRef } from 'react'
+import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import Router from 'next/router'
@@ -25,16 +25,7 @@ const LoginView = () => {
     const emailInputElement = useRef<HTMLInputElement | null>(null)
     const passwordInputElement = useRef<HTMLInputElement | null>(null)
 
-    const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
-
-    useEffect(() => {
-        if (isLoggedIn === 'true') {
-            Router.push('/profilgate')
-        } else {
-            return
-        }
-    }, [isLoggedIn])
 
     const isEmailValidFunc = () => {
         setIsFirstEmailTry(false)

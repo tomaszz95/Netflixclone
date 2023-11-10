@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Router from 'next/router'
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
@@ -19,10 +20,18 @@ const SignupLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
     const [logOutButton, setLogOutButton] = useState(true)
     const [showLanguageSelect, setShowLanguageSelect] = useState(true)
     const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
+    const paymentData = useSelector<any, any>((state) => state.payment)
+    const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
     const router = useRouter()
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     useEffect(() => {
+        if (isLoggedIn === 'true' && paymentData !== null && paymentData.isFullySet) {
+            Router.push('/profilgate')
+        } else {
+            return
+        }
+
         if (router.pathname.includes('simpleSetup')) {
             setShowLanguageSelect(false)
         }
@@ -32,7 +41,7 @@ const SignupLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
         } else {
             setLogOutButton(false)
         }
-    }, [loginEmailsData])
+    }, [loginEmailsData, isLoggedIn])
 
     const changeLanguage = () => {
         console.log('This select should change language..')

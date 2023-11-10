@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Router from 'next/router'
+import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
@@ -15,12 +17,19 @@ type ChildrenLayoutType = {
 const LogLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
     const [isLoginPage, setIsLoginPage] = useState(false)
     const router = useRouter()
+    const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
 
     useEffect(() => {
+        if (isLoggedIn === 'true') {
+            Router.push('/profilgate')
+        } else {
+            return
+        }
+
         if (router.pathname === '/login') {
             setIsLoginPage(true)
         }
-    }, [])
+    }, [isLoggedIn])
 
     return (
         <ReactProviderCookiesData>

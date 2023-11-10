@@ -9,16 +9,18 @@ import styles from './HeroSection.module.css'
 const HeroSection = () => {
     const [isRegistering, setIsRegistering] = useState(false)
     const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
+    const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
 
     useEffect(() => {
         if (
-            loginEmailsData.startSignUpEmail !== null ||
-            loginEmailsData.signUpEmail !== null ||
-            loginEmailsData.signInEmail !== null
+            (loginEmailsData.startSignUpEmail !== null ||
+                loginEmailsData.signUpEmail !== null ||
+                loginEmailsData.signInEmail !== null) &&
+            !isLoggedIn
         ) {
             setIsRegistering(true)
         }
-    }, [loginEmailsData])
+    }, [loginEmailsData, isLoggedIn])
 
     return (
         <section className={styles.heroSection}>

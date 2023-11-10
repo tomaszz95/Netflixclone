@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import ReactProviderCookiesData from '../../../components/helpers/ReactProviderCookiesData'
+import WithoutAuth from '../../../components/layouts/withoutAuth'
 import SingleProfileManage from '../../../components/profile/editProfile/SingleProfileManage'
 
 const ManageProfileSite = () => {
@@ -16,6 +17,7 @@ const ManageProfileSite = () => {
 
     return (
         <ReactProviderCookiesData>
+            <WithoutAuth />
             <SingleProfileManage profilName={queryRouter} />
         </ReactProviderCookiesData>
     )

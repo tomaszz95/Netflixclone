@@ -1,0 +1,97 @@
+.container {
+    color: var(--pure-white);
+}
+
+.line {
+    margin: 0.8em 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--light-grey);
+}
+
+.nameInput,
+.gameBoxInput {
+    width: 100%;
+    border: 1px solid transparent;
+    color: var(--pure-white);
+    padding: 0.4em 0.6em;
+    background-color: var(--lighter-black);
+    margin-bottom: 0.4em;
+    transition: border 0.3s;
+}
+
+.nameInput::placeholder,
+.gameBoxInput::placeholder {
+    color: var(--pure-white);
+}
+
+.selectBox {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.selectBoxSpan,
+.gameBoxSpan {
+    display: block;
+    color: var(--dark-grey);
+    margin-bottom: 0.4em;
+}
+
+.selectBoxSelect {
+    width: 100px;
+    padding: 0.3em;
+    color: var(--pure-white);
+    background-color: var(--lighter-black);
+}
+
+.gameBox {
+    margin-top: 1.5em;
+}
+
+.gameBoxText {
+    font-size: 0.8rem;
+    margin-bottom: 1em;
+}
+
+.gameBoxCounter {
+    display: block;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.gameBoxCounter.good {
+    color: var(--success-color);
+}
+
+.gameBoxCounter.wrong {
+    color: var(--call-to-action);
+}
+
+@media (min-width: 786px) {
+    .line {
+        margin: 1em 0;
+    }
+
+    .nameInput,
+    .gameBoxInput {
+        padding: 0.5em 0.6em;
+    }
+
+    .selectBoxSpan,
+    .gameBoxSpan {
+        margin-bottom: 0.6em;
+    }
+
+    .selectBoxSelect {
+        padding: 0.4em;
+    }
+
+    .gameBoxText {
+        font-size: 0.9rem;
+    }
+
+    .gameBoxCounter {
+        font-size: 1rem;
+    }
+}

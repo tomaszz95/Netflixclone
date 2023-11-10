@@ -64,7 +64,7 @@
     border: 1px solid transparent;
     color: var(--pure-white);
     padding: 0.4em 0.6em;
-    background-color: var(--light-grey);
+    background-color: var(--lighter-black);
     margin-bottom: 0.4em;
     transition: border 0.3s;
 }

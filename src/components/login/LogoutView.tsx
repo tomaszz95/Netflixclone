@@ -1,18 +1,9 @@
 import Router from 'next/router'
 import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
 import styles from './LogoutView.module.css'
 
 const LogoutView = () => {
-    const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
-
     useEffect(() => {
-        if (isLoggedIn === 'true') {
-            Router.push('/profilgate')
-        } else {
-            return
-        }
-
         const timer = setTimeout(() => {
             Router.push('/')
         }, 30000)

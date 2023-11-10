@@ -1,0 +1,66 @@
+.buttons {
+    margin-top: 1em;
+    display: flex;
+}
+
+.button {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 3px;
+    padding: 0.2em 0.5em;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: var(--light-grey);
+    font-weight: 600;
+    border: 1px solid var(--light-grey);
+    transition:
+        border 0.3s,
+        color 0.3s,
+        background-color 0.3s;
+}
+
+.buttonSave {
+    margin-right: 1em;
+    background-color: var(--pure-white);
+    color: rgb(20, 20, 20);
+}
+
+.buttonCancel {
+    margin-right: 1em;
+}
+
+.button:hover {
+    color: var(--pure-white);
+    border: 1px solid var(--pure-white);
+}
+
+.buttonSave:hover {
+    color: var(--pure-white);
+    background-color: var(--call-to-action);
+    border: 1px solid var(--call-to-action);
+}
+
+@media (min-width: 786px) {
+    .buttons {
+        margin-top: 2em;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 110px;
+        padding: 0.5em;
+        font-size: var(--size-xxxs);
+    }
+
+    .buttonSave {
+        margin-right: 1.5em;
+    }
+
+    .buttonCancel {
+        margin-right: 1.5em;
+    }
+
+    .buttonDelete {
+        max-width: 140px;
+    }
+}

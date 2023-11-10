@@ -9,10 +9,24 @@ type ComponentType = {
 }
 
 const EditProfileForm: React.FC<ComponentType> = ({ profilName }) => {
+    const [nameInputName, setNameInputName] = useState('')
+    const [gameHandleName, setGameHandleName] = useState('')
     const [selectedLanguage, setSelectedLanguage] = useState('English')
 
     const changeLanguageHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedLanguage(e.target.value)
+    }
+
+    const gameInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setGameHandleName(e.target.value.trim())
+    }
+
+    const nameInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setNameInputName(e.target.value.trim())
+    }
+
+    const submitAllData = () => {
+        console.log(selectedLanguage)
     }
 
     return (
@@ -41,8 +55,21 @@ const EditProfileForm: React.FC<ComponentType> = ({ profilName }) => {
                         You handle is a unique name that'll be used for playing with other Netflix members across all
                         Netflix Games.
                     </p>
-                    <input type="text" placeholder="Create Game Handle" className={styles.gameBoxInput} />
-                    <span className={styles.gameBoxCounter}>/16</span>
+                    <input
+                        type="text"
+                        placeholder="Create Game Handle"
+                        className={styles.gameBoxInput}
+                        max={16}
+                        min={5}
+                        onChange={gameInputHandler}
+                    />
+                    <span
+                        className={`${styles.gameBoxCounter} ${
+                            gameHandleName.length > 4 && gameHandleName.length < 16 ? styles.good : styles.wrong
+                        }`}
+                    >
+                        {gameHandleName.length}/16
+                    </span>
                 </div>
             </div>
             <div className={styles.line} />

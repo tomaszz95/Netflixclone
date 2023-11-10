@@ -1,0 +1,61 @@
+.maturityBoxSpan {
+    display: block;
+    color: var(--dark-grey);
+    margin-bottom: 0.8em;
+}
+
+.maturityBoxItem {
+    display: inline;
+    padding: 0.5em;
+    background-color: rgb(40, 40, 40);
+    font-size: 0.85rem;
+    border-radius: 6px;
+}
+
+.maturityBoxText {
+    font-size: 0.8rem;
+    margin: 1.4em 0;
+}
+
+.button {
+    margin: 0.2em 0 0.6em;
+    width: 100%;
+    max-width: 85px;
+    border-radius: 3px;
+    padding: 0.5em 0.6em;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: var(--light-grey);
+    font-weight: 600;
+    border: 1px solid var(--light-grey);
+    transition:
+        border 0.3s,
+        color 0.3s;
+}
+
+.button:hover {
+    color: var(--pure-white);
+    border: 1px solid var(--pure-white);
+}
+
+@media (min-width: 786px) {
+    .maturityBoxSpan {
+        margin-bottom: 1em;
+    }
+
+    .maturityBoxItem {
+        padding: 0.6em;
+        font-size: 0.9rem;
+    }
+
+    .maturityBoxText {
+        font-size: 0.9rem;
+        margin: 1.4em 0 1em;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 100px;
+        font-size: var(--size-xxxs);
+    }
+}
