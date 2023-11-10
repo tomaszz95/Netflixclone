@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import ReactProviderCookiesData from '../../../components/helpers/ReactProviderCookiesData'
-import WithoutAuth from '../../../components/layouts/withoutAuth'
+import WithoutAuth from '../../../components/layouts/WithoutAuth'
 import SingleProfileManage from '../../../components/profile/editProfile/SingleProfileManage'
 
 const ManageProfileSite = () => {
