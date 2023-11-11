@@ -14,8 +14,9 @@ const HeaderSection = () => {
     const [isLogged, setIsLogged] = useState(false)
     const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
+
     const changeLanguage = () => {
-        console.log('This select should change language..')
+        console.log('Should change language.. Omitted in the demo version')
     }
 
     useEffect(() => {

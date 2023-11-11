@@ -98,6 +98,11 @@
     border: 1px solid var(--pure-white);
 }
 
+.loading {
+    color: var(--pure-white);
+    font-size: var(--size-xxm);
+}
+
 @media (min-width: 786px) {
     .title {
         font-size: var(--size-xxl);

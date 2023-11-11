@@ -28,8 +28,6 @@ const SignupLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
     useEffect(() => {
         if (isLoggedIn === 'true' && paymentData !== null && paymentData.isFullySet) {
             Router.push('/profilgate')
-        } else {
-            return
         }
 
         if (router.pathname.includes('simpleSetup')) {

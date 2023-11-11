@@ -4,7 +4,7 @@ import { footerMainSiteLinks } from '../helpers/siteText'
 
 const FooterSection = () => {
     const changeLanguage = () => {
-        console.log('This select should change language..')
+        console.log('Should change language.. Omitted in the demo version')
     }
 
     return (

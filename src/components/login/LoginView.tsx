@@ -87,11 +87,11 @@ const LoginView = () => {
                 .then((userCredential) => {
                     const userEmail = userCredential.user.email
                     if (userEmail) {
+                        Router.push(`/`)
                         dispatch(
                             loginEmailsActions.createEmailsCookie({ emailFunction: 'signInEmail', email: userEmail }),
                         )
                         dispatch(isLoggedInActions.createLoggedCookie('true'))
-                        Router.push(`/`)
                     }
                 })
                 .catch((error) => {

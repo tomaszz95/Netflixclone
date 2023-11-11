@@ -18,12 +18,11 @@ const LogLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
     const [isLoginPage, setIsLoginPage] = useState(false)
     const router = useRouter()
     const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
+    const paymentData = useSelector<any, any>((state) => state.payment)
 
     useEffect(() => {
-        if (isLoggedIn === 'true') {
+        if (isLoggedIn === 'true' && paymentData !== null && paymentData.isFullySet) {
             Router.push('/profilgate')
-        } else {
-            return
         }
 
         if (router.pathname === '/login') {

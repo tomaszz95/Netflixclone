@@ -46,7 +46,7 @@ const ChooseUserView = () => {
                     </Link>
                 </ul>
             ) : (
-                <p>Loading data...</p>
+                <p className={styles.loading}>Loading data...</p>
             )}
             <button
                 type="submit"
