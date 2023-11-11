@@ -5,40 +5,46 @@ import styles from './EditProfileForm.module.css'
 import MaturitySection from './MaturitySection'
 
 type ComponentType = {
-    profilName: string
+    formData: {
+        selectedName: string
+        selectedLanguage: string
+        oldName: string
+    }
+    onInputChange: (name: string, value: string) => void
 }
 
-const EditProfileForm: React.FC<ComponentType> = ({ profilName }) => {
-    const [nameInputName, setNameInputName] = useState('')
-    const [gameHandleName, setGameHandleName] = useState('')
-    const [selectedLanguage, setSelectedLanguage] = useState('English')
+const EditProfileForm: React.FC<ComponentType> = ({ formData, onInputChange }) => {
+    const [gameName, setGameName] = useState('')
+
+    const nameInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        onInputChange('selectedName', e.target.value)
+    }
 
     const changeLanguageHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedLanguage(e.target.value)
+        onInputChange('selectedLanguage', e.target.value)
     }
 
     const gameInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setGameHandleName(e.target.value.trim())
-    }
-
-    const nameInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setNameInputName(e.target.value.trim())
-    }
-
-    const submitAllData = () => {
-        console.log(selectedLanguage)
+        setGameName(e.target.value)
+        console.log('Should do something with this name.. Omitted in the demo version')
     }
 
     return (
         <div className={styles.container}>
             <div className={styles.nicknameBox}>
-                <input type="text" placeholder={profilName} className={styles.nameInput} />
+                <input
+                    type="text"
+                    placeholder={formData.selectedName.trim().length > 0 ? formData.selectedName : 'Name'}
+                    className={`${styles.nameInput} ${formData.selectedName.trim().length === 0 ? styles.empty : ''}`}
+                    onChange={nameInputHandler}
+                />
+                <p className={styles.error}>Please enter a name</p>
                 <div className={styles.selectBox}>
                     <span className={styles.selectBoxSpan}>Language:</span>
                     <select
                         name="language"
                         className={styles.selectBoxSelect}
-                        defaultValue="English"
+                        defaultValue={formData.selectedLanguage}
                         onChange={changeLanguageHandler}
                     >
                         {inputsLanguagesData.map((language) => (
@@ -65,10 +71,10 @@ const EditProfileForm: React.FC<ComponentType> = ({ profilName }) => {
                     />
                     <span
                         className={`${styles.gameBoxCounter} ${
-                            gameHandleName.length > 4 && gameHandleName.length < 16 ? styles.good : styles.wrong
+                            gameName.length > 4 && gameName.length < 16 ? styles.good : styles.wrong
                         }`}
                     >
-                        {gameHandleName.length}/16
+                        {gameName.length}/16
                     </span>
                 </div>
             </div>

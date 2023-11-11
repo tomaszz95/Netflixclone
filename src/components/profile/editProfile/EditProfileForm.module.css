@@ -25,6 +25,21 @@
     color: var(--pure-white);
 }
 
+.error {
+    font-size: 0.9rem;
+    margin-left: 0.2em;
+    color: var(--call-to-action);
+    display: none;
+}
+
+.nameInput.empty + .error {
+    display: block;
+}
+
+.nameInput.empty {
+    border: 1px solid var(--call-to-action);
+}
+
 .selectBox {
     margin-top: 1em;
     display: flex;

@@ -1,0 +1,117 @@
+.container {
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    min-height: 100vh;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    padding: 1em;
+    width: 100%;
+    max-width: 500px;
+}
+
+.title {
+    font-size: var(--size-xxl);
+    color: var(--pure-white);
+    font-weight: 500;
+}
+
+.line {
+    margin: 0.6em 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--light-grey);
+}
+
+.content {
+    margin: 1.5em 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.imgBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgBox span {
+    margin: 0.5em 1em 0 0;
+    color: var(--light-grey);
+}
+
+.text {
+    color: var(--pure-white);
+    font-size: 0.85rem;
+}
+
+.buttons {
+    margin-top: 2em;
+    display: flex;
+}
+
+.button {
+    width: 100%;
+    max-width: 130px;
+    border-radius: 3px;
+    padding: 0.5em 0.8em;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: var(--light-grey);
+    font-weight: 600;
+    border: 1px solid var(--light-grey);
+    transition:
+        border 0.3s,
+        color 0.3s,
+        background-color 0.3s;
+}
+
+.buttonKeep {
+    margin-right: 1.2em;
+    background-color: var(--pure-white);
+    color: rgb(20, 20, 20);
+}
+
+.buttonDelete:hover {
+    color: var(--pure-white);
+    border: 1px solid var(--pure-white);
+}
+
+.buttonKeep:hover {
+    color: var(--pure-white);
+    background-color: var(--call-to-action);
+    border: 1px solid var(--call-to-action);
+}
+
+@media (min-width: 786px) {
+    .title {
+        font-size: var(--size-xxxl);
+    }
+
+    .line {
+        margin: 1em 0;
+    }
+
+    .imgBox span {
+        font-size: var(--size-m);
+    }
+
+    .text {
+        font-size: var(--size-xxxs);
+    }
+
+    .button {
+        max-width: 140px;
+        font-size: var(--size-xxxs);
+    }
+
+    .buttonKeep {
+        margin-right: 1.5em;
+    }
+}

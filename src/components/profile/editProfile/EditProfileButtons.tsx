@@ -5,9 +5,10 @@ import styles from './EditProfileButtons.module.css'
 
 type ComponentType = {
     profilName: string
+    onHandleSubmit: () => void
 }
 
-const EditProfileButtons: React.FC<ComponentType> = ({ profilName }) => {
+const EditProfileButtons: React.FC<ComponentType> = ({ profilName, onHandleSubmit }) => {
     const paymentData = useSelector<any, any>((state) => state.payment)
 
     return (
@@ -16,7 +17,7 @@ const EditProfileButtons: React.FC<ComponentType> = ({ profilName }) => {
                 type="button"
                 aria-label="Edit profile button"
                 className={`${styles.button} ${styles.buttonSave}`}
-                // onClick={submitData}
+                onClick={onHandleSubmit}
             >
                 Save
             </button>
@@ -28,14 +29,14 @@ const EditProfileButtons: React.FC<ComponentType> = ({ profilName }) => {
             >
                 Cancel
             </button>
-            {paymentData.selectedNames[0] === profilName ? (
+            {paymentData.selectedNames[0] === profilName || profilName === 'kids' ? (
                 ''
             ) : (
                 <button
                     type="button"
                     aria-label="Delete profile button"
                     className={`${styles.button} ${styles.buttonDelete}`}
-                    // onClick={submitData}
+                    onClick={() => Router.push(`/profile/manage/${profilName}/delete`)}
                 >
                     Delete Profile
                 </button>

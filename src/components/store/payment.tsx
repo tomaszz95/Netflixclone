@@ -78,6 +78,42 @@ const paymentSlice = createSlice({
 
             return userObject
         },
+
+        editProfilInfo(state, action) {
+            const newName = action.payload.selectedName
+            const oldName = action.payload.oldName
+            const selectedLanguage = action.payload.selectedLanguage
+
+            const updatedSelectedNames = state.selectedNames.map((name) => (name === oldName ? newName : name))
+
+            const updatedSelectedLanguages = state.selectedLanguages.includes(selectedLanguage)
+                ? state.selectedLanguages
+                : [...state.selectedLanguages, selectedLanguage]
+
+            const updatedUserObject: initialType = {
+                ...state,
+                selectedNames: updatedSelectedNames,
+                selectedLanguages: updatedSelectedLanguages,
+            }
+
+            createCookie('payment', JSON.stringify(updatedUserObject))
+
+            return updatedUserObject
+        },
+
+        deleteProfile(state, action) {
+            const deleteValue = action.payload
+            const updatedSelectedNames = state.selectedNames.filter((name) => name !== deleteValue)
+
+            const userObject: initialType = {
+                ...state,
+                selectedNames: updatedSelectedNames,
+            }
+
+            createCookie('payment', JSON.stringify(userObject))
+
+            return userObject
+        },
     },
 })
 
