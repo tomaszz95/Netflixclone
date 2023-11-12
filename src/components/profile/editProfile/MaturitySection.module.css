@@ -6,7 +6,8 @@
 
 .maturityBoxItem {
     display: inline;
-    padding: 0.5em;
+    padding: 0.6em;
+    margin-right: 1em;
     background-color: rgb(40, 40, 40);
     font-size: 0.85rem;
     border-radius: 6px;
@@ -44,7 +45,7 @@
     }
 
     .maturityBoxItem {
-        padding: 0.6em;
+        padding: 0.7em;
         font-size: 0.9rem;
     }
 
