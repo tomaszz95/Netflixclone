@@ -47,6 +47,22 @@ export const footerMainSiteLinks: string[] = [
     'Ad Choices',
 ]
 
+export const footerLoggedMainSiteLinks: string[] = [
+    'Audio Description',
+    'Help Center',
+    'Gift Cards',
+    'Media Center',
+    'Investor Relations',
+    'Jobs',
+    'Terms of Use',
+    'Privacy',
+    'Legal Notices',
+    'Cookie Preferences',
+    'Corporate Information',
+    'Contact Us',
+    'Ad Choices',
+]
+
 export const inputsDeviceSurveyData = [
     { id: 'tv', icon: '/icons/tvSetupIcon.png', title: 'TV', text: 'Smart or internet connected TVs' },
     {

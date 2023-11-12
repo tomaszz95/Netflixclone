@@ -1,19 +1,18 @@
+import HeaderLoggedSection from './HeaderLoggedSection'
+import HeroLoggedSection from './HeroLoggedSection'
 import LoggedFooterSections from './LoggedFooterSection'
 import styles from './LoggedMainSiteView.module.css'
+import MainViewLoggedSection from './MainViewLoggedSection'
 
 const LoggedMainSiteView = () => {
     return (
         <>
             <header className={styles.header}>
-                {/* <HeaderSection />
-                <HeroSection /> */}
+                <HeaderLoggedSection />
+                <HeroLoggedSection />
             </header>
             <main className={styles.main}>
-                {/* <CentralSection sectionCount="1" />
-                <CentralSection sectionCount="2" />
-                <CentralSection sectionCount="3" />
-                <CentralSection sectionCount="4" />
-                <QuestionSection /> */}
+                <MainViewLoggedSection />
             </main>
             <footer className={styles.footer}>
                 <LoggedFooterSections />

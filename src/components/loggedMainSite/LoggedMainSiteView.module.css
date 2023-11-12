@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main {
+    background-color: var(--light-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.footer {
+    background-color: var(--light-black);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
