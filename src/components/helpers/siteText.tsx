@@ -142,3 +142,62 @@ export const inputsLanguagesData = [
     '日本語',
     '粵語',
 ]
+
+export const mobileNavigationLinks = [
+    {
+        text: 'Home',
+        link: '/',
+    },
+    {
+        text: 'My List',
+        link: '/mylist',
+    },
+    {
+        text: 'Thrillers',
+        link: '/genre/thrillers',
+    },
+    {
+        text: 'Kids & Family',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Action',
+        link: '/genre/action',
+    },
+    {
+        text: 'Anime',
+        link: '/genre/anime',
+    },
+    {
+        text: 'Comedies',
+        link: '/genre/comedies',
+    },
+    {
+        text: 'Fantasy',
+        link: '/genre/fantasy',
+    },
+    {
+        text: 'Sci-Fi',
+        link: '/genre/scifi',
+    },
+    {
+        text: 'Horror',
+        link: '/genre/horror',
+    },
+    {
+        text: 'Documentaries',
+        link: '/genre/documentaries',
+    },
+    {
+        text: 'Musicals',
+        link: '/genre/musicals',
+    },
+    {
+        text: 'Romance',
+        link: '/genre/romance',
+    },
+    {
+        text: 'Dramas',
+        link: '/genre/dramas',
+    },
+]

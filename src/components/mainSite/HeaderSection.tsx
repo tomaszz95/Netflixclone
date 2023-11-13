@@ -29,6 +29,7 @@ const HeaderSection = () => {
         signOut(auth)
 
         dispatch(isLoggedInActions.createLoggedCookie('false'))
+        deleteCookie('chosenUser')
         deleteCookie('signInEmail')
         deleteCookie('signUpEmail')
         deleteCookie('startSignUpEmail')

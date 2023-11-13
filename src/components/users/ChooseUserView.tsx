@@ -1,11 +1,18 @@
 import Link from 'next/link'
 import Router from 'next/router'
 import { useSelector } from 'react-redux'
+import { createCookie } from '../helpers/localStorageFunctions'
 
 import styles from './ChooseUserView.module.css'
 
 const ChooseUserView = () => {
     const paymentData = useSelector<any, any>((state) => state.payment)
+
+    const chosenUser = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        const anchorElement = e.currentTarget as HTMLAnchorElement
+
+        createCookie('chosenUser', anchorElement.id)
+    }
 
     return (
         <div className={styles.container}>
@@ -15,7 +22,13 @@ const ChooseUserView = () => {
                     {paymentData.selectedNames.map((user: string) => {
                         if (user !== null) {
                             return (
-                                <Link href="/browse" key={user} className={styles.listLink}>
+                                <Link
+                                    href="/browse"
+                                    id={user}
+                                    key={user}
+                                    className={styles.listLink}
+                                    onClick={chosenUser}
+                                >
                                     <li className={styles.listItem}>
                                         <img
                                             src="https://occ-0-5273-41.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
@@ -27,7 +40,7 @@ const ChooseUserView = () => {
                             )
                         }
                     })}
-                    <Link href="/kids" className={styles.listLink}>
+                    <Link href="/kids" id="kids" className={styles.listLink} onClick={chosenUser}>
                         <li className={styles.listItem}>
                             <img
                                 src="https://occ-0-5273-41.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABcENEq3AWngawcvIFgivpRF0Wx5gW-LVuNdof8gYEbtGtft04ORrv_UDixUwcbH1PpV3k16HITdmAnDgXwneLsz2WZuyDuHk5Xpb.png?r=f55"

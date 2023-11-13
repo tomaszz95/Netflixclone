@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { footerLoggedMainSiteLinks } from '../helpers/siteText'
 import styles from './LoggedFooterSections.module.css'
 
 const LoggedFooterSections = () => {
     const [showServiceCode, setShowServiceCode] = useState(false)
+    const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
+
+    useEffect(() => {
+        const year = new Date().getFullYear()
+        setCurrentYear(year)
+    }, [])
 
     return (
         <div className={styles.footer}>
@@ -46,7 +52,7 @@ const LoggedFooterSections = () => {
                     </button>
                 )}
             </div>
-            <span className={styles.netflixInfo}>© 1997-2023 Netflix, Inc.</span>
+            <span className={styles.netflixInfo}>© 1997-{currentYear} Netflix, Inc.</span>
         </div>
     )
 }

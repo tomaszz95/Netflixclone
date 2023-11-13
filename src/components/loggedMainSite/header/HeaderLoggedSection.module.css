@@ -1,0 +1,22 @@
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+    z-index: 50;
+    border-bottom: none;
+}
+
+@media (min-width: 786) {
+    .header {
+        padding: 2em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header {
+        padding: 3em;
+    }
+}
