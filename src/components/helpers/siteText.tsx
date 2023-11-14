@@ -145,14 +145,6 @@ export const inputsLanguagesData = [
 
 export const mobileNavigationLinks = [
     {
-        text: 'Home',
-        link: '/',
-    },
-    {
-        text: 'My List',
-        link: '/mylist',
-    },
-    {
         text: 'Thrillers',
         link: '/genre/thrillers',
     },

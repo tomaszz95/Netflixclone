@@ -1,3 +1,108 @@
 .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     max-width: 1500px;
+    padding: 0.2em 0.5em;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.burgerBtn {
+    background-color: transparent;
+}
+
+.burgerImg {
+    width: 40px;
+}
+
+.netflixLogo {
+    margin-left: 0.4em;
+    width: 110px;
+}
+
+.navigation {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    width: 250px;
+    background-color: var(--pure-black);
+    z-index: 50px;
+    /* display: none; */
+}
+
+.searchInput {
+    background-color: var(--grey);
+    border: 2px solid var(--light-grey);
+    color: var(--pure-white);
+    width: 120px;
+    padding: 0.3em 0.5em;
+}
+
+.searchInput::placeholder {
+    color: var(--light-grey);
+}
+
+.profileContainer {
+    padding: 0.5em 1em;
+}
+
+.profileBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profileBox img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5em;
+}
+
+.profileBoxFlex,
+.profileLinkContainer,
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileName,
+.profileLink {
+    color: var(--light-grey);
+    font-weight: 600;
+}
+
+.profileSwitch {
+    color: var(--light-grey);
+    font-size: 0.8rem;
+}
+
+.profileLink,
+.genreLink {
+    margin-top: 0.5em;
+}
+
+.line {
+    margin: 0.8em 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--grey);
+}
+
+.genreLink {
+    margin-bottom: 0.4em;
+}
+
+.genreLink .profileLink {
+    padding: 0.5em 1em;
+    border-left: 2px solid transparent;
+}
+
+.profileLink.chosenLink {
+    color: var(--pure-white);
+    border-left: 2px solid var(--call-to-action);
 }

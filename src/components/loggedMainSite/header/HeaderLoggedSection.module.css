@@ -4,19 +4,20 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 1em;
+    padding: 0.3em;
     z-index: 50;
     border-bottom: none;
+    background-color: var(--pure-black);
 }
 
 @media (min-width: 786) {
     .header {
-        padding: 2em;
+        padding: 1.5em;
     }
 }
 
 @media (min-width: 1200px) {
     .header {
-        padding: 3em;
+        padding: 2.5em;
     }
 }
