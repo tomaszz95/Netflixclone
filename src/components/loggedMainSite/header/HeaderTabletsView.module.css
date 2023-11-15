@@ -1,0 +1,76 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    padding: 0.5em;
+}
+
+.netflixLogo {
+    margin-left: 0.4em;
+    width: 160px;
+}
+
+.navBox,
+.searchBox {
+    display: flex;
+    align-items: center;
+}
+
+.navBtn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    margin-left: 1em;
+    font-size: var(--size-xm);
+    color: var(--pure-white);
+}
+
+.navBtn.active {
+    color: var(--call-to-action);
+    font-weight: 600;
+}
+
+.navBtn:disabled {
+    color: var(--light-grey);
+}
+
+.navBtn img {
+    width: 45px;
+    height: 45px;
+    margin: 0 1em 0 0.4em;
+}
+
+.browseNav,
+.kidsNav {
+    display: none;
+}
+
+.searchBox {
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    background-color: var(--grey);
+    border: 2px solid var(--light-grey);
+    color: var(--pure-white);
+    width: 120px;
+    padding: 0.3em 0.5em;
+}
+
+.searchInput::placeholder {
+    color: var(--light-grey);
+}
+
+.profileBox {
+    display: none;
+}
+
+@media (min-width: 520px) {
+    .searchInput {
+        width: 200px;
+    }
+}

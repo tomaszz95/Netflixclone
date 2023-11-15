@@ -31,7 +31,7 @@ const HeaderLoggedSection = () => {
 
     return (
         <section className={styles.header}>
-            {windowWidth < 768 ? (
+            {windowWidth < 786 ? (
                 <HeaderMobileView chosenUser={chosenUser} />
             ) : windowWidth < 1200 ? (
                 <HeaderTabletsView chosenUser={chosenUser} />

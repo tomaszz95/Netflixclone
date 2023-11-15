@@ -143,7 +143,7 @@ export const inputsLanguagesData = [
     '粵語',
 ]
 
-export const mobileNavigationLinks = [
+export const navigationLinks = [
     {
         text: 'Thrillers',
         link: '/genre/thrillers',
