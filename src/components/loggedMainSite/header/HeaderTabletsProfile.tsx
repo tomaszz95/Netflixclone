@@ -53,7 +53,7 @@ const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, 
                     Exit Kids
                 </Link>
             )}
-            ;
+
             <div className={`${styles.profileBox} ${browseNavActive ? styles.active : ''}`}>
                 <div className={styles.profileBoxFlex}>
                     <Link href="/profilgate" className={styles.profileLink}>

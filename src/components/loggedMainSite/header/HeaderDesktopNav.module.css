@@ -1,0 +1,24 @@
+.navBox {
+    display: flex;
+    align-items: center;
+}
+
+.netflixLogo {
+    margin-left: 0.4em;
+    width: 160px;
+}
+
+.profileLink {
+    font-weight: 500;
+    color: var(--pure-white);
+    transition: color 0.3s;
+    margin-right: 1em;
+}
+
+.profileLink.active {
+    font-weight: 700;
+}
+
+.profileLink:hover {
+    color: var(--light-grey);
+}
