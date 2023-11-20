@@ -193,3 +193,54 @@ export const navigationLinks = [
         link: '/genre/dramas',
     },
 ]
+
+export const navigationKidsLinks = [
+    {
+        text: 'Science & Arts',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Animals',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Dinosaurs',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Interactive',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Princesses',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Action',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Fantasy',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Funny',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Little Kids',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Adventures',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Cute',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Nature',
+        link: '/genre/kids',
+    },
+]

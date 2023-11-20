@@ -1,22 +1,8 @@
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1500px;
-    padding: 0.5em;
-}
-
-.netflixLogo {
-    margin-left: 0.4em;
-    width: 160px;
-}
-
-.navBox,
 .searchBox {
     position: relative;
     display: flex;
     align-items: center;
+    margin-right: 1em;
 }
 
 .navBtn {
@@ -33,36 +19,14 @@
     font-weight: 600;
 }
 
-.navBtn:disabled {
-    color: var(--light-grey);
-}
-
 .navBtn img {
     width: 45px;
     height: 45px;
     margin: 0 1em 0 0.4em;
 }
 
-.browseNav,
-.kidsNav,
 .profileBox {
     display: none;
-}
-
-.navigation {
-    display: flex;
-    padding: 0.5em;
-    height: 100%;
-}
-
-.homeNav {
-    height: 100%;
-    padding-right: 4em;
-    border-right: 2px solid var(--pure-white);
-}
-
-.genreLink {
-    margin-top: 0.2em;
 }
 
 .profileLink {
@@ -72,27 +36,6 @@
 
 .profileLink:hover {
     text-decoration: underline;
-}
-
-.navListItems {
-    padding: 0 1.2em;
-}
-
-.linksContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
-    gap: 0 3em;
-}
-
-.linksContainer .profileLink {
-    font-weight: 400;
-}
-
-.searchBox {
-    margin-right: 1em;
-    display: flex;
-    align-items: center;
 }
 
 .searchInput {
@@ -107,9 +50,7 @@
     color: var(--light-grey);
 }
 
-.browseNav.active,
-.profileBox.active,
-.kidsNav.active {
+.profileBox.active {
     position: absolute;
     display: block;
     height: 140px;
@@ -123,9 +64,7 @@
     padding: 0.5em;
 }
 
-.browseNav.active::before,
-.profileBox.active::before,
-.kidsNav.active::before {
+.profileBox.active::before {
     content: '';
     display: block;
     width: 0;
@@ -146,10 +85,6 @@
 
 .profileBox.active::before {
     left: 110px;
-}
-
-.kidsNav.active {
-    left: 260px;
 }
 
 .profileBoxFlex {

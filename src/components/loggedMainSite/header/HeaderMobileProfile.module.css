@@ -1,0 +1,58 @@
+.profileContainer {
+    padding: 0.5em 1em;
+}
+
+.profileBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profileBox img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5em;
+}
+
+.profileBoxFlex,
+.profileLinkContainer,
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileName,
+.profileLink {
+    color: var(--light-grey);
+    font-weight: 600;
+}
+
+.profileSwitch {
+    color: var(--light-grey);
+    font-size: 0.8rem;
+}
+
+.profileLink,
+.genreLink {
+    margin-top: 0.5em;
+}
+
+.profileLink {
+    width: 100%;
+}
+
+.genreLink {
+    margin-bottom: 0.4em;
+    width: 100%;
+}
+
+.genreLink .profileLink {
+    padding: 0.5em 1em;
+    border-left: 2px solid transparent;
+    width: 100%;
+}
+
+.profileLink.chosenLink {
+    color: var(--pure-white);
+    border-left: 2px solid var(--call-to-action);
+}

@@ -68,47 +68,20 @@
     color: var(--light-grey);
 }
 
-.profileContainer {
-    padding: 0.5em 1em;
-}
-
-.profileBox {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.profileBox img {
-    width: 40px;
-    height: 40px;
-    margin-right: 0.5em;
-}
-
-.profileBoxFlex,
-.profileLinkContainer,
 .linksContainer {
     display: flex;
     flex-direction: column;
 }
 
-.profileName,
 .profileLink {
     color: var(--light-grey);
     font-weight: 600;
-}
-
-.profileSwitch {
-    color: var(--light-grey);
-    font-size: 0.8rem;
+    width: 100%;
 }
 
 .profileLink,
 .genreLink {
     margin-top: 0.5em;
-}
-
-.profileLink {
-    width: 100%;
 }
 
 .line {

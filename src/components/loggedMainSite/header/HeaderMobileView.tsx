@@ -4,13 +4,13 @@ import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import { useState, useEffect } from 'react'
 
-import { navigationLinks } from '../../helpers/siteText'
 import auth from '../../../../firebase'
 import { signOut } from 'firebase/auth'
 import { isLoggedInActions } from '../../store/loggedin'
 import { deleteCookie } from '../../helpers/localStorageFunctions'
-import EditProfileImage from '../../profile/editProfile/EditProfileImage'
 import styles from './HeaderMobileView.module.css'
+import HeaderMobileBurgerNav from './HeaderMobileBurgerNav'
+import HeaderMobileProfile from './HeaderMobileProfile'
 
 type ComponentType = {
     chosenUser: string
@@ -19,17 +19,12 @@ type ComponentType = {
 const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser }) => {
     const [isNavVisible, setIsNavVisible] = useState(false)
     const [chosenLinkUrl, setChosenLinkUrl] = useState('')
-    const [chosenUserState, setChosenUserState] = useState('')
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
     const router = useRouter()
 
     useEffect(() => {
         if (router.pathname !== undefined) {
             setChosenLinkUrl(router.pathname)
-        }
-
-        if (chosenUser !== '') {
-            setChosenUserState(chosenUser.charAt(0).toUpperCase() + chosenUser.slice(1))
         }
     }, [chosenUser])
 
@@ -67,28 +62,7 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser }) => {
                     id="navContainer"
                 >
                     <nav className={styles.navigation}>
-                        <div className={styles.profileContainer}>
-                            <div className={styles.profileBox}>
-                                <EditProfileImage profilName={chosenUser} />
-                                <div className={styles.profileBoxFlex}>
-                                    <span className={styles.profileName}>{chosenUserState}</span>
-                                    <Link href="/profilgate" className={styles.profileSwitch}>
-                                        Switch Profiles
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className={styles.profileLinkContainer}>
-                                <Link href="/youraccount" className={styles.profileLink}>
-                                    Account
-                                </Link>
-                                <Link href="#" className={styles.profileLink}>
-                                    Help Center
-                                </Link>
-                                <Link href="/logout" className={styles.profileLink} onClick={logoutHandler}>
-                                    Sign Out of Netflix
-                                </Link>
-                            </div>
-                        </div>
+                        <HeaderMobileProfile chosenUser={chosenUser} />
                         <div className={styles.line}></div>
                         <ol className={styles.linksContainer}>
                             <li className={styles.genreLink}>
@@ -108,13 +82,7 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser }) => {
                                     My List
                                 </Link>
                             </li>
-                            {navigationLinks.map((genre) => (
-                                <li className={styles.genreLink} key={genre.link}>
-                                    <Link href={genre.link} className={styles.profileLink}>
-                                        {genre.text}
-                                    </Link>
-                                </li>
-                            ))}
+                            <HeaderMobileBurgerNav chosenUser={chosenUser} />
                         </ol>
                     </nav>
                 </div>
