@@ -15,10 +15,6 @@
     margin-right: 1em;
 }
 
-.profileLink.active {
-    font-weight: 700;
-}
-
 .profileLink:hover {
     color: var(--light-grey);
 }
