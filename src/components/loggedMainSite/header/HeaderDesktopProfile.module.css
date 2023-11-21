@@ -1,0 +1,121 @@
+.notificationBox,
+.headerRight {
+    display: flex;
+    align-items: center;
+}
+
+.notificationBox {
+    margin: 0 0.5em;
+}
+
+.headerRight {
+    position: relative;
+}
+
+.notificationButton {
+    padding: 0.5em;
+    background-color: transparent;
+}
+
+.notificationButton img {
+    width: 28px;
+}
+
+.notification {
+    display: none;
+    position: absolute;
+    width: 400px;
+    background-color: var(--pure-black);
+    z-index: 100;
+    top: 90px;
+    border-radius: 3px;
+    left: -330px;
+    border-top: 3px solid var(--pure-white);
+    box-shadow: 0 0 3px 0 var(--pure-white);
+    padding: 1em;
+    transition: opacity 0.3s;
+}
+
+.notification.showNotification {
+    opacity: 0.75;
+    display: flex;
+}
+
+.notification.showNotification:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.notification::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 13px solid var(--pure-white);
+    position: absolute;
+    top: -15px;
+    left: 345px;
+    z-index: 100;
+}
+
+.notificationImageBox {
+    height: 63px;
+    position: relative;
+    width: 112px;
+}
+
+.firstShadow,
+.secondShadow,
+.notificationImageBox img {
+    border-radius: 4px;
+    box-shadow:
+        0 2px 2px 0 rgba(0, 0, 0, 0.24),
+        0 0 2px 0 rgba(0, 0, 0, 0.12);
+    height: 56px;
+    position: absolute;
+    width: 103px;
+}
+
+.firstShadow {
+    background-color: rgb(219, 219, 215);
+    left: 3px;
+    top: 2px;
+    z-index: 2;
+}
+
+.secondShadow {
+    background-color: rgb(194, 194, 190);
+    left: 7px;
+    top: 5px;
+    z-index: 1;
+}
+
+.notificationImageBox img {
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+.notificationContent {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.notificationText {
+    font-size: 1.1rem;
+    color: var(--pure-white);
+    line-height: 1.2;
+}
+
+.notificationTime {
+    margin-top: 0.2em;
+    font-size: 0.8rem;
+    color: var(--light-grey);
+}
+
+.profileBox {
+    display: none;
+}

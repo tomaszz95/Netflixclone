@@ -16,7 +16,16 @@ type ComponentType = {
 
 const HeaderDesktopProfile: React.FC<ComponentType> = ({ chosenUser }) => {
     const [chosenUserState, setChosenUserState] = useState('')
+    const [showNotification, setShowNotification] = useState(false)
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
+
+    const handleNotificationMouseEnter = () => {
+        setShowNotification(true)
+    }
+
+    const handleNotificationMouseLeave = () => {
+        setShowNotification(false)
+    }
 
     const logoutHandler = () => {
         signOut(auth)
@@ -35,22 +44,37 @@ const HeaderDesktopProfile: React.FC<ComponentType> = ({ chosenUser }) => {
     }, [chosenUser])
 
     return (
-        <div className={styles.notificationBox}>
-            <button
-                className={styles.notificationButton}
-                type="button"
-                aria-label="Click to open notofications"
-            ></button>
-            <div className={styles.notification}>
-                <img
-                    src="https://dnm.nflximg.net/api/v6/kvDymu0eXRyicIuSUzvRrxrm5dU/AAAABeydawaaq1x6t59V75n4fSKIWAn-JrxXIk40bkQ7vKeG0gXclKxf90Dell3MPo_rvDxPAgDBqvkWCZoMF7aRaI-wBQrlCoskHjEAo50mg57jOf_51iRto29ePzRAGNDqHvxI8DGImnPaOzk.jpg?r=2ec"
-                    alt="Best christmas ever image!"
-                />
-                <div className={styles.notificationContent}>
-                    <p className={styles.notificationText}>Top 10 movies: World</p>
-                    <p className={styles.notificationText}>See what's popular</p>
-                    <span className={styles.notificationTime}>1 week ago</span>
-                </div>
+        <div className={styles.headerRight}>
+            <div className={styles.notificationBox}>
+                <button
+                    className={styles.notificationButton}
+                    type="button"
+                    aria-label="Click to open notifications"
+                    onMouseEnter={handleNotificationMouseEnter}
+                    onMouseLeave={handleNotificationMouseLeave}
+                >
+                    <img src="/icons/bellIcon.png" alt="" />
+                </button>
+                <Link
+                    href="/genre/topmovies"
+                    className={`${styles.notification} ${showNotification ? styles.showNotification : ''}`}
+                    onMouseEnter={handleNotificationMouseEnter}
+                    onMouseLeave={handleNotificationMouseLeave}
+                >
+                    <div className={styles.notificationImageBox}>
+                        <div className={styles.firstShadow}></div>
+                        <div className={styles.secondShadow}></div>
+                        <img
+                            src="https://dnm.nflximg.net/api/v6/kvDymu0eXRyicIuSUzvRrxrm5dU/AAAABeydawaaq1x6t59V75n4fSKIWAn-JrxXIk40bkQ7vKeG0gXclKxf90Dell3MPo_rvDxPAgDBqvkWCZoMF7aRaI-wBQrlCoskHjEAo50mg57jOf_51iRto29ePzRAGNDqHvxI8DGImnPaOzk.jpg?r=2ec"
+                            alt="Best christmas ever image!"
+                        />
+                    </div>
+                    <div className={styles.notificationContent}>
+                        <p className={styles.notificationText}>Top 10 movies: World</p>
+                        <p className={styles.notificationText}>See what's popular</p>
+                        <span className={styles.notificationTime}>1 week ago</span>
+                    </div>
+                </Link>
             </div>
 
             {chosenUser !== 'kids' ? (
