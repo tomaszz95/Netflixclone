@@ -55,7 +55,7 @@ export async function getStaticProps() {
             options,
         )
         const moviesData = await moviesResponse.json()
-        console.log(moviesData)
+      
         const seriesResponse = await fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1', options)
         const seriesData = await seriesResponse.json()
 
