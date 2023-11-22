@@ -9,15 +9,3 @@
     border-bottom: none;
     background-color: var(--pure-black);
 }
-
-@media (min-width: 786) {
-    .header {
-        padding: 1.5em;
-    }
-}
-
-@media (min-width: 1200px) {
-    .header {
-        padding: 2.5em;
-    }
-}

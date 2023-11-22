@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { getCookie } from '../../helpers/localStorageFunctions'
-import HeaderDesktopView from './HeaderDesktopView'
 
 import styles from './HeaderLoggedSection.module.css'
-import HeaderMobileView from './HeaderMobileView'
-import HeaderTabletsView from './HeaderTabletsView'
+import HeaderMobileView from './mobile/HeaderMobileView'
+import HeaderDesktopView from './desktop/HeaderDesktopView'
+import HeaderTabletsView from './tablet/HeaderTabletsView'
 
 const HeaderLoggedSection = () => {
     const [windowWidth, setWindowWidth] = useState(0)

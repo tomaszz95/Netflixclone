@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
-import EditProfileImage from '../../profile/editProfile/EditProfileImage'
+import EditProfileImage from '../../../profile/editProfile/EditProfileImage'
 import { useState, useEffect } from 'react'
 import styles from './HeaderMobileProfile.module.css'
-import auth from '../../../../firebase'
+import auth from '../../../../../firebase'
 import { signOut } from 'firebase/auth'
-import { isLoggedInActions } from '../../store/loggedin'
-import { deleteCookie } from '../../helpers/localStorageFunctions'
+import { isLoggedInActions } from '../../../store/loggedin'
+import { deleteCookie } from '../../../helpers/localStorageFunctions'
 
 type ComponentType = {
     chosenUser: string

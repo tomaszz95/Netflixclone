@@ -244,3 +244,77 @@ export const navigationKidsLinks = [
         link: '/genre/kids',
     },
 ]
+
+export const navigationLinksShort = [
+    {
+        text: 'Home',
+        link: '/browse',
+    },
+    {
+        text: 'TV Shows',
+        link: '/genre/tvshows',
+    },
+    {
+        text: 'Movies',
+        link: '/genre/movies',
+    },
+    {
+        text: 'New & Popular',
+        link: '/genre/latest',
+    },
+    {
+        text: 'My List',
+        link: '/genre/mylist',
+    },
+]
+
+export const navigationKidsLinksShort = [
+    {
+        text: 'Science & Arts',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Animals',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Dinosaurs',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Interactive',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Princesses',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Action',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Fantasy',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Funny',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Little Kids',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Adventures',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Cute',
+        link: '/genre/kids',
+    },
+    {
+        text: 'Nature',
+        link: '/genre/kids',
+    },
+]

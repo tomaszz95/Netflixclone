@@ -2,11 +2,11 @@ import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
-import auth from '../../../../firebase'
+import auth from '../../../../../firebase'
 import { signOut } from 'firebase/auth'
-import { isLoggedInActions } from '../../store/loggedin'
-import { deleteCookie } from '../../helpers/localStorageFunctions'
-import { navigationLinks, navigationKidsLinks } from '../../helpers/siteText'
+import { isLoggedInActions } from '../../../store/loggedin'
+import { deleteCookie } from '../../../helpers/localStorageFunctions'
+import { navigationLinks, navigationKidsLinks } from '../../../helpers/siteText'
 
 import styles from './HeaderTabletsNav.module.css'
 
