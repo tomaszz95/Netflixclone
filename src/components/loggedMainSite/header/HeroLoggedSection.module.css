@@ -1,0 +1,123 @@
+.hero {
+    position: relative;
+    margin-top: 3em;
+    width: 100%;
+    max-height: 80vh;
+    border-bottom: none;
+    overflow: hidden;
+}
+
+.heroImg {
+    width: 100%;
+    object-fit: cover;
+}
+
+.shadowBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.textBox {
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    left: 3%;
+}
+
+.textTitle {
+    font-size: 6rem;
+    line-height: 100px;
+    color: var(--dirty-white);
+    font-style: italic;
+    margin-bottom: 0.3em;
+}
+
+.textDescription {
+    font-size: 1.8rem;
+    line-height: 35px;
+    color: var(--pure-white);
+}
+
+.textInfo {
+    margin-top: 1.8em;
+    display: flex;
+    align-items: center;
+}
+
+.playBtn,
+.moreInfoBtn {
+    display: flex;
+    align-items: center;
+    background-color: var(--pure-white);
+    color: var(--pure-black);
+    padding: 0.6em 1.6em;
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    font-size: var(--size-m);
+    transition: background-color 0.3s;
+    margin-right: 1em;
+}
+
+.playBtn img,
+.moreInfoBtn img {
+    width: 30px;
+    margin-right: 0.5em;
+}
+
+.playBtn:hover {
+    background-color: var(--dark-grey);
+}
+
+.moreInfoBtn {
+    color: var(--pure-white);
+    background-color: var(--lighter-black);
+}
+
+.moreInfoBtn:hover {
+    background-color: var(--grey);
+}
+
+.soundBox {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 70%;
+    right: 0;
+    z-index: 1000;
+}
+
+.soundBoxBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--pure-white);
+    border-radius: 50%;
+    padding: 0.7em;
+    margin-right: 1.8em;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.soundBoxBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.soundBoxContent {
+    height: 60px;
+    border-left: 3px solid var(--pure-white);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.soundBoxText {
+    line-height: 60px;
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin: 0 3.5em 0 1em;
+}

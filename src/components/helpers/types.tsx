@@ -59,3 +59,5 @@ export type seriesDataType = {
 }
 
 export type fetchedMoviesPropsData = { posterPath: string; movieTitle: string }
+
+export type heroMoviesFetchedData = { posterPath: string; movieTitle: string; movieOverview: string }

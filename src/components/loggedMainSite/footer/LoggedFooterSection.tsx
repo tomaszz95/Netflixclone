@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { footerLoggedMainSiteLinks } from '../helpers/siteText'
+import { footerLoggedMainSiteLinks } from '../../helpers/siteText'
 import styles from './LoggedFooterSections.module.css'
 
 const LoggedFooterSections = () => {
