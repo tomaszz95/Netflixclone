@@ -10,18 +10,22 @@ export type sectionMainDataObj = {
 }
 
 export type fetchedContentType = {
-    moviesData: {
-        page: number
-        results: moviesDataType[]
-        total_pages: number
-        total_results: number
-    }
-    seriesData: {
-        page: number
-        results: seriesDataType[]
-        total_pages: number
-        total_results: number
-    }
+    moviesData: fullMoviesDataType
+    seriesData: fullSeriesDataType
+}
+
+export type fullMoviesDataType = {
+    page: number
+    results: moviesDataType[]
+    total_pages: number
+    total_results: number
+}
+
+export type fullSeriesDataType = {
+    page: number
+    results: seriesDataType[]
+    total_pages: number
+    total_results: number
 }
 
 export type moviesDataType = {
@@ -61,3 +65,7 @@ export type seriesDataType = {
 export type fetchedMoviesPropsData = { posterPath: string; movieTitle: string }
 
 export type heroMoviesFetchedData = { posterPath: string; movieTitle: string; movieOverview: string }
+
+export type fetchedMainSingleObj = { posterPath: string; movieTitle: string; movieId: number }
+
+export type fetchedMainWholeObj = { [key: string]: fetchedMainSingleObj[] }
