@@ -143,113 +143,125 @@ export const inputsLanguagesData = [
     '粵語',
 ]
 
-export const navigationLinks = [
-    {
-        text: 'Thrillers',
-        link: '/genre/thrillers',
-    },
-    {
-        text: 'Kids & Family',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Action',
-        link: '/genre/action',
-    },
-    {
-        text: 'Anime',
-        link: '/genre/anime',
-    },
-    {
-        text: 'Comedies',
-        link: '/genre/comedies',
-    },
+export const navigationBrowseLinks = [
     {
         text: 'Fantasy',
-        link: '/genre/fantasy',
+        link: '/genre/14',
     },
     {
-        text: 'Sci-Fi',
-        link: '/genre/scifi',
+        text: 'Animation',
+        link: '/genre/16',
+    },
+    {
+        text: 'Drama',
+        link: '/genre/18',
     },
     {
         text: 'Horror',
-        link: '/genre/horror',
+        link: '/genre/27',
     },
     {
-        text: 'Documentaries',
-        link: '/genre/documentaries',
+        text: 'Action',
+        link: '/genre/28',
     },
     {
-        text: 'Musicals',
-        link: '/genre/musicals',
+        text: 'Comedy',
+        link: '/genre/35',
+    },
+    {
+        text: 'History',
+        link: '/genre/36',
+    },
+    {
+        text: 'Crime',
+        link: '/genre/80',
+    },
+    {
+        text: 'Documentary',
+        link: '/genre/99',
+    },
+    {
+        text: 'Mystery',
+        link: '/genre/9648',
     },
     {
         text: 'Romance',
-        link: '/genre/romance',
+        link: '/genre/10749',
     },
     {
-        text: 'Dramas',
-        link: '/genre/dramas',
+        text: 'Family',
+        link: '/genre/10751',
+    },
+    {
+        text: 'Action & Adventure',
+        link: '/genre/10759',
+    },
+    {
+        text: 'Sci-Fi & Fantasy',
+        link: '/genre/10765',
+    },
+    {
+        text: 'War & Politics',
+        link: '/genre/10768',
     },
 ]
 
 export const navigationKidsLinks = [
     {
-        text: 'Science & Arts',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Animals',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Dinosaurs',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Interactive',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Princesses',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Action',
-        link: '/genre/kids',
+        text: 'Adventure',
+        link: '/genre/12',
     },
     {
         text: 'Fantasy',
-        link: '/genre/kids',
+        link: '/genre/14',
     },
     {
-        text: 'Funny',
-        link: '/genre/kids',
+        text: 'Animation',
+        link: '/genre/16',
     },
     {
-        text: 'Little Kids',
-        link: '/genre/kids',
+        text: 'Action',
+        link: '/genre/28',
     },
     {
-        text: 'Adventures',
-        link: '/genre/kids',
+        text: 'Comedy',
+        link: '/genre/35',
     },
     {
-        text: 'Cute',
-        link: '/genre/kids',
+        text: 'History',
+        link: '/genre/36',
     },
     {
-        text: 'Nature',
-        link: '/genre/kids',
+        text: 'Documentary',
+        link: '/genre/99',
+    },
+    {
+        text: 'Science Fiction',
+        link: '/genre/878',
+    },
+    {
+        text: 'Mystery',
+        link: '/genre/9648',
+    },
+    {
+        text: 'Music',
+        link: '/genre/10402',
+    },
+    {
+        text: 'Romance',
+        link: '/genre/10749',
+    },
+    {
+        text: 'Family',
+        link: '/genre/10751',
+    },
+    {
+        text: 'Kids Heaven',
+        link: '/genre/10762',
     },
 ]
 
 export const navigationLinksShort = [
-    {
-        text: 'Home',
-        link: '/browse',
-    },
     {
         text: 'TV Shows',
         link: '/genre/tvshows',
@@ -268,53 +280,43 @@ export const navigationLinksShort = [
     },
 ]
 
-export const navigationKidsLinksShort = [
-    {
-        text: 'Science & Arts',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Animals',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Dinosaurs',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Interactive',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Princesses',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Action',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Fantasy',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Funny',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Little Kids',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Adventures',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Cute',
-        link: '/genre/kids',
-    },
-    {
-        text: 'Nature',
-        link: '/genre/kids',
-    },
+export const fetchedMovieGenres = [
+    { id: 12, name: 'Adventure' },
+    { id: 14, name: 'Fantasy' },
+    { id: 16, name: 'Animation' },
+    { id: 18, name: 'Drama' },
+    { id: 27, name: 'Horror' },
+    { id: 28, name: 'Action' },
+    { id: 35, name: 'Comedy' },
+    { id: 36, name: 'History' },
+    { id: 37, name: 'Western' },
+    { id: 53, name: 'Thriller' },
+    { id: 80, name: 'Crime' },
+    { id: 99, name: 'Documentary' },
+    { id: 878, name: 'Science Fiction' },
+    { id: 9648, name: 'Mystery' },
+    { id: 10402, name: 'Music' },
+    { id: 10749, name: 'Romance' },
+    { id: 10751, name: 'Family' },
+    { id: 10752, name: 'War' },
+    { id: 10770, name: 'TV Movie' },
+]
+
+export const fetchedSeriesGenres = [
+    { id: 16, name: 'Animation' },
+    { id: 18, name: 'Drama' },
+    { id: 35, name: 'Comedy' },
+    { id: 37, name: 'Western' },
+    { id: 80, name: 'Crime' },
+    { id: 99, name: 'Documentary' },
+    { id: 9648, name: 'Mystery' },
+    { id: 10751, name: 'Family' },
+    { id: 10759, name: 'Action & Adventure' },
+    { id: 10762, name: 'Kids' },
+    { id: 10763, name: 'News' },
+    { id: 10764, name: 'Reality' },
+    { id: 10765, name: 'Sci-Fi & Fantasy' },
+    { id: 10766, name: 'Soap' },
+    { id: 10767, name: 'Talk' },
+    { id: 10768, name: 'War & Politics' },
 ]

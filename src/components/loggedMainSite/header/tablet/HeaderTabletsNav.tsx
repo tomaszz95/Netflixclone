@@ -6,7 +6,7 @@ import auth from '../../../../../firebase'
 import { signOut } from 'firebase/auth'
 import { isLoggedInActions } from '../../../store/loggedin'
 import { deleteCookie } from '../../../helpers/localStorageFunctions'
-import { navigationLinks, navigationKidsLinks } from '../../../helpers/siteText'
+import { navigationBrowseLinks, navigationKidsLinks } from '../../../helpers/siteText'
 
 import styles from './HeaderTabletsNav.module.css'
 
@@ -66,20 +66,11 @@ const HeaderTabletsNav: React.FC<ComponentType> = ({ chosenUser, onOpenNav, navA
                                 Home
                             </Link>
                         </li>
-                        <li className={styles.genreLink}>
-                            <Link
-                                href="/mylist"
-                                className={`${styles.profileLink} ${chosenUser === 'kids' ? '' : styles.active}`}
-                                onClick={logoutHandler}
-                            >
-                                My List
-                            </Link>
-                        </li>
                     </div>
                     <div className={styles.navListItems}>
                         {chosenUser !== 'kids' ? (
                             <ol className={styles.linksContainer}>
-                                {navigationLinks.map((genre) => (
+                                {navigationBrowseLinks.map((genre) => (
                                     <li className={styles.genreLink} key={genre.link}>
                                         <Link href={genre.link} className={styles.profileLink}>
                                             {genre.text}

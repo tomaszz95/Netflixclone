@@ -22,8 +22,8 @@ const HeaderDesktopNav: React.FC<ComponentType> = ({ chosenUser }) => {
             <Link href="/genre/latest" className={styles.profileLink}>
                 New & Popular
             </Link>
-            <Link href="/mylist" className={styles.profileLink}>
-                My List
+            <Link href="/genre/trending" className={styles.profileLink}>
+                Trending
             </Link>
         </div>
     )
