@@ -77,11 +77,6 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser }) => {
                                     Home
                                 </Link>
                             </li>
-                            <li className={styles.genreLink}>
-                                <Link href="/mylist" className={styles.profileLink} onClick={logoutHandler}>
-                                    My List
-                                </Link>
-                            </li>
                             <HeaderMobileBurgerNav chosenUser={chosenUser} />
                         </ol>
                     </nav>

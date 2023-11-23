@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import styles from './HeaderMobileBurgerNav.module.css'
-import { navigationLinks, navigationKidsLinks } from '../../../helpers/siteText'
+import { navigationBrowseLinks, navigationKidsLinks } from '../../../helpers/siteText'
 
 type ComponentType = {
     chosenUser: string
@@ -11,7 +11,7 @@ const HeaderMobileBurgerNav: React.FC<ComponentType> = ({ chosenUser }) => {
     return (
         <>
             {chosenUser !== 'kids'
-                ? navigationLinks.map((genre) => (
+                ? navigationBrowseLinks.map((genre) => (
                       <li className={styles.genreLink} key={genre.text}>
                           <Link href={genre.link} className={styles.profileLink}>
                               {genre.text}

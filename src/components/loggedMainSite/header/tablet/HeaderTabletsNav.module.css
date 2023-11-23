@@ -63,8 +63,8 @@
 .browseNav.active {
     position: absolute;
     display: block;
-    height: 140px;
-    width: 650px;
+    height: 160px;
+    width: 720px;
     background-color: var(--pure-black);
     z-index: 100;
     top: 70px;
