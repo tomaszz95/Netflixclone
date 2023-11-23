@@ -79,7 +79,7 @@ const HeroLoggedSection = () => {
                     )}
                 </button>
                 <div className={styles.soundBoxContent}>
-                    <span className={styles.soundBoxText}>16+</span>
+                    <span className={styles.soundBoxText}>{router.pathname.includes('browse') ? '16+' : '7+'}</span>
                 </div>
             </div>
         </section>
