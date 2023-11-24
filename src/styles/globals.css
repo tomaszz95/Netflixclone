@@ -110,3 +110,16 @@ section {
 .left {
     order: -1;
 }
+
+.slick-list {
+    margin: 1em 0;
+}
+
+.slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.slick-slide {
+    margin: 0 0.1em;
+}
