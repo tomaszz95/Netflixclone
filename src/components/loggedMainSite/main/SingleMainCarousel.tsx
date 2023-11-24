@@ -12,11 +12,13 @@ type ComponentType = {
 
 const SingleMainCarousel: React.FC<ComponentType> = ({ category, itemArray }) => {
     const categoryId = getCategoryLink(category)
- 
+
     return (
         <div className={styles.singleRow}>
             <Link href={`/genre/${categoryId}`} className={styles.rowLink}>
                 <h2 className={styles.rowTitle}>{category}</h2>
+                <span className={styles.rowText}>Explore All..</span>
+                <img src="/icons/exploreArrow.png" alt="" className={styles.rowIcon} />
             </Link>
             <Slider {...carouselSettings}>
                 {itemArray.map((item, index) => (

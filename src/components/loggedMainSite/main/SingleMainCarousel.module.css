@@ -8,15 +8,41 @@
 }
 
 .rowLink {
-    align-self: left;
+    display: flex;
+    align-items: baseline;
+    width: 400px;
 }
 
 .rowTitle {
     line-height: 1.3;
     font-weight: 600;
     letter-spacing: 0.6px;
-    font-size: var(--size-m);
+    font-size: var(--size-xm);
     color: #999999;
+}
+
+.rowText {
+    transform: translateX(-50px);
+    opacity: 0;
+    margin-left: 1em;
+    font-weight: 500;
+    color: rgb(84, 185, 197);
+    pointer-events: none;
+    transition:
+        opacity 0.3s 0.2s,
+        transform 0.3s 0.2s;
+}
+
+.rowIcon {
+    transform: translateX(-100px);
+    opacity: 0;
+    margin-left: 0.5em;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
 }
 
 @media (min-width: 786px) {
@@ -24,8 +50,12 @@
         margin-top: 5em;
     }
 
+    .singleRow {
+        margin-top: 2em;
+    }
+
     .rowTitle {
-        font-size: var(--size-xm);
+        font-size: var(--size-xxm);
     }
 }
 
@@ -35,6 +65,21 @@
     }
 
     .rowTitle {
-        font-size: var(--size-xxm);
+        font-size: var(--size-xxxm);
+        transition: color 0.3s;
+    }
+
+    .rowLink:hover .rowTitle {
+        color: var(--pure-white);
+    }
+
+    .rowLink:hover .rowText {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .rowLink:hover .rowIcon {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
