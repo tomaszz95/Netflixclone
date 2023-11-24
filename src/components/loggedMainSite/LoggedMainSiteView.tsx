@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react'
 
+import { fetchedMainWholeObj } from '../helpers/types'
 import HeaderLoggedSection from './header/HeaderLoggedSection'
 import HeroLoggedSection from './header/HeroLoggedSection'
 import LoggedFooterSections from './footer/LoggedFooterSection'
 import styles from './LoggedMainSiteView.module.css'
-import MainViewLoggedSection from './MainViewLoggedSection'
+import MainViewLoggedSection from './main/MainViewLoggedSection'
 
-const LoggedMainSiteView = () => {
+type ComponentType = {
+    fetchedData: fetchedMainWholeObj
+}
+
+const LoggedMainSiteView: React.FC<ComponentType> = ({ fetchedData }) => {
     const [windowWidth, setWindowWidth] = useState(0)
 
     useEffect(() => {
@@ -29,7 +34,7 @@ const LoggedMainSiteView = () => {
                 {windowWidth < 1200 ? '' : <HeroLoggedSection />}
             </header>
             <main className={styles.main}>
-                <MainViewLoggedSection />
+                <MainViewLoggedSection fetchedData={fetchedData} />
             </main>
             <footer className={styles.footer}>
                 <LoggedFooterSections />

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { fetchedMainWholeObj } from '../../components/helpers/types'
 
 import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
@@ -6,12 +5,9 @@ import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteVi
 import { getAllAPIFetchedData } from '../api/mainSite'
 
 const BrowsePage: React.FC<fetchedMainWholeObj> = ({ fetchedData }) => {
-    const [fetchedContentObjects, setfetchedContentObjects] = useState([])
-
-    console.log(fetchedData)
     return (
         <ReactProviderCookiesData>
-            <LoggedMainSiteView />
+            <LoggedMainSiteView fetchedData={fetchedData} />
         </ReactProviderCookiesData>
     )
 }
