@@ -4,7 +4,11 @@ import ReactProviderCookiesData from '../../components/helpers/ReactProviderCook
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
 import { getAllAPIFetchedData } from '../api/mainSite'
 
-const BrowsePage: React.FC<fetchedMainWholeObj> = ({ fetchedData }) => {
+type ComponentType = {
+    fetchedData: fetchedMainWholeObj
+}
+
+const BrowsePage: React.FC<ComponentType> = ({ fetchedData }) => {
     return (
         <ReactProviderCookiesData>
             <LoggedMainSiteView fetchedData={fetchedData} />
