@@ -123,3 +123,9 @@ section {
 .slick-slide {
     margin: 0 0.1em;
 }
+
+@media (min-width: 1200px) {
+    .slick-slide {
+        margin: 0 0.4em;
+    }
+}
