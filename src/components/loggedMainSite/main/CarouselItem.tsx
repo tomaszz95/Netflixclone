@@ -6,9 +6,11 @@ import MoreInfoBox from './MoreInfoBox'
 
 type ComponentType = {
     singleItem: fetchedMainSingleObj
+    category: string
+    index: number
 }
 
-const CarouselItem: React.FC<ComponentType> = ({ singleItem }) => {
+const CarouselItem: React.FC<ComponentType> = ({ singleItem, category, index }) => {
     const [isHovered, setIsHovered] = useState(false)
 
     const handleMouseEnter = () => {
@@ -22,6 +24,11 @@ const CarouselItem: React.FC<ComponentType> = ({ singleItem }) => {
     return (
         <div className={styles.movieBox}>
             <Link href={`/movie/${singleItem.movieId}`} className={styles.movieLink}>
+                {category.includes('Trending') || category.includes('Rated') || category.includes('Popular') ? (
+                    <span className={styles.hugeNumber}>{index + 1}</span>
+                ) : (
+                    ''
+                )}
                 <div
                     className={`${styles.movieLink} ${isHovered ? styles.hovered : ''}`}
                     onMouseEnter={handleMouseEnter}
@@ -40,10 +47,8 @@ const CarouselItem: React.FC<ComponentType> = ({ singleItem }) => {
                             className={styles.movieImg}
                         />
                     )}
-                    <div className={styles.movieLinkOverlay}></div>
                 </div>
             </Link>
-
             <div className={styles.moreInfoBox}>
                 <MoreInfoBox singleItem={singleItem} />
             </div>

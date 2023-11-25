@@ -22,7 +22,7 @@ const SingleMainCarousel: React.FC<ComponentType> = ({ category, itemArray }) =>
             </Link>
             <Slider {...carouselSettings}>
                 {itemArray.map((item, index) => (
-                    <CarouselItem singleItem={item} key={index} />
+                    <CarouselItem singleItem={item} key={index} index={index} category={category} />
                 ))}
             </Slider>
         </div>

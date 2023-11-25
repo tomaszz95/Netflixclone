@@ -1,4 +1,9 @@
 import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
+import Router from 'next/router'
+
+import { paymentActions } from '../../store/payment'
 import { fetchedMainSingleObj } from '../../helpers/types'
 import styles from './MoreInfoBox.module.css'
 
@@ -11,8 +16,14 @@ const MoreInfoBox: React.FC<ComponentType> = ({ singleItem }) => {
     const [isInList, setIsInList] = useState(false)
     const [isSoundOn, setIsSoundOn] = useState(true)
     const [randomNumber, setRandomNumber] = useState<number | null>(null)
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
+    const selectedMovies = useSelector<any, any>((state) => state.payment.selectedMovies)
 
     useEffect(() => {
+        if (selectedMovies.includes(singleItem.movieTitle)) {
+            setIsInList(true)
+        }
+
         generateRandomNumber()
     }, [])
 
@@ -21,6 +32,24 @@ const MoreInfoBox: React.FC<ComponentType> = ({ singleItem }) => {
     }
 
     const myList = () => {
+        if (isInList) {
+            const newArray = selectedMovies.filter((movie: string) => movie !== singleItem.movieTitle)
+
+            dispatch(
+                paymentActions.changePaymentValue({
+                    name: 'selectedMovies',
+                    value: newArray,
+                }),
+            )
+        } else {
+            dispatch(
+                paymentActions.changePaymentValue({
+                    name: 'selectedMovies',
+                    value: [...selectedMovies, singleItem.movieTitle],
+                }),
+            )
+        }
+
         setIsInList(!isInList)
     }
 
@@ -49,7 +78,11 @@ const MoreInfoBox: React.FC<ComponentType> = ({ singleItem }) => {
         <>
             <div className={styles.buttonsRow}>
                 <div className={styles.buttonsLeft}>
-                    <button className={styles.playBtn} aria-label="Play video button">
+                    <button
+                        className={styles.playBtn}
+                        aria-label="Play video button"
+                        onClick={() => Router.push(`/movie/${singleItem.movieId}`)}
+                    >
                         <img src="/icons/playIcon.png" />
                     </button>
                     <button
