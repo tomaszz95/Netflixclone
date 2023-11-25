@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useState, useRef } from 'react'
 import HeaderDesktopNav from './HeaderDesktopNav'
 import HeaderDesktopProfile from './HeaderDesktopProfile'

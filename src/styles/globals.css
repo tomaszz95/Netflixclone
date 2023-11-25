@@ -120,8 +120,44 @@ section {
     align-items: center;
 }
 
+.slick-slider {
+    position: relative;
+}
+
 .slick-slide {
     margin: 0 0.1em;
+}
+
+.slick-slider:hover .slick-arrow {
+    display: block;
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--pure-white);
+    font-size: 2.5em;
+    transition:
+        font-size 0.3s,
+        background-color 0.3s;
+    z-index: 100;
+    display: none;
+}
+
+.slick-arrow:hover {
+    font-size: 4em;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slick-prev {
+    left: -65px;
+}
+
+.slick-next {
+    right: -65px;
 }
 
 @media (min-width: 1200px) {

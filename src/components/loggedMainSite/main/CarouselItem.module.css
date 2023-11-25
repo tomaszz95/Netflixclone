@@ -1,8 +1,93 @@
+.movieBox {
+    position: relative;
+    overflow: hidden;
+}
+
 .movieLink {
-    width: 100px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .movieImg {
     width: 100%;
+    height: auto;
     object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.moreInfoBox {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    bottom: -10%;
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.movieLink:hover .movieImg {
+    transform: scale(1.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+@media (min-width: 1600px) {
+    .movieLink:hover:before,
+    .movieBox:hover .movieLink:before {
+        content: '';
+        position: absolute;
+        top: 65%;
+        right: 0;
+        width: 100%;
+        height: 35%;
+        background-color: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition:
+            opacity 0.3s,
+            transform 0.3s;
+        z-index: 2;
+    }
+
+    .movieLink:hover:before,
+    .movieBox:hover .movieLink:before {
+        opacity: 1;
+        transform: scaleX(1.2) scaleY(1.9);
+    }
+
+    .movieBox:hover .moreInfoBox {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(-30%);
+        z-index: 3;
+    }
+}
+
+@media (min-width: 1760px) {
+    .movieLink:hover:before,
+    .movieBox:hover .movieLink:before {
+        top: 70%;
+        height: 35%;
+    }
+
+    .movieBox:hover .moreInfoBox {
+        transform: translateY(-35%);
+    }
+}
+
+@media (min-width: 1920px) {
+    .movieLink:hover:before,
+    .movieBox:hover .movieLink:before {
+        height: 27%;
+    }
 }
