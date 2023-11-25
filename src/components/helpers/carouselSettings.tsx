@@ -1,3 +1,4 @@
+import { SampleNextArrow, SamplePrevArrow } from './customArrows'
 import { allFetchedGenres } from './siteText'
 
 export const carouselSettings = {
@@ -6,9 +7,11 @@ export const carouselSettings = {
     initialSlide: 0,
     slidesToScroll: 4,
     adaptiveHeight: true,
-    swipeToSlide: false,
+    draggable: false,
     arrows: true,
     infinite: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
         {
             breakpoint: 1200,
@@ -17,6 +20,7 @@ export const carouselSettings = {
                 arrows: false,
                 slidesToShow: 5,
                 swipeToSlide: true,
+                draggable: true,
             },
         },
         {
@@ -26,6 +30,7 @@ export const carouselSettings = {
                 arrows: false,
                 slidesToShow: 4,
                 swipeToSlide: true,
+                draggable: true,
             },
         },
         {
@@ -35,6 +40,7 @@ export const carouselSettings = {
                 arrows: false,
                 slidesToShow: 3,
                 swipeToSlide: true,
+                draggable: true,
             },
         },
         {
@@ -44,6 +50,7 @@ export const carouselSettings = {
                 arrows: false,
                 slidesToShow: 2,
                 swipeToSlide: true,
+                draggable: true,
             },
         },
     ],

@@ -1,0 +1,126 @@
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-4px);
+    }
+    100% {
+        transform: translateX(4px);
+    }
+}
+
+.buttonsRow,
+.textRow,
+.addonsRow,
+.buttonsLeft {
+    display: flex;
+    align-items: center;
+}
+
+.buttonsRow {
+    justify-content: space-between;
+}
+
+.soundBoxBtn,
+.playBtn,
+.addListBtn,
+.likeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--pure-white);
+    border-radius: 50%;
+    padding: 0.5em;
+    background-color: transparent;
+    transition:
+        background-color 0.3s,
+        opacity 0.2s,
+        border 0.2s;
+}
+
+.playBtn {
+    background-color: var(--pure-white);
+    margin-right: 0.8em;
+}
+
+.playBtn img {
+    margin-left: 0.1em;
+}
+
+.soundBoxBtn img,
+.playBtn img,
+.likeBtn img,
+.addListBtn img {
+    width: 18px;
+    height: 18px;
+}
+
+.addListBtn {
+    margin-right: 0.8em;
+}
+
+.textRow,
+.addonsRow {
+    margin-top: 1em;
+    font-weight: 500;
+    color: var(--pure-white);
+    justify-content: space-around;
+}
+
+.years {
+    border: 1px solid var(--pure-white);
+    margin: 0 0.4em;
+    padding: 0.2em;
+}
+
+.rating {
+    text-align: center;
+    font-weight: 400;
+}
+
+.addonsRow {
+    color: var(--dark-grey);
+    font-size: 0.85rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--dark-grey);
+    border-radius: 50%;
+}
+
+.red {
+    color: var(--call-to-action);
+}
+
+.green {
+    color: var(--darker-green);
+}
+
+.yellow {
+    color: rgb(238, 207, 30);
+}
+
+.likeBtn.isLiked,
+.addListBtn.isInList {
+    border: 3px solid var(--darker-green) !important;
+}
+
+.isLiked img {
+    animation: slideAnimation 1s ease-in-out;
+}
+
+@media (min-width: 1200px) {
+    .soundBoxBtn:hover,
+    .addListBtn:hover,
+    .likeBtn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .playBtn:hover {
+        background-color: var(--dark-grey);
+        border: 3px solid var(--dark-grey);
+    }
+}

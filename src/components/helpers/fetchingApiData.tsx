@@ -62,7 +62,9 @@ const moviesDataFunc = (moviesData: fullMoviesDataType) => {
             const posterPath = movie.poster_path
             const movieTitle = movie.title
             const movieId = movie.id
-            moviesArray.push({ posterPath, movieTitle, movieId })
+            const movieVote = movie.vote_average
+
+            moviesArray.push({ posterPath, movieTitle, movieId, movieVote })
         }
     }
 
@@ -78,7 +80,9 @@ const seriesDataFunc = (seriesData: fullSeriesDataType) => {
             const posterPath = series.poster_path
             const movieTitle = series.name
             const movieId = series.id
-            seriesArray.push({ posterPath, movieTitle, movieId })
+            const movieVote = series.vote_average
+
+            seriesArray.push({ posterPath, movieTitle, movieId, movieVote })
         }
     }
 
