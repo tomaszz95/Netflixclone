@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1500px;
     padding: 0.2em 0.5em;
 }
 
@@ -30,7 +29,6 @@
     top: 60px;
     left: 0;
     width: 100%;
-    height: 100vh;
     background-color: transparent;
     transition:
         background-color 0.3s,
@@ -50,6 +48,7 @@
 .navWrapper.visible {
     background-color: rgba(0, 0, 0, 0.6);
     transform: translateX(0);
+    height: 100vh;
 }
 
 .navWrapper.visible .navigation {
@@ -60,7 +59,7 @@
     background-color: var(--grey);
     border: 2px solid var(--light-grey);
     color: var(--pure-white);
-    width: 120px;
+    width: 40%;
     padding: 0.3em 0.5em;
 }
 
@@ -71,7 +70,8 @@
 .linksContainer {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
 }
 
 .profileLink {

@@ -8,9 +8,10 @@ import HeaderTabletsProfile from './HeaderTabletsProfile'
 
 type ComponentType = {
     chosenUser: string
+    query: string | string[] | undefined
 }
 
-const HeaderTabletsView: React.FC<ComponentType> = ({ chosenUser }) => {
+const HeaderTabletsView: React.FC<ComponentType> = ({ chosenUser, query }) => {
     const [navActive, setNavActive] = useState(false)
     const [profileNavActive, setProfileNavActive] = useState(false)
 
@@ -42,6 +43,7 @@ const HeaderTabletsView: React.FC<ComponentType> = ({ chosenUser }) => {
                 chosenUser={chosenUser}
                 onOpenNav={openNavHandler}
                 browseNavActive={profileNavActive}
+                query={query}
             />
         </div>
     )

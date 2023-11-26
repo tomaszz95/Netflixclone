@@ -92,8 +92,8 @@ const seriesDataFunc = (seriesData: fullSeriesDataType) => {
 export const moviesGetDataFunc = async (link: string) => {
     try {
         const response = await fetch(link, options)
-        const responsaData = await response.json()
-        const fixedData = moviesDataFunc(responsaData)
+        const responseData = await response.json()
+        const fixedData = moviesDataFunc(responseData)
 
         return fixedData
     } catch (error) {
@@ -104,8 +104,8 @@ export const moviesGetDataFunc = async (link: string) => {
 export const seriesGetDataFunc = async (link: string) => {
     try {
         const response = await fetch(link, options)
-        const responsaData = await response.json()
-        const fixedData = seriesDataFunc(responsaData)
+        const responseData = await response.json()
+        const fixedData = seriesDataFunc(responseData)
 
         return fixedData
     } catch (error) {
@@ -159,4 +159,34 @@ export async function getAllSeriesGenres() {
     await Promise.all(promises)
 
     return seriesObj
+}
+
+export async function searchMoviesByInput(keyword: string) {
+    try {
+        const response = await fetch(
+            `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1`,
+            options,
+        )
+        const responseData = await response.json()
+        const fixedData = moviesDataFunc(responseData)
+
+        return fixedData
+    } catch (error) {
+        throw new Error('Failed to fetch series data')
+    }
+}
+
+export async function searchSeriesByInput(keyword: string) {
+    try {
+        const response = await fetch(
+            `https://api.themoviedb.org/3/search/tv?query=${keyword}&include_adult=false&language=en-US&page=1`,
+            options,
+        )
+        const responseData = await response.json()
+        const fixedData = seriesDataFunc(responseData)
+
+        return fixedData
+    } catch (error) {
+        throw new Error('Failed to fetch series data')
+    }
 }
