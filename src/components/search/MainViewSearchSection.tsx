@@ -2,7 +2,7 @@ import { fetchedMainSingleObj } from '../helpers/types'
 import styles from './MainViewSearchSection.module.css'
 
 type ComponentType = {
-    fetchedData: fetchedMainSingleObj
+    fetchedData: fetchedMainSingleObj[]
 }
 
 const MainViewSearchSection: React.FC<ComponentType> = ({ fetchedData }) => {
