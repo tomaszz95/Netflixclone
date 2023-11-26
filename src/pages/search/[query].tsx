@@ -17,7 +17,8 @@ const SearchPage: React.FC<ComponentType> = () => {
     const fetchData = async (query: string) => {
         try {
             const fetchedData = await searchByInput(query)
-            setSearchedData(fetchedData)
+            const sortedData = fetchedData.sort((a, b) => b.moviePopularity - a.moviePopularity)
+            setSearchedData(sortedData)
         } catch (error) {
             console.error('Data fetching failed:', error)
         }

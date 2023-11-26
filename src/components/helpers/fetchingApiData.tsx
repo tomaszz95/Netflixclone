@@ -63,8 +63,9 @@ const moviesDataFunc = (moviesData: fullMoviesDataType) => {
             const movieTitle = movie.title
             const movieId = movie.id
             const movieVote = movie.vote_average
+            const moviePopularity = movie.popularity
 
-            moviesArray.push({ posterPath, movieTitle, movieId, movieVote })
+            moviesArray.push({ posterPath, movieTitle, movieId, movieVote, moviePopularity })
         }
     }
 
@@ -81,8 +82,9 @@ const seriesDataFunc = (seriesData: fullSeriesDataType) => {
             const movieTitle = series.name
             const movieId = series.id
             const movieVote = series.vote_average
+            const moviePopularity = series.popularity
 
-            seriesArray.push({ posterPath, movieTitle, movieId, movieVote })
+            seriesArray.push({ posterPath, movieTitle, movieId, movieVote, moviePopularity })
         }
     }
 
@@ -169,7 +171,6 @@ export async function searchMoviesByInput(keyword: string) {
         )
         const responseData = await response.json()
         const fixedData = moviesDataFunc(responseData)
-
         return fixedData
     } catch (error) {
         throw new Error('Failed to fetch series data')

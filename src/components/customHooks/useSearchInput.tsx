@@ -24,10 +24,9 @@ const useSearchInput = ({ chosenUser, query }: UseSearchInputProps) => {
         if (e.target.value.trim() !== '') {
             router.push(`/search/${inputValue}`)
             setInputSearchValue(inputValue)
-        } else if (inputValue === '') {
-            const user = chosenUser === 'kids' ? 'kids' : 'browse'
-            router.push(`/${user}`)
+        } else if (inputValue === '' && !router.pathname.includes('kids')) {
             setInputSearchValue('')
+            router.push(`/browse`)
         }
     }
 
