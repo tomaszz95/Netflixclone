@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getCookie } from '../../helpers/localStorageFunctions'
+import { useRouter } from 'next/router'
 
 import styles from './HeaderLoggedSection.module.css'
 import HeaderMobileView from './mobile/HeaderMobileView'
@@ -9,6 +10,7 @@ import HeaderTabletsView from './tablet/HeaderTabletsView'
 const HeaderLoggedSection = () => {
     const [windowWidth, setWindowWidth] = useState(0)
     const [chosenUser, setChosenUser] = useState('')
+    const router = useRouter()
 
     useEffect(() => {
         const handleResize = () => {
@@ -32,11 +34,11 @@ const HeaderLoggedSection = () => {
     return (
         <section className={styles.header}>
             {windowWidth < 786 ? (
-                <HeaderMobileView chosenUser={chosenUser} />
+                <HeaderMobileView chosenUser={chosenUser} query={router.query.query} />
             ) : windowWidth < 1200 ? (
-                <HeaderTabletsView chosenUser={chosenUser} />
+                <HeaderTabletsView chosenUser={chosenUser} query={router.query.query} />
             ) : (
-                <HeaderDesktopView chosenUser={chosenUser} />
+                <HeaderDesktopView chosenUser={chosenUser} query={router.query.query} />
             )}
         </section>
     )

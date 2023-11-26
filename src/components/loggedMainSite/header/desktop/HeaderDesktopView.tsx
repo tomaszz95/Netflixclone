@@ -1,19 +1,29 @@
-import { useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import useSearchInput from '../../../customHooks/useSearchInput'
 import HeaderDesktopNav from './HeaderDesktopNav'
 import HeaderDesktopProfile from './HeaderDesktopProfile'
 import styles from './HeaderDesktopView.module.css'
 
 type ComponentType = {
     chosenUser: string
+    query: string | string[] | undefined
 }
 
-const HeaderDesktopView: React.FC<ComponentType> = ({ chosenUser }) => {
+const HeaderDesktopView: React.FC<ComponentType> = ({ chosenUser, query }) => {
     const [isInputOpen, setIsInputOpen] = useState(false)
-    const inputRef = useRef<HTMLInputElement>(null)
+    const { inputSearchValue, refInput, handleInputChange } = useSearchInput({ chosenUser, query })
+    const router = useRouter()
+
+    useEffect(() => {
+        if (router.pathname.includes('search')) {
+            setIsInputOpen(true)
+        }
+    }, [])
 
     const openInputHandler = () => {
-        if (inputRef.current) {
-            inputRef.current.focus()
+        if (refInput.current) {
+            refInput.current.focus()
             setIsInputOpen(true)
         }
     }
@@ -30,11 +40,13 @@ const HeaderDesktopView: React.FC<ComponentType> = ({ chosenUser }) => {
                     <input
                         type="text"
                         id="searchInput"
-                        placeholder="Titles, people, genres"
+                        placeholder="Movie or series title.."
                         className={`${styles.searchInput} ${isInputOpen ? styles.active : ''}`}
                         aria-label="Search bar"
-                        ref={inputRef}
+                        ref={refInput}
                         onBlur={handleBlur}
+                        onChange={handleInputChange}
+                        value={inputSearchValue}
                     />
                     <button
                         className={styles.searchButton}

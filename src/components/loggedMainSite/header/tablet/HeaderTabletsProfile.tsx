@@ -8,16 +8,19 @@ import { signOut } from 'firebase/auth'
 import { isLoggedInActions } from '../../../store/loggedin'
 import { deleteCookie } from '../../../helpers/localStorageFunctions'
 import styles from './HeaderTabletsProfile.module.css'
+import useSearchInput from '../../../customHooks/useSearchInput'
 
 type ComponentType = {
     chosenUser: string
     onOpenNav: (e: React.MouseEvent<HTMLButtonElement>) => void
     browseNavActive: boolean
+    query: string | string[] | undefined
 }
 
-const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, browseNavActive }) => {
+const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, browseNavActive, query }) => {
     const [chosenUserState, setChosenUserState] = useState('')
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
+    const { inputSearchValue, refInput, handleInputChange } = useSearchInput({ chosenUser, query })
 
     const logoutHandler = () => {
         signOut(auth)
@@ -37,7 +40,15 @@ const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, 
 
     return (
         <div className={styles.searchBox}>
-            <input type="text" placeholder="Search" className={styles.searchInput} />
+            <input
+                type="text"
+                placeholder="Search"
+                className={styles.searchInput}
+                onChange={handleInputChange}
+                value={inputSearchValue}
+                ref={refInput}
+                aria-label="Search bar"
+            />
             {chosenUser !== 'kids' ? (
                 <button
                     type="button"

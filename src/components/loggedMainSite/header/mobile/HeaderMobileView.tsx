@@ -1,42 +1,28 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useDispatch } from 'react-redux'
-import { ThunkDispatch } from '@reduxjs/toolkit'
 import { useState, useEffect } from 'react'
 
-import auth from '../../../../../firebase'
-import { signOut } from 'firebase/auth'
-import { isLoggedInActions } from '../../../store/loggedin'
-import { deleteCookie } from '../../../helpers/localStorageFunctions'
 import styles from './HeaderMobileView.module.css'
 import HeaderMobileBurgerNav from './HeaderMobileBurgerNav'
 import HeaderMobileProfile from './HeaderMobileProfile'
+import useSearchInput from '../../../customHooks/useSearchInput'
 
 type ComponentType = {
     chosenUser: string
+    query: string | string[] | undefined
 }
 
-const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser }) => {
+const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser, query }) => {
     const [isNavVisible, setIsNavVisible] = useState(false)
     const [chosenLinkUrl, setChosenLinkUrl] = useState('')
-    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
     const router = useRouter()
+    const { inputSearchValue, refInput, handleInputChange } = useSearchInput({ chosenUser, query })
 
     useEffect(() => {
         if (router.pathname !== undefined) {
             setChosenLinkUrl(router.pathname)
         }
     }, [chosenUser])
-
-    const logoutHandler = () => {
-        signOut(auth)
-
-        dispatch(isLoggedInActions.createLoggedCookie('false'))
-        deleteCookie('chosenUser')
-        deleteCookie('signInEmail')
-        deleteCookie('signUpEmail')
-        deleteCookie('startSignUpEmail')
-    }
 
     const hideNavHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLDivElement
@@ -85,7 +71,15 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser }) => {
                     <img src="/photos/netflixLogo.png" alt="Netflix Logo" className={styles.netflixLogo} />
                 </Link>
             </div>
-            <input type="text" placeholder="Search" className={styles.searchInput} />
+            <input
+                type="text"
+                placeholder="Search"
+                className={styles.searchInput}
+                onChange={handleInputChange}
+                value={inputSearchValue}
+                ref={refInput}
+                aria-label="Search bar"
+            />
         </div>
     )
 }

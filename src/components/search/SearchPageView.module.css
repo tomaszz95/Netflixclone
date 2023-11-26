@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: var(--light-black);
+}
+
+.main {
+    background-color: var(--light-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer {
+    background-color: var(--light-black);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading {
+    margin: 0 auto;
+    font-size: 4rem;
+}
