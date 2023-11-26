@@ -34,7 +34,7 @@ export const carouselSettings = {
             },
         },
         {
-            breakpoint: 768,
+            breakpoint: 786,
             settings: {
                 infinite: false,
                 arrows: false,
