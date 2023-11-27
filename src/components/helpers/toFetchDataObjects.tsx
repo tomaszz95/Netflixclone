@@ -50,6 +50,7 @@ export const seriesGenreLinks = [
     },
     { type: 'War & Politics', link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=10768' },
 ]
+
 export const allSeriesLinks = [
     {
         type: 'Popular Series',
@@ -98,4 +99,37 @@ export const allSeriesLinks = [
         link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=10767',
     },
     { type: 'War & Politics', link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=10768' },
+]
+
+export const allMoviesLinks = [
+    {
+        type: 'Popular Movies',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc',
+    },
+    {
+        type: 'Top Rated Movies',
+        link: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
+    },
+    { type: 'Trending Movies', link: 'https://api.themoviedb.org/3/trending/movie/week?language=en-US' },
+    { type: 'Adventure', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=12' },
+    { type: 'Fantasy', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=14' },
+    { type: 'Animation', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=16' },
+    { type: 'Drama', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=18' },
+    { type: 'Horror', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=27' },
+    { type: 'Action', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=28' },
+    { type: 'Comedy', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=35' },
+    { type: 'History', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=36' },
+    { type: 'Western', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=37' },
+    { type: 'Thriller', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=53' },
+    { type: 'Crime', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=80' },
+    { type: 'Documentary', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=99' },
+    {
+        type: 'Science Fiction',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=878',
+    },
+    { type: 'Mystery', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=9648' },
+    { type: 'Music', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10402' },
+    { type: 'Romance', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10749' },
+    { type: 'Family', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10751' },
+    { type: 'War', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10752' },
 ]

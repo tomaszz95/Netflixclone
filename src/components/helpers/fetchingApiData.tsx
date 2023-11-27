@@ -1,5 +1,5 @@
 import { fullMoviesDataType, fullSeriesDataType } from './types'
-import { getOptions, moviesGenreLinks, seriesGenreLinks, allSeriesLinks } from './toFetchData'
+import { getOptions, moviesGenreLinks, seriesGenreLinks, allSeriesLinks, allMoviesLinks } from './toFetchDataObjects'
 
 const moviesDataFunc = (moviesData: fullMoviesDataType) => {
     let moviesArray = []
@@ -33,6 +33,41 @@ const seriesDataFunc = (seriesData: fullSeriesDataType) => {
             const moviePopularity = series.popularity
 
             seriesArray.push({ posterPath, movieTitle, movieId, movieVote, moviePopularity })
+        }
+    }
+
+    return seriesArray
+}
+const moviesDataFuncHero = (moviesData: fullMoviesDataType) => {
+    let moviesArray = []
+
+    for (const key in moviesData.results) {
+        if (moviesData.results.hasOwnProperty(key)) {
+            const movie = moviesData.results[key]
+            const posterPath = movie.poster_path
+            const movieTitle = movie.title
+            const movieId = movie.id
+            const movieOverview = movie.overview
+
+            moviesArray.push({ posterPath, movieTitle, movieId, movieOverview })
+        }
+    }
+
+    return moviesArray
+}
+
+const seriesDataFuncHero = (seriesData: fullSeriesDataType) => {
+    let seriesArray = []
+
+    for (const key in seriesData.results) {
+        if (seriesData.results.hasOwnProperty(key)) {
+            const series = seriesData.results[key]
+            const posterPath = series.poster_path
+            const movieTitle = series.name
+            const movieId = series.id
+            const movieOverview = series.overview
+
+            seriesArray.push({ posterPath, movieTitle, movieId, movieOverview })
         }
     }
 
@@ -138,4 +173,74 @@ export async function getAllTVSeriesData() {
     await Promise.all(promises)
 
     return seriesObj
+}
+
+export async function getAllMovieData() {
+    let moviesObj: { [key: string]: any } = {}
+
+    const promises = allMoviesLinks.map(async (linkObj) => {
+        const moviesDataType = linkObj.type
+        const moviesDataLink = linkObj.link
+        const fetchedMoviesData = await moviesGetDataFunc(moviesDataLink)
+
+        moviesObj[moviesDataType] = fetchedMoviesData
+    })
+
+    await Promise.all(promises)
+
+    return moviesObj
+}
+
+export async function getHeroSeriesData() {
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1`, getOptions)
+        const responseData = await response.json()
+        const fixedData = seriesDataFuncHero(responseData)
+
+        return fixedData
+    } catch (error) {
+        throw new Error('Failed to fetch series data')
+    }
+}
+
+export async function getHeroMoviesData() {
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`, getOptions)
+        const responseData = await response.json()
+        const fixedData = moviesDataFuncHero(responseData)
+
+        return fixedData
+    } catch (error) {
+        throw new Error('Failed to fetch movie data')
+    }
+}
+
+export async function getHeroBrowseData() {
+    try {
+        const response = await fetch(
+            `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=vote_count.desc`,
+            getOptions,
+        )
+        const responseData = await response.json()
+        const fixedData = seriesDataFuncHero(responseData)
+
+        return fixedData
+    } catch (error) {
+        throw new Error('Failed to fetch series data')
+    }
+}
+
+export async function getHeroKidsData() {
+    try {
+        const response = await fetch(
+            `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=vote_count.desc`,
+            getOptions,
+        )
+        const responseData = await response.json()
+        const fixedData = moviesDataFuncHero(responseData)
+
+        return fixedData
+    } catch (error) {
+        throw new Error('Failed to fetch series data')
+    }
 }

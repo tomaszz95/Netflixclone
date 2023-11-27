@@ -2,7 +2,7 @@ import { fetchedMainWholeObj } from '../../components/helpers/types'
 
 import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
-import { getAllAPIFetchedData } from '../api/mainSite'
+import { getAllAPIFetchedData } from '../api/fetchMainSitesApiData'
 
 type ComponentType = {
     fetchedData: fetchedMainWholeObj
