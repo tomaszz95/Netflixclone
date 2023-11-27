@@ -64,7 +64,7 @@ export type seriesDataType = {
 
 export type fetchedMoviesPropsData = { posterPath: string; movieTitle: string }
 
-export type heroMoviesFetchedData = { posterPath: string; movieTitle: string; movieOverview: string }
+export type heroMoviesFetchedData = { posterPath: string; movieTitle: string; movieOverview: string; movieId: number }
 
 export type fetchedMainSingleObj = {
     posterPath: string

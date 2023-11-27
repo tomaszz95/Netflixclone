@@ -299,7 +299,6 @@ export const fetchedMovieGenres = [
     { id: 10749, name: 'Romance' },
     { id: 10751, name: 'Family' },
     { id: 10752, name: 'War' },
-    { id: 10770, name: 'TV Movie' },
 ]
 
 export const fetchedSeriesGenres = [

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import { getOptions } from '../../components/helpers/toFetchDataObjects'
 import { fetchedContentType, fetchedMoviesPropsData } from '../../components/helpers/types'
 import SignupLayout from '../../components/layouts/SignupLayout'
 import ChooseMoviesView from '../../components/simpleSetup/ChooseMoviesView'
@@ -41,22 +42,17 @@ const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData
 export default ChooseMoviesPage
 
 export async function getStaticProps() {
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDBAPI_BEARER}`,
-        },
-    }
-
     try {
         const moviesResponse = await fetch(
             'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
-            options,
+            getOptions,
         )
         const moviesData = await moviesResponse.json()
 
-        const seriesResponse = await fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1', options)
+        const seriesResponse = await fetch(
+            'https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1',
+            getOptions,
+        )
         const seriesData = await seriesResponse.json()
 
         return {

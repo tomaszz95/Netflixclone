@@ -12,7 +12,7 @@ const useSearchInput = ({ chosenUser, query }: UseSearchInputProps) => {
     const router = useRouter()
     const refInput = useRef<HTMLInputElement | null>(null)
     const selectedPathname = useSelector<any, any>((state) => state.pathname)
-    console.log(selectedPathname)
+
     useEffect(() => {
         if (query && query !== '' && typeof query === 'string' && refInput.current) {
             setInputSearchValue(query)

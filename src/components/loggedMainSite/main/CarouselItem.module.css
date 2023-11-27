@@ -123,7 +123,7 @@
 @media (min-width: 1920px) {
     .movieLink:hover:before,
     .movieBox:hover .movieLink:before {
-        height: 27%;
+        height: 35%;
     }
 
     .hugeNumber {

@@ -2,16 +2,16 @@ import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { heroMoviesFetchedData } from '../../helpers/types'
 import styles from './HeroLoggedSection.module.css'
-
-const initialType = {
-    posterPath: '',
-    movieTitle: '',
-    movieOverview: '',
-}
+import getHeroHandler from '../../../pages/api/fetchHeroApiData'
 
 const HeroLoggedSection = () => {
     const router = useRouter()
-    const [seriesSingleData, setSeriesSingleData] = useState<heroMoviesFetchedData>(initialType)
+    const [seriesSingleData, setSeriesSingleData] = useState<heroMoviesFetchedData>({
+        posterPath: '',
+        movieTitle: '',
+        movieOverview: '',
+        movieId: 0,
+    })
     const [isSoundOn, setIsSoundOn] = useState(true)
     const isMounted = useRef(false)
 
@@ -24,17 +24,19 @@ const HeroLoggedSection = () => {
     useEffect(() => {
         if (!isMounted.current) {
             isMounted.current = true
-            fetch('/api/tvShows', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(router.pathname),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    setSeriesSingleData(data)
-                })
+            const fetchDataFunc = async () => {
+                const fetchedData = await getHeroHandler(location.pathname)
+
+                if (fetchedData) {
+                    const generateRandomIndex = () => Math.floor(Math.random() * fetchedData.length)
+
+                    const randomIndex = generateRandomIndex()
+                    const singleItem = fetchedData[randomIndex]
+                    console.log(singleItem)
+                    setSeriesSingleData(singleItem)
+                }
+            }
+            fetchDataFunc()
         }
     }, [])
 
@@ -79,7 +81,7 @@ const HeroLoggedSection = () => {
                     )}
                 </button>
                 <div className={styles.soundBoxContent}>
-                    <span className={styles.soundBoxText}>{router.pathname.includes('browse') ? '16+' : '7+'}</span>
+                    <span className={styles.soundBoxText}>{router.pathname.includes('kids') ? '7+' : '16+'}</span>
                 </div>
             </div>
         </section>
