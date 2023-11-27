@@ -2,13 +2,13 @@ import { fetchedMainWholeObj } from '../../components/helpers/types'
 
 import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
-import { getAllAPIFetchedData } from '../api/mainSite'
+import { getAllAPIFetchedDataShows } from '../api/allTvSeries'
 
 type ComponentType = {
     fetchedData: fetchedMainWholeObj
 }
 
-const BrowsePage: React.FC<ComponentType> = ({ fetchedData }) => {
+const MoviesPage: React.FC<ComponentType> = ({ fetchedData }) => {
     return (
         <ReactProviderCookiesData>
             <LoggedMainSiteView fetchedData={fetchedData} />
@@ -16,10 +16,10 @@ const BrowsePage: React.FC<ComponentType> = ({ fetchedData }) => {
     )
 }
 
-export default BrowsePage
+export default MoviesPage
 
 export async function getStaticProps() {
-    const fetchedData = await getAllAPIFetchedData()
+    const fetchedData = await getAllAPIFetchedDataShows()
 
     return {
         props: {

@@ -20,6 +20,7 @@ type ComponentType = {
 const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, browseNavActive, query }) => {
     const [chosenUserState, setChosenUserState] = useState('')
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
+
     const { inputSearchValue, refInput, handleInputChange } = useSearchInput({ chosenUser, query })
 
     const logoutHandler = () => {

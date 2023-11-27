@@ -1,57 +1,5 @@
 import { fullMoviesDataType, fullSeriesDataType } from './types'
-
-const moviesLinks = [
-    {
-        type: 'Popular Movies',
-        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc',
-    },
-    {
-        type: 'Top Rated Movies',
-        link: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
-    },
-    { type: 'Trending Movies', link: 'https://api.themoviedb.org/3/trending/movie/week?language=en-US' },
-    { type: 'Fantasy', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=14' },
-    { type: 'Horror', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=27' },
-    { type: 'Action', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=28' },
-    { type: 'History', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=36' },
-    { type: 'Documentary', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=99' },
-    { type: 'Romance', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10749' },
-    { type: 'Family', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10751' },
-]
-
-const seriesLinks = [
-    {
-        type: 'Popular Series',
-        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc',
-    },
-    {
-        type: 'Top Rated Series',
-        link: 'https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1',
-    },
-    { type: 'Trending Series', link: 'https://api.themoviedb.org/3/trending/tv/week?language=en-US' },
-    { type: 'Animation', link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=16' },
-    { type: 'Drama', link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=18' },
-    { type: 'Comedy', link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=35' },
-    { type: 'Crime', link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=80' },
-    { type: 'Mystery', link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=9648' },
-    {
-        type: 'Action & Adventure',
-        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=10759',
-    },
-    {
-        type: 'Sci-Fi & Fantasy',
-        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=10765',
-    },
-    { type: 'War & Politics', link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=10768' },
-]
-
-const options = {
-    method: 'GET',
-    headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDBAPI_BEARER}`,
-    },
-}
+import { getOptions, moviesGenreLinks, seriesGenreLinks, allSeriesLinks } from './toFetchData'
 
 const moviesDataFunc = (moviesData: fullMoviesDataType) => {
     let moviesArray = []
@@ -93,7 +41,7 @@ const seriesDataFunc = (seriesData: fullSeriesDataType) => {
 
 export const moviesGetDataFunc = async (link: string) => {
     try {
-        const response = await fetch(link, options)
+        const response = await fetch(link, getOptions)
         const responseData = await response.json()
         const fixedData = moviesDataFunc(responseData)
 
@@ -105,7 +53,7 @@ export const moviesGetDataFunc = async (link: string) => {
 
 export const seriesGetDataFunc = async (link: string) => {
     try {
-        const response = await fetch(link, options)
+        const response = await fetch(link, getOptions)
         const responseData = await response.json()
         const fixedData = seriesDataFunc(responseData)
 
@@ -118,7 +66,7 @@ export const seriesGetDataFunc = async (link: string) => {
 export async function getAllBrowseMoviesData() {
     let moviesObj: { [key: string]: any } = {}
 
-    const promises = moviesLinks.map(async (linkObj) => {
+    const promises = moviesGenreLinks.map(async (linkObj) => {
         const moviesDataType = linkObj.type
         const moviesDataLink = linkObj.link
         const fetchedMoviesData = await moviesGetDataFunc(moviesDataLink)
@@ -134,23 +82,7 @@ export async function getAllBrowseMoviesData() {
 export async function getAllBrowseSeriesData() {
     let seriesObj: { [key: string]: any } = {}
 
-    const promises = seriesLinks.map(async (linkObj) => {
-        const seriesDataType = linkObj.type
-        const seriesDataLink = linkObj.link
-        const fetchedSeriesData = await seriesGetDataFunc(seriesDataLink)
-
-        seriesObj[seriesDataType] = fetchedSeriesData
-    })
-
-    await Promise.all(promises)
-
-    return seriesObj
-}
-
-export async function getAllSeriesGenres() {
-    let seriesObj: { [key: string]: any } = {}
-
-    const promises = seriesLinks.map(async (linkObj) => {
+    const promises = seriesGenreLinks.map(async (linkObj) => {
         const seriesDataType = linkObj.type
         const seriesDataLink = linkObj.link
         const fetchedSeriesData = await seriesGetDataFunc(seriesDataLink)
@@ -167,7 +99,7 @@ export async function searchMoviesByInput(keyword: string) {
     try {
         const response = await fetch(
             `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1`,
-            options,
+            getOptions,
         )
         const responseData = await response.json()
         const fixedData = moviesDataFunc(responseData)
@@ -181,7 +113,7 @@ export async function searchSeriesByInput(keyword: string) {
     try {
         const response = await fetch(
             `https://api.themoviedb.org/3/search/tv?query=${keyword}&include_adult=false&language=en-US&page=1`,
-            options,
+            getOptions,
         )
         const responseData = await response.json()
         const fixedData = seriesDataFunc(responseData)
@@ -190,4 +122,20 @@ export async function searchSeriesByInput(keyword: string) {
     } catch (error) {
         throw new Error('Failed to fetch series data')
     }
+}
+
+export async function getAllTVSeriesData() {
+    let seriesObj: { [key: string]: any } = {}
+
+    const promises = allSeriesLinks.map(async (linkObj) => {
+        const seriesDataType = linkObj.type
+        const seriesDataLink = linkObj.link
+        const fetchedSeriesData = await seriesGetDataFunc(seriesDataLink)
+
+        seriesObj[seriesDataType] = fetchedSeriesData
+    })
+
+    await Promise.all(promises)
+
+    return seriesObj
 }

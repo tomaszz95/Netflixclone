@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 
 type UseSearchInputProps = {
@@ -10,7 +11,8 @@ const useSearchInput = ({ chosenUser, query }: UseSearchInputProps) => {
     const [inputSearchValue, setInputSearchValue] = useState('')
     const router = useRouter()
     const refInput = useRef<HTMLInputElement | null>(null)
-
+    const selectedPathname = useSelector<any, any>((state) => state.pathname)
+    console.log(selectedPathname)
     useEffect(() => {
         if (query && query !== '' && typeof query === 'string' && refInput.current) {
             setInputSearchValue(query)
@@ -22,11 +24,11 @@ const useSearchInput = ({ chosenUser, query }: UseSearchInputProps) => {
         const inputValue = e.target.value
 
         if (e.target.value.trim() !== '') {
-            router.push(`/search/${inputValue}`)
+            router.push(`/search/${selectedPathname}/${inputValue}`)
             setInputSearchValue(inputValue)
         } else if (inputValue === '' && !router.pathname.includes('kids')) {
             setInputSearchValue('')
-            router.push(`/browse`)
+            router.push(`/${selectedPathname}`)
         }
     }
 

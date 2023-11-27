@@ -13,16 +13,16 @@ const HeaderDesktopNav: React.FC<ComponentType> = ({ chosenUser }) => {
             <Link href={`${chosenUser === 'kids' ? '/kids' : '/browse'}`} className={styles.profileLink}>
                 Home
             </Link>
-            <Link href="/genre/tvshows" className={styles.profileLink}>
+            <Link href="/tvshows" className={styles.profileLink}>
                 TV Shows
             </Link>
-            <Link href="/genre/movies" className={styles.profileLink}>
+            <Link href="/movies" className={styles.profileLink}>
                 Movies
             </Link>
-            <Link href="/genre/popular" className={styles.profileLink}>
+            <Link href="/popular" className={styles.profileLink}>
                 New & Popular
             </Link>
-            <Link href="/genre/trending" className={styles.profileLink}>
+            <Link href="/trending" className={styles.profileLink}>
                 Trending
             </Link>
         </div>

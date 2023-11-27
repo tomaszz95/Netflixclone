@@ -12,8 +12,8 @@ type ComponentType = {
 
 const HeaderDesktopView: React.FC<ComponentType> = ({ chosenUser, query }) => {
     const [isInputOpen, setIsInputOpen] = useState(false)
-    const { inputSearchValue, refInput, handleInputChange } = useSearchInput({ chosenUser, query })
     const router = useRouter()
+    const { inputSearchValue, refInput, handleInputChange } = useSearchInput({ chosenUser, query })
 
     useEffect(() => {
         if (router.pathname.includes('search')) {
