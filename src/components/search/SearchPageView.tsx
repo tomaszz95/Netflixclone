@@ -5,6 +5,7 @@ import LoggedFooterSections from '../loggedMainSite/footer/LoggedFooterSection'
 import HeaderLoggedSection from '../loggedMainSite/header/HeaderLoggedSection'
 import MainViewSearchSection from './MainViewSearchSection'
 import styles from './SearchPageView.module.css'
+
 type ComponentType = {
     fetchedData: fetchedMainSingleObj[]
 }

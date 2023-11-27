@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
-
+import { useDispatch } from 'react-redux'
+import { ThunkDispatch } from '@reduxjs/toolkit'
+import { useRouter } from 'next/router'
+import { pathnameActions } from '../store/pathname'
 import { fetchedMainWholeObj } from '../helpers/types'
 import HeaderLoggedSection from './header/HeaderLoggedSection'
 import HeroLoggedSection from './header/HeroLoggedSection'
@@ -13,6 +16,8 @@ type ComponentType = {
 
 const LoggedMainSiteView: React.FC<ComponentType> = ({ fetchedData }) => {
     const [windowWidth, setWindowWidth] = useState(0)
+    const router = useRouter()
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
     useEffect(() => {
         const handleResize = () => {
@@ -24,6 +29,18 @@ const LoggedMainSiteView: React.FC<ComponentType> = ({ fetchedData }) => {
 
         return () => {
             window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+
+    useEffect(() => {
+        if (router.pathname === '/browse') {
+            dispatch(pathnameActions.createPathname('browse'))
+        } else if (router.pathname === '/kids') {
+            dispatch(pathnameActions.createPathname('kids'))
+        } else if (router.pathname === '/tvshows') {
+            dispatch(pathnameActions.createPathname('tvshows'))
+        } else if (router.pathname === '/movies') {
+            dispatch(pathnameActions.createPathname('movies'))
         }
     }, [])
 
