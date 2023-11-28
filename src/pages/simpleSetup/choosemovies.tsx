@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getOptions } from '../../components/helpers/toFetchDataObjects'
+import { getOptions } from '../../components/APIHelpers/toFetchDataObjects'
 import { fetchedContentType, fetchedMoviesPropsData } from '../../components/helpers/types'
 import SignupLayout from '../../components/layouts/SignupLayout'
 import ChooseMoviesView from '../../components/simpleSetup/ChooseMoviesView'

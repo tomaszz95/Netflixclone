@@ -32,7 +32,7 @@ const HeroLoggedSection = () => {
 
                     const randomIndex = generateRandomIndex()
                     const singleItem = fetchedData[randomIndex]
-                    console.log(singleItem)
+                
                     setSeriesSingleData(singleItem)
                 }
             }

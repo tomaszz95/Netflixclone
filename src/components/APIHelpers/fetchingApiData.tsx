@@ -1,5 +1,13 @@
-import { fullMoviesDataType, fullSeriesDataType } from './types'
-import { getOptions, moviesGenreLinks, seriesGenreLinks, allSeriesLinks, allMoviesLinks } from './toFetchDataObjects'
+import { fullMoviesDataType, fullSeriesDataType } from '../helpers/types'
+import {
+    getOptions,
+    moviesGenreLinks,
+    seriesGenreLinks,
+    allSeriesLinks,
+    allMoviesLinks,
+    popularAndNewestSeries,
+    popularAndNewestMovies,
+} from './toFetchDataObjects'
 
 const moviesDataFunc = (moviesData: fullMoviesDataType) => {
     let moviesArray = []
@@ -130,32 +138,63 @@ export async function getAllBrowseSeriesData() {
     return seriesObj
 }
 
-export async function searchMoviesByInput(keyword: string) {
-    try {
-        const response = await fetch(
-            `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1`,
-            getOptions,
-        )
-        const responseData = await response.json()
-        const fixedData = moviesDataFunc(responseData)
-        return fixedData
-    } catch (error) {
-        throw new Error('Failed to fetch series data')
+export async function searchMoviesByInput(keyword: string, user: string) {
+    if (user !== 'kids') {
+        try {
+            const response = await fetch(
+                `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1`,
+                getOptions,
+            )
+            const responseData = await response.json()
+            const fixedData = moviesDataFunc(responseData)
+
+            return fixedData
+        } catch (error) {
+            throw new Error('Failed to fetch series data')
+        }
+    } else {
+        try {
+            const response = await fetch(
+                `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1&certification=PG-13&certification_country=US`,
+                getOptions,
+            )
+            const responseData = await response.json()
+            const fixedData = moviesDataFunc(responseData)
+            return fixedData
+        } catch (error) {
+            throw new Error('Failed to fetch series data')
+        }
     }
 }
 
-export async function searchSeriesByInput(keyword: string) {
-    try {
-        const response = await fetch(
-            `https://api.themoviedb.org/3/search/tv?query=${keyword}&include_adult=false&language=en-US&page=1`,
-            getOptions,
-        )
-        const responseData = await response.json()
-        const fixedData = seriesDataFunc(responseData)
+export async function searchSeriesByInput(keyword: string, user: string) {
+    if (user !== 'kids') {
+        try {
+            const response = await fetch(
+                `https://api.themoviedb.org/3/search/tv?query=${keyword}&include_adult=false&language=en-US&page=1`,
+                getOptions,
+            )
+            const responseData = await response.json()
+            const fixedData = seriesDataFunc(responseData)
+            console.log(fixedData)
 
-        return fixedData
-    } catch (error) {
-        throw new Error('Failed to fetch series data')
+            return fixedData
+        } catch (error) {
+            throw new Error('Failed to fetch series data')
+        }
+    } else {
+        try {
+            const response = await fetch(
+                `https://api.themoviedb.org/3/search/tv?query=${keyword}&include_adult=false&language=en-US&page=1&certification=PG-13&certification_country=US`,
+                getOptions,
+            )
+            const responseData = await response.json()
+            const fixedData = seriesDataFunc(responseData)
+            console.log(fixedData)
+            return fixedData
+        } catch (error) {
+            throw new Error('Failed to fetch series data')
+        }
     }
 }
 
@@ -233,7 +272,7 @@ export async function getHeroBrowseData() {
 export async function getHeroKidsData() {
     try {
         const response = await fetch(
-            `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=vote_count.desc`,
+            `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=16`,
             getOptions,
         )
         const responseData = await response.json()
@@ -243,4 +282,27 @@ export async function getHeroKidsData() {
     } catch (error) {
         throw new Error('Failed to fetch series data')
     }
+}
+
+export async function getAllPopularAndNewestData() {
+    let moviesAndSeries: { [key: string]: any } = {}
+
+    const promisesSeries = popularAndNewestSeries.map(async (linkObj) => {
+        const seriesDataType = linkObj.type
+        const seriesDataLink = linkObj.link
+        const fetchedSeriesData = await seriesGetDataFunc(seriesDataLink)
+
+        moviesAndSeries[seriesDataType] = fetchedSeriesData
+    })
+
+    const promisesMovies = popularAndNewestMovies.map(async (linkObj) => {
+        const moviesDataType = linkObj.type
+        const moviesDataLink = linkObj.link
+        const fetchedMoviesData = await moviesGetDataFunc(moviesDataLink)
+
+        moviesAndSeries[moviesDataType] = fetchedMoviesData
+    })
+    await Promise.all([...promisesSeries, ...promisesMovies])
+
+    return moviesAndSeries
 }

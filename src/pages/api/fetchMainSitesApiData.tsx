@@ -3,7 +3,8 @@ import {
     getAllBrowseSeriesData,
     getAllTVSeriesData,
     getAllMovieData,
-} from '../../components/helpers/fetchingApiData'
+    getAllPopularAndNewestData,
+} from '../../components/APIHelpers/fetchingApiData'
 
 export async function getAllAPIFetchedData() {
     const moviesData = await getAllBrowseMoviesData()
@@ -25,8 +26,16 @@ export async function getAllAPIFetchedDataShows() {
 
 export async function getAllAPIFetchedDataMovies() {
     const movieData = await getAllMovieData()
-  
+
     return {
         ...movieData,
+    }
+}
+
+export async function getAllAPIFetchedPopularAndNewestData() {
+    const fetchedData = await getAllPopularAndNewestData()
+
+    return {
+        ...fetchedData,
     }
 }
