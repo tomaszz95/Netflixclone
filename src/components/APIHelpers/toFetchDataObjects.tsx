@@ -133,3 +133,30 @@ export const allMoviesLinks = [
     { type: 'Family', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10751' },
     { type: 'War', link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10752' },
 ]
+
+export const popularAndNewestMovies = [
+    {
+        type: 'Popular Movies',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc',
+    },
+    { type: 'Trending Movies', link: 'https://api.themoviedb.org/3/trending/movie/week?language=en-US' },
+    {
+        type: 'Top Rated Movies',
+        link: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
+    },
+    { type: 'Upcoming Movies', link: 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1' },
+    { type: 'Now Playing', link: 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1' },
+]
+
+export const popularAndNewestSeries = [
+    {
+        type: 'Popular Series',
+        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc',
+    },
+    {
+        type: 'Top Rated Series',
+        link: 'https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1',
+    },
+    { type: 'Trending Series', link: 'https://api.themoviedb.org/3/trending/tv/week?language=en-US' },
+    { type: 'Upcoming Series', link: 'https://api.themoviedb.org/3/tv/on_the_air?language=en-US&page=1' },
+]

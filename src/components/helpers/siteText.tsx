@@ -261,25 +261,6 @@ export const navigationKidsLinks = [
     },
 ]
 
-export const navigationLinksShort = [
-    {
-        text: 'TV Shows',
-        link: '/genre/tvshows',
-    },
-    {
-        text: 'Movies',
-        link: '/genre/movies',
-    },
-    {
-        text: 'New & Popular',
-        link: '/genre/latest',
-    },
-    {
-        text: 'My List',
-        link: '/genre/mylist',
-    },
-]
-
 export const fetchedMovieGenres = [
     { id: 12, name: 'Adventure' },
     { id: 14, name: 'Fantasy' },
