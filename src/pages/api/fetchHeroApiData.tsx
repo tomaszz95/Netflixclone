@@ -1,4 +1,4 @@
-import { getHeroKidsData, getHeroMoviesData, getHeroSeriesData } from '../../components/APIHelpers/fetchingApiData'
+import { getHeroKidsData, getHeroMoviesData, getHeroSeriesData } from '../../components/APIHelpers/fetchHeroApiData'
 
 export async function getAllHeroFetchedData() {
     const moviesData = await getHeroSeriesData()
@@ -29,13 +29,13 @@ export async function getKidsHeroFetchedData() {
     return dataArray
 }
 
-export default async function getHeroHandler(pathname: string) {
+export default async function getHeroHandler(pathname: string, chosenUser: string) {
     let fetchedData
 
-    if (pathname === '/browse' || pathname === '/popular') {
-        fetchedData = await getAllHeroFetchedData()
-    } else if (pathname === '/kids') {
+    if (pathname === '/kids' || chosenUser === 'kids') {
         fetchedData = await getKidsHeroFetchedData()
+    } else if (pathname === '/browse' || pathname === '/popular') {
+        fetchedData = await getAllHeroFetchedData()
     } else if (pathname === '/tvshows') {
         fetchedData = await getSeriesHeroFetchedData()
     } else if (pathname === '/movies') {

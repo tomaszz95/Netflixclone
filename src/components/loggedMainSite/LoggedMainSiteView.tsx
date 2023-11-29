@@ -41,6 +41,8 @@ const LoggedMainSiteView: React.FC<ComponentType> = ({ fetchedData }) => {
             dispatch(pathnameActions.createPathname('tvshows'))
         } else if (router.pathname === '/movies') {
             dispatch(pathnameActions.createPathname('movies'))
+        } else if (router.pathname === '/popular') {
+            dispatch(pathnameActions.createPathname('popular'))
         }
     }, [])
 

@@ -1,10 +1,10 @@
-import { searchMoviesByInput, searchSeriesByInput } from '../../components/APIHelpers/fetchingApiData'
+import { searchMoviesByInput, searchSeriesByInput } from '../../components/APIHelpers/searchApiData'
 
-export const searchByInput = async (query: string, pathname: string) => {
-    if (pathname === 'browse') {
+export const searchByInput = async (query: string, pathname: string, chosenUser: string) => {
+    if (pathname === 'browse' || pathname === 'kids' || pathname === 'popular') {
         try {
-            const moviesPromise = searchMoviesByInput(query, 'user')
-            const seriesPromise = searchSeriesByInput(query, 'user')
+            const moviesPromise = searchMoviesByInput(query, chosenUser)
+            const seriesPromise = searchSeriesByInput(query, chosenUser)
             const [movies, series] = await Promise.all([moviesPromise, seriesPromise])
 
             const searchedMovies = [...movies, ...series]
@@ -15,7 +15,7 @@ export const searchByInput = async (query: string, pathname: string) => {
         }
     } else if (pathname === 'tvshows') {
         try {
-            const seriesPromise = searchSeriesByInput(query, 'user')
+            const seriesPromise = searchSeriesByInput(query, chosenUser)
             const series = await Promise.all([seriesPromise])
             const searchedMovies = [...series[0]]
 
@@ -25,22 +25,10 @@ export const searchByInput = async (query: string, pathname: string) => {
         }
     } else if (pathname === 'movies') {
         try {
-            const moviesPromise = searchMoviesByInput(query, 'user')
+            const moviesPromise = searchMoviesByInput(query, chosenUser)
             const movies = await Promise.all([moviesPromise])
 
             const searchedMovies = [...movies[0]]
-
-            return searchedMovies
-        } catch (error) {
-            return []
-        }
-    } else if (pathname === 'kids') {
-        try {
-            const moviesPromise = searchMoviesByInput(query, 'kids')
-            const seriesPromise = searchSeriesByInput(query, 'kids')
-            const [movies, series] = await Promise.all([moviesPromise, seriesPromise])
-
-            const searchedMovies = [...movies, ...series]
 
             return searchedMovies
         } catch (error) {

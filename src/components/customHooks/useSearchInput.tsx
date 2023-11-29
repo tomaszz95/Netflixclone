@@ -15,18 +15,20 @@ const useSearchInput = ({ chosenUser, query }: UseSearchInputProps) => {
 
     useEffect(() => {
         if (query && query !== '' && typeof query === 'string' && refInput.current) {
-            setInputSearchValue(query)
+            const trimedValue = query.replace(/\s+/g, ' ')
+            setInputSearchValue(trimedValue)
             refInput.current.focus()
         }
     }, [chosenUser, query])
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = e.target.value
+        const trimedValue = inputValue.replace(/\s+/g, ' ')
 
-        if (e.target.value.trim() !== '') {
+        if (inputValue !== '') {
             router.push(`/search/${selectedPathname}/${inputValue}`)
-            setInputSearchValue(inputValue)
-        } else if (inputValue === '' && !router.pathname.includes('kids')) {
+            setInputSearchValue(trimedValue)
+        } else if (inputValue === '') {
             setInputSearchValue('')
             router.push(`/${selectedPathname}`)
         }
