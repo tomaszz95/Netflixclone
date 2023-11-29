@@ -1,13 +1,14 @@
 import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
 import { fetchedMainWholeObj } from '../../components/helpers/types'
-import { getAllAPIFetchedData } from '../api/fetchMainSitesApiData'
+import { getAllKidsAPIFetchedData } from '../api/fetchMainSitesApiData'
 
 type ComponentType = {
     fetchedData: fetchedMainWholeObj
 }
 
 const KidsPage: React.FC<ComponentType> = ({ fetchedData }) => {
+
     return (
         <ReactProviderCookiesData>
             <LoggedMainSiteView fetchedData={fetchedData} />
@@ -18,7 +19,7 @@ const KidsPage: React.FC<ComponentType> = ({ fetchedData }) => {
 export default KidsPage
 
 export async function getStaticProps() {
-    const fetchedData = await getAllAPIFetchedData()
+    const fetchedData = await getAllKidsAPIFetchedData()
 
     return {
         props: {

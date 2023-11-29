@@ -51,6 +51,108 @@ export const seriesGenreLinks = [
     { type: 'War & Politics', link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=10768' },
 ]
 
+export const moviesGenreLinksKids = [
+    {
+        type: 'Popular Movies',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&certification=G&certification_country=US',
+    },
+    {
+        type: 'Top Rated Movies',
+        link: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&certification=G&certification_country=US',
+    },
+    {
+        type: 'Trending Movies',
+        link: 'https://api.themoviedb.org/3/trending/movie/week?language=en-US&certification=G&certification_country=US',
+    },
+    {
+        type: 'Adventure',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=12&certification=G&certification_country=US',
+    },
+    {
+        type: 'Fantasy',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=14&certification=G&certification_country=US',
+    },
+    {
+        type: 'Animation',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=16&certification=G&certification_country=US',
+    },
+    {
+        type: 'Action',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=28&certification=G&certification_country=US',
+    },
+    {
+        type: 'Comedy',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=35&certification=G&certification_country=US',
+    },
+    {
+        type: 'History',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=36&certification=G&certification_country=US',
+    },
+    {
+        type: 'Documentary',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=99&certification=G&certification_country=US',
+    },
+    {
+        type: 'Science Fiction',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=878&certification=G&certification_country=US',
+    },
+    {
+        type: 'Mystery',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=9648&certification=G&certification_country=US',
+    },
+    {
+        type: 'Music',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10402&certification=G&certification_country=US',
+    },
+    {
+        type: 'Romance',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10749&certification=G&certification_country=US',
+    },
+    {
+        type: 'Family',
+        link: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&with_genres=10751&certification=G&certification_country=US',
+    },
+]
+
+export const seriesGenreLinksKids = [
+    {
+        type: 'Popular Series',
+        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&certification=G&certification_country=US',
+    },
+    {
+        type: 'Top Rated Series',
+        link: 'https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1&certification=G&certification_country=US',
+    },
+    {
+        type: 'Trending Series',
+        link: 'https://api.themoviedb.org/3/trending/tv/week?language=en-US&certification=G&certification_country=US',
+    },
+    {
+        type: 'Animation',
+        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=16&certification=G&certification_country=US',
+    },
+    {
+        type: 'Comedy',
+        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=35&certification=G&certification_country=US',
+    },
+    {
+        type: 'Documentary',
+        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=99&certification=G&certification_country=US',
+    },
+    {
+        type: 'Mystery',
+        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=9648&certification=G&certification_country=US',
+    },
+    {
+        type: 'Family',
+        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=10751&certification=G&certification_country=US',
+    },
+    {
+        type: 'Kids',
+        link: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&with_genres=10762&certification=G&certification_country=US',
+    },
+]
+
 export const allSeriesLinks = [
     {
         type: 'Popular Series',
