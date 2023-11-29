@@ -73,3 +73,4 @@ export const seriesDataFuncHero = (seriesData: fullSeriesDataType) => {
 
     return seriesArray
 }
+
