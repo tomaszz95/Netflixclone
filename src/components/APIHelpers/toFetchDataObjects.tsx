@@ -262,3 +262,36 @@ export const popularAndNewestSeries = [
     { type: 'Trending Series', link: 'https://api.themoviedb.org/3/trending/tv/week?language=en-US' },
     { type: 'Upcoming Series', link: 'https://api.themoviedb.org/3/tv/on_the_air?language=en-US&page=1' },
 ]
+
+export const genrePopularNewTopMoviesSeries = [
+    {
+        name: 'popularMovies',
+        link1: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc',
+        link2: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc',
+    },
+    {
+        name: 'topRatedMovies',
+        link1: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
+        link2: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=2',
+    },
+    {
+        name: 'trendingMovies',
+        link1: 'https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=1',
+        link2: 'https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=2',
+    },
+    {
+        name: 'popularSeries',
+        link1: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc',
+        link2: 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=2&sort_by=popularity.desc',
+    },
+    {
+        name: 'topRatedSeries',
+        link1: 'https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1',
+        link2: 'https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=2',
+    },
+    {
+        name: 'trendingSeries',
+        link1: 'https://api.themoviedb.org/3/trending/tv/week?language=en-US&page=1',
+        link2: 'https://api.themoviedb.org/3/trending/tv/week?language=en-US&page=2',
+    },
+]

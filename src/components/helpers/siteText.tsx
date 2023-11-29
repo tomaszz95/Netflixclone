@@ -329,4 +329,10 @@ export const allFetchedGenres = [
     { id: 10767, name: 'Talk' },
     { id: 10768, name: 'War & Politics' },
     { id: 10770, name: 'TV Movie' },
+    { id: 'popularMovies', name: 'Popular Movies' },
+    { id: 'popularSeries', name: 'Popular Series' },
+    { id: 'trendingMovies', name: 'Trending Movies' },
+    { id: 'trendingSeries', name: 'Trending Series' },
+    { id: 'topRatedMovies', name: 'Top Rated Movies' },
+    { id: 'topRatedSeries', name: 'Top Rated Series' },
 ]
