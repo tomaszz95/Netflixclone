@@ -17,7 +17,7 @@ const SingleGenreView: React.FC<ComponentType> = ({ fetchedData }) => {
     useEffect(() => {
         const loadingTimeout = setTimeout(() => {
             if (fetchedData.length === 0) {
-                setLoadingText(`Your search for '${router.query.query}' did not have any matches.`)
+                setLoadingText(`There was an error with data loading. Please try again later.`)
             }
         }, 3000)
 

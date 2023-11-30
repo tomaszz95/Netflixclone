@@ -4,6 +4,7 @@ import { ThunkDispatch } from '@reduxjs/toolkit'
 import { useState, useEffect } from 'react'
 import EditProfileImage from '../../../profile/editProfile/EditProfileImage'
 import auth from '../../../../../firebase'
+import { useRouter } from 'next/router'
 import { signOut } from 'firebase/auth'
 import { isLoggedInActions } from '../../../store/loggedin'
 import { deleteCookie } from '../../../helpers/localStorageFunctions'
@@ -20,6 +21,7 @@ type ComponentType = {
 const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, browseNavActive, query }) => {
     const [chosenUserState, setChosenUserState] = useState('')
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
+    const router = useRouter()
 
     const { inputSearchValue, refInput, handleInputChange } = useSearchInput({ chosenUser, query })
 
@@ -41,15 +43,18 @@ const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, 
 
     return (
         <div className={styles.searchBox}>
-            <input
-                type="text"
-                placeholder="Search"
-                className={styles.searchInput}
-                onChange={handleInputChange}
-                value={inputSearchValue}
-                ref={refInput}
-                aria-label="Search bar"
-            />
+            {!router.pathname.includes('genre') && (
+                <input
+                    type="text"
+                    placeholder="Search"
+                    className={styles.searchInput}
+                    onChange={handleInputChange}
+                    value={inputSearchValue}
+                    disabled={router.pathname.includes('genre')}
+                    ref={refInput}
+                    aria-label="Search bar"
+                />
+            )}
             {chosenUser !== 'kids' ? (
                 <button
                     type="button"

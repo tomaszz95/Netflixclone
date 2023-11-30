@@ -1,0 +1,163 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.headerContainer {
+    padding: 0.2em;
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header img {
+    width: 100px;
+    height: 50px;
+}
+
+.loginLink {
+    color: var(--grey);
+    font-weight: 600;
+    padding: 0.5em;
+    font-size: 0.9rem;
+}
+
+.loginLink:hover {
+    text-decoration: underline;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 0;
+}
+
+.footer {
+    margin-top: 5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.3em 1.3em 1.5em;
+    background-color: var(--dirty-white);
+    border-top: 1px solid var(--dark-grey);
+}
+
+.footerContainer {
+    width: 100%;
+}
+
+.question,
+.links a {
+    margin-bottom: 1.1em;
+    color: rgb(115, 115, 115);
+    cursor: pointer;
+}
+
+.question:hover,
+.links a:hover {
+    text-decoration: underline;
+}
+
+.question {
+    display: block;
+    margin-bottom: 2em;
+}
+
+.links {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1em;
+}
+
+.links a {
+    font-size: 0.875rem;
+}
+
+@media (min-width: 500px) {
+    .header img {
+        width: 150px;
+        height: 65px;
+    }
+
+    .loginLink {
+        font-size: var(--size-xxxs);
+    }
+
+    .links {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 786px) {
+    .header img {
+        width: 160px;
+        height: 65px;
+    }
+
+    .loginLink {
+        font-size: var(--size-m);
+    }
+
+    .headerContainer {
+        padding: 0.7em 2.2em;
+    }
+
+    .footer {
+        justify-content: center;
+        align-items: center;
+        padding: 2em 5em;
+    }
+
+    .footerContainer {
+        max-width: 1500px;
+    }
+
+    .question,
+    .links a {
+        margin-bottom: 1em;
+    }
+
+    .question {
+        margin-bottom: 1.6em;
+    }
+
+    .links {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-bottom: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header img {
+        width: 170px;
+        height: 70px;
+    }
+
+    .footerContainer {
+        max-width: 1000px;
+    }
+
+    .question {
+        font-size: 1.1rem;
+    }
+
+    .links a {
+        font-size: 0.9rem;
+    }
+}

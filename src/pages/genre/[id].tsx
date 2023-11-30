@@ -16,7 +16,6 @@ const SingleGenrePage: React.FC<ComponentType> = ({ fetchedData }) => {
         setSortedData(sortedMovies)
     })
 
-    console.log(sortedData)
     return <ReactProviderCookiesData>{<SingleGenreView fetchedData={sortedData} />}</ReactProviderCookiesData>
 }
 
