@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5em;
+    max-width: 450px;
+}
+
+.title {
+    font-size: var(--size-xxm);
+    text-align: center;
+    margin-bottom: 1.2em;
+}
+
+.profileBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.4em;
+}
+
+.username {
+    font-weight: 500;
+}
+
+.transferLink {
+    font-size: var(--size-xxxs);
+    font-weight: 500;
+}
+
+.transferLink:hover,
+.learnMoreLink:hover {
+    text-decoration: underline;
+}
+
+.transferButton {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-top: 2em;
+    font-size: var(--size-m);
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.transferButton:hover {
+    background-color: var(--call-to-action-hover);
+}
+
+.learnMoreLink {
+    margin-top: 1em;
+    font-size: var(--size-m);
+    font-weight: 600;
+    color: var(--pure-black);
+}
+
+.infoBox {
+    margin-top: 3em;
+}
+
+.infoBoxTitle {
+    font-size: var(--size-m);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.infoBoxSingle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.infoBoxImg {
+    width: 25px;
+    height: 25px;
+    margin-right: 1.5em;
+}
+
+.infoBoxText {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.greyText {
+    margin-left: 3em;
+    font-size: 1.1rem;
+    font-style: italic;
+}

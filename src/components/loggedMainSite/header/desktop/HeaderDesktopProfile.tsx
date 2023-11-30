@@ -77,7 +77,7 @@ const HeaderDesktopProfile: React.FC<ComponentType> = ({ chosenUser }) => {
                         <img src="/icons/bellIcon.png" alt="" />
                     </button>
                     <Link
-                        href="/genre/topmovies"
+                        href="/genre/topRatedMovies"
                         className={`${styles.notification} ${showNotification ? styles.showNotification : ''}`}
                         onMouseEnter={handleNotificationMouseEnter}
                         onMouseLeave={handleNotificationMouseLeave}
