@@ -1,0 +1,206 @@
+.section {
+    width: 100%;
+    margin: 1em 0;
+    padding: 1em;
+    border: 2px solid var(--dark-grey);
+    background-color: var(--pure-white);
+}
+
+.title {
+    font-weight: 400;
+    font-size: var(--size-m);
+    color: var(--light-grey);
+}
+
+.dataBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.mailBox,
+.cardBox,
+.giftBox,
+.mailLinks,
+.cardLinks {
+    margin-top: 1em;
+}
+
+.mailDat,
+.mailLinks,
+.cardData,
+.cardLinks {
+    border-bottom: 2px solid var(--dark-grey);
+}
+
+.mailData {
+    border-bottom: 2px solid var(--dark-grey);
+}
+
+.mailData span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: var(--pure-black);
+}
+
+.mailData p {
+    margin-bottom: 1em;
+}
+
+.memberLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.memberLink:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.memberLink:hover p {
+    text-decoration: underline;
+}
+
+.cardBox {
+    margin-top: 2em;
+}
+
+.cardData p {
+    margin-bottom: 1em;
+}
+
+.cardDataInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.cardDataInfo img {
+    margin-right: 0.8em;
+}
+
+.cardDataInfo span {
+    font-weight: 600;
+}
+
+.cancelBtn {
+    margin-top: 1em;
+    width: 100%;
+    font-size: var(--size-m);
+    font-weight: 500;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid var(--dark-grey);
+    background-color: var(--dark-grey);
+    transition: background-color 0.3s;
+}
+
+.cancelBtn:hover {
+    background-color: var(--greylish);
+}
+
+@media (min-width: 786px) {
+    .section {
+        min-width: 650px;
+        border: none;
+        border-top: 1px solid var(--light-grey);
+        border-bottom: 1px solid var(--light-grey);
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .title {
+        margin-top: 0.5em;
+        font-size: var(--size-xm);
+    }
+
+    .mailBox,
+    .cardBox {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--dark-grey);
+        padding-bottom: 0.5em;
+    }
+
+    .mailData,
+    .mailLinks,
+    .cardData,
+    .cardLinks {
+        border-bottom: none;
+    }
+
+    .mailData span {
+        margin-bottom: 0.6em;
+    }
+
+    .mailData p {
+        margin-bottom: 0.6em;
+    }
+
+    .memberLink {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-bottom: 0.6em;
+        padding-bottom: 0;
+        border-bottom: none;
+        width: 100%;
+    }
+
+    .memberLink p {
+        text-align: right;
+        color: var(--light-blue);
+    }
+
+    .memberLink span {
+        display: none;
+    }
+
+    .cardBox {
+        margin-top: 1.5em;
+    }
+
+    .cardData p {
+        margin-bottom: 0.6em;
+    }
+
+    .cardDataInfo {
+        margin-bottom: 0.6em;
+    }
+
+    .cancelBtn {
+        margin: 1em auto;
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 1000px;
+        padding: 1em 0;
+    }
+
+    .title {
+        margin-top: 0.3em;
+    }
+
+    .dataBox {
+        width: 70%;
+    }
+
+    .cancelBtn {
+        position: absolute;
+        top: 50px;
+        width: 270px;
+    }
+}
