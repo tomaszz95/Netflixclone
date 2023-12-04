@@ -1,0 +1,23 @@
+.verifyBox {
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+    padding: 1em;
+    width: 100%;
+    background-color: rgb(247, 224, 181);
+}
+
+.veryfiBoxIcon {
+    margin-right: 1em;
+}
+
+.verifyBoxTextTitle {
+    font-weight: 700;
+    margin-bottom: 0.4em;
+}
+
+.verifiBoxTextButton {
+    background-color: transparent;
+    margin-top: 0.5em;
+    text-decoration: underline;
+}

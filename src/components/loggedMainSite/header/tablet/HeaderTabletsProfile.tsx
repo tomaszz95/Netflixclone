@@ -78,7 +78,7 @@ const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, 
                     </Link>
                 </div>
                 <div className={styles.profileLinkContainer}>
-                    <Link href="/youraccount" className={styles.profileLink}>
+                    <Link href="/profile/youraccount" className={styles.profileLink}>
                         Account
                     </Link>
                     <Link href="#" className={styles.profileLink}>
