@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { verifyNumber } from '../../helpers/dummyActionFunctions'
 import { getCurrentMonth } from '../../helpers/helpersFunctions'
 import MembershipBox from './main/MembershipBox'
+import PlanDetails from './main/PlanDetails'
 import VerifyBox from './main/VerifyBox'
 import styles from './YourAccountMain.module.css'
 
@@ -34,6 +35,7 @@ const YourAccountMain = () => {
                 />
             )}
             <MembershipBox isNumberVerify={verified} userEmail={userInfo.userEmail} />
+            <PlanDetails plan={userInfo.userSubscriptionType} />
         </div>
     )
 }

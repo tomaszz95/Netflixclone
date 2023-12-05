@@ -1,0 +1,116 @@
+.section {
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 1em;
+    border: 2px solid var(--dark-grey);
+    background-color: var(--pure-white);
+}
+
+.title {
+    font-weight: 400;
+    font-size: var(--size-m);
+    color: var(--light-grey);
+}
+
+.planBox {
+    margin-top: 0.6em;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.planBox span {
+    font-weight: 600;
+    margin-right: 0.8em;
+}
+
+.planBox img {
+    width: 32px;
+    height: 32px;
+}
+
+.memberLink {
+    margin: 0.8em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.memberLink:hover p {
+    text-decoration: underline;
+}
+
+@media (min-width: 786px) {
+    .section {
+        margin: 0;
+        border: none;
+        min-width: 650px;
+        border-bottom: 1px solid var(--light-grey);
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 0 0.8em;
+    }
+
+    .title {
+        width: 100%;
+        margin-top: 0.5em;
+        font-size: var(--size-xm);
+    }
+
+    .planBox {
+        margin-top: 1em;
+        border-bottom: none;
+    }
+
+    .planBox span {
+        font-size: 1.1rem;
+        margin-right: 1em;
+    }
+
+    .planBox img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .memberLink {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .memberLink p {
+        text-align: right;
+        color: var(--light-blue);
+    }
+
+    .memberLink span {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1000px;
+        padding: 1em 0;
+    }
+
+    .title {
+        width: 30%;
+        margin-top: 0;
+    }
+
+    .planBox {
+        margin-top: 1em;
+        border-bottom: none;
+        width: 61%;
+    }
+
+    .planBox img {
+        width: 36px;
+        height: 36px;
+    }
+}

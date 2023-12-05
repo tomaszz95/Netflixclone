@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Router from 'next/router'
 
 import { cancelMembership } from '../../../helpers/dummyActionFunctions'
 import styles from './MembershipBox.module.css'
@@ -72,6 +73,7 @@ const MembershipBox: React.FC<ComponentType> = ({ isNumberVerify, userEmail }) =
                 className={styles.cancelBtn}
                 onClick={() => {
                     cancelMembership()
+                    Router.push('/profilgate')
                 }}
             >
                 Cancel Membership
