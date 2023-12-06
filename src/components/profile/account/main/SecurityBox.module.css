@@ -1,0 +1,93 @@
+.section {
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 1em;
+    border: 2px solid var(--dark-grey);
+    background-color: var(--pure-white);
+}
+
+.title {
+    font-weight: 400;
+    font-size: var(--size-m);
+    color: var(--light-grey);
+    margin-bottom: 0.6em;
+}
+
+.text {
+    text-align: left;
+}
+
+.giftBox {
+    margin-top: 1em;
+}
+
+.memberLink {
+    margin: 0.8em 0;
+    padding: 1em 0 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--light-grey);
+}
+
+.memberLink:hover p {
+    text-decoration: underline;
+}
+
+@media (min-width: 786px) {
+    .section {
+        margin: 0.5em;
+        border: none;
+        min-width: 650px;
+        border-bottom: 1px solid var(--light-grey);
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 0 0.8em;
+    }
+
+    .title {
+        width: 100%;
+        margin-top: 0.5em;
+        font-size: var(--size-xm);
+    }
+
+    .text {
+        width: 330px;
+    }
+
+    .memberLink {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        border-top: none;
+        padding: 0;
+    }
+
+    .memberLink p {
+        text-align: right;
+        color: var(--light-blue);
+    }
+
+    .memberLink span {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1000px;
+        padding: 1em 0;
+    }
+
+    .title {
+        width: 25%;
+        margin-top: 0;
+    }
+
+    .text {
+        width: 39%;
+    }
+}

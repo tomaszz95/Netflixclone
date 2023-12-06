@@ -4,6 +4,8 @@ import { verifyNumber } from '../../helpers/dummyActionFunctions'
 import { getCurrentMonth } from '../../helpers/helpersFunctions'
 import MembershipBox from './main/MembershipBox'
 import PlanDetails from './main/PlanDetails'
+import SecurityBox from './main/SecurityBox'
+import SingleProfile from './main/SingleProfile'
 import VerifyBox from './main/VerifyBox'
 import styles from './YourAccountMain.module.css'
 
@@ -36,6 +38,22 @@ const YourAccountMain = () => {
             )}
             <MembershipBox isNumberVerify={verified} userEmail={userInfo.userEmail} />
             <PlanDetails plan={userInfo.userSubscriptionType} />
+            <SecurityBox />
+            <section className={styles.sectionExtra}>
+                <h2 className={styles.titleExtra}>EXTRA MEMBERS</h2>
+                <p className={styles.textExtra}>
+                    With the Standard or Premium plan, you can share Netflix with someone who doesn't live with you.
+                </p>
+            </section>
+            <section className={styles.sectionExtra}>
+                <h2 className={styles.titleExtra}>PROFILE & PARENTAL CONTROLS</h2>
+                <div className={styles.boxExtra}>
+                    {userInfo.selectedNames.map((profile: string) =>
+                        profile !== null ? <SingleProfile key={profile} profilName={profile} /> : '',
+                    )}
+                    <SingleProfile profilName="kids" />
+                </div>
+            </section>
         </div>
     )
 }

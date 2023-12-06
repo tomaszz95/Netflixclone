@@ -26,6 +26,46 @@
     font-weight: 600;
 }
 
+.sectionExtra {
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 1em;
+    border: 2px solid var(--dark-grey);
+    background-color: var(--pure-white);
+}
+
+.titleExtra {
+    font-weight: 400;
+    font-size: var(--size-m);
+    color: var(--light-grey);
+    margin-bottom: 0.6em;
+}
+
+.textExtra {
+    text-align: left;
+}
+
+@media (min-width: 786px) {
+    .sectionExtra {
+        margin: 0.5em;
+        border: none;
+        min-width: 650px;
+        border-bottom: 1px solid var(--light-grey);
+        background-color: transparent;
+        padding: 0 0 1.2em;
+    }
+
+    .titleExtra {
+        width: 100%;
+        margin: 0.5em 0;
+        font-size: var(--size-xm);
+    }
+
+    .textExtra {
+        width: 400px;
+    }
+}
+
 @media (min-width: 1200px) {
     .title {
         font-size: var(--size-l);
@@ -34,5 +74,26 @@
 
     .dateBox img {
         margin-right: 1em;
+    }
+
+    .boxExtra {
+        width: 70%;
+    }
+
+    .sectionExtra {
+        display: flex;
+        align-items: center;
+        width: 1000px;
+        padding: 1em 0;
+    }
+
+    .titleExtra {
+        width: 30%;
+        margin-top: 0;
+        align-self: flex-start;
+    }
+
+    .textExtra {
+        width: 39%;
     }
 }
