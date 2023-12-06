@@ -1,0 +1,46 @@
+.profilBox {
+    padding: 1em 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.profilBox:last-child {
+    border-bottom: none;
+}
+
+.profilBox img {
+    width: 55px;
+    height: 55px;
+}
+
+.profilInfo {
+    margin-left: 0.4em;
+}
+
+.profilName {
+    font-weight: 600;
+}
+
+.profilRate {
+    font-size: 0.85rem;
+}
+
+.profilArrow {
+    margin-left: auto;
+    transform: rotate(90deg);
+    padding: 1em 0.3em 1em 1em;
+    background-color: transparent;
+    transition: transform 0.2s;
+}
+
+.profilArrow:hover {
+    transform: rotate(90deg) scale(1.2);
+}
+
+@media (min-width: 1200px) {
+    .profilBox {
+        border-bottom: 1px solid var(--dark-grey);
+    }
+}
