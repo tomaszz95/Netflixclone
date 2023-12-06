@@ -13,10 +13,6 @@
     margin-bottom: 0.6em;
 }
 
-.text {
-    text-align: left;
-}
-
 .linkBox {
     margin-top: 1em;
 }
@@ -36,26 +32,25 @@
 
 @media (min-width: 786px) {
     .section {
-        margin: 0.5em;
+        margin: 0.5em 0 3em;
         border: none;
         min-width: 650px;
-        border-bottom: 1px solid var(--light-grey);
         background-color: transparent;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
         padding: 0 0 0.8em;
     }
 
     .title {
-        width: 100%;
-        margin-top: 0.5em;
+        width: 30%;
+        align-self: flex-start;
         font-size: var(--size-xm);
+        margin-top: 0.5em;
     }
 
     .text {
-        width: 330px;
+        width: 350px;
     }
 
     .memberLink {
@@ -85,9 +80,5 @@
     .title {
         width: 25%;
         margin-top: 0;
-    }
-
-    .text {
-        width: 39%;
     }
 }

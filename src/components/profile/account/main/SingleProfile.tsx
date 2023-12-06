@@ -25,17 +25,16 @@ const SingleProfile: React.FC<ComponentType> = ({ profilName }) => {
                 </div>
                 <button
                     aria-label="Click to show more info about profile box"
-                    className={styles.profilArrow}
+                    className={`${styles.profilArrow} ${moreInfoVisible ? styles.active : ''}`}
                     onClick={() => setMoreInfoVisible(!moreInfoVisible)}
                 >
-                    &gt;
+                    <span className={styles.profilArrowIcon}>&gt;</span>
                 </button>
             </div>
             {moreInfoVisible && (
                 <div className={styles.moreInfo}>
                     {profilName === 'kids'
                         ? singleProfileKidsMoreInfoTexts.map((prop) => {
-                              console.log(prop)
                               return (
                                   <SingleProfileMoreInfo
                                       key={prop.moreInfoProperty}
@@ -54,7 +53,7 @@ const SingleProfile: React.FC<ComponentType> = ({ profilName }) => {
                               />
                           ))}
                     <div className={styles.moreInfoBoxInfo}>
-                        <input type="checkbox" className={styles.moreInfoBoxProperty} />
+                        <input type="checkbox" className={styles.moreInfoBoxInput} />
                         <label className={styles.moreInfoBoxText}>Reduce animation effect when navigating on TV.</label>
                     </div>
                 </div>
