@@ -118,6 +118,7 @@ section {
 .slick-track {
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .slick-slider {
@@ -126,6 +127,7 @@ section {
 
 .slick-slide {
     margin: 0 0.1em;
+    height: 100%;
 }
 
 .slick-slider:hover .slick-arrow {

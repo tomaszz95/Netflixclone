@@ -1,0 +1,47 @@
+.moreInfoBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5em 0 0 5em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.moreInfoBoxInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.moreInfoBoxProperty {
+    font-weight: 500;
+    margin-bottom: 0.2em;
+}
+
+.moreInfoBoxText {
+    font-size: 0.85rem;
+    margin-right: 0.6em;
+    color: var(--light-grey);
+}
+
+.moreInfoBoxLink {
+    color: var(--lighter-blue);
+    font-size: 0.9rem;
+}
+
+.moreInfoBoxLink:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 786px) {
+    .moreInfoBox {
+        margin: 1.5em 0 0 5.5em;
+    }
+
+    .moreInfoBoxText {
+        font-size: 0.9rem;
+    }
+
+    .moreInfoBoxLink {
+        font-size: 1rem;
+    }
+}

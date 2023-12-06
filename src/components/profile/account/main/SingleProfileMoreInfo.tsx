@@ -15,7 +15,9 @@ const SingleProfileMoreInfo: React.FC<ComponentType> = ({ moreInfoProperty, more
                 <span className={styles.moreInfoBoxProperty}>{moreInfoProperty}</span>
                 <span className={styles.moreInfoBoxText}>{moreInfoText}</span>
             </div>
-            <Link href="#">{moreInfoLink}</Link>
+            <Link href="#" className={styles.moreInfoBoxLink}>
+                {moreInfoLink}
+            </Link>
         </div>
     )
 }

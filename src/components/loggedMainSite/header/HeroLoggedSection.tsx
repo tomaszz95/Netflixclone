@@ -90,7 +90,7 @@ const HeroLoggedSection = () => {
                     )}
                 </button>
                 <div className={styles.soundBoxContent}>
-                    <span className={styles.soundBoxText}>{chosenUser ? '7+' : '16+'}</span>
+                    <span className={styles.soundBoxText}>{chosenUser === 'kids' ? '7+' : '16+'}</span>
                 </div>
             </div>
         </section>

@@ -5,6 +5,7 @@ import { getCurrentMonth } from '../../helpers/helpersFunctions'
 import MembershipBox from './main/MembershipBox'
 import PlanDetails from './main/PlanDetails'
 import SecurityBox from './main/SecurityBox'
+import SettingsBox from './main/SettingsBox'
 import SingleProfile from './main/SingleProfile'
 import VerifyBox from './main/VerifyBox'
 import styles from './YourAccountMain.module.css'
@@ -54,6 +55,7 @@ const YourAccountMain = () => {
                     <SingleProfile profilName="kids" />
                 </div>
             </section>
+            <SettingsBox />
         </div>
     )
 }

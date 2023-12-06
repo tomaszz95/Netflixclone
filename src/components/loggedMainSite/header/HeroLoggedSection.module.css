@@ -5,11 +5,15 @@
     max-height: 80vh;
     border-bottom: none;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .heroImg {
     width: 100%;
     object-fit: cover;
+    object-position: bottom;
 }
 
 .shadowBox {
