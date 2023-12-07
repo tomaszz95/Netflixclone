@@ -1,6 +1,7 @@
 .singleRow {
     display: flex;
     flex-direction: column;
+    margin-top: 10em;
 }
 
 .singleRow:first-child {
@@ -51,7 +52,7 @@
     }
 
     .singleRow {
-        margin-top: 2em;
+        margin-top: 2.5em;
     }
 
     .rowTitle {
@@ -62,6 +63,10 @@
 @media (min-width: 1200px) {
     .singleRow:first-child {
         margin-top: 0;
+    }
+
+    .singleRow {
+        margin-top: 1em;
     }
 
     .rowTitle {

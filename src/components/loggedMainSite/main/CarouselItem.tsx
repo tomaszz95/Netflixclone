@@ -25,7 +25,7 @@ const CarouselItem: React.FC<ComponentType> = ({ singleItem, category, index }) 
 
     return (
         <div className={styles.movieBox}>
-            <Link href={`/movie/${singleItem.movieId}`} className={styles.movieLink}>
+            <Link href={`/${singleItem.type}/${singleItem.movieId}`} className={styles.movieLink}>
                 {(category && category.includes('Trending')) ||
                 (category && category.includes('Rated')) ||
                 (category && category.includes('Popular')) ? (

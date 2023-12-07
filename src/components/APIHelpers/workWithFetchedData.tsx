@@ -11,8 +11,9 @@ export const moviesDataFunc = (moviesData: fullMoviesDataType) => {
             const movieId = movie.id
             const movieVote = movie.vote_average
             const moviePopularity = movie.popularity
+            const type = 'movie'
 
-            moviesArray.push({ posterPath, movieTitle, movieId, movieVote, moviePopularity })
+            moviesArray.push({ posterPath, movieTitle, movieId, movieVote, moviePopularity, type })
         }
     }
 
@@ -30,8 +31,9 @@ export const seriesDataFunc = (seriesData: fullSeriesDataType) => {
             const movieId = series.id
             const movieVote = series.vote_average
             const moviePopularity = series.popularity
+            const type = 'series'
 
-            seriesArray.push({ posterPath, movieTitle, movieId, movieVote, moviePopularity })
+            seriesArray.push({ posterPath, movieTitle, movieId, movieVote, moviePopularity, type })
         }
     }
 
@@ -48,8 +50,9 @@ export const moviesDataFuncHero = (moviesData: fullMoviesDataType) => {
             const movieTitle = movie.title
             const movieId = movie.id
             const movieOverview = movie.overview
+            const type = 'movie'
 
-            moviesArray.push({ posterPath, movieTitle, movieId, movieOverview })
+            moviesArray.push({ posterPath, movieTitle, movieId, movieOverview, type })
         }
     }
 
@@ -66,11 +69,11 @@ export const seriesDataFuncHero = (seriesData: fullSeriesDataType) => {
             const movieTitle = series.name
             const movieId = series.id
             const movieOverview = series.overview
+            const type = 'series'
 
-            seriesArray.push({ posterPath, movieTitle, movieId, movieOverview })
+            seriesArray.push({ posterPath, movieTitle, movieId, movieOverview, type })
         }
     }
 
     return seriesArray
 }
-

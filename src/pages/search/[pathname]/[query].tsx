@@ -10,11 +10,7 @@ import { useRouter } from 'next/router'
 import { pathnameActions } from '../../../components/store/pathname'
 import { getCookie } from '../../../components/helpers/localStorageFunctions'
 
-type ComponentType = {
-    searchedMovies: fetchedMainSingleObj[]
-}
-
-const SearchPage: React.FC<ComponentType> = () => {
+const SearchPage = () => {
     const router = useRouter()
     const [searchedData, setSearchedData] = useState<fetchedMainSingleObj[]>([])
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
