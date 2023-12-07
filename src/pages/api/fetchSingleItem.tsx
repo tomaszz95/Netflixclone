@@ -24,7 +24,9 @@ export async function fetchSingleData(queryType: string, queryId: string) {
         fetchedData = await fetchSingleSeriesData(queryId)
     }
 
-    return {
-        ...fetchedData,
+    if (fetchedData !== undefined) {
+        return {
+            ...fetchedData,
+        }
     }
 }

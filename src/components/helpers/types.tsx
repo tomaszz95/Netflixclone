@@ -82,3 +82,56 @@ export type fetchedMainSingleObj = {
 }
 
 export type fetchedMainWholeObj = { [key: string]: fetchedMainSingleObj[] }
+
+export type singleMovieFetchedDataType = {}
+
+export type singleSeriesFetchedDataType = {
+    crewData: { actors: string[] }
+    similar: fetchedMainSingleObj[]
+    singleItem: singleSeriesItem
+}
+
+export type singleSeriesItem = {
+    createdBy: string[]
+    firstReleaseData: string
+    genres: string[]
+    heroImagePath: string
+    heroImagePath2: string
+    id: number
+    lastReleaseData: string
+    numberOfEpisodes: number
+    numberOfSeasons: number
+    overview: string
+    tagline: string
+    title: string
+    type: string
+    seasons: [
+        {
+            air_date: string
+            episode_count: number
+            name: string
+            overview: string
+            poster_path: string
+            season_number: number
+        },
+    ]
+}
+
+export type singleMoviesFetchedDataType = {
+    crewData: { actors: string[]; crew: { name: string; role: string } }
+    similar: fetchedMainSingleObj[]
+    singleItem: singleSeriesItem
+}
+
+export type singleMoviesItem = {
+    genres: string[]
+    heroImagePath: string
+    heroImagePath2: string
+    id: number
+    overview: string
+    releaseData: string
+    runtime: number
+    tagline: string
+    title: string
+    type: string
+}

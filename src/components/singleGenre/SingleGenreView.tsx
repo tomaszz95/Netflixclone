@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { fetchedMainSingleObj } from '../helpers/types'
 import LoggedFooterSections from '../loggedMainSite/footer/LoggedFooterSection'
@@ -12,7 +11,6 @@ type ComponentType = {
 
 const SingleGenreView: React.FC<ComponentType> = ({ fetchedData }) => {
     const [loadingText, setLoadingText] = useState('Loading...')
-    const router = useRouter()
 
     useEffect(() => {
         const loadingTimeout = setTimeout(() => {
