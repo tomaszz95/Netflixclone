@@ -11,12 +11,17 @@ type ComponentType = {
 
 const SingleGenrePage: React.FC<ComponentType> = ({ fetchedData }) => {
     const [sortedData, setSortedData] = useState<fetchedMainSingleObj[]>([])
+
     useEffect(() => {
         const sortedMovies = fetchedData.sort((a, b) => b.moviePopularity - a.moviePopularity)
         setSortedData(sortedMovies)
     })
 
-    return <ReactProviderCookiesData>{<SingleGenreView fetchedData={sortedData} />}</ReactProviderCookiesData>
+    return (
+        <ReactProviderCookiesData>
+            <SingleGenreView fetchedData={sortedData} />
+        </ReactProviderCookiesData>
+    )
 }
 
 export default SingleGenrePage
