@@ -50,7 +50,7 @@
     .hugeNumber {
         position: absolute;
         display: flex;
-        font-size: 5rem;
+        font-size: 4rem;
         top: 0;
         left: 0;
         color: var(--pure-white);
@@ -63,7 +63,7 @@
 
 @media (min-width: 1300px) {
     .hugeNumber {
-        font-size: 6em;
+        font-size: 5em;
     }
 }
 
@@ -104,7 +104,7 @@
     }
 
     .hugeNumber {
-        font-size: 7rem;
+        font-size: 6rem;
     }
 }
 
@@ -127,6 +127,6 @@
     }
 
     .hugeNumber {
-        font-size: 8rem;
+        font-size: 7rem;
     }
 }
