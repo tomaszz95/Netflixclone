@@ -3,6 +3,7 @@ import { heroMoviesFetchedData } from '../../helpers/types'
 import styles from './HeroLoggedSection.module.css'
 import getHeroHandler from '../../../pages/api/fetchHeroApiData'
 import { getCookie } from '../../helpers/localStorageFunctions'
+import { limitTextToTwoSentences } from '../../helpers/helpersFunctions'
 
 const HeroLoggedSection = () => {
     const [seriesSingleData, setSeriesSingleData] = useState<heroMoviesFetchedData>({
@@ -10,16 +11,11 @@ const HeroLoggedSection = () => {
         movieTitle: '',
         movieOverview: '',
         movieId: 0,
+        type: '',
     })
     const [isSoundOn, setIsSoundOn] = useState(true)
     const [chosenUser, setChosenUser] = useState('')
     const isMounted = useRef(false)
-
-    const limitTextToTwoSentences = (text: string) => {
-        const sentences = text.split('. ')
-        const truncatedText = sentences.slice(0, 2).join('. ')
-        return truncatedText
-    }
 
     useEffect(() => {
         let cookiesUser = ''

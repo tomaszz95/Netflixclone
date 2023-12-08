@@ -1,0 +1,106 @@
+.heroSection {
+    z-index: 100;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    margin-top: 50px;
+    border-bottom: none;
+}
+
+.heroImage {
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+.textBox {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    color: var(--pure-white);
+    z-index: 10001;
+}
+
+.textBoxTitle {
+    margin-bottom: 0.2em;
+    font-size: var(--size-xxm);
+}
+
+.textBoxSpans {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.textBoxSpans span {
+    color: var(--dark-grey);
+    font-weight: 500;
+    margin-right: 0.5em;
+}
+
+.textBoxOverwiev {
+    max-width: 300px;
+}
+
+@media (min-width: 786px) {
+    .heroSection {
+        margin-top: 80px;
+    }
+
+    .textBox {
+        left: 15%;
+    }
+
+    .textBoxTitle {
+        font-size: var(--size-l);
+    }
+
+    .textBoxSpans {
+        font-size: 1.1rem;
+        margin-bottom: 0.8em;
+    }
+
+    .textBoxSpans span {
+        margin-right: 0.6em;
+    }
+
+    .textBoxOverwiev {
+        font-size: 1.1rem;
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .textBox {
+        left: 20%;
+    }
+
+    .textBoxTitle {
+        font-size: var(--size-xl);
+    }
+
+    .textBoxSpans {
+        font-size: var(--size-m);
+        margin-bottom: 1em;
+    }
+
+    .textBoxSpans span {
+        margin-right: 0.8em;
+    }
+
+    .textBoxOverwiev {
+        font-size: var(--size-m);
+        max-width: 550px;
+    }
+}

@@ -26,3 +26,9 @@ export const capitalizeFirstLetter = (text:string) => {
 
     return text.charAt(0).toUpperCase() + text.slice(1)
 }
+
+export const limitTextToTwoSentences = (text: string) => {
+    const sentences = text.split('. ')
+    const truncatedText = sentences.slice(0, 2).join('. ')
+    return truncatedText
+}

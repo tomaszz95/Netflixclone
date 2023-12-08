@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: var(--light-black);
+}
+
+.main {
+    background-color: var(--light-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.footer {
+    background-color: var(--light-black);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    color: var(--light-grey);
+}
