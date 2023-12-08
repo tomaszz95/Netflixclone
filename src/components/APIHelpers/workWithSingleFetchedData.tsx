@@ -7,7 +7,6 @@ export const movieFullSingleData = (movieData: any) => {
     const genres = movieData.genres.map((genre: any) => genre.name)
     const releaseData = movieData.release_date.slice(0, 4)
     const runtime = movieData.runtime
-    const tagline = movieData.tagline
     const type = 'movie'
 
     const movieFilteredData = {
@@ -19,7 +18,6 @@ export const movieFullSingleData = (movieData: any) => {
         genres,
         releaseData,
         runtime,
-        tagline,
         type,
     }
 
@@ -55,7 +53,13 @@ export const seriesFullSingleData = (seriesData: any) => {
     const heroImagePath = seriesData.backdrop_path
     const heroImagePath2 = seriesData.poster_path
     const id = seriesData.id
-    const createdBy = seriesData.created_by.map((author: any) => author.name)
+    let createdBy
+    if (seriesData.created_by.length > 0) {
+        createdBy = seriesData.created_by[0].name
+    } else {
+        createdBy = ''
+    }
+
     const overview = seriesData.overview
     const genres = seriesData.genres.map((genre: any) => genre.name)
     const firstReleaseData = seriesData.first_air_date.slice(0, 4)
@@ -78,9 +82,6 @@ export const seriesFullSingleData = (seriesData: any) => {
             return null
         })
         .filter(Boolean)
-
-    const tagline = seriesData.tagline
-
     const type = 'series'
 
     const seriesFilteredData = {
@@ -93,7 +94,6 @@ export const seriesFullSingleData = (seriesData: any) => {
         genres,
         firstReleaseData,
         lastReleaseData,
-        tagline,
         numberOfEpisodes,
         numberOfSeasons,
         seasons,

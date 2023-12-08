@@ -8,6 +8,10 @@
     margin-top: 2em;
 }
 
+.singleRow:last-child {
+    margin-bottom: 10em;
+}
+
 .rowLink {
     display: flex;
     align-items: baseline;
@@ -49,6 +53,10 @@
 @media (min-width: 786px) {
     .singleRow:first-child {
         margin-top: 5em;
+    }
+
+    .singleRow:last-child {
+        margin-bottom: 3em;
     }
 
     .singleRow {

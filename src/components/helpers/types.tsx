@@ -92,7 +92,7 @@ export type singleSeriesFetchedDataType = {
 }
 
 export type singleSeriesItem = {
-    createdBy: string[]
+    createdBy: string
     firstReleaseData: string
     genres: string[]
     heroImagePath: string
@@ -102,19 +102,18 @@ export type singleSeriesItem = {
     numberOfEpisodes: number
     numberOfSeasons: number
     overview: string
-    tagline: string
     title: string
     type: string
-    seasons: [
-        {
-            air_date: string
-            episode_count: number
-            name: string
-            overview: string
-            poster_path: string
-            season_number: number
-        },
-    ]
+    seasons: seasonsDataType[]
+}
+
+export type seasonsDataType = {
+    air_date: string
+    episode_count: number
+    name: string
+    overview: string
+    poster_path: string
+    season_number: number
 }
 
 export type singleMoviesFetchedDataType = {
@@ -131,7 +130,6 @@ export type singleMoviesItem = {
     overview: string
     releaseData: string
     runtime: number
-    tagline: string
     title: string
     type: string
 }

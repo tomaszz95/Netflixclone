@@ -43,18 +43,20 @@ const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, 
 
     return (
         <div className={styles.searchBox}>
-            {!router.pathname.includes('genre') && (
-                <input
-                    type="text"
-                    placeholder="Search"
-                    className={styles.searchInput}
-                    onChange={handleInputChange}
-                    value={inputSearchValue}
-                    disabled={router.pathname.includes('genre')}
-                    ref={refInput}
-                    aria-label="Search bar"
-                />
-            )}
+            {!router.pathname.includes('genre') &&
+                !router.pathname.includes('movie') &&
+                !router.pathname.includes('series') && (
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        className={styles.searchInput}
+                        onChange={handleInputChange}
+                        value={inputSearchValue}
+                        disabled={router.pathname.includes('genre')}
+                        ref={refInput}
+                        aria-label="Search bar"
+                    />
+                )}
             {chosenUser !== 'kids' ? (
                 <button
                     type="button"
