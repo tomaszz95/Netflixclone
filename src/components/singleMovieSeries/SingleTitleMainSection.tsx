@@ -8,14 +8,14 @@ const SingleTitleMainSection = ({ fetchedData }: any) => {
         <>
             <SingleMainHero fetchedDataInfo={fetchedData.singleItem} />
             {fetchedData.singleItem.type === 'series' && (
-                <SingleMainSeries seasonsInfo={fetchedData.singleItem.seasons} />
+                <SingleMainSeries seasonsInfo={fetchedData.singleItem.seasons} title={fetchedData.singleItem.title} />
             )}
             <SingleMainCrew
                 crewData={fetchedData.crewData}
                 seriesCreator={fetchedData.singleItem.type === 'series' ? fetchedData.singleItem.createdBy : ''}
                 genres={fetchedData.singleItem.genres}
             />
-            <SingleMainSimilar similar={fetchedData.similar} />
+            <SingleMainSimilar similar={fetchedData.similar} title={fetchedData.singleItem.title} />
         </>
     )
 }

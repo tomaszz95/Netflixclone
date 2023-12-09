@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import Link from 'next/link'
 import { heroMoviesFetchedData } from '../../helpers/types'
 import styles from './HeroLoggedSection.module.css'
 import getHeroHandler from '../../../pages/api/fetchHeroApiData'
@@ -31,7 +32,6 @@ const HeroLoggedSection = () => {
             isMounted.current = true
             const fetchDataFunc = async () => {
                 const fetchedData = await getHeroHandler(location.pathname, cookiesUser)
-
                 if (fetchedData) {
                     const generateRandomIndex = () => Math.floor(Math.random() * fetchedData.length)
 
@@ -63,14 +63,22 @@ const HeroLoggedSection = () => {
                 <h1 className={styles.textTitle}>{seriesSingleData.movieTitle}</h1>
                 <p className={styles.textDescription}>{truncatedOverview}</p>
                 <div className={styles.textInfo}>
-                    <button className={styles.playBtn} aria-label="Play series button">
+                    <Link
+                        href={`${seriesSingleData.type}/${seriesSingleData.movieId}`}
+                        className={styles.playBtn}
+                        aria-label="Play series button"
+                    >
                         <img src="/icons/playIcon.png" alt="" />
                         <span>Play</span>
-                    </button>
-                    <button className={styles.moreInfoBtn} aria-label="More info button">
+                    </Link>
+                    <Link
+                        href={`${seriesSingleData.type}/${seriesSingleData.movieId}`}
+                        className={styles.moreInfoBtn}
+                        aria-label="Go to more info site"
+                    >
                         <img src="/icons/infoIcon.png" alt="" />
                         <span>More Info</span>
-                    </button>
+                    </Link>
                 </div>
             </div>
             <div className={styles.soundBox}>

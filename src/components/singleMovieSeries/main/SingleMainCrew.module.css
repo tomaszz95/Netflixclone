@@ -1,5 +1,5 @@
 .crewSection {
-    max-width: 1400px;
+    max-width: 1600px;
     width: 100%;
     border-bottom: none;
     padding: 2em 1.5em;
@@ -55,10 +55,6 @@
 }
 
 @media (min-width: 1200px) {
-    .crewSection {
-        padding: 3em;
-    }
-
     .title {
         font-size: var(--size-xxm);
     }

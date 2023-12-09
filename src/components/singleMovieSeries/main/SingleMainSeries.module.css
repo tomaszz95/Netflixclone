@@ -1,0 +1,148 @@
+.seriesSection {
+    width: 100%;
+    border-bottom: none;
+    padding: 1.5em 1.5em 1em;
+}
+
+.title {
+    color: var(--dark-grey);
+    font-weight: 600;
+    margin-bottom: 0.6em;
+}
+
+.seasonBoxTitle {
+    font-size: var(--size-m);
+    color: var(--light-grey);
+    font-weight: 500;
+    margin: 0.8em 0 0.2em;
+}
+
+.seasonBoxAirDate {
+    font-size: var(--size-xxxs);
+    color: var(--light-grey);
+    font-weight: 500;
+    margin-bottom: 0.4em;
+}
+
+.seasonBoxOverview {
+    color: var(--dark-grey);
+    margin-bottom: 1em;
+}
+
+.episodesBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.singleEpisode {
+    margin-top: 1em;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.singleEpisodeImg {
+    max-width: 100px;
+    width: 25%;
+    margin-right: 1em;
+}
+
+.singleEpisodeText {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0.5em;
+}
+
+.singleEpisodeNumer,
+.singleEpisodeDuration {
+    font-size: var(--size-xxxs);
+    color: var(--dark-grey);
+    font-weight: 600;
+    margin-bottom: 0.6em;
+}
+
+.singleEpisodeOverview {
+    width: 100%;
+    color: var(--light-grey);
+}
+
+@media (min-width: 520px) {
+    .singleEpisodeImg {
+        margin-right: 2em;
+    }
+}
+
+@media (min-width: 786px) {
+    .title {
+        font-size: var(--size-xxm);
+        margin-bottom: 0.6em;
+    }
+
+    .seasonBoxTitle {
+        font-size: var(--size-xm);
+        margin: 1em 0 0.2em;
+    }
+
+    .episodesBox {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+    }
+
+    .singleEpisode {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .singleEpisodeImg {
+        max-width: 200px;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .singleEpisodeText {
+        margin-top: 0.5em;
+        padding: 0;
+        max-width: 200px;
+    }
+
+    .singleEpisodeNumer,
+    .singleEpisodeDuration {
+        font-size: 1.1rem;
+        margin-bottom: 0.6em;
+    }
+
+    .singleEpisodeOverview {
+        width: 100%;
+        color: var(--light-grey);
+    }
+}
+
+@media (min-width: 1200px) {
+    .seriesSection {
+        max-width: 1600px;
+    }
+
+    .seasonBoxTitle {
+        font-size: 1.6rem;
+    }
+
+    .seasonBoxAirDate {
+        font-size: 1.1rem;
+    }
+
+    .seasonBoxOverview {
+        font-size: 1.05rem;
+    }
+
+    .singleEpisodeText {
+        margin-top: 1em;
+    }
+
+    .singleEpisodeNumer,
+    .singleEpisodeDuration {
+        font-size: 1.15rem;
+    }
+}

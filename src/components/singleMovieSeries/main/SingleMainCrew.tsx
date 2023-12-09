@@ -13,9 +13,6 @@ const SingleMainCrew: React.FC<ComponentType> = ({ crewData, seriesCreator, genr
     let titleMakerType
     let titleMakerName
 
-    console.log(seriesCreator)
-    console.log(genres)
-    console.log(crewData)
     if (crewData.crew) {
         titleMakerType = crewData.crew.role
         titleMakerName = crewData.crew.name
