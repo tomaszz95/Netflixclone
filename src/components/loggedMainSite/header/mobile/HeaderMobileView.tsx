@@ -30,7 +30,7 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser, query }) => {
             setIsNavVisible(false)
         }
     }
-
+    console.log(router.pathname)
     return (
         <div className={styles.wrapper}>
             <div className={styles.content}>
@@ -71,19 +71,17 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser, query }) => {
                     <img src="/photos/netflixLogo.png" alt="Netflix Logo" className={styles.netflixLogo} />
                 </Link>
             </div>
-            {!router.pathname.includes('genre') &&
-                !router.pathname.includes('movie') &&
-                !router.pathname.includes('series') && (
-                    <input
-                        type="text"
-                        placeholder="Search"
-                        className={styles.searchInput}
-                        onChange={handleInputChange}
-                        value={inputSearchValue}
-                        ref={refInput}
-                        aria-label="Search bar"
-                    />
-                )}
+            {!router.pathname.includes('genre') && !router.pathname.includes('[movieType]') && (
+                <input
+                    type="text"
+                    placeholder="Search"
+                    className={styles.searchInput}
+                    onChange={handleInputChange}
+                    value={inputSearchValue}
+                    ref={refInput}
+                    aria-label="Search bar"
+                />
+            )}
         </div>
     )
 }
