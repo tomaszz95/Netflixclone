@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+
+import DeleteProfileView from '../../../../components/profile/editProfile/DeleteProfileView'
 
 import ReactProviderCookiesData from '../../../../components/helpers/ReactProviderCookiesData'
 import WithoutAuth from '../../../../components/layouts/WithoutAuth'
-import DeleteProfileView from '../../../../components/profile/editProfile/DeleteProfileView'
 
 const DeleteProfileSite = () => {
     const [queryRouter, setQueryRouter] = useState('')

@@ -4,10 +4,8 @@ import { ThunkDispatch } from '@reduxjs/toolkit'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { isLoggedInActions } from '../store/loggedin'
-import { deleteCookie } from '../helpers/localStorageFunctions'
-import auth from '../../../firebase'
-import { signOut } from 'firebase/auth'
+import useLogoutHandler from '../customHooks/useLogoutHandler'
+import { changingLanguage } from '../helpers/dummyActionFunctions'
 import styles from './HeaderSection.module.css'
 
 const HeaderSection = () => {
@@ -15,8 +13,8 @@ const HeaderSection = () => {
     const isLoggedIn = useSelector<any, any>((state) => state.isLoggedIn)
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
-    const changeLanguage = () => {
-        console.log('Should change language.. Omitted in the demo version')
+    const handleLogout = () => {
+        useLogoutHandler(dispatch)
     }
 
     useEffect(() => {
@@ -25,21 +23,11 @@ const HeaderSection = () => {
         }
     }, [isLoggedIn])
 
-    const logoutHandler = () => {
-        signOut(auth)
-
-        dispatch(isLoggedInActions.createLoggedCookie('false'))
-        deleteCookie('chosenUser')
-        deleteCookie('signInEmail')
-        deleteCookie('signUpEmail')
-        deleteCookie('startSignUpEmail')
-    }
-
     return (
         <section className={styles.header}>
-            <Image src="/photos/netflixLogo.png" alt="Netflix Logo" width="100" height="50" priority={true} />
+            <Image src="/photos/netflixLogo.png" alt="Netflix Logo" width="100" height="50" />
             <div className={styles.headerBox}>
-                <select name="language" className={styles.select} onChange={changeLanguage} defaultValue="English">
+                <select name="language" className={styles.select} onChange={changingLanguage} defaultValue="English">
                     <option value="Polish">Polish</option>
                     <option value="English">English</option>
                 </select>
@@ -49,7 +37,7 @@ const HeaderSection = () => {
                         aria-label="Click to sign out"
                         className={styles.signBtn}
                         href="/logout"
-                        onClick={logoutHandler}
+                        onClick={handleLogout}
                     >
                         Sign Out
                     </Link>

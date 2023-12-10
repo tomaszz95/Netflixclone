@@ -1,8 +1,8 @@
+import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import Router from 'next/router'
-import { useSelector } from 'react-redux'
-import { createCookie } from '../helpers/localStorageFunctions'
 
+import { createCookie } from '../helpers/localStorageFunctions'
 import styles from './ChooseUserView.module.css'
 
 const ChooseUserView = () => {
@@ -63,7 +63,7 @@ const ChooseUserView = () => {
             )}
             <button
                 type="submit"
-                aria-label="Manage profiles"
+                aria-label="Manage profiles button"
                 className={styles.submitBtn}
                 onClick={() => Router.push('/profile/manage')}
             >

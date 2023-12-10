@@ -1,6 +1,7 @@
+import ManageProfilesView from '../../../components/profile/ManageProfilesView'
+
 import ReactProviderCookiesData from '../../../components/helpers/ReactProviderCookiesData'
 import WithoutAuth from '../../../components/layouts/WithoutAuth'
-import ManageProfilesView from '../../../components/profile/ManageProfilesView'
 
 const ManageProfileSite = () => {
     return (

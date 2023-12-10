@@ -91,6 +91,7 @@ const RegformView = () => {
             createUserWithEmailAndPassword(auth, inputEmail, inputPassword)
                 .then((userCredential) => {
                     Router.push(`/signup/plan`)
+                    
                     dispatch(isLoggedInActions.createLoggedCookie('true'))
                     dispatch(loginEmailsActions.createEmailsCookie({ emailFunction: 'signUpEmail', email: inputEmail }))
                 })

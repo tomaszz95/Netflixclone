@@ -6,19 +6,19 @@
 }
 
 .main {
-    background-color: var(--greylish);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--greylish);
     width: 100%;
     overflow: hidden;
 }
 
 .footer {
-    background-color: var(--light-black);
-    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1em;
+    background-color: var(--light-black);
 }

@@ -1,15 +1,14 @@
-import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
-import { useState, useEffect } from 'react'
-import EditProfileImage from '../../../profile/editProfile/EditProfileImage'
-import auth from '../../../../../firebase'
 import { useRouter } from 'next/router'
-import { signOut } from 'firebase/auth'
-import { isLoggedInActions } from '../../../store/loggedin'
-import { deleteCookie } from '../../../helpers/localStorageFunctions'
-import styles from './HeaderTabletsProfile.module.css'
+import Link from 'next/link'
+
+import EditProfileImage from '../../../profile/editProfile/EditProfileImage'
 import useSearchInput from '../../../customHooks/useSearchInput'
+import useLogoutHandler from '../../../customHooks/useLogoutHandler'
+
+import styles from './HeaderTabletsProfile.module.css'
 
 type ComponentType = {
     chosenUser: string
@@ -25,14 +24,8 @@ const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, 
 
     const { inputSearchValue, refInput, handleInputChange } = useSearchInput({ chosenUser, query })
 
-    const logoutHandler = () => {
-        signOut(auth)
-
-        dispatch(isLoggedInActions.createLoggedCookie('false'))
-        deleteCookie('chosenUser')
-        deleteCookie('signInEmail')
-        deleteCookie('signUpEmail')
-        deleteCookie('startSignUpEmail')
+    const handleLogout = () => {
+        useLogoutHandler(dispatch)
     }
 
     useEffect(() => {
@@ -86,7 +79,7 @@ const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, 
                     <Link href="#" className={styles.profileLink}>
                         Help Center
                     </Link>
-                    <Link href="/logout" className={styles.profileLink} onClick={logoutHandler}>
+                    <Link href="/logout" className={styles.profileLink} onClick={handleLogout}>
                         Sign Out of Netflix
                     </Link>
                 </div>

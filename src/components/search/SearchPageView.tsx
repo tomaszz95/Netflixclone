@@ -1,9 +1,11 @@
-import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import { fetchedMainSingleObj } from '../helpers/types'
+import { useRouter } from 'next/router'
+
 import LoggedFooterSections from '../loggedMainSite/footer/LoggedFooterSection'
 import HeaderLoggedSection from '../loggedMainSite/header/HeaderLoggedSection'
 import MainViewSearchSection from './MainViewSearchSection'
+
+import { fetchedMainSingleObj } from '../helpers/types'
 import styles from './SearchPageView.module.css'
 
 type ComponentType = {

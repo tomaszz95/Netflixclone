@@ -1,13 +1,13 @@
 .hero {
     position: relative;
-    margin-top: 3em;
-    width: 100%;
-    max-height: 80vh;
-    border-bottom: none;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-height: 80vh;
+    margin-top: 3em;
+    border-bottom: none;
+    overflow: hidden;
 }
 
 .heroImg {
@@ -26,18 +26,18 @@
 }
 
 .textBox {
-    width: 50%;
     position: absolute;
     top: 25%;
     left: 3%;
+    width: 50%;
 }
 
 .textTitle {
+    margin-bottom: 0.3em;
     font-size: 5rem;
     line-height: 100px;
     color: var(--dirty-white);
     font-style: italic;
-    margin-bottom: 0.3em;
 }
 
 .textDescription {
@@ -47,24 +47,24 @@
 }
 
 .textInfo {
-    margin-top: 1.8em;
     display: flex;
     align-items: center;
+    margin-top: 1.8em;
 }
 
 .playBtn,
 .moreInfoBtn {
     display: flex;
     align-items: center;
+    padding: 0.6em 1.6em;
+    margin-right: 1em;
     background-color: var(--pure-white);
     color: var(--pure-black);
-    padding: 0.6em 1.6em;
     border-radius: 5px;
     border: none;
     font-weight: 700;
     font-size: var(--size-m);
     transition: background-color 0.3s;
-    margin-right: 1em;
 }
 
 .playBtn img,
@@ -88,10 +88,10 @@
 
 .soundBox {
     position: absolute;
-    display: flex;
-    align-items: center;
     top: 70%;
     right: 0;
+    display: flex;
+    align-items: center;
     z-index: 1000;
 }
 
@@ -99,10 +99,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid var(--pure-white);
-    border-radius: 50%;
     padding: 0.7em;
     margin-right: 1.8em;
+    border: 3px solid var(--pure-white);
+    border-radius: 50%;
     background-color: transparent;
     transition: background-color 0.3s;
 }
@@ -118,10 +118,10 @@
 }
 
 .soundBoxText {
-    line-height: 60px;
     display: block;
+    margin: 0 3.5em 0 1em;
     font-size: 1.8rem;
+    line-height: 60px;
     font-weight: 600;
     color: var(--pure-white);
-    margin: 0 3.5em 0 1em;
 }

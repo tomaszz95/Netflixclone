@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
 import { paymentActions } from '../store/payment'
-
 import styles from './PaymentPickerView.module.css'
 
 const PaymentPickerView = () => {

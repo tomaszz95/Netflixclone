@@ -3,17 +3,17 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 2.5em 2.4em 5em;
-    margin-bottom: 5em;
     max-width: 480px;
     max-height: 660px;
+    padding: 2.5em 2.4em 5em;
+    margin-bottom: 5em;
 }
 
 .step {
-    color: var(--grey);
-    font-weight: 500;
-    font-size: 0.9rem;
     margin-bottom: 0.2em;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--grey);
 }
 
 .title {
@@ -45,11 +45,11 @@
 
 .emailInput,
 .passwordInput {
+    padding: 1.4em 1em 0.7em;
     border-radius: 5px;
     background-color: var(--pure-white);
     border: 1px solid var(--light-grey);
     color: var(--grey);
-    padding: 1.4em 1em 0.7em;
     font-weight: 500;
 }
 
@@ -99,8 +99,8 @@
 .error {
     justify-content: flex-start;
     align-items: center;
-    margin-top: 0.5em;
     display: none;
+    margin-top: 0.5em;
 }
 
 .error img {
@@ -115,9 +115,9 @@
 
 .submitBtn {
     width: 100%;
+    padding: 0.7em;
     margin-top: 0.8em;
     border-radius: 5px;
-    padding: 0.7em;
     font-size: var(--size-xm);
     background-color: var(--call-to-action);
     color: var(--pure-white);

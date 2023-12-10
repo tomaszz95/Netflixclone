@@ -8,8 +8,8 @@
 }
 
 .netflixLogo {
-    margin-left: 0.4em;
     width: 160px;
+    margin-left: 0.4em;
 }
 
 .navBox,
@@ -51,8 +51,8 @@
 
 .navigation {
     display: flex;
-    padding: 0.5em;
     height: 100%;
+    padding: 0.5em;
 }
 
 .homeNav {
@@ -81,8 +81,8 @@
 .linksContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
     gap: 0 3em;
+    width: 100%;
 }
 
 .linksContainer .profileLink {
@@ -90,17 +90,17 @@
 }
 
 .searchBox {
-    margin-right: 1em;
     display: flex;
     align-items: center;
+    margin-right: 1em;
 }
 
 .searchInput {
+    width: 120px;
+    padding: 0.3em 0.5em;
     background-color: var(--grey);
     border: 2px solid var(--light-grey);
     color: var(--pure-white);
-    width: 120px;
-    padding: 0.3em 0.5em;
 }
 
 .searchInput::placeholder {
@@ -111,31 +111,31 @@
 .profileBox.active,
 .kidsNav.active {
     position: absolute;
+    top: 70px;
+    left: 180px;
     display: block;
     height: 140px;
     width: 650px;
+    padding: 0.5em;
     background-color: var(--pure-black);
     z-index: 100;
-    top: 70px;
     border-radius: 3px;
-    left: 180px;
     border-top: 3px solid var(--pure-white);
-    padding: 0.5em;
 }
 
 .browseNav.active::before,
 .profileBox.active::before,
 .kidsNav.active::before {
     content: '';
+    position: absolute;
+    top: -15px;
+    left: 20px;
     display: block;
     width: 0;
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-bottom: 13px solid var(--pure-white);
-    position: absolute;
-    top: -15px;
-    left: 20px;
     z-index: 100;
 }
 
@@ -168,11 +168,11 @@
 }
 
 .exitKidsBtn {
-    margin-left: 1.5em;
     width: 100%;
     max-width: 180px;
-    border-radius: 3px;
+    margin-left: 1.5em;
     padding: 0.5em 1.2em;
+    border-radius: 3px;
     font-size: var(--size-xxxs);
     background-color: var(--call-to-action);
     color: var(--pure-white);

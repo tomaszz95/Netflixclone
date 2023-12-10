@@ -1,6 +1,7 @@
-import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
-import RegformView from '../../components/signup/RegformView'
 import SignupLayout from '../../components/layouts/SignupLayout'
+import RegformView from '../../components/signup/RegformView'
+
+import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 
 const RegformPage = () => {
     return (

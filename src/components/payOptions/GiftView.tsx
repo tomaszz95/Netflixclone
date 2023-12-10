@@ -92,7 +92,12 @@ const GiftView = () => {
             <p className={styles.botCheck}>
                 This page is protected by Google reCAPTCHA to ensure you're not a bot.{' '}
                 {!showBotText && (
-                    <button type="button" className={styles.botLink} onClick={showBotTextHandler}>
+                    <button
+                        type="button"
+                        className={styles.botLink}
+                        onClick={showBotTextHandler}
+                        aria-label="Learn more button"
+                    >
                         Learn more
                     </button>
                 )}

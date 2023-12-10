@@ -1,18 +1,22 @@
-import styles from './YourAccountHeader.module.css'
-import Link from 'next/link'
 import { useRef, useState } from 'react'
-import { signOut } from 'firebase/auth'
 import { useDispatch } from 'react-redux'
-import { createCookie, deleteCookie } from '../../helpers/localStorageFunctions'
-import { isLoggedInActions } from '../../store/loggedin'
 import { ThunkDispatch } from '@reduxjs/toolkit'
+import Link from 'next/link'
+
 import EditProfileImage from '../editProfile/EditProfileImage'
 
-import auth from '../../../../firebase'
+import useLogoutHandler from '../../customHooks/useLogoutHandler'
+import { createCookie } from '../../helpers/localStorageFunctions'
+import styles from './YourAccountHeader.module.css'
+
 const YourAccountHeader = () => {
     const [showProfile, setShowProfile] = useState(false)
-    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
     const timerProfileRef = useRef<number | null>(null)
+    const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
+
+    const handleLogout = () => {
+        useLogoutHandler(dispatch)
+    }
 
     const handleProfileMouseEnter = () => {
         if (timerProfileRef.current) {
@@ -26,16 +30,6 @@ const YourAccountHeader = () => {
         timerProfileRef.current = window.setTimeout(() => {
             setShowProfile(false)
         }, 300)
-    }
-
-    const logoutHandler = () => {
-        signOut(auth)
-
-        dispatch(isLoggedInActions.createLoggedCookie('false'))
-        deleteCookie('chosenUser')
-        deleteCookie('signInEmail')
-        deleteCookie('signUpEmail')
-        deleteCookie('startSignUpEmail')
     }
 
     return (
@@ -91,7 +85,7 @@ const YourAccountHeader = () => {
                             </Link>
                         </div>
                         <div className={styles.line}></div>
-                        <Link href="/logout" className={styles.profileLinkOut} onClick={logoutHandler}>
+                        <Link href="/logout" className={styles.profileLinkOut} onClick={handleLogout}>
                             Sign Out of Netflix
                         </Link>
                     </div>

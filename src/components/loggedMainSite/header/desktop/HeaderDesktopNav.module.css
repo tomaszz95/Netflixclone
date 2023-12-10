@@ -4,15 +4,15 @@
 }
 
 .netflixLogo {
-    margin-left: 0.4em;
     width: 160px;
+    margin-left: 0.4em;
 }
 
 .profileLink {
+    margin-right: 1em;
     font-weight: 500;
     color: var(--pure-white);
     transition: color 0.3s;
-    margin-right: 1em;
 }
 
 .profileLink:hover {

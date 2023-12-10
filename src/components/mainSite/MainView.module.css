@@ -15,8 +15,8 @@
 }
 
 .footer {
-    background-color: var(--pure-black);
     padding: 1em;
+    background-color: var(--pure-black);
     display: flex;
     align-items: center;
     justify-content: center;

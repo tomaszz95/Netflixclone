@@ -22,17 +22,17 @@
 }
 
 .notification {
-    display: none;
     position: absolute;
+    top: 60px;
+    left: -330px;
+    display: none;
     width: 400px;
+    padding: 1em;
     background-color: var(--pure-black);
     z-index: 100;
-    top: 60px;
     border-radius: 3px;
-    left: -330px;
     border-top: 3px solid var(--pure-white);
     box-shadow: 0 0 3px 0 var(--pure-white);
-    padding: 1em;
     transition: opacity 0.3s;
 }
 
@@ -48,47 +48,47 @@
 
 .notification::before {
     content: '';
+    position: absolute;
+    top: -12px;
+    left: 350px;
     display: block;
     width: 0;
     height: 0;
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     border-bottom: 11px solid var(--pure-white);
-    position: absolute;
-    top: -12px;
-    left: 350px;
     z-index: 100;
 }
 
 .notificationImageBox {
     height: 63px;
-    position: relative;
     width: 112px;
+    position: relative;
 }
 
 .firstShadow,
 .secondShadow,
 .notificationImageBox img {
+    position: absolute;
+    height: 56px;
+    width: 103px;
     border-radius: 4px;
     box-shadow:
         0 2px 2px 0 rgba(0, 0, 0, 0.24),
         0 0 2px 0 rgba(0, 0, 0, 0.12);
-    height: 56px;
-    position: absolute;
-    width: 103px;
 }
 
 .firstShadow {
-    background-color: rgb(219, 219, 215);
     left: 3px;
     top: 2px;
+    background-color: rgb(219, 219, 215);
     z-index: 2;
 }
 
 .secondShadow {
-    background-color: rgb(194, 194, 190);
     left: 7px;
     top: 5px;
+    background-color: rgb(194, 194, 190);
     z-index: 1;
 }
 
@@ -99,9 +99,9 @@
 }
 
 .notificationContent {
-    margin-left: 1em;
     display: flex;
     flex-direction: column;
+    margin-left: 1em;
 }
 
 .notificationText {
@@ -121,11 +121,11 @@
 }
 
 .navBtn {
+    position: relative;
     display: flex;
     align-items: center;
-    background-color: transparent;
-    position: relative;
     margin-left: 1em;
+    background-color: transparent;
     font-size: var(--size-m);
     color: var(--pure-white);
 }
@@ -159,11 +159,11 @@
 }
 
 .profileBox {
-    display: none;
-    flex-direction: column;
     position: absolute;
     top: 70px;
     left: -70px;
+    display: none;
+    flex-direction: column;
     width: 220px;
     background-color: var(--pure-black);
     z-index: 100;
@@ -180,21 +180,21 @@
 
 .profileBox::before {
     content: '';
+    position: absolute;
+    top: -12px;
+    left: 160px;
     display: block;
     width: 0;
     height: 0;
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     border-bottom: 11px solid var(--pure-white);
-    position: absolute;
-    top: -12px;
-    left: 160px;
     z-index: 100;
 }
 
 .notificationImageBox {
-    height: 63px;
     position: relative;
+    height: 63px;
     width: 112px;
 }
 
@@ -204,9 +204,9 @@
 }
 
 .profileBoxFlex {
-    padding: 0.2em 1em;
     display: flex;
     align-items: center;
+    padding: 0.2em 1em;
     cursor: pointer;
 }
 
@@ -221,9 +221,9 @@
 
 .profileLink,
 .profileLinkOut {
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--pure-white);
-    font-size: 0.85rem;
 }
 
 .profileBoxFlex:hover .profileLink,
@@ -232,37 +232,37 @@
 }
 
 .profileBoxFlexIcon {
-    transform: scale(0.65);
     margin-right: 1.4em;
+    transform: scale(0.65);
 }
 
 .line {
-    margin: 0.5em 0;
     display: block;
-    width: 100%;
     height: 1px;
+    width: 100%;
+    margin: 0.5em 0;
     background-color: var(--light-grey);
 }
 
 .profileLinkOut:last-child {
     align-self: center;
-    font-weight: 700;
-    font-size: 0.9rem;
     padding: 0.5em 0 1em;
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
 .kidsLink img {
-    margin-left: 1em;
     width: 40px;
     height: 40px;
+    margin-left: 1em;
 }
 
 .exitKidsBtn {
-    margin-left: 0.5em;
     width: 100%;
     max-width: 180px;
-    border-radius: 3px;
+    margin-left: 0.5em;
     padding: 0.5em 1.2em;
+    border-radius: 3px;
     font-size: var(--size-xxxs);
     background-color: var(--call-to-action);
     color: var(--pure-white);

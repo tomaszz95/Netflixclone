@@ -1,10 +1,11 @@
-import Link from 'next/link'
 import { useState } from 'react'
+import Link from 'next/link'
 import Router from 'next/router'
 
-import styles from './HeaderTabletsView.module.css'
 import HeaderTabletsNav from './HeaderTabletsNav'
 import HeaderTabletsProfile from './HeaderTabletsProfile'
+
+import styles from './HeaderTabletsView.module.css'
 
 type ComponentType = {
     chosenUser: string

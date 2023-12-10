@@ -1,16 +1,18 @@
-import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
-import { fetchedMainWholeObj } from '../../components/helpers/types'
+
 import { getAllKidsAPIFetchedData } from '../api/fetchMainSitesApiData'
+import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
+import { fetchedMainWholeObj } from '../../components/helpers/types'
+import WithoutAuth from '../../components/layouts/WithoutAuth'
 
 type ComponentType = {
     fetchedData: fetchedMainWholeObj
 }
 
 const KidsPage: React.FC<ComponentType> = ({ fetchedData }) => {
-
     return (
         <ReactProviderCookiesData>
+            <WithoutAuth />
             <LoggedMainSiteView fetchedData={fetchedData} />
         </ReactProviderCookiesData>
     )

@@ -7,10 +7,10 @@
 }
 
 .title {
+    margin-bottom: 0.6em;
     font-weight: 400;
     font-size: var(--size-m);
     color: var(--light-grey);
-    margin-bottom: 0.6em;
 }
 
 .linkBox {
@@ -18,11 +18,11 @@
 }
 
 .memberLink {
-    margin: 0.8em 0;
-    padding: 1em 0 0.4em;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0.8em 0;
+    padding: 1em 0 0.4em;
     border-top: 1px solid var(--light-grey);
 }
 
@@ -32,21 +32,21 @@
 
 @media (min-width: 786px) {
     .section {
-        margin: 0.5em 0 3em;
-        border: none;
-        min-width: 650px;
-        background-color: transparent;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        min-width: 650px;
+        margin: 0.5em 0 3em;
         padding: 0 0 0.8em;
+        border: none;
+        background-color: transparent;
     }
 
     .title {
         width: 30%;
+        margin-top: 0.5em;
         align-self: flex-start;
         font-size: var(--size-xm);
-        margin-top: 0.5em;
     }
 
     .text {
@@ -57,8 +57,8 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        border-top: none;
         padding: 0;
+        border-top: none;
     }
 
     .memberLink p {

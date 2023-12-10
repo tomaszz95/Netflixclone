@@ -1,9 +1,12 @@
+import { useEffect, useState } from 'react'
+
+import SingleGenreView from '../../components/singleGenre/SingleGenreView'
+
+import getGenreData from '../api/fetchSingleGenreData'
 import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 import { fetchedMainSingleObj } from '../../components/helpers/types'
 import { allFetchedGenres } from '../../components/helpers/siteText'
-import SingleGenreView from '../../components/singleGenre/SingleGenreView'
-import getGenreData from '../api/fetchSingleGenreData'
-import { useEffect, useState } from 'react'
+import WithoutAuth from '../../components/layouts/WithoutAuth'
 
 type ComponentType = {
     fetchedData: fetchedMainSingleObj[]
@@ -19,6 +22,7 @@ const SingleGenrePage: React.FC<ComponentType> = ({ fetchedData }) => {
 
     return (
         <ReactProviderCookiesData>
+            <WithoutAuth />
             <SingleGenreView fetchedData={sortedData} />
         </ReactProviderCookiesData>
     )

@@ -7,19 +7,19 @@
 }
 
 .main {
-    background-color: var(--light-black);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--light-black);
     width: 100%;
     overflow: hidden;
 }
 
 .footer {
-    background-color: var(--light-black);
-    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1em;
+    background-color: var(--light-black);
 }

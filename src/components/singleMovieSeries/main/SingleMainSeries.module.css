@@ -1,32 +1,32 @@
 .seriesSection {
     width: 100%;
-    border-bottom: none;
     padding: 1.5em 1.5em 1em;
+    border-bottom: none;
 }
 
 .title {
+    margin-bottom: 0.6em;
     color: var(--dark-grey);
     font-weight: 600;
-    margin-bottom: 0.6em;
 }
 
 .seasonBoxTitle {
+    margin: 0.8em 0 0.2em;
     font-size: var(--size-m);
     color: var(--light-grey);
     font-weight: 500;
-    margin: 0.8em 0 0.2em;
 }
 
 .seasonBoxAirDate {
+    margin-bottom: 0.4em;
     font-size: var(--size-xxxs);
     color: var(--light-grey);
     font-weight: 500;
-    margin-bottom: 0.4em;
 }
 
 .seasonBoxOverview {
-    color: var(--dark-grey);
     margin-bottom: 1em;
+    color: var(--dark-grey);
 }
 
 .episodesBox {
@@ -35,10 +35,10 @@
 }
 
 .singleEpisode {
-    margin-top: 1em;
-    padding: 0.5em;
     display: flex;
     align-items: center;
+    margin-top: 1em;
+    padding: 0.5em;
 }
 
 .singleEpisodeImg {
@@ -48,19 +48,19 @@
 }
 
 .singleEpisodeText {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
     padding: 0.5em;
 }
 
 .singleEpisodeNumer,
 .singleEpisodeDuration {
+    margin-bottom: 0.6em;
     font-size: var(--size-xxxs);
     color: var(--dark-grey);
     font-weight: 600;
-    margin-bottom: 0.6em;
 }
 
 .singleEpisodeOverview {
@@ -76,13 +76,13 @@
 
 @media (min-width: 786px) {
     .title {
-        font-size: var(--size-xxm);
         margin-bottom: 0.6em;
+        font-size: var(--size-xxm);
     }
 
     .seasonBoxTitle {
-        font-size: var(--size-xm);
         margin: 1em 0 0.2em;
+        font-size: var(--size-xm);
     }
 
     .episodesBox {
@@ -103,15 +103,15 @@
     }
 
     .singleEpisodeText {
+        max-width: 200px;
         margin-top: 0.5em;
         padding: 0;
-        max-width: 200px;
     }
 
     .singleEpisodeNumer,
     .singleEpisodeDuration {
-        font-size: 1.1rem;
         margin-bottom: 0.6em;
+        font-size: 1.1rem;
     }
 
     .singleEpisodeOverview {

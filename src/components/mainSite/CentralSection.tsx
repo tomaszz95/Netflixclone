@@ -6,9 +6,7 @@ type ComponentType = { sectionCount: string }
 
 const CentralSection: React.FC<ComponentType> = ({ sectionCount }) => {
     const section = mainSiteSectionData[sectionCount]
-    let insideBox
-    let boxClass
-    let imgClass
+    let insideBox, boxClass, imgClass
 
     if (sectionCount === '1') {
         insideBox = (

@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
-import ReactProviderCookiesData from '../../../../components/helpers/ReactProviderCookiesData'
-import WithoutAuth from '../../../../components/layouts/WithoutAuth'
 import SingleProfileManage from '../../../../components/profile/editProfile/SingleProfileManage'
+
+import WithoutAuth from '../../../../components/layouts/WithoutAuth'
+import ReactProviderCookiesData from '../../../../components/helpers/ReactProviderCookiesData'
 
 const ManageProfileSite = () => {
     const [queryRouter, setQueryRouter] = useState('')

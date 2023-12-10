@@ -75,6 +75,7 @@ const MembershipBox: React.FC<ComponentType> = ({ isNumberVerify, userEmail }) =
                     cancelMembership()
                     Router.push('/profilgate')
                 }}
+                aria-label="Cancel membership button"
             >
                 Cancel Membership
             </button>

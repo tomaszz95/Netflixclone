@@ -7,12 +7,12 @@
 }
 
 .container {
-    max-width: 1600px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
+    max-width: 1600px;
     color: var(--pure-white);
 }
 
@@ -21,14 +21,14 @@
 }
 
 .sectionBox h2 {
-    font-size: var(--size-xxxm);
     margin-bottom: 0.6em;
     font-weight: 900;
+    font-size: var(--size-xxxm);
 }
 
 .sectionBox p {
-    font-size: 1.15em;
     margin-bottom: 1em;
+    font-size: 1.15em;
 }
 
 .imageBox {
@@ -57,10 +57,10 @@
 }
 
 .stranger {
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
@@ -155,8 +155,8 @@
     }
 
     .sectionBox {
-        margin-bottom: 0;
         padding: 1em 2em 1em 1em;
+        margin-bottom: 0;
         width: 50%;
     }
 
@@ -192,8 +192,8 @@
     }
 
     .sectionBox h2 {
-        font-size: var(--size-xvl);
         margin-bottom: 0.4em;
+        font-size: var(--size-xvl);
     }
 
     .sectionBox p {

@@ -19,6 +19,7 @@ const MoreInfoAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 0 ? 'accordionItemFocus' : ''}`}
                     onClick={() => openCookieText(0)}
+                    aria-label="Open for more info about general description"
                 >
                     General description
                 </button>
@@ -65,6 +66,7 @@ const MoreInfoAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 1 ? 'accordionItemFocus' : ''}`}
                     onClick={() => openCookieText(1)}
+                    aria-label="Open for more info about necessary cookies"
                 >
                     Necessary cookies
                 </button>
@@ -89,6 +91,7 @@ const MoreInfoAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 2 ? 'accordionItemFocus' : ''}`}
                     onClick={() => openCookieText(2)}
+                    aria-label="Open for more info about our analytical and functional cookies"
                 >
                     Our analytical and functional cookies
                 </button>
@@ -115,6 +118,7 @@ const MoreInfoAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 3 ? 'accordionItemFocus' : ''}`}
                     onClick={() => openCookieText(3)}
+                    aria-label="Open for more info about analytical and third-party functional cookies"
                 >
                     Analytical and third-party functional cookies
                 </button>
@@ -134,6 +138,7 @@ const MoreInfoAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 4 ? 'accordionItemFocus' : ''}`}
                     onClick={() => openCookieText(4)}
+                    aria-label="Open for more info about advertising cookies"
                 >
                     Advertising cookies
                 </button>

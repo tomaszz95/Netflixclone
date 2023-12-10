@@ -1,11 +1,12 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
-import styles from './HeaderMobileView.module.css'
 import HeaderMobileBurgerNav from './HeaderMobileBurgerNav'
 import HeaderMobileProfile from './HeaderMobileProfile'
+
 import useSearchInput from '../../../customHooks/useSearchInput'
+import styles from './HeaderMobileView.module.css'
 
 type ComponentType = {
     chosenUser: string
@@ -30,7 +31,7 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser, query }) => {
             setIsNavVisible(false)
         }
     }
-    console.log(router.pathname)
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.content}>

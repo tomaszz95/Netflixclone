@@ -1,13 +1,12 @@
-import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
+import Link from 'next/link'
+
 import EditProfileImage from '../../../profile/editProfile/EditProfileImage'
-import { useState, useEffect } from 'react'
+import useLogoutHandler from '../../../customHooks/useLogoutHandler'
+
 import styles from './HeaderMobileProfile.module.css'
-import auth from '../../../../../firebase'
-import { signOut } from 'firebase/auth'
-import { isLoggedInActions } from '../../../store/loggedin'
-import { deleteCookie } from '../../../helpers/localStorageFunctions'
 
 type ComponentType = {
     chosenUser: string
@@ -17,14 +16,8 @@ const HeaderMobileProfile: React.FC<ComponentType> = ({ chosenUser }) => {
     const [chosenUserState, setChosenUserState] = useState('')
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
-    const logoutHandler = () => {
-        signOut(auth)
-
-        dispatch(isLoggedInActions.createLoggedCookie('false'))
-        deleteCookie('chosenUser')
-        deleteCookie('signInEmail')
-        deleteCookie('signUpEmail')
-        deleteCookie('startSignUpEmail')
+    const handleLogout = () => {
+        useLogoutHandler(dispatch)
     }
 
     useEffect(() => {
@@ -51,7 +44,7 @@ const HeaderMobileProfile: React.FC<ComponentType> = ({ chosenUser }) => {
                 <Link href="#" className={styles.profileLink}>
                     Help Center
                 </Link>
-                <Link href="/logout" className={styles.profileLink} onClick={logoutHandler}>
+                <Link href="/logout" className={styles.profileLink} onClick={handleLogout}>
                     Sign Out of Netflix
                 </Link>
             </div>

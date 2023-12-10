@@ -1,14 +1,13 @@
-import styles from './HeaderDesktopProfile.module.css'
-
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import { useState, useRef } from 'react'
+
 import EditProfileImage from '../../../profile/editProfile/EditProfileImage'
-import auth from '../../../../../firebase'
-import { signOut } from 'firebase/auth'
-import { isLoggedInActions } from '../../../store/loggedin'
-import { deleteCookie, createCookie } from '../../../helpers/localStorageFunctions'
+
+import { createCookie } from '../../../helpers/localStorageFunctions'
+import useLogoutHandler from '../../../customHooks/useLogoutHandler'
+import styles from './HeaderDesktopProfile.module.css'
 
 type ComponentType = {
     chosenUser: string
@@ -53,14 +52,8 @@ const HeaderDesktopProfile: React.FC<ComponentType> = ({ chosenUser }) => {
         }, 300)
     }
 
-    const logoutHandler = () => {
-        signOut(auth)
-
-        dispatch(isLoggedInActions.createLoggedCookie('false'))
-        deleteCookie('chosenUser')
-        deleteCookie('signInEmail')
-        deleteCookie('signUpEmail')
-        deleteCookie('startSignUpEmail')
+    const handleLogout = () => {
+        useLogoutHandler(dispatch)
     }
 
     return (
@@ -164,7 +157,7 @@ const HeaderDesktopProfile: React.FC<ComponentType> = ({ chosenUser }) => {
                             </Link>
                         </div>
                         <div className={styles.line}></div>
-                        <Link href="/logout" className={styles.profileLinkOut} onClick={logoutHandler}>
+                        <Link href="/logout" className={styles.profileLinkOut} onClick={handleLogout}>
                             Sign Out of Netflix
                         </Link>
                     </div>

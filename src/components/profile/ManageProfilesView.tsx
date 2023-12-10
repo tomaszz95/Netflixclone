@@ -1,6 +1,6 @@
+import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import Router from 'next/router'
-import { useSelector } from 'react-redux'
 
 import styles from './ManageProfilesView.module.css'
 
@@ -58,7 +58,7 @@ const ManageProfilesView = () => {
             )}
             <button
                 type="submit"
-                aria-label="Manage profiles"
+                aria-label="Done manage profile"
                 className={styles.submitBtn}
                 onClick={() => Router.push('/profilgate')}
             >

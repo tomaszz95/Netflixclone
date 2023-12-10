@@ -11,6 +11,7 @@ const PaypalView = () => {
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
     const submitClick = () => {
         Router.push(`/simpleSetup/orderfinal`)
+
         dispatch(paymentActions.changePaymentValue({ name: 'userPaid', value: true }))
     }
 

@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
-import { fetchedMainSingleObj } from '../helpers/types'
+
+import MainViewGenreSection from './MainViewGenreSection'
 import LoggedFooterSections from '../loggedMainSite/footer/LoggedFooterSection'
 import HeaderLoggedSection from '../loggedMainSite/header/HeaderLoggedSection'
-import MainViewGenreSection from './MainViewGenreSection'
+
+import { fetchedMainSingleObj } from '../helpers/types'
 import styles from './SingleGenreView.module.css'
 
 type ComponentType = {

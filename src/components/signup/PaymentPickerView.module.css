@@ -1,11 +1,11 @@
 .container {
-    width: 100%;
-    max-width: 700px;
-    padding: 1.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    width: 100%;
+    max-width: 700px;
+    padding: 1.5em;
 }
 
 .lockIcon {
@@ -13,11 +13,10 @@
 }
 
 .step {
-    margin-top: 1.4em;
+    margin: 1.4em 0 0.4em;
+    font-size: 0.87rem;
     color: var(--grey);
     font-weight: 500;
-    font-size: 0.87rem;
-    margin-bottom: 0.4em;
 }
 
 .title {
@@ -40,12 +39,12 @@
 }
 
 .encryptedBox {
-    margin-top: 1.5em;
-    font-size: 0.875rem;
-    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    width: 100%;
+    margin-top: 1.5em;
+    font-size: 0.875rem;
 }
 
 .encrypted {
@@ -81,9 +80,9 @@
 }
 
 .buttonIcon {
+    margin-left: 2em;
     font-size: 1.5rem;
     font-weight: 600;
-    margin-left: 2em;
 }
 
 @media (min-width: 786px) {
@@ -106,8 +105,8 @@
 
     .text,
     .textBold {
-        text-align: center;
         padding: 0 4em;
+        text-align: center;
         font-size: var(--size-m);
     }
 

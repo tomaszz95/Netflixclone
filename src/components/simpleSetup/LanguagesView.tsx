@@ -22,6 +22,7 @@ const LanguagesView = () => {
 
     const submitData = () => {
         dispatch(paymentActions.changePaymentValue({ name: 'selectedLanguages', value: selectedLanguages }))
+        
         Router.push('/simpleSetup/choosemovies')
     }
 

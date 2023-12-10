@@ -13,7 +13,7 @@ export const getGenreTrendingPopularTopData = async (id: string) => {
             }
         })
         .filter(Boolean)
-    console.log(links)
+
     if (links[0]?.link1.includes('/movie')) {
         try {
             const response1 = await fetch(links[0].link1, getOptions)
@@ -78,7 +78,7 @@ export const getGenreByIdData = async (id: string) => {
         )
         const responseMoviesData2 = await responseMovies2.json()
         const fixedDataMovies2 = moviesDataFunc(responseMoviesData2)
-        console.log(fixedDataMovies1, fixedDataMovies2)
+
         return [...fixedDataMovies1, ...fixedDataMovies2]
     } else if (isSeriesGenre) {
         const responseSeries1 = await fetch(

@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
-import { fetchedMainSingleObj } from '../../../components/helpers/types'
-import ReactProviderCookiesData from '../../../components/helpers/ReactProviderCookiesData'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
-import SearchPageView from '../../../components/search/SearchPageView'
-import { searchByInput } from '../../api/searchByInput'
-import _ from 'lodash'
 import { useRouter } from 'next/router'
+import _ from 'lodash'
+
+import SearchPageView from '../../../components/search/SearchPageView'
+
+import { searchByInput } from '../../api/searchByInput'
 import { pathnameActions } from '../../../components/store/pathname'
 import { getCookie } from '../../../components/helpers/localStorageFunctions'
+import { fetchedMainSingleObj } from '../../../components/helpers/types'
+import ReactProviderCookiesData from '../../../components/helpers/ReactProviderCookiesData'
+import WithoutAuth from '../../../components/layouts/WithoutAuth'
 
 const SearchPage = () => {
     const router = useRouter()
@@ -60,6 +63,7 @@ const SearchPage = () => {
 
     return (
         <ReactProviderCookiesData>
+            <WithoutAuth />
             <SearchPageView fetchedData={searchedData} />
         </ReactProviderCookiesData>
     )

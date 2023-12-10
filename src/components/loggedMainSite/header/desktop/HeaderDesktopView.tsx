@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import useSearchInput from '../../../customHooks/useSearchInput'
+
 import HeaderDesktopNav from './HeaderDesktopNav'
 import HeaderDesktopProfile from './HeaderDesktopProfile'
+
+import useSearchInput from '../../../customHooks/useSearchInput'
 import styles from './HeaderDesktopView.module.css'
 
 type ComponentType = {

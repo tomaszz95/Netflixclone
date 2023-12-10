@@ -11,7 +11,12 @@ const ModalMoreInfo: React.FC<ComponentType> = ({ onCloseMoreInfo, onAcceptCooki
             <MoreInfoHeader onCloseMoreInfo={onCloseMoreInfo} />
             <MoreInfoAccordion />
             <div className={styles.buttonBox}>
-                <button type="button" onClick={onAcceptCookies} className={styles.saveBtn}>
+                <button
+                    type="button"
+                    onClick={onAcceptCookies}
+                    className={styles.saveBtn}
+                    aria-label="Click to save settings"
+                >
                     Save settings
                 </button>
             </div>

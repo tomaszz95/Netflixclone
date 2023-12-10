@@ -1,13 +1,13 @@
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import Image from 'next/image'
 import Link from 'next/link'
 import Router from 'next/router'
-import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
 
-import ReactProviderCookiesData from '../helpers/ReactProviderCookiesData'
 import LoginFooter from '../login/LoginFooter'
 
+import ReactProviderCookiesData from '../helpers/ReactProviderCookiesData'
 import styles from './LogLayout.module.css'
 
 type ChildrenLayoutType = {
@@ -41,7 +41,6 @@ const LogLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
                                 alt="Netflix Logo"
                                 width="100"
                                 height="40"
-                                priority={true}
                             />
                         </Link>
                         {isLoginPage ? (

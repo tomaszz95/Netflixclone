@@ -1,5 +1,6 @@
-import Router from 'next/router'
 import { useEffect } from 'react'
+import Router from 'next/router'
+
 import styles from './LogoutView.module.css'
 
 const LogoutView = () => {

@@ -10,14 +10,14 @@
 }
 
 .genreLink {
-    margin-bottom: 0.4em;
     width: 100%;
+    margin-bottom: 0.4em;
 }
 
 .genreLink .profileLink {
+    width: 100%;
     padding: 0.5em 1em;
     border-left: 2px solid transparent;
-    width: 100%;
 }
 
 .profileLink.chosenLink {

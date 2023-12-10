@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-import styles from './HeaderMobileBurgerNav.module.css'
 import { navigationBrowseLinks, navigationKidsLinks } from '../../../helpers/siteText'
+import styles from './HeaderMobileBurgerNav.module.css'
 
 type ComponentType = {
     chosenUser: string

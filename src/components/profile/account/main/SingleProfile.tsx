@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { capitalizeFirstLetter } from '../../../helpers/helpersFunctions'
+
 import EditProfileImage from '../../editProfile/EditProfileImage'
-import styles from './SingleProfile.module.css'
 import SingleProfileMoreInfo from './SingleProfileMoreInfo'
+
+import { capitalizeFirstLetter } from '../../../helpers/helpersFunctions'
 import { singleProfileMoreInfoTexts, singleProfileKidsMoreInfoTexts } from '../../../helpers/siteText'
+import styles from './SingleProfile.module.css'
 
 type ComponentType = {
     profilName: string

@@ -24,6 +24,7 @@ const DeviceSurveyView = () => {
 
     const submitData = () => {
         dispatch(paymentActions.changePaymentValue({ name: 'selectedDevices', value: selectedDevice }))
+        
         Router.push('/simpleSetup/newprofiles')
     }
 

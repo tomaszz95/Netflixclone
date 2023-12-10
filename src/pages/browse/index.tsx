@@ -1,8 +1,9 @@
-import { fetchedMainWholeObj } from '../../components/helpers/types'
-
-import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
+
 import { getAllAPIFetchedData } from '../api/fetchMainSitesApiData'
+import { fetchedMainWholeObj } from '../../components/helpers/types'
+import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
+import WithoutAuth from '../../components/layouts/WithoutAuth'
 
 type ComponentType = {
     fetchedData: fetchedMainWholeObj
@@ -11,6 +12,7 @@ type ComponentType = {
 const BrowsePage: React.FC<ComponentType> = ({ fetchedData }) => {
     return (
         <ReactProviderCookiesData>
+            <WithoutAuth />
             <LoggedMainSiteView fetchedData={fetchedData} />
         </ReactProviderCookiesData>
     )

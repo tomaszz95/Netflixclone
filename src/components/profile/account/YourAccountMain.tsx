@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { verifyNumber } from '../../helpers/dummyActionFunctions'
-import { getCurrentMonth } from '../../helpers/helpersFunctions'
+
 import MembershipBox from './main/MembershipBox'
 import PlanDetails from './main/PlanDetails'
 import SecurityBox from './main/SecurityBox'
 import SettingsBox from './main/SettingsBox'
 import SingleProfile from './main/SingleProfile'
 import VerifyBox from './main/VerifyBox'
+
+import { getCurrentMonth } from '../../helpers/helpersFunctions'
+import { verifyNumber } from '../../helpers/dummyActionFunctions'
 import styles from './YourAccountMain.module.css'
 
 const YourAccountMain = () => {

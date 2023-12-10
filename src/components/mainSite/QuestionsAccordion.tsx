@@ -18,6 +18,7 @@ const QuestionsAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 1 ? 'openQuestionText' : ''}`}
                     onClick={() => openCookieText(1)}
+                    aria-label="More info about what is Netflix"
                 >
                     What is Netflix?
                     <span className={styles.accordionIcon}>
@@ -48,6 +49,7 @@ const QuestionsAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 2 ? 'openQuestionText' : ''}`}
                     onClick={() => openCookieText(2)}
+                    aria-label="More info about how much does Netflix cost"
                 >
                     How much does Netflix cost?
                     <span className={styles.accordionIcon}>
@@ -70,6 +72,7 @@ const QuestionsAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 3 ? 'openQuestionText' : ''}`}
                     onClick={() => openCookieText(3)}
+                    aria-label="More info about where can i watch"
                 >
                     Where can i watch?
                     <span className={styles.accordionIcon}>
@@ -102,6 +105,7 @@ const QuestionsAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 4 ? 'openQuestionText' : ''}`}
                     onClick={() => openCookieText(4)}
+                    aria-label="More info about how do I cancel"
                 >
                     How do I cancel?
                     <span className={styles.accordionIcon}>
@@ -125,6 +129,7 @@ const QuestionsAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 5 ? 'openQuestionText' : ''}`}
                     onClick={() => openCookieText(5)}
+                    aria-label="More info about what can I watch on Netflix"
                 >
                     What can I watch on Netflix?
                     <span className={styles.accordionIcon}>
@@ -147,6 +152,7 @@ const QuestionsAccordion = () => {
                 <button
                     className={`${styles.accordionItem} ${activeAccordion === 6 ? 'openQuestionText' : ''}`}
                     onClick={() => openCookieText(6)}
+                    aria-label="More info about is Netflix good for kids"
                 >
                     Is Netflix good for kids?
                     <span className={styles.accordionIcon}>

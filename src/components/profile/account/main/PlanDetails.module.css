@@ -13,16 +13,16 @@
 }
 
 .planBox {
-    margin-top: 0.6em;
     display: flex;
     align-items: center;
+    margin-top: 0.6em;
     padding-bottom: 0.5em;
     border-bottom: 1px solid var(--dark-grey);
 }
 
 .planBox span {
-    font-weight: 600;
     margin-right: 0.8em;
+    font-weight: 600;
 }
 
 .planBox img {
@@ -31,10 +31,10 @@
 }
 
 .memberLink {
-    margin: 0.8em 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0.8em 0;
 }
 
 .memberLink:hover p {
@@ -43,16 +43,16 @@
 
 @media (min-width: 786px) {
     .section {
-        margin: 0;
-        border: none;
-        min-width: 650px;
-        border-bottom: 1px solid var(--light-grey);
-        background-color: transparent;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
+        min-width: 650px;
         padding: 0 0 0.8em;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid var(--light-grey);
+        background-color: transparent;
+        flex-wrap: wrap;
     }
 
     .title {
@@ -67,8 +67,8 @@
     }
 
     .planBox span {
-        font-size: 1.1rem;
         margin-right: 1em;
+        font-size: 1.1rem;
     }
 
     .planBox img {
@@ -104,9 +104,9 @@
     }
 
     .planBox {
+        width: 61%;
         margin-top: 1em;
         border-bottom: none;
-        width: 61%;
     }
 
     .planBox img {

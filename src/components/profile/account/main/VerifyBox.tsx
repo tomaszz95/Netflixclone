@@ -13,7 +13,7 @@ const VerifyBox: React.FC<ComponentType> = ({ verifyNumberHandler }) => {
                 <p className={styles.verifyBoxTextContent}>
                     Verifying your phone number enhances security and can help you access and recover your account.
                 </p>
-                <button onClick={verifyNumberHandler} className={styles.verifiBoxTextButton}>
+                <button onClick={verifyNumberHandler} className={styles.verifiBoxTextButton} aria-label='Verify telephone number'>
                     Verify now.
                 </button>
             </div>
