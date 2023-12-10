@@ -35,10 +35,10 @@
 }
 
 .titleExtra {
+    margin-bottom: 0.6em;
     font-weight: 400;
     font-size: var(--size-m);
     color: var(--light-grey);
-    margin-bottom: 0.6em;
 }
 
 .textExtra {
@@ -47,12 +47,12 @@
 
 @media (min-width: 786px) {
     .sectionExtra {
-        margin: 0.5em;
-        border: none;
         min-width: 650px;
+        margin: 0.5em;
+        padding: 0 0 1.2em;
+        border: none;
         border-bottom: 1px solid var(--light-grey);
         background-color: transparent;
-        padding: 0 0 1.2em;
     }
 
     .titleExtra {
@@ -68,8 +68,8 @@
 
 @media (min-width: 1200px) {
     .title {
-        font-size: var(--size-l);
         margin-bottom: 0.5em;
+        font-size: var(--size-l);
     }
 
     .dateBox img {

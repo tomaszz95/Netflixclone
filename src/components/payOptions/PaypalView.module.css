@@ -33,8 +33,8 @@
     align-items: center;
     width: 100%;
     margin-top: 0.8em;
-    border-radius: 5px;
     padding: 0.6em;
+    border-radius: 5px;
     font-size: var(--size-xm);
     background-color: var(--call-to-action);
     color: var(--pure-white);

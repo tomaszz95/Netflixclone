@@ -1,7 +1,7 @@
 .maturityBoxSpan {
     display: block;
-    color: var(--dark-grey);
     margin-bottom: 0.8em;
+    color: var(--dark-grey);
 }
 
 .maturityBoxItem {
@@ -14,16 +14,16 @@
 }
 
 .maturityBoxText {
-    font-size: 0.8rem;
     margin: 1.4em 0;
+    font-size: 0.8rem;
 }
 
 .button {
-    margin: 0.2em 0 0.6em;
     width: 100%;
     max-width: 85px;
-    border-radius: 3px;
     padding: 0.5em 0.6em;
+    margin: 0.2em 0 0.6em;
+    border-radius: 3px;
     font-size: 0.9rem;
     background-color: transparent;
     color: var(--light-grey);
@@ -50,8 +50,8 @@
     }
 
     .maturityBoxText {
-        font-size: 0.9rem;
         margin: 1.4em 0 1em;
+        font-size: 0.9rem;
     }
 
     .button {

@@ -1,9 +1,10 @@
 import Link from 'next/link'
+import Slider from 'react-slick'
+import CarouselItem from './CarouselItem'
+
+import { carouselSettings, getCategoryLink } from '../../helpers/carouselSettings'
 import { fetchedMainSingleObj } from '../../helpers/types'
 import styles from './SingleMainCarousel.module.css'
-import Slider from 'react-slick'
-import { carouselSettings, getCategoryLink } from '../../helpers/carouselSettings'
-import CarouselItem from './CarouselItem'
 
 type ComponentType = {
     category: string

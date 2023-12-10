@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import { inputsLanguagesData } from '../../helpers/siteText'
+
 import AutoplaysSection from './AutoplaysSection'
-import styles from './EditProfileForm.module.css'
 import MaturitySection from './MaturitySection'
+
+import { setGamingAccount } from '../../helpers/dummyActionFunctions'
+import { inputsLanguagesData } from '../../helpers/siteText'
+import styles from './EditProfileForm.module.css'
 
 type ComponentType = {
     formData: {
@@ -26,7 +29,7 @@ const EditProfileForm: React.FC<ComponentType> = ({ formData, onInputChange }) =
 
     const gameInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setGameName(e.target.value)
-        console.log('Should do something with this name.. Omitted in the demo version')
+        setGamingAccount()
     }
 
     return (

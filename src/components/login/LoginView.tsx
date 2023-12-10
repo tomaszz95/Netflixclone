@@ -5,7 +5,6 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 import Router from 'next/router'
 
 import auth from '../../../firebase'
-
 import { isLoggedInActions } from '../store/loggedin'
 import { loginEmailsActions } from '../store/login-emails'
 import LoginFormHelpers from './LoginFormHelpers'

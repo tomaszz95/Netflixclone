@@ -23,20 +23,20 @@
 
 .select {
     margin-right: 1em;
-    background-color: var(--light-black);
-    color: var(--pure-white);
     padding: 0.5em;
     border-radius: 5px;
+    background-color: var(--light-black);
+    color: var(--pure-white);
 }
 
 .signBtn {
-    border-radius: 5px;
     padding: 0.5em 1em;
     font-size: 0.85rem;
-    background-color: var(--call-to-action);
-    color: var(--pure-white);
+    border-radius: 5px;
     letter-spacing: 0.5px;
     font-weight: 500;
+    background-color: var(--call-to-action);
+    color: var(--pure-white);
     transition: background-color 0.3s;
     text-decoration: none;
 }

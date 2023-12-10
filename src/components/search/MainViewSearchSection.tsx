@@ -1,7 +1,9 @@
-import { fetchedMainSingleObj } from '../helpers/types'
 import { useRouter } from 'next/router'
-import styles from './MainViewSearchSection.module.css'
+
 import CarouselItem from '../loggedMainSite/main/CarouselItem'
+
+import { fetchedMainSingleObj } from '../helpers/types'
+import styles from './MainViewSearchSection.module.css'
 
 type ComponentType = {
     fetchedData: fetchedMainSingleObj[]

@@ -1,10 +1,11 @@
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
-import { heroMoviesFetchedData } from '../../helpers/types'
-import styles from './HeroLoggedSection.module.css'
+
 import getHeroHandler from '../../../pages/api/fetchHeroApiData'
 import { getCookie } from '../../helpers/localStorageFunctions'
 import { limitTextToTwoSentences } from '../../helpers/helpersFunctions'
+import { heroMoviesFetchedData } from '../../helpers/types'
+import styles from './HeroLoggedSection.module.css'
 
 const HeroLoggedSection = () => {
     const [seriesSingleData, setSeriesSingleData] = useState<heroMoviesFetchedData>({

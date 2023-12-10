@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import { useRouter } from 'next/router'
-import { pathnameActions } from '../store/pathname'
-import { fetchedMainWholeObj } from '../helpers/types'
+
+import MainViewLoggedSection from './main/MainViewLoggedSection'
 import HeaderLoggedSection from './header/HeaderLoggedSection'
 import HeroLoggedSection from './header/HeroLoggedSection'
 import LoggedFooterSections from './footer/LoggedFooterSection'
+
+import { pathnameActions } from '../store/pathname'
+import { fetchedMainWholeObj } from '../helpers/types'
 import styles from './LoggedMainSiteView.module.css'
-import MainViewLoggedSection from './main/MainViewLoggedSection'
 
 type ComponentType = {
     fetchedData: fetchedMainWholeObj

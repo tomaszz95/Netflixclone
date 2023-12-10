@@ -5,6 +5,19 @@ export type sectionMainData = {
     video?: string
 }
 
+export type initialPaymentType = {
+    userEmail: null | string
+    userSubscriptionType: null | string
+    userPaid: boolean
+    howToPay: string
+    selectedDevices: string[]
+    selectedLanguages: string[]
+    selectedNames: string[]
+    selectedMovies: string[]
+    isFullySet: boolean
+}
+
+
 export type sectionMainDataObj = {
     [key: string]: sectionMainData
 }

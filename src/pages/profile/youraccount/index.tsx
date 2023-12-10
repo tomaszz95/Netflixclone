@@ -1,6 +1,7 @@
+import YourAccountView from '../../../components/profile/account/YourAccountView'
+
 import ReactProviderCookiesData from '../../../components/helpers/ReactProviderCookiesData'
 import WithoutAuth from '../../../components/layouts/WithoutAuth'
-import YourAccountView from '../../../components/profile/account/YourAccountView'
 
 const AccountSite = () => {
     return (

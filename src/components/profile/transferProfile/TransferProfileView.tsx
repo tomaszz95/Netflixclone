@@ -1,23 +1,17 @@
-import styles from './TransferProfileView.module.css'
-import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
-import { signOut } from 'firebase/auth'
-import auth from '../../../../firebase'
-import { isLoggedInActions } from '../../store/loggedin'
-import { deleteCookie } from '../../helpers/localStorageFunctions'
+import Link from 'next/link'
+
+import useLogoutHandler from '../../customHooks/useLogoutHandler'
 import TransferProfileMain from './TransferProfileMain'
+
+import styles from './TransferProfileView.module.css'
 
 const TransferProfileView = () => {
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
-    const logoutHandler = () => {
-        signOut(auth)
-
-        dispatch(isLoggedInActions.createLoggedCookie('false'))
-        deleteCookie('signInEmail')
-        deleteCookie('signUpEmail')
-        deleteCookie('startSignUpEmail')
+    const handleLogout = () => {
+        useLogoutHandler(dispatch)
     }
 
     return (
@@ -28,7 +22,7 @@ const TransferProfileView = () => {
                         <img src="/photos/netflixLogo.png" alt="Netflix Logo" />
                     </Link>
 
-                    <Link href="/logout" className={styles.loginLink} onClick={logoutHandler}>
+                    <Link href="/logout" className={styles.loginLink} onClick={handleLogout}>
                         Sign Out
                     </Link>
                 </div>

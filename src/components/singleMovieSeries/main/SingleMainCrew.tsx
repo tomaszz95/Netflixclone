@@ -10,8 +10,7 @@ type ComponentType = {
 }
 
 const SingleMainCrew: React.FC<ComponentType> = ({ crewData, seriesCreator, genres }) => {
-    let titleMakerType
-    let titleMakerName
+    let titleMakerType, titleMakerName
 
     if (crewData.crew) {
         titleMakerType = crewData.crew.role

@@ -9,10 +9,9 @@ const MoreInfoHeader: React.FC<ComponentType> = ({ onCloseMoreInfo }) => {
         <div className={styles.infoHeader}>
             <Image
                 src="/photos/netflixLogo.png"
-                alt="Netflix Logo"
+                alt="Netflix Logo icon"
                 width="95"
                 height="40"
-                priority={true}
                 className={styles.netflixLogo}
             />
             <div className={styles.infoHeaderBox}>
@@ -28,7 +27,6 @@ const MoreInfoHeader: React.FC<ComponentType> = ({ onCloseMoreInfo }) => {
                         alt="Close icon"
                         width="24"
                         height="24"
-                        priority={true}
                         className={styles.closeIcon}
                     />
                 </button>

@@ -1,9 +1,11 @@
-import { fetchedMainSingleObj } from '../helpers/types'
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import styles from './MainViewGenreSection.module.css'
+import { useRouter } from 'next/router'
+
 import CarouselItem from '../loggedMainSite/main/CarouselItem'
+
 import { allFetchedGenres } from '../helpers/siteText'
+import { fetchedMainSingleObj } from '../helpers/types'
+import styles from './MainViewGenreSection.module.css'
 
 type ComponentType = {
     fetchedData: fetchedMainSingleObj[]

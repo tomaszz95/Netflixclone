@@ -1,8 +1,11 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
+import { useRouter } from 'next/router'
+
 import SingleTitleView from '../../components/singleMovieSeries/SingleTitleView'
+
+import WithoutAuth from '../../components/layouts/WithoutAuth'
 import { fetchSingleData } from '../api/fetchSingleItem'
+import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 
 const SingleTitlePage = () => {
     const router = useRouter()
@@ -27,6 +30,7 @@ const SingleTitlePage = () => {
 
     return (
         <ReactProviderCookiesData>
+            <WithoutAuth />
             <SingleTitleView fetchedData={searchedData} />
         </ReactProviderCookiesData>
     )

@@ -28,8 +28,8 @@
 }
 
 .formBox {
-    margin: 0.4em 0 0.8em;
     width: 100%;
+    margin: 0.4em 0 0.8em;
 }
 
 .cardBoxMobileContainer {
@@ -39,12 +39,12 @@
 
 .formBox input {
     position: relative;
-    border-radius: 5px;
-    background-color: transparent;
-    border: 1px solid var(--grey);
     width: 100%;
     padding: 1.4em 0.9em 0.6em;
     margin-top: 0.5rem;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--grey);
 }
 
 .telNumberLabel {
@@ -63,11 +63,11 @@
 .error {
     display: flex;
     align-items: center;
+    display: none;
+    margin-top: 0.4em;
     color: var(--call-to-action-hover);
     font-weight: 400;
     font-size: 0.875rem;
-    margin-top: 0.4em;
-    display: none;
 }
 
 .error.wrongInput {
@@ -77,8 +77,8 @@
 .submitBtn {
     width: 100%;
     margin-top: 0.8em;
-    border-radius: 5px;
     padding: 0.6em;
+    border-radius: 5px;
     font-size: var(--size-xm);
     background-color: var(--call-to-action);
     color: var(--pure-white);

@@ -20,8 +20,8 @@
 }
 
 .netflixLogo {
-    margin-left: 0.4em;
     width: 110px;
+    margin-left: 0.4em;
 }
 
 .navWrapper {
@@ -46,9 +46,9 @@
 }
 
 .navWrapper.visible {
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
     transform: translateX(0);
-    height: 100vh;
 }
 
 .navWrapper.visible .navigation {
@@ -56,11 +56,11 @@
 }
 
 .searchInput {
+    width: 40%;
+    padding: 0.3em 0.5em;
     background-color: var(--grey);
     border: 2px solid var(--light-grey);
     color: var(--pure-white);
-    width: 40%;
-    padding: 0.3em 0.5em;
 }
 
 .searchInput::placeholder {
@@ -75,9 +75,9 @@
 }
 
 .profileLink {
+    width: 100%;
     color: var(--light-grey);
     font-weight: 600;
-    width: 100%;
 }
 
 .profileLink,
@@ -98,9 +98,9 @@
 }
 
 .genreLink .profileLink {
+    width: 100%;
     padding: 0.5em 1em;
     border-left: 2px solid transparent;
-    width: 100%;
 }
 
 .profileLink.chosenLink {

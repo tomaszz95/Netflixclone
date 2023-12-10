@@ -4,8 +4,8 @@ import Image from 'next/image'
 import ModalText from './ModalText'
 import ModalMoreInfo from './ModalMoreInfo'
 import CookiesPortal from './CookiesPortal'
-import { createCookie, getCookie } from '../helpers/localStorageFunctions'
 
+import { createCookie, getCookie } from '../helpers/localStorageFunctions'
 import styles from './CookiesModal.module.css'
 
 const CookiesModal = () => {
@@ -56,6 +56,7 @@ const CookiesModal = () => {
                             <button
                                 role="button"
                                 onClick={acceptCookies}
+                                aria-label="Click to accept cookies"
                                 className={`${styles.button} ${styles.acceptBtn}`}
                             >
                                 Accept
@@ -63,6 +64,7 @@ const CookiesModal = () => {
                             <button
                                 role="button"
                                 onClick={rejectCookies}
+                                aria-label="Click to reject cookies"
                                 className={`${styles.button} ${styles.rejectBtn}`}
                             >
                                 Reject
@@ -70,6 +72,7 @@ const CookiesModal = () => {
                             <button
                                 role="button"
                                 onClick={openMoreInfo}
+                                aria-label="Click to personalise choices"
                                 className={`${styles.button} ${styles.personaliseBtn}`}
                             >
                                 Personalise my choices
@@ -79,7 +82,7 @@ const CookiesModal = () => {
                     <button
                         onClick={rejectCookies}
                         role="button"
-                        aria-label="Close cookies info"
+                        aria-label="Close cookies info modal"
                         className={styles.closeBtn}
                     >
                         <Image
@@ -87,7 +90,6 @@ const CookiesModal = () => {
                             alt="Close icon"
                             width="24"
                             height="24"
-                            priority={true}
                             className={styles.closeIcon}
                         />
                     </button>

@@ -12,9 +12,9 @@
 }
 
 .step {
+    font-size: 0.87rem;
     color: var(--grey);
     font-weight: 500;
-    font-size: 0.87rem;
 }
 
 .title {
@@ -32,16 +32,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 1em;
     width: 100%;
+    margin-top: 1em;
 }
 
 .moviesBox {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.2em;
     flex-wrap: wrap;
+    gap: 0.2em;
     width: 100%;
     margin-bottom: 3em;
 }
@@ -63,28 +63,28 @@
 }
 
 .loading {
-    padding: 2em;
     display: block;
+    padding: 2em;
     margin: 0 auto;
     font-size: 2rem;
     font-weight: 700;
 }
 
 .posterImg {
-    border-radius: 3px;
     width: 100%;
+    border-radius: 3px;
     cursor: pointer;
 }
 
 .checkedBox {
     position: absolute;
-    width: 100%;
-    height: 98%;
     top: 0;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 98%;
     border-radius: 3px;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
@@ -102,21 +102,21 @@
 
 .submitBtnBox {
     position: sticky;
-    border: 1px solid var(--pure-white);
-    background-color: var(--pure-white);
-    padding: 1em;
     bottom: 0;
+    padding: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    border: 1px solid var(--pure-white);
+    background-color: var(--pure-white);
 }
 
 .submitBtn {
     width: 100%;
     max-width: 300px;
-    border-radius: 5px;
     padding: 0.6em;
+    border-radius: 5px;
     font-size: var(--size-m);
     background-color: var(--call-to-action);
     color: var(--pure-white);
@@ -142,8 +142,8 @@
     }
 
     .textBox {
-        padding-right: 3em;
         width: 700px;
+        padding-right: 3em;
     }
 
     .step {
@@ -163,8 +163,8 @@
     }
 
     .moviesContainer {
-        margin-top: 0;
         width: 800px;
+        margin-top: 0;
     }
 
     .moviesBox {
@@ -182,9 +182,9 @@
     }
 
     .submitBtnBox {
+        position: relative;
         display: flex;
         justify-content: flex-end;
-        position: relative;
         padding: 0;
     }
 

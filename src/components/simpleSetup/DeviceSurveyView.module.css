@@ -8,9 +8,9 @@
 }
 
 .step {
+    font-size: 0.87rem;
     color: var(--grey);
     font-weight: 500;
-    font-size: 0.87rem;
 }
 
 .textBox {
@@ -32,18 +32,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1em;
     width: 100%;
+    margin-top: 1em;
 }
 
 .inputs {
-    max-width: 750px;
-    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4em;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    max-width: 750px;
+    width: 100%;
+    gap: 0.4em;
 }
 
 .submitBtn {
@@ -99,14 +99,14 @@
     }
 
     .inputsContainer {
-        margin-top: 0;
         width: 700px;
+        margin-top: 0;
     }
 
     .submitBtn {
+        align-self: flex-end;
         margin-top: 2.5em;
         padding: 0.5em;
         font-size: var(--size-xm);
-        align-self: flex-end;
     }
 }

@@ -1,10 +1,10 @@
 .infoHeader {
-    top: 0;
-    width: 100%;
-    padding: 1.2em 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    top: 0;
+    width: 100%;
+    padding: 1.2em 2em;
     border-bottom: 1px solid var(--dark-grey);
 }
 
@@ -12,14 +12,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     margin-left: 2em;
+    overflow: hidden;
 }
 
 .infoHeaderBox h2 {
     display: block;
-    color: var(--light-black);
     line-height: 1.2;
+    color: var(--light-black);
     font-size: var(--size-m);
     overflow: hidden;
     position: relative;
@@ -31,8 +31,8 @@
     display: flex;
     justify-content: center;
     margin-left: 1em;
-    background-color: var(--pure-white);
     border-radius: 50%;
+    background-color: var(--pure-white);
     transition: background-color 0.3s;
 }
 
@@ -42,8 +42,8 @@
 
 @media (min-width: 786px) {
     .infoHeaderBox h2 {
+        margin-right: 5em;
         line-height: 1.4;
         font-size: var(--size-xm);
-        margin-right: 5em;
     }
 }

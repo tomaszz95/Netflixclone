@@ -1,7 +1,7 @@
 .inputBox {
-    width: 100%;
     display: flex;
     align-items: center;
+    width: 100%;
     margin-top: 0.6em;
 }
 
@@ -11,17 +11,17 @@
 }
 
 .inputIcon {
-    margin-right: 1em;
     width: 40px;
+    margin-right: 1em;
 }
 
 .inputFormInput {
-    border-radius: 5px;
-    background-color: transparent;
-    border: 1px solid var(--grey);
     width: 100%;
     padding: 1.2em 4% 0.6em;
     margin-top: 0.5rem;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--grey);
 }
 
 .inputFormLabel {
@@ -63,8 +63,8 @@
     }
 
     .inputIcon {
-        margin-right: 1.2em;
         width: 44px;
+        margin-right: 1.2em;
     }
 
     .inputFormInput {

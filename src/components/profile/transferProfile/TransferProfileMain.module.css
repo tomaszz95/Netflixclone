@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2.5em;
     max-width: 450px;
+    padding: 2.5em;
 }
 
 .title {
@@ -35,9 +35,9 @@
 .transferButton {
     width: 100%;
     max-width: 300px;
-    border-radius: 5px;
     padding: 0.5em;
     margin-top: 2em;
+    border-radius: 5px;
     font-size: var(--size-m);
     background-color: var(--call-to-action);
     color: var(--pure-white);
@@ -61,9 +61,9 @@
 }
 
 .infoBoxTitle {
+    margin-bottom: 1em;
     font-size: var(--size-m);
     text-align: center;
-    margin-bottom: 1em;
 }
 
 .infoBoxSingle {

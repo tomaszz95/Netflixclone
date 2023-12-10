@@ -136,17 +136,17 @@ section {
 
 .slick-arrow {
     position: absolute;
+    display: none;
     top: 3%;
     width: 60px;
     height: 94%;
+    font-size: 2.5em;
     background-color: rgba(0, 0, 0, 0.6);
     color: var(--pure-white);
-    font-size: 2.5em;
     transition:
         font-size 0.3s,
         background-color 0.3s;
     z-index: 100;
-    display: none;
 }
 
 .slick-arrow:hover {

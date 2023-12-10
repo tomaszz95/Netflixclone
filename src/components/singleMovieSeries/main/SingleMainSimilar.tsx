@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import { fetchedMainSingleObj } from '../../helpers/types'
 import styles from './SingleMainSimilar.module.css'
 

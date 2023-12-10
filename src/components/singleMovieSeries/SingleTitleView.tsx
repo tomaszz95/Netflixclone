@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+
 import LoggedFooterSections from '../loggedMainSite/footer/LoggedFooterSection'
 import HeaderLoggedSection from '../loggedMainSite/header/HeaderLoggedSection'
 import SingleTitleMainSection from './SingleTitleMainSection'

@@ -1,13 +1,13 @@
 .similarSection {
     width: 100%;
-    border-bottom: none;
     padding: 1em 1.5em;
+    border-bottom: none;
 }
 
 .title {
+    margin-bottom: 0.6em;
     color: var(--dark-grey);
     font-weight: 600;
-    margin-bottom: 0.6em;
 }
 
 .similarList {
@@ -40,8 +40,8 @@
     }
 
     .title {
-        font-size: var(--size-xxm);
         margin-bottom: 0.6em;
+        font-size: var(--size-xxm);
     }
 
     .similarList img {

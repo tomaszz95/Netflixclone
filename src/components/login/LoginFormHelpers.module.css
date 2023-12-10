@@ -16,13 +16,13 @@
 }
 
 .rememberInput:after {
-    position: absolute;
     content: '';
-    border-radius: 2px;
+    position: absolute;
     left: 0;
     top: 0;
     width: 15px;
     height: 15px;
+    border-radius: 2px;
     border: none;
     background-color: rgb(105, 102, 102);
     transition: background-color 0.2s;
@@ -30,8 +30,8 @@
 }
 
 .rememberInput:before {
-    position: absolute;
     content: '\002714';
+    position: absolute;
     top: -5px;
     left: 0px;
     font-size: 1.1rem;
@@ -49,15 +49,15 @@
 }
 
 .rememberLabel {
-    color: var(--dark-grey);
-    font-size: 0.825rem;
     margin-left: 0.5em;
+    font-size: 0.825rem;
+    color: var(--dark-grey);
 }
 
 .rememberLink {
-    color: var(--dark-grey);
-    font-size: 0.825rem;
     margin-left: 0.5em;
+    font-size: 0.825rem;
+    color: var(--dark-grey);
 }
 
 .rememberLink:hover {
@@ -76,8 +76,8 @@
 }
 
 .signUp p {
-    color: rgb(115, 115, 115);
     margin-right: 0.4em;
+    color: rgb(115, 115, 115);
 }
 
 .signUp a {

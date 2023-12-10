@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 import styles from './DeviceSurveyInput.module.css'
 
 type ComponentType = {

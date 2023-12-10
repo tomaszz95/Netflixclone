@@ -1,8 +1,9 @@
-import { fetchedMainWholeObj } from '../../components/helpers/types'
-
-import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
+
 import { getAllAPIFetchedDataShows } from '../api/fetchMainSitesApiData'
+import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
+import { fetchedMainWholeObj } from '../../components/helpers/types'
+import WithoutAuth from '../../components/layouts/WithoutAuth'
 
 type ComponentType = {
     fetchedData: fetchedMainWholeObj
@@ -11,6 +12,7 @@ type ComponentType = {
 const TVShowsPage: React.FC<ComponentType> = ({ fetchedData }) => {
     return (
         <ReactProviderCookiesData>
+            <WithoutAuth />
             <LoggedMainSiteView fetchedData={fetchedData} />
         </ReactProviderCookiesData>
     )

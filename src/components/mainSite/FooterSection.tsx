@@ -1,12 +1,9 @@
 import styles from './FooterSection.module.css'
 
+import { changingLanguage } from '../helpers/dummyActionFunctions'
 import { footerMainSiteLinks } from '../helpers/siteText'
 
 const FooterSection = () => {
-    const changeLanguage = () => {
-        console.log('Should change language.. Omitted in the demo version')
-    }
-
     return (
         <div className={styles.footer}>
             <a href="#" className={styles.question}>
@@ -19,7 +16,7 @@ const FooterSection = () => {
                     </a>
                 ))}
             </div>
-            <select name="language" className={styles.select} onChange={changeLanguage} defaultValue="English">
+            <select name="language" className={styles.select} onChange={changingLanguage} defaultValue="English">
                 <option value="Polish">Polish</option>
                 <option value="English">English</option>
             </select>

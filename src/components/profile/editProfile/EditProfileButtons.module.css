@@ -1,14 +1,14 @@
 .buttons {
-    margin-top: 1em;
     display: flex;
+    margin-top: 1em;
 }
 
 .button {
     width: 100%;
     max-width: 100px;
-    border-radius: 3px;
     padding: 0.2em 0.5em;
     font-size: 0.9rem;
+    border-radius: 3px;
     background-color: transparent;
     color: var(--light-grey);
     font-weight: 600;

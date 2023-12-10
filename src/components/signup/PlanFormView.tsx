@@ -1,5 +1,6 @@
-import Router from 'next/router'
+import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import Router from 'next/router'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
 import { paymentActions } from '../store/payment'
@@ -7,7 +8,6 @@ import PlanFormOffer from './PlanFormOffer'
 import PlanFormChoice from './PlanFormChoice'
 
 import styles from './PlanFormView.module.css'
-import { useState } from 'react'
 
 const PlanFormView = () => {
     const [selectedPlan, setSelectedPlan] = useState('premium')

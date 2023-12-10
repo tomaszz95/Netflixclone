@@ -1,9 +1,9 @@
 .terms,
 .acceptText {
+    margin-bottom: 0.5em;
     font-size: 0.85rem;
     line-height: 17px;
     color: var(--light-grey);
-    margin-bottom: 0.5em;
 }
 
 .terms a {
@@ -15,17 +15,17 @@
 }
 
 .acceptBox {
-    padding: 1em;
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 1em;
 }
 
 .acceptError {
     display: block;
+    margin-bottom: 1em;
     color: var(--call-to-action);
     font-weight: 500;
-    margin-bottom: 1em;
 }
 
 .acceptContainer {

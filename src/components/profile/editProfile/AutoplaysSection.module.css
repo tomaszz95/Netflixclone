@@ -4,8 +4,8 @@
 
 .autoplaysBoxSpan {
     display: block;
-    color: var(--dark-grey);
     margin-bottom: 0.3em;
+    color: var(--dark-grey);
 }
 
 .autoplaysBoxContent {

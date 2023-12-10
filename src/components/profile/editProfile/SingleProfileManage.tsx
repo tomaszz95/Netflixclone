@@ -41,6 +41,7 @@ const SingleProfileManage: React.FC<ComponentType> = ({ profilName }) => {
     const handleSubmit = () => {
         if (formData.selectedName.trim().length > 0) {
             dispatch(paymentActions.editProfilInfo(formData))
+            
             Router.push('/profile/manage')
         }
     }

@@ -6,10 +6,10 @@
 }
 
 .step {
+    margin-bottom: 0.4em;
     color: var(--grey);
     font-weight: 500;
     font-size: 0.87rem;
-    margin-bottom: 0.4em;
 }
 
 .title {

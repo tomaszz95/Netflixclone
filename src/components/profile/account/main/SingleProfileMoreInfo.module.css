@@ -13,13 +13,13 @@
 }
 
 .moreInfoBoxProperty {
-    font-weight: 500;
     margin-bottom: 0.2em;
+    font-weight: 500;
 }
 
 .moreInfoBoxText {
-    font-size: 0.85rem;
     margin-right: 0.6em;
+    font-size: 0.85rem;
     color: var(--light-grey);
 }
 

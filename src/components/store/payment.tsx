@@ -1,39 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { createCookie, getCookie } from '../helpers/localStorageFunctions'
-
-type initialType = {
-    userEmail: null | string
-    userSubscriptionType: null | string
-    userPaid: boolean
-    howToPay: string
-    selectedDevices: string[]
-    selectedLanguages: string[]
-    selectedNames: string[]
-    selectedMovies: string[]
-    isFullySet: boolean
-}
-
-const initialState: initialType = {
-    userEmail: null,
-    userSubscriptionType: null,
-    userPaid: false,
-    howToPay: '',
-    selectedDevices: [],
-    selectedLanguages: [],
-    selectedNames: [],
-    selectedMovies: [],
-    isFullySet: false,
-}
+import { initialPaymentStateValues } from '../helpers/initialTypes'
+import { initialPaymentType } from '../helpers/types'
 
 const paymentSlice = createSlice({
     name: 'payment',
-    initialState: initialState,
+    initialState: initialPaymentStateValues,
 
     reducers: {
         getAllPaymentCookie() {
             const paymentUserObject = getCookie('payment')
 
-            let cookieParsed = null
+            let cookieParsed = initialPaymentStateValues
 
             if (paymentUserObject !== null) {
                 cookieParsed = JSON.parse(paymentUserObject)
@@ -48,7 +26,7 @@ const paymentSlice = createSlice({
             const userPaidNow = action.payload.userPaid
             const howToPayNow = action.payload.howToPay
 
-            const userObject: initialType = {
+            const userObject: initialPaymentType = {
                 userEmail: userEmailNew,
                 userSubscriptionType: userSubscriptionTypeNew,
                 userPaid: userPaidNow,
@@ -69,7 +47,7 @@ const paymentSlice = createSlice({
             const valueName = action.payload.name
             const value = action.payload.value
 
-            const userObject: initialType = {
+            const userObject: initialPaymentType = {
                 ...state,
                 [valueName]: value,
             }
@@ -90,7 +68,7 @@ const paymentSlice = createSlice({
                 ? state.selectedLanguages
                 : [...state.selectedLanguages, selectedLanguage]
 
-            const updatedUserObject: initialType = {
+            const updatedUserObject: initialPaymentType = {
                 ...state,
                 selectedNames: updatedSelectedNames,
                 selectedLanguages: updatedSelectedLanguages,
@@ -105,7 +83,7 @@ const paymentSlice = createSlice({
             const deleteValue = action.payload
             const updatedSelectedNames = state.selectedNames.filter((name) => name !== deleteValue)
 
-            const userObject: initialType = {
+            const userObject: initialPaymentType = {
                 ...state,
                 selectedNames: updatedSelectedNames,
             }

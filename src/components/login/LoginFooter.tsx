@@ -1,12 +1,9 @@
+import { changingLanguage } from '../helpers/dummyActionFunctions'
 import styles from './LoginFooter.module.css'
 
 type ComponentType = { isLoginPage: boolean }
 
 const LoginFooter: React.FC<ComponentType> = ({ isLoginPage }) => {
-    const changeLanguage = () => {
-        console.log('This select should change language..')
-    }
-
     return (
         <footer className={styles.footer}>
             <div className={styles.footerContainer}>
@@ -25,7 +22,7 @@ const LoginFooter: React.FC<ComponentType> = ({ isLoginPage }) => {
                 <select
                     name="language"
                     className={`${styles.select} ${isLoginPage ? styles.loginBg : styles.logoutBg}`}
-                    onChange={changeLanguage}
+                    onChange={changingLanguage}
                     defaultValue="English"
                 >
                     <option value="Polish">Polish</option>

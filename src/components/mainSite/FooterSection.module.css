@@ -1,9 +1,9 @@
 .footer {
-    width: 100%;
-    max-width: 1500px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
+    max-width: 1500px;
     padding: 1.2em 0.8em;
 }
 
@@ -21,8 +21,8 @@
 
 .links {
     display: grid;
-    width: 100%;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
     margin-bottom: 1em;
 }
 
@@ -32,26 +32,27 @@
 
 .select {
     margin-right: 1em;
+    padding: 0.5em;
     background-color: var(--light-black);
     color: var(--pure-white);
-    padding: 0.5em;
     border-radius: 5px;
 }
 
 .language {
     margin-top: 1.4em;
-    color: rgba(255, 255, 255, 0.7);
     font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 @media (min-width: 1200px) {
     .footer {
         padding: 2em;
     }
+
     .question,
     .links a {
-        font-size: var(--size-m);
         margin-bottom: 1.2em;
+        font-size: var(--size-m);
     }
 
     .links {

@@ -1,6 +1,7 @@
 import SignupLayout from '../../components/layouts/SignupLayout'
-import WithoutAuth from '../../components/layouts/WithoutAuth'
 import PaymentPickerView from '../../components/signup/PaymentPickerView'
+
+import WithoutAuth from '../../components/layouts/WithoutAuth'
 
 const PaymentPickerPage = () => {
     return (

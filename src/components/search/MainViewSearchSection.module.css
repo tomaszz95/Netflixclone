@@ -8,8 +8,8 @@
 }
 
 .title {
-    color: var(--light-grey);
     margin-bottom: 1em;
+    color: var(--light-grey);
 }
 
 .searchedList {
@@ -26,8 +26,8 @@
 
 @media (min-width: 786px) {
     .title {
-        font-size: var(--size-xxm);
         margin-bottom: 1.5em;
+        font-size: var(--size-xxm);
     }
 
     .mainSection {

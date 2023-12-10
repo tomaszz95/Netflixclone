@@ -1,6 +1,7 @@
+import SingleMainCarousel from './SingleMainCarousel'
+
 import { fetchedMainWholeObj } from '../../helpers/types'
 import styles from './MainViewLoggedSection.module.css'
-import SingleMainCarousel from './SingleMainCarousel'
 
 type ComponentType = {
     fetchedData: fetchedMainWholeObj

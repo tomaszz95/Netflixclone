@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react'
 import { getCookie } from '../../helpers/localStorageFunctions'
 import { useRouter } from 'next/router'
 
-import styles from './HeaderLoggedSection.module.css'
 import HeaderMobileView from './mobile/HeaderMobileView'
 import HeaderDesktopView from './desktop/HeaderDesktopView'
 import HeaderTabletsView from './tablet/HeaderTabletsView'
+
+import styles from './HeaderLoggedSection.module.css'
 
 const HeaderLoggedSection = () => {
     const [windowWidth, setWindowWidth] = useState(0)

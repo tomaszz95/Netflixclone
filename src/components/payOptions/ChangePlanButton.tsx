@@ -24,7 +24,11 @@ const ChangePlanButton = () => {
                     {userPaymentData.charAt(0).toUpperCase() + userPaymentData.slice(1)}
                 </span>
             </div>
-            <button className={styles.chosenButton} onClick={() => Router.push('/signup/planform')}>
+            <button
+                className={styles.chosenButton}
+                onClick={() => Router.push('/signup/planform')}
+                aria-label="Change plan"
+            >
                 Change
             </button>
         </div>

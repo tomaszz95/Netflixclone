@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import styles from './LoginFormHelpers.module.css'
 import Link from 'next/link'
+
+import styles from './LoginFormHelpers.module.css'
 
 const LoginFormHelpers = () => {
     const [isVisible, setIsVisible] = useState(false)

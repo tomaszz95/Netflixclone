@@ -1,14 +1,14 @@
 .crewSection {
     max-width: 1600px;
     width: 100%;
-    border-bottom: none;
     padding: 2em 1.5em;
+    border-bottom: none;
 }
 
 .title {
+    margin-bottom: 0.5em;
     color: var(--dark-grey);
     font-weight: 600;
-    margin-bottom: 0.5em;
 }
 
 .detailBox {
@@ -23,10 +23,10 @@
 }
 
 .detailTitle {
+    margin-top: 0.6em;
+    font-weight: 500;
     font-size: var(--size-m);
     color: var(--light-grey);
-    font-weight: 500;
-    margin-top: 0.6em;
 }
 
 .detailTitleFirst {
@@ -45,8 +45,8 @@
     }
 
     .title {
-        font-size: var(--size-xxm);
         margin-bottom: 0.6em;
+        font-size: var(--size-xxm);
     }
 
     .detailBox {

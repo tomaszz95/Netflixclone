@@ -1,6 +1,7 @@
 import SignupLayout from '../../components/layouts/SignupLayout'
-import WithoutAuth from '../../components/layouts/WithoutAuth'
 import PaypalView from '../../components/payOptions/PaypalView'
+
+import WithoutAuth from '../../components/layouts/WithoutAuth'
 
 const PaypalPage = () => {
     return (

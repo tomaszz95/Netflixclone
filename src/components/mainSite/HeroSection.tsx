@@ -30,7 +30,6 @@ const HeroSection = () => {
                 alt="Netflix hero image with most known films and series in the background"
                 width="1800"
                 height="1800"
-                priority={true}
                 className={styles.heroImage}
             />
             <div className={styles.heroContent}>

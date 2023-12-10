@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { getCookie } from '../../helpers/localStorageFunctions'
+
 import EditProfileImage from '../editProfile/EditProfileImage'
+
+import { profileTransferHandler } from '../../helpers/dummyActionFunctions'
+import { getCookie } from '../../helpers/localStorageFunctions'
 import styles from './TransferProfileMain.module.css'
 
 const TransferProfileMain = () => {
@@ -17,10 +20,8 @@ const TransferProfileMain = () => {
         }
     }, [])
 
-    const profileTransferHandler = () => {
-        console.log('Should transfer profile...')
-        console.log('Transfer in proggress...')
-        console.log('Transfer successful!')
+    const profileTransferHandlerFunc = () => {
+        profileTransferHandler()
 
         router.push('/profile/manage')
     }
@@ -37,7 +38,7 @@ const TransferProfileMain = () => {
             </Link>
             <button
                 aria-label="Start profile transfer button"
-                onClick={profileTransferHandler}
+                onClick={profileTransferHandlerFunc}
                 className={styles.transferButton}
             >
                 Start Profile Transfer

@@ -1,8 +1,9 @@
-import Link from 'next/link'
 import { useState } from 'react'
+import Link from 'next/link'
+import MoreInfoBox from './MoreInfoBox'
+
 import { fetchedMainSingleObj } from '../../helpers/types'
 import styles from './CarouselItem.module.css'
-import MoreInfoBox from './MoreInfoBox'
 
 type ComponentType = {
     singleItem: fetchedMainSingleObj

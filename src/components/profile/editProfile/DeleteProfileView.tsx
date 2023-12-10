@@ -16,6 +16,7 @@ const DeleteProfileView: React.FC<ComponentType> = ({ profilName }) => {
 
     const deleteProfileHandler = () => {
         dispatch(paymentActions.deleteProfile(profilName))
+        
         Router.push('/profile/manage')
     }
 
