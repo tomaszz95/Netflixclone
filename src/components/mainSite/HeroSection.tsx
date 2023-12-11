@@ -31,6 +31,7 @@ const HeroSection = () => {
                 width="1800"
                 height="1800"
                 className={styles.heroImage}
+                priority={true}
             />
             <div className={styles.heroContent}>
                 <div className={styles.heroText}>
