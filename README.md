@@ -33,4 +33,4 @@ App is still in proggress mode - below is a list of issues / futuers I'm working
 -   [ improve the re-rendering of components and pages ],
 -   [ add testing ].
 
-#### I encourage you to check the website - uploaded to vercel [Netflix Clone](https://netflixclone-rh4mvcn81-tomaszz95.vercel.app/).
+#### I encourage you to check the website - uploaded to vercel [Netflix Clone](https://netflixclone-eosin-gamma.vercel.app/).
