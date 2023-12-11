@@ -12,7 +12,7 @@ App is still in proggress mode - below is a list of issues / futuers I'm working
 -   full registration netflix process (choosing devices, languages, series),
 -   user is available to log in, sign in, log out and register,
 -   when user is log in different options are available (profile edit, 'watching series', browse / kid page),
--   404 page,
+-   404 and 500 page,
 -   accessibility practices,
 -   fully responsive,
 -   using firebase to log in / log out and auth management,
@@ -33,4 +33,4 @@ App is still in proggress mode - below is a list of issues / futuers I'm working
 -   [ improve the re-rendering of components and pages ],
 -   [ add testing ].
 
-#### I encourage you to check the website - uploaded to vercel [Netflix Clone](https://netflixclone-eosin-gamma.vercel.app/).
+#### I encourage you to check the website - uploaded to vercel [Netflix Clone](https://netflixclone-rh4mvcn81-tomaszz95.vercel.app/).
