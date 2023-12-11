@@ -1,3 +1,5 @@
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import SingleGenreView from '../../components/singleGenre/SingleGenreView'
@@ -7,6 +9,7 @@ import ReactProviderCookiesData from '../../components/helpers/ReactProviderCook
 import { fetchedMainSingleObj } from '../../components/helpers/types'
 import { allFetchedGenres } from '../../components/helpers/siteText'
 import WithoutAuth from '../../components/layouts/WithoutAuth'
+import { getGenreName } from '../../components/helpers/helpersFunctions'
 
 type ComponentType = {
     fetchedData: fetchedMainSingleObj[]
@@ -14,6 +17,8 @@ type ComponentType = {
 
 const SingleGenrePage: React.FC<ComponentType> = ({ fetchedData }) => {
     const [sortedData, setSortedData] = useState<fetchedMainSingleObj[]>([])
+    const router = useRouter()
+    const genreName = getGenreName(router.query.id)
 
     useEffect(() => {
         const sortedMovies = fetchedData.sort((a, b) => b.moviePopularity - a.moviePopularity)
@@ -21,10 +26,16 @@ const SingleGenrePage: React.FC<ComponentType> = ({ fetchedData }) => {
     })
 
     return (
-        <ReactProviderCookiesData>
-            <WithoutAuth />
-            <SingleGenreView fetchedData={sortedData} />
-        </ReactProviderCookiesData>
+        <>
+            <Head>
+                <title>{genreName} Titles | Netflix</title>
+                <meta name="description" content={`${genreName} Genre Titles page`} />
+            </Head>
+            <ReactProviderCookiesData>
+                <WithoutAuth />
+                <SingleGenreView fetchedData={sortedData} />
+            </ReactProviderCookiesData>
+        </>
     )
 }
 

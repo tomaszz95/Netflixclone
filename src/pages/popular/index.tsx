@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
 
 import { getAllAPIFetchedPopularAndNewestData } from '../api/fetchMainSitesApiData'
@@ -11,10 +13,16 @@ type ComponentType = {
 
 const NewAndPopularPage: React.FC<ComponentType> = ({ fetchedData }) => {
     return (
-        <ReactProviderCookiesData>
-            <WithoutAuth />
-            <LoggedMainSiteView fetchedData={fetchedData} />
-        </ReactProviderCookiesData>
+        <>
+            <Head>
+                <title>Popular titles | Netflix</title>
+                <meta name="description" content="Popular titles page" />
+            </Head>
+            <ReactProviderCookiesData>
+                <WithoutAuth />
+                <LoggedMainSiteView fetchedData={fetchedData} />
+            </ReactProviderCookiesData>
+        </>
     )
 }
 

@@ -16,6 +16,5 @@ export default async function getGenreData(id: string) {
         fetchedData = await getGenreByIdData(id)
     }
 
-    console.log(fetchedData)
     return fetchedData
 }

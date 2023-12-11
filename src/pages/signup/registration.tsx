@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import RegistrationView from '../../components/signup/RegistrationView'
 import SignupLayout from '../../components/layouts/SignupLayout'
 
@@ -5,11 +7,17 @@ import ReactProviderCookiesData from '../../components/helpers/ReactProviderCook
 
 const RegistrationPage = () => {
     return (
-        <ReactProviderCookiesData>
-            <SignupLayout>
-                <RegistrationView />
-            </SignupLayout>
-        </ReactProviderCookiesData>
+        <>
+            <Head>
+                <title>Registration | Netflix</title>
+                <meta name="description" content="Registration page" />
+            </Head>
+            <ReactProviderCookiesData>
+                <SignupLayout>
+                    <RegistrationView />
+                </SignupLayout>
+            </ReactProviderCookiesData>
+        </>
     )
 }
 

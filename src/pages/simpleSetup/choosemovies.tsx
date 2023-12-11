@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
 import SignupLayout from '../../components/layouts/SignupLayout'
@@ -34,9 +35,15 @@ const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData
     }, [])
 
     return (
-        <SignupLayout>
-            <ChooseMoviesView fetchedContent={fetchedContentObjects} />
-        </SignupLayout>
+        <>
+            <Head>
+                <title>Choose Movie | Netflix</title>
+                <meta name="description" content="Choose your favorite movies and series" />
+            </Head>
+            <SignupLayout>
+                <ChooseMoviesView fetchedContent={fetchedContentObjects} />
+            </SignupLayout>
+        </>
     )
 }
 

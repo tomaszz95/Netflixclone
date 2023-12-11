@@ -1,11 +1,19 @@
+import Head from 'next/head'
+
 import LoginView from '../../components/login/LoginView'
 import LogLayout from '../../components/layouts/LogLayout'
 
 const LoginPage = () => {
     return (
-        <LogLayout>
-            <LoginView />
-        </LogLayout>
+        <>
+            <Head>
+                <title>Login | Netflix</title>
+                <meta name="description" content="Login page" />
+            </Head>
+            <LogLayout>
+                <LoginView />
+            </LogLayout>
+        </>
     )
 }
 

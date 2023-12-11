@@ -1,11 +1,18 @@
+import Head from 'next/head'
 import SignupLayout from '../../components/layouts/SignupLayout'
 import DeviceSurveyView from '../../components/simpleSetup/DeviceSurveyView'
 
 const DevicesSurveyPage = () => {
     return (
-        <SignupLayout>
-            <DeviceSurveyView />
-        </SignupLayout>
+        <>
+            <Head>
+                <title>Devices Survey | Netflix</title>
+                <meta name="description" content="Devices survey page" />
+            </Head>
+            <SignupLayout>
+                <DeviceSurveyView />
+            </SignupLayout>
+        </>
     )
 }
 

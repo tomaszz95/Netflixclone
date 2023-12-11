@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
 
 import { getAllAPIFetchedDataShows } from '../api/fetchMainSitesApiData'
@@ -12,6 +14,10 @@ type ComponentType = {
 const TVShowsPage: React.FC<ComponentType> = ({ fetchedData }) => {
     return (
         <ReactProviderCookiesData>
+            <Head>
+                <title>Tv shows list | Netflix</title>
+                <meta name="description" content="Tv shows netflix list" />
+            </Head>
             <WithoutAuth />
             <LoggedMainSiteView fetchedData={fetchedData} />
         </ReactProviderCookiesData>

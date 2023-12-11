@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -29,10 +31,16 @@ const SingleTitlePage = () => {
     }, [router.query])
 
     return (
-        <ReactProviderCookiesData>
-            <WithoutAuth />
-            <SingleTitleView fetchedData={searchedData} />
-        </ReactProviderCookiesData>
+        <>
+            <Head>
+                <title>{searchedData.singleItem.title} | Netflix</title>
+                <meta name="description" content={`${searchedData.singleItem.title} page`} />
+            </Head>
+            <ReactProviderCookiesData>
+                <WithoutAuth />
+                <SingleTitleView fetchedData={searchedData} />
+            </ReactProviderCookiesData>
+        </>
     )
 }
 
