@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
@@ -62,10 +63,16 @@ const SearchPage = () => {
     }, [router.query])
 
     return (
-        <ReactProviderCookiesData>
-            <WithoutAuth />
-            <SearchPageView fetchedData={searchedData} />
-        </ReactProviderCookiesData>
+        <>
+            <Head>
+                <title>Search {router.query.query} | Netflix</title>
+                <meta name="description" content="Dcb Option Payment page" />
+            </Head>
+            <ReactProviderCookiesData>
+                <WithoutAuth />
+                <SearchPageView fetchedData={searchedData} />
+            </ReactProviderCookiesData>
+        </>
     )
 }
 

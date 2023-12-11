@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -17,10 +18,16 @@ const DeleteProfileSite = () => {
     }, [router.query.profileName])
 
     return (
-        <ReactProviderCookiesData>
-            <WithoutAuth />
-            <DeleteProfileView profilName={queryRouter} />
-        </ReactProviderCookiesData>
+        <>
+            <Head>
+                <title>Delete Profile | Netflix</title>
+                <meta name="description" content="Delete Profile page" />
+            </Head>
+            <ReactProviderCookiesData>
+                <WithoutAuth />
+                <DeleteProfileView profilName={queryRouter} />
+            </ReactProviderCookiesData>
+        </>
     )
 }
 

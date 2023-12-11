@@ -1,3 +1,5 @@
+import { allFetchedGenres } from './siteText'
+
 export const getCurrentMonth = () => {
     const months = [
         'January',
@@ -70,4 +72,11 @@ export const generateRandomDescription = () => {
     generatedText = generatedText.charAt(0).toUpperCase() + generatedText.slice(1)
 
     return generatedText
+}
+
+export const getGenreName = (id: any) => {
+    const genre = allFetchedGenres.find((genre) => genre.id == id)
+    const genreName = genre?.name
+
+    return genreName
 }

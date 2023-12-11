@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
 
 import { getAllAPIFetchedData } from '../api/fetchMainSitesApiData'
@@ -11,10 +13,16 @@ type ComponentType = {
 
 const BrowsePage: React.FC<ComponentType> = ({ fetchedData }) => {
     return (
-        <ReactProviderCookiesData>
-            <WithoutAuth />
-            <LoggedMainSiteView fetchedData={fetchedData} />
-        </ReactProviderCookiesData>
+        <>
+            <Head>
+                <title>Home | Netflix</title>
+                <meta name="description" content="Home page" />
+            </Head>
+            <ReactProviderCookiesData>
+                <WithoutAuth />
+                <LoggedMainSiteView fetchedData={fetchedData} />
+            </ReactProviderCookiesData>
+        </>
     )
 }
 

@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -17,10 +18,17 @@ const ManageProfileSite = () => {
     }, [router.query.profileName])
 
     return (
-        <ReactProviderCookiesData>
-            <WithoutAuth />
-            <SingleProfileManage profilName={queryRouter} />
-        </ReactProviderCookiesData>
+        <>
+            <Head>
+                <title>{router.query.profileName} Profile | Netflix</title>
+                <meta name="description" content={`${router.query.profileName} Profile page`} />
+            </Head>
+
+            <ReactProviderCookiesData>
+                <WithoutAuth />
+                <SingleProfileManage profilName={queryRouter} />
+            </ReactProviderCookiesData>
+        </>
     )
 }
 
