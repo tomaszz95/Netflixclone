@@ -33,8 +33,8 @@ const SingleTitlePage = () => {
     return (
         <>
             <Head>
-                <title>{searchedData.singleItem.title} | Netflix</title>
-                <meta name="description" content={`${searchedData.singleItem.title} page`} />
+                <title>Netflix</title>
+                <meta name="description" content="Netflix single movie / series page" />
             </Head>
             <ReactProviderCookiesData>
                 <WithoutAuth />
