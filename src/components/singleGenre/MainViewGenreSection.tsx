@@ -23,7 +23,7 @@ const MainViewGenreSection: React.FC<ComponentType> = ({ fetchedData }) => {
         } else {
             setChosenGenre('')
         }
-    }, [])
+    }, [router.query.id])
 
     return (
         <section className={styles.mainSection}>

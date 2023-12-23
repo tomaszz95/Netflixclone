@@ -27,7 +27,8 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser, query }) => {
 
     const hideNavHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLDivElement
-        if (target.id === 'navContainer') {
+     
+        if (target.id === 'navContainer' || router.pathname.includes('genre')) {
             setIsNavVisible(false)
         }
     }
