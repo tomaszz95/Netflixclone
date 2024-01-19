@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import SignupLayout from '../../components/layouts/SignupLayout'
 import ChooseMoviesView from '../../components/simpleSetup/ChooseMoviesView'
 
-import { getOptions } from '../../components/APIHelpers/toFetchDataObjects'
+import { getOptions } from '../../lib/toFetchDataObjects'
 import { fetchedContentType, fetchedMoviesPropsData } from '../../types/types'
 
 const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData }) => {
