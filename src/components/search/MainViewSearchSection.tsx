@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 
 import CarouselItem from '../loggedMainSite/main/CarouselItem'
 
-import { fetchedMainSingleObj } from '../helpers/types'
+import { fetchedMainSingleObj } from '../../types/types'
 import styles from './MainViewSearchSection.module.css'
 
 type ComponentType = {

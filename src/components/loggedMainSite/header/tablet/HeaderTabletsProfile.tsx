@@ -5,8 +5,8 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 import EditProfileImage from '../../../profile/editProfile/EditProfileImage'
-import useSearchInput from '../../../customHooks/useSearchInput'
-import useLogoutHandler from '../../../customHooks/useLogoutHandler'
+import useSearchInput from '../../../../hooks/useSearchInput'
+import useLogoutHandler from '../../../../hooks/useLogoutHandler'
 
 import styles from './HeaderTabletsProfile.module.css'
 

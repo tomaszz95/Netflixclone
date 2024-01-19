@@ -1,4 +1,4 @@
-import { getGenreByIdData, getGenreTrendingPopularTopData } from '../../components/APIHelpers/fetchGenreApiData'
+import { getGenreByIdData, getGenreTrendingPopularTopData } from '../../lib/fetchGenreApiData'
 
 export default async function getGenreData(id: string) {
     let fetchedData

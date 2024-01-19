@@ -1,5 +1,5 @@
 import { SampleNextArrow, SamplePrevArrow } from './customArrows'
-import { allFetchedGenres } from './siteText'
+import { allFetchedGenres } from '../constans/siteText'
 
 export const carouselSettings = {
     dots: false,

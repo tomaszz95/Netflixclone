@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import HeaderDesktopNav from './HeaderDesktopNav'
 import HeaderDesktopProfile from './HeaderDesktopProfile'
 
-import useSearchInput from '../../../customHooks/useSearchInput'
+import useSearchInput from '../../../../hooks/useSearchInput'
 import styles from './HeaderDesktopView.module.css'
 
 type ComponentType = {

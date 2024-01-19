@@ -4,7 +4,7 @@ import { ThunkDispatch } from '@reduxjs/toolkit'
 import Link from 'next/link'
 
 import EditProfileImage from '../../../profile/editProfile/EditProfileImage'
-import useLogoutHandler from '../../../customHooks/useLogoutHandler'
+import useLogoutHandler from '../../../../hooks/useLogoutHandler'
 
 import styles from './HeaderMobileProfile.module.css'
 

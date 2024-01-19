@@ -1,6 +1,6 @@
-import { generateRandomDescription } from '../../helpers/helpersFunctions'
-import { getRandomMinutes } from '../../helpers/helpersFunctions'
-import { seasonsDataType } from '../../helpers/types'
+import { generateRandomDescription } from '../../../helpers/helpersFunctions'
+import { getRandomMinutes } from '../../../helpers/helpersFunctions'
+import { seasonsDataType } from '../../../types/types'
 import styles from './SingleMainSeries.module.css'
 
 type ComponentType = {

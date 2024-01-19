@@ -4,7 +4,7 @@ import {
     getAllTVSeriesData,
     getAllMovieData,
     getAllPopularAndNewestData,
-} from '../../components/APIHelpers/fetchApiData'
+} from '../../lib/fetchApiData'
 
 export async function getAllAPIFetchedData() {
     const moviesData = await getAllBrowseMoviesData('browse')

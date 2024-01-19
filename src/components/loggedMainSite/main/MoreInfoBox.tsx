@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import Router from 'next/router'
 
-import { paymentActions } from '../../store/payment'
-import { fetchedMainSingleObj } from '../../helpers/types'
+import { paymentActions } from '../../../store/payment'
+import { fetchedMainSingleObj } from '../../../types/types'
 import styles from './MoreInfoBox.module.css'
 
 type ComponentType = {

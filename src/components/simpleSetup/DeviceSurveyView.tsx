@@ -5,8 +5,8 @@ import { ThunkDispatch } from '@reduxjs/toolkit'
 
 import DeviceSurveyInput from './DeviceSurveyInput'
 
-import { paymentActions } from '../store/payment'
-import { inputsDeviceSurveyData } from '../helpers/siteText'
+import { paymentActions } from '../../store/payment'
+import { inputsDeviceSurveyData } from '../../constans/siteText'
 import styles from './DeviceSurveyView.module.css'
 
 const DeviceSurveyView = () => {
@@ -24,7 +24,7 @@ const DeviceSurveyView = () => {
 
     const submitData = () => {
         dispatch(paymentActions.changePaymentValue({ name: 'selectedDevices', value: selectedDevice }))
-        
+
         Router.push('/simpleSetup/newprofiles')
     }
 

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Router from 'next/router'
 
-import { cancelMembership } from '../../../helpers/dummyActionFunctions'
+import { cancelMembership } from '../../../../helpers/dummyActionFunctions'
 import styles from './MembershipBox.module.css'
 
 type ComponentType = {

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import Router from 'next/router'
 
-import { loginEmailsActions } from '../store/login-emails'
+import { loginEmailsActions } from '../../store/login-emails'
 import styles from './MembershipEmail.module.css'
 
 const MembershipEmail = () => {

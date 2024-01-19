@@ -4,8 +4,8 @@ import { ThunkDispatch } from '@reduxjs/toolkit'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import useLogoutHandler from '../customHooks/useLogoutHandler'
-import { changingLanguage } from '../helpers/dummyActionFunctions'
+import useLogoutHandler from '../../hooks/useLogoutHandler'
+import { changingLanguage } from '../../helpers/dummyActionFunctions'
 import styles from './HeaderSection.module.css'
 
 const HeaderSection = () => {

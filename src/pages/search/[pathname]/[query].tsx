@@ -8,10 +8,10 @@ import _ from 'lodash'
 import SearchPageView from '../../../components/search/SearchPageView'
 
 import { searchByInput } from '../../api/searchByInput'
-import { pathnameActions } from '../../../components/store/pathname'
-import { getCookie } from '../../../components/helpers/localStorageFunctions'
-import { fetchedMainSingleObj } from '../../../components/helpers/types'
-import ReactProviderCookiesData from '../../../components/helpers/ReactProviderCookiesData'
+import { pathnameActions } from '../../../store/pathname'
+import { getCookie } from '../../../helpers/localStorageFunctions'
+import { fetchedMainSingleObj } from '../../../types/types'
+import ReactProviderCookiesData from '../../../helpers/ReactProviderCookiesData'
 import WithoutAuth from '../../../components/layouts/WithoutAuth'
 
 const SearchPage = () => {

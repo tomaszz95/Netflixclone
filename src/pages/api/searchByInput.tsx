@@ -1,4 +1,4 @@
-import { searchMoviesByInput, searchSeriesByInput } from '../../components/APIHelpers/searchApiData'
+import { searchMoviesByInput, searchSeriesByInput } from '../../lib/searchApiData'
 
 export const searchByInput = async (query: string, pathname: string, chosenUser: string) => {
     if (pathname === 'browse' || pathname === 'kids' || pathname === 'popular') {

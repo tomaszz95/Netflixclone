@@ -2,7 +2,7 @@ import { Provider } from 'react-redux'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import store from '../components/store'
+import store from '../store'
 
 import '../styles/globals.css'
 

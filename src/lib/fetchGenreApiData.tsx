@@ -1,4 +1,4 @@
-import { fetchedMovieGenres, fetchedSeriesGenres } from '../helpers/siteText'
+import { fetchedMovieGenres, fetchedSeriesGenres } from '../constans/siteText'
 import { getOptions } from './toFetchDataObjects'
 import { genrePopularNewTopMoviesSeries } from './toFetchDataObjects'
 import { moviesDataFunc, seriesDataFunc } from './workWithFetchedData'

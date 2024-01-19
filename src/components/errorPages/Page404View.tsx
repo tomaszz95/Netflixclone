@@ -1,4 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
+import NETFLIX_LOGO from '../../assets/photos/netflixLogo.png'
+
 import styles from './Page404View.module.css'
 
 const Page404View = () => {
@@ -6,7 +10,7 @@ const Page404View = () => {
         <>
             <header className={styles.header}>
                 <Link href="/">
-                    <img src="/photos/netflixLogo.png" alt="Netflix Logo" className={styles.netflixLogo} />
+                    <Image src={NETFLIX_LOGO} alt="Netflix Logo" className={styles.netflixLogo} />
                 </Link>
             </header>
             <main className={styles.main}>

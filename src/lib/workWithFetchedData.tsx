@@ -1,4 +1,4 @@
-import { fullMoviesDataType, fullSeriesDataType } from '../helpers/types'
+import { fullMoviesDataType, fullSeriesDataType } from '../types/types'
 
 export const moviesDataFunc = (moviesData: fullMoviesDataType) => {
     let moviesArray = []

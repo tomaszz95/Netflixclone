@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { fetchedMainSingleObj } from '../../helpers/types'
+import { fetchedMainSingleObj } from '../../../types/types'
 import styles from './SingleMainSimilar.module.css'
 
 type ComponentType = {

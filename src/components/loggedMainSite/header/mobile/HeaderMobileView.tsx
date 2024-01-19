@@ -5,7 +5,7 @@ import Link from 'next/link'
 import HeaderMobileBurgerNav from './HeaderMobileBurgerNav'
 import HeaderMobileProfile from './HeaderMobileProfile'
 
-import useSearchInput from '../../../customHooks/useSearchInput'
+import useSearchInput from '../../../../hooks/useSearchInput'
 import styles from './HeaderMobileView.module.css'
 
 type ComponentType = {
@@ -27,7 +27,7 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser, query }) => {
 
     const hideNavHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLDivElement
-     
+
         if (target.id === 'navContainer' || router.pathname.includes('genre')) {
             setIsNavVisible(false)
         }

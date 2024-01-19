@@ -1,0 +1,10 @@
+.closeBtn {
+    max-width: 24px;
+    max-height: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.closeBtn:hover {
+    background-color: rgb(228, 228, 228);
+}

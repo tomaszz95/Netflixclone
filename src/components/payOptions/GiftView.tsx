@@ -5,7 +5,7 @@ import Router from 'next/router'
 
 import ChangePlanButton from './ChangePlanButton'
 
-import { paymentActions } from '../store/payment'
+import { paymentActions } from '../../store/payment'
 import styles from './GiftView.module.css'
 
 const GiftView = () => {

@@ -18,6 +18,13 @@
         background-color 0.3s;
 }
 
+.accordionItemFocus {
+    background-color: var(--pure-white) !important;
+    border-top: 1px solid var(--pure-black) !important;
+    border-bottom: 1px solid var(--pure-black) !important;
+    border-left: 10px solid var(--call-to-action) !important;
+}
+
 .accordionText {
     display: none;
     padding: 1.5em;
@@ -28,6 +35,10 @@
     display: none;
 }
 
+.openCookieText {
+    display: block;
+}
+
 @media (min-width: 786px) {
     .accordion {
         width: 100%;
@@ -35,11 +46,11 @@
         max-height: 440px;
         overflow: auto;
     }
-    
+
     .accordionBox {
         display: flex;
     }
-    
+
     .accordionItem {
         min-width: 200px;
         max-width: 200px;

@@ -5,9 +5,9 @@ import Link from 'next/link'
 import Router from 'next/router'
 import { useRouter } from 'next/router'
 
-import useLogoutHandler from '../customHooks/useLogoutHandler'
-import ReactProviderCookiesData from '../helpers/ReactProviderCookiesData'
-import { changingLanguage } from '../helpers/dummyActionFunctions'
+import useLogoutHandler from '../../hooks/useLogoutHandler'
+import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
+import { changingLanguage } from '../../helpers/dummyActionFunctions'
 import styles from './SignupLayout.module.css'
 
 type ChildrenLayoutType = {

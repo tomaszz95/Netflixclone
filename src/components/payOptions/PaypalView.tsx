@@ -4,7 +4,7 @@ import { ThunkDispatch } from '@reduxjs/toolkit'
 
 import ChangePlanButton from './ChangePlanButton'
 
-import { paymentActions } from '../store/payment'
+import { paymentActions } from '../../store/payment'
 import styles from './PaypalView.module.css'
 
 const PaypalView = () => {
