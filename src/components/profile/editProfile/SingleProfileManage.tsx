@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
-import { paymentActions } from '../../store/payment'
+import { paymentActions } from '../../../store/payment'
 import EditProfileButtons from './EditProfileButtons'
 import EditProfileForm from './EditProfileForm'
 import EditProfileImage from './EditProfileImage'
@@ -41,7 +41,7 @@ const SingleProfileManage: React.FC<ComponentType> = ({ profilName }) => {
     const handleSubmit = () => {
         if (formData.selectedName.trim().length > 0) {
             dispatch(paymentActions.editProfilInfo(formData))
-            
+
             Router.push('/profile/manage')
         }
     }

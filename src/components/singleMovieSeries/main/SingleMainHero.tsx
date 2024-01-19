@@ -1,5 +1,5 @@
-import { limitTextToTwoSentences } from '../../helpers/helpersFunctions'
-import { singleSeriesItem, singleMoviesItem } from '../../helpers/types'
+import { limitTextToTwoSentences } from '../../../helpers/helpersFunctions'
+import { singleSeriesItem, singleMoviesItem } from '../../../types/types'
 import styles from './SingleMainHero.module.css'
 
 type ComponentType = {

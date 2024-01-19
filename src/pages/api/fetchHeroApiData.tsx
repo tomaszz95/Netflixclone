@@ -1,4 +1,4 @@
-import { getHeroKidsData, getHeroMoviesData, getHeroSeriesData } from '../../components/APIHelpers/fetchHeroApiData'
+import { getHeroKidsData, getHeroMoviesData, getHeroSeriesData } from '../../lib/fetchHeroApiData'
 
 export async function getAllHeroFetchedData() {
     const moviesData = await getHeroSeriesData()

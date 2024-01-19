@@ -3,8 +3,8 @@ import { useState } from 'react'
 import AutoplaysSection from './AutoplaysSection'
 import MaturitySection from './MaturitySection'
 
-import { setGamingAccount } from '../../helpers/dummyActionFunctions'
-import { inputsLanguagesData } from '../../helpers/siteText'
+import { setGamingAccount } from '../../../helpers/dummyActionFunctions'
+import { inputsLanguagesData } from '../../../constans/siteText'
 import styles from './EditProfileForm.module.css'
 
 type ComponentType = {

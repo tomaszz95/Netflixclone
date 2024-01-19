@@ -6,6 +6,7 @@
     width: 100%;
     padding: 1.2em 2em;
     border-bottom: 1px solid var(--dark-grey);
+    background-color: var(--greylish);
 }
 
 .infoHeaderBox {
@@ -25,19 +26,6 @@
     position: relative;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.infoHeaderBox button {
-    display: flex;
-    justify-content: center;
-    margin-left: 1em;
-    border-radius: 50%;
-    background-color: var(--pure-white);
-    transition: background-color 0.3s;
-}
-
-.infoHeaderBox button:hover {
-    background-color: rgb(228, 228, 228);
 }
 
 @media (min-width: 786px) {

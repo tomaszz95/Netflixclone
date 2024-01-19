@@ -8,7 +8,7 @@ const isLoggedInSlice = createSlice({
     reducers: {
         getLoggedInCookie() {
             const isLoggedIn = getCookie('isLoggedIn')
-            
+
             let login
             if (isLoggedIn === null || isLoggedIn === 'false') {
                 login = 'false'

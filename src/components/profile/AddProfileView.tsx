@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import Router from 'next/router'
 
-import { paymentActions } from '../store/payment'
+import { paymentActions } from '../../store/payment'
 import styles from './AddProfileView.module.css'
 
 const AddProfileView = () => {

@@ -6,7 +6,7 @@ import Router from 'next/router'
 import AcceptTerms from './AcceptTerms'
 import ChangePlanButton from './ChangePlanButton'
 
-import { paymentActions } from '../store/payment'
+import { paymentActions } from '../../store/payment'
 import styles from './CreditOptionView.module.css'
 
 const CreditOptionView = () => {

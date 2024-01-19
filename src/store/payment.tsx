@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { createCookie, getCookie } from '../helpers/localStorageFunctions'
-import { initialPaymentStateValues } from '../helpers/initialTypes'
-import { initialPaymentType } from '../helpers/types'
+import { initialPaymentStateValues } from '../types/initialTypes'
+import { initialPaymentType } from '../types/types'
 
 const paymentSlice = createSlice({
     name: 'payment',

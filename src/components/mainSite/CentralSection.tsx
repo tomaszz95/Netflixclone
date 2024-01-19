@@ -1,6 +1,6 @@
 import styles from './CentralSection.module.css'
 
-import { mainSiteSectionData } from '../helpers/siteText'
+import { mainSiteSectionData } from '../../constans/siteText'
 
 type ComponentType = { sectionCount: string }
 

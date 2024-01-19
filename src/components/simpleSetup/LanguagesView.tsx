@@ -3,8 +3,8 @@ import Router from 'next/router'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
-import { paymentActions } from '../store/payment'
-import { inputsLanguagesData } from '../helpers/siteText'
+import { paymentActions } from '../../store/payment'
+import { inputsLanguagesData } from '../../constans/siteText'
 import styles from './LanguagesView.module.css'
 
 const LanguagesView = () => {
@@ -22,7 +22,7 @@ const LanguagesView = () => {
 
     const submitData = () => {
         dispatch(paymentActions.changePaymentValue({ name: 'selectedLanguages', value: selectedLanguages }))
-        
+
         Router.push('/simpleSetup/choosemovies')
     }
 

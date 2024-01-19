@@ -2,7 +2,7 @@ import Router from 'next/router'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
-import { paymentActions } from '../../store/payment'
+import { paymentActions } from '../../../store/payment'
 import EditProfileImage from './EditProfileImage'
 
 import styles from './DeleteProfileView.module.css'
@@ -16,7 +16,7 @@ const DeleteProfileView: React.FC<ComponentType> = ({ profilName }) => {
 
     const deleteProfileHandler = () => {
         dispatch(paymentActions.deleteProfile(profilName))
-        
+
         Router.push('/profile/manage')
     }
 

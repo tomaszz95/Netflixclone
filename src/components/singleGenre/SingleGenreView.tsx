@@ -4,7 +4,7 @@ import MainViewGenreSection from './MainViewGenreSection'
 import LoggedFooterSections from '../loggedMainSite/footer/LoggedFooterSection'
 import HeaderLoggedSection from '../loggedMainSite/header/HeaderLoggedSection'
 
-import { fetchedMainSingleObj } from '../helpers/types'
+import { fetchedMainSingleObj } from '../../types/types'
 import styles from './SingleGenreView.module.css'
 
 type ComponentType = {

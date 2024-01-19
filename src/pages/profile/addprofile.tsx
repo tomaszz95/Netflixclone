@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import AddProfileView from '../../components/profile/AddProfileView'
 
-import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
 import WithoutAuth from '../../components/layouts/WithoutAuth'
 
 const AddProfileSite = () => {

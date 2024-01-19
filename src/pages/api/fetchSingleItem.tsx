@@ -1,4 +1,4 @@
-import { moviesSingleDataFunc, seriesSingleDataFunc } from '../../components/APIHelpers/fetchSingleApiData'
+import { moviesSingleDataFunc, seriesSingleDataFunc } from '../../lib/fetchSingleApiData'
 
 export async function fetchSingleMovieData(movieId: string) {
     const movieData = await moviesSingleDataFunc(movieId)

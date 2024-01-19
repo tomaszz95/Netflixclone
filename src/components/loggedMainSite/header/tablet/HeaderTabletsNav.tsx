@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { navigationBrowseLinks, navigationKidsLinks } from '../../../helpers/siteText'
+import { navigationBrowseLinks, navigationKidsLinks } from '../../../../constans/siteText'
 import styles from './HeaderTabletsNav.module.css'
 
 type ComponentType = {

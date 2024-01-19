@@ -1,4 +1,4 @@
-import { changingLanguage } from '../helpers/dummyActionFunctions'
+import { changingLanguage } from '../../helpers/dummyActionFunctions'
 import styles from './LoginFooter.module.css'
 
 type ComponentType = { isLoginPage: boolean }

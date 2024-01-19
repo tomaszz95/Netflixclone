@@ -71,21 +71,6 @@ a {
     --size-xxxvl: 4rem;
 }
 
-.closeModalClass {
-    display: block;
-}
-
-.openCookieText {
-    display: block !important;
-}
-
-.accordionItemFocus {
-    background-color: var(--pure-white) !important;
-    border-top: 1px solid var(--pure-black) !important;
-    border-bottom: 1px solid var(--pure-black) !important;
-    border-left: 10px solid var(--call-to-action) !important;
-}
-
 #cookiesModal {
     position: fixed;
     width: 100vw;

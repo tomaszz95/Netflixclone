@@ -1,4 +1,4 @@
-import { sectionMainDataObj } from './types'
+import { sectionMainDataObj } from '../types/types'
 
 export const mainSiteSectionData: sectionMainDataObj = {
     '1': {

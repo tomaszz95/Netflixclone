@@ -3,8 +3,8 @@ import { useRouter } from 'next/router'
 
 import CarouselItem from '../loggedMainSite/main/CarouselItem'
 
-import { allFetchedGenres } from '../helpers/siteText'
-import { fetchedMainSingleObj } from '../helpers/types'
+import { allFetchedGenres } from '../../constans/siteText'
+import { fetchedMainSingleObj } from '../../types/types'
 import styles from './MainViewGenreSection.module.css'
 
 type ComponentType = {

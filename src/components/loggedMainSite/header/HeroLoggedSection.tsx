@@ -2,9 +2,9 @@ import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 
 import getHeroHandler from '../../../pages/api/fetchHeroApiData'
-import { getCookie } from '../../helpers/localStorageFunctions'
-import { limitTextToTwoSentences } from '../../helpers/helpersFunctions'
-import { heroMoviesFetchedData } from '../../helpers/types'
+import { getCookie } from '../../../helpers/localStorageFunctions'
+import { limitTextToTwoSentences } from '../../../helpers/helpersFunctions'
+import { heroMoviesFetchedData } from '../../../types/types'
 import styles from './HeroLoggedSection.module.css'
 
 const HeroLoggedSection = () => {

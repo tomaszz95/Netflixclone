@@ -5,8 +5,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'
 import Router from 'next/router'
 
 import auth from '../../../firebase'
-import { isLoggedInActions } from '../store/loggedin'
-import { loginEmailsActions } from '../store/login-emails'
+import { isLoggedInActions } from '../../store/loggedin'
+import { loginEmailsActions } from '../../store/login-emails'
 
 import styles from './RegformView.module.css'
 
@@ -91,7 +91,7 @@ const RegformView = () => {
             createUserWithEmailAndPassword(auth, inputEmail, inputPassword)
                 .then((userCredential) => {
                     Router.push(`/signup/plan`)
-                    
+
                     dispatch(isLoggedInActions.createLoggedCookie('true'))
                     dispatch(loginEmailsActions.createEmailsCookie({ emailFunction: 'signUpEmail', email: inputEmail }))
                 })

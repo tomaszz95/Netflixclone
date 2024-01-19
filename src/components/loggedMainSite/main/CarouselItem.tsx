@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import MoreInfoBox from './MoreInfoBox'
 
-import { fetchedMainSingleObj } from '../../helpers/types'
+import { fetchedMainSingleObj } from '../../../types/types'
 import styles from './CarouselItem.module.css'
 
 type ComponentType = {

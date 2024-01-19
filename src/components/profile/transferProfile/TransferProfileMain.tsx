@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 import EditProfileImage from '../editProfile/EditProfileImage'
 
-import { profileTransferHandler } from '../../helpers/dummyActionFunctions'
-import { getCookie } from '../../helpers/localStorageFunctions'
+import { profileTransferHandler } from '../../../helpers/dummyActionFunctions'
+import { getCookie } from '../../../helpers/localStorageFunctions'
 import styles from './TransferProfileMain.module.css'
 
 const TransferProfileMain = () => {

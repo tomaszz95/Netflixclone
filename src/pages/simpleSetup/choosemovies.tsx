@@ -5,7 +5,7 @@ import SignupLayout from '../../components/layouts/SignupLayout'
 import ChooseMoviesView from '../../components/simpleSetup/ChooseMoviesView'
 
 import { getOptions } from '../../components/APIHelpers/toFetchDataObjects'
-import { fetchedContentType, fetchedMoviesPropsData } from '../../components/helpers/types'
+import { fetchedContentType, fetchedMoviesPropsData } from '../../types/types'
 
 const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData }) => {
     const [fetchedContentObjects, setfetchedContentObjects] = useState<fetchedMoviesPropsData[]>([])

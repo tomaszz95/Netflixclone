@@ -7,7 +7,7 @@ import SingleTitleView from '../../components/singleMovieSeries/SingleTitleView'
 
 import WithoutAuth from '../../components/layouts/WithoutAuth'
 import { fetchSingleData } from '../api/fetchSingleItem'
-import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
 
 const SingleTitlePage = () => {
     const router = useRouter()

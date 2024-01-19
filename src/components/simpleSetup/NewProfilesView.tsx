@@ -5,8 +5,8 @@ import { ThunkDispatch } from '@reduxjs/toolkit'
 
 import NewProfileInput from './NewProfilesInput'
 
-import { paymentActions } from '../store/payment'
-import { initialInputNamesValues } from '../helpers/siteText'
+import { paymentActions } from '../../store/payment'
+import { initialInputNamesValues } from '../../constans/siteText'
 import styles from './NewProfilesView.module.css'
 
 const NewProfilesView = () => {

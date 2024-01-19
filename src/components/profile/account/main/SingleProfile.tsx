@@ -3,8 +3,8 @@ import { useState } from 'react'
 import EditProfileImage from '../../editProfile/EditProfileImage'
 import SingleProfileMoreInfo from './SingleProfileMoreInfo'
 
-import { capitalizeFirstLetter } from '../../../helpers/helpersFunctions'
-import { singleProfileMoreInfoTexts, singleProfileKidsMoreInfoTexts } from '../../../helpers/siteText'
+import { capitalizeFirstLetter } from '../../../../helpers/helpersFunctions'
+import { singleProfileMoreInfoTexts, singleProfileKidsMoreInfoTexts } from '../../../../constans/siteText'
 import styles from './SingleProfile.module.css'
 
 type ComponentType = {

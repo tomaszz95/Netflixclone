@@ -5,8 +5,8 @@ import { useState, useRef } from 'react'
 
 import EditProfileImage from '../../../profile/editProfile/EditProfileImage'
 
-import { createCookie } from '../../../helpers/localStorageFunctions'
-import useLogoutHandler from '../../../customHooks/useLogoutHandler'
+import { createCookie } from '../../../../helpers/localStorageFunctions'
+import useLogoutHandler from '../../../../hooks/useLogoutHandler'
 import styles from './HeaderDesktopProfile.module.css'
 
 type ComponentType = {

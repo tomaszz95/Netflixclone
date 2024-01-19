@@ -3,8 +3,8 @@ import Router from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
-import { paymentActions } from '../store/payment'
-import { fetchedMoviesPropsData } from '../helpers/types'
+import { paymentActions } from '../../store/payment'
+import { fetchedMoviesPropsData } from '../../types/types'
 import styles from './ChooseMoviesView.module.css'
 
 const ChooseMoviesView: React.FC<{ fetchedContent: fetchedMoviesPropsData[] }> = ({ fetchedContent }) => {

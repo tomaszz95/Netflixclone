@@ -8,8 +8,8 @@ import HeaderLoggedSection from './header/HeaderLoggedSection'
 import HeroLoggedSection from './header/HeroLoggedSection'
 import LoggedFooterSections from './footer/LoggedFooterSection'
 
-import { pathnameActions } from '../store/pathname'
-import { fetchedMainWholeObj } from '../helpers/types'
+import { pathnameActions } from '../../store/pathname'
+import { fetchedMainWholeObj } from '../../types/types'
 import styles from './LoggedMainSiteView.module.css'
 
 type ComponentType = {

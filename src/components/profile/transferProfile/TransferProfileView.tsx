@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import Link from 'next/link'
 
-import useLogoutHandler from '../../customHooks/useLogoutHandler'
+import useLogoutHandler from '../../../hooks/useLogoutHandler'
 import TransferProfileMain from './TransferProfileMain'
 
 import styles from './TransferProfileView.module.css'

@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Slider from 'react-slick'
 import CarouselItem from './CarouselItem'
 
-import { carouselSettings, getCategoryLink } from '../../helpers/carouselSettings'
-import { fetchedMainSingleObj } from '../../helpers/types'
+import { carouselSettings, getCategoryLink } from '../../../helpers/carouselSettings'
+import { fetchedMainSingleObj } from '../../../types/types'
 import styles from './SingleMainCarousel.module.css'
 
 type ComponentType = {

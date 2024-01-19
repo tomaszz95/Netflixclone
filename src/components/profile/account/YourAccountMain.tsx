@@ -8,8 +8,8 @@ import SettingsBox from './main/SettingsBox'
 import SingleProfile from './main/SingleProfile'
 import VerifyBox from './main/VerifyBox'
 
-import { getCurrentMonth } from '../../helpers/helpersFunctions'
-import { verifyNumber } from '../../helpers/dummyActionFunctions'
+import { getCurrentMonth } from '../../../helpers/helpersFunctions'
+import { verifyNumber } from '../../../helpers/dummyActionFunctions'
 import styles from './YourAccountMain.module.css'
 
 const YourAccountMain = () => {

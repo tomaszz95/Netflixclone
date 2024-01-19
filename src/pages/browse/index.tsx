@@ -3,8 +3,8 @@ import Head from 'next/head'
 import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteView'
 
 import { getAllAPIFetchedData } from '../api/fetchMainSitesApiData'
-import { fetchedMainWholeObj } from '../../components/helpers/types'
-import ReactProviderCookiesData from '../../components/helpers/ReactProviderCookiesData'
+import { fetchedMainWholeObj } from '../../types/types'
+import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
 import WithoutAuth from '../../components/layouts/WithoutAuth'
 
 type ComponentType = {

@@ -1,7 +1,7 @@
 import styles from './FooterSection.module.css'
 
-import { changingLanguage } from '../helpers/dummyActionFunctions'
-import { footerMainSiteLinks } from '../helpers/siteText'
+import { changingLanguage } from '../../helpers/dummyActionFunctions'
+import { footerMainSiteLinks } from '../../constans/siteText'
 
 const FooterSection = () => {
     return (
