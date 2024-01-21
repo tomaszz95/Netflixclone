@@ -1,17 +1,20 @@
 import Head from 'next/head'
 
-import Page404View from '../components/errorPages/Page404View'
+import ErrorPage from '../components/errorPages/ErrorPage'
 
-const Page404 = () => {
+const ErrorPage404 = () => {
     return (
         <>
             <Head>
                 <title>404 error | Netflix</title>
                 <meta name="description" content="404 error page" />
             </Head>
-            <Page404View />
+            <ErrorPage
+                errorTitle="Lost your way?"
+                errorText="Sorry, we can't find that page. You'll find lots to explore on the home page."
+            />
         </>
     )
 }
 
-export default Page404
+export default ErrorPage404

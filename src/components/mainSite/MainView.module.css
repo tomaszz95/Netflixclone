@@ -14,6 +14,10 @@
     overflow: hidden;
 }
 
+.list {
+    width: 100%;
+}
+
 .footer {
     padding: 1em;
     background-color: var(--pure-black);

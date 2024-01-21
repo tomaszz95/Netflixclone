@@ -1,6 +1,6 @@
 .heroSection {
     width: 100%;
-    height: 680px;
+    height: 670px;
 }
 
 .heroShadow {
@@ -50,15 +50,9 @@
 }
 
 @media (min-width: 786px) {
-    .heroSection {
-        height: 650px;
-    }
-
+    .heroSection,
+    .heroImage,
     .heroShadow {
-        height: 692px;
-    }
-
-    .heroImage {
         height: 692px;
     }
 
@@ -77,15 +71,9 @@
 }
 
 @media (min-width: 1200px) {
-    .heroSection {
-        height: 800px;
-    }
-
+    .heroSection,
+    .heroImage,
     .heroShadow {
-        height: 792px;
-    }
-
-    .heroImage {
         height: 792px;
     }
 

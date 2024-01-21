@@ -1,8 +1,10 @@
-export type sectionMainData = {
-    title: string
-    text: string
-    image: string
-    video?: string
+export type nextJsImage = {
+    blurDatURL: string
+    blurHeight: number
+    blurWidth: number
+    height: number
+    width: number
+    src: string
 }
 
 export type initialPaymentType = {
@@ -15,11 +17,6 @@ export type initialPaymentType = {
     selectedNames: string[]
     selectedMovies: string[]
     isFullySet: boolean
-}
-
-
-export type sectionMainDataObj = {
-    [key: string]: sectionMainData
 }
 
 export type fetchedContentType = {

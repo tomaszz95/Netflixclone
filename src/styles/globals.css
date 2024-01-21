@@ -78,24 +78,6 @@ a {
     z-index: 1000;
 }
 
-.openQuestionText {
-    max-height: 800px !important;
-    overflow: visible !important;
-    opacity: 1 !important;
-}
-
-section {
-    border-bottom: 8px solid var(--lighter-black);
-}
-
-.right {
-    order: 1;
-}
-
-.left {
-    order: -1;
-}
-
 .slick-list {
     margin: 1em 0;
 }
