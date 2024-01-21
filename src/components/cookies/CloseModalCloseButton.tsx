@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import CLOSE_ICON from '../../assets/icons/closeIcon.png'
 
-import styles from './CloseModalButton.module.css'
+import styles from './CloseModalCloseButton.module.css'
 type ComponentType = { onClick: () => void }
 
 const CloseModalButton: React.FC<ComponentType> = ({ onClick }) => {

@@ -8,9 +8,9 @@ const MoreInfoAccordion = () => {
     const [activeAccordion, setActiveAccordion] = useState(0)
 
     return (
-        <div className={styles.accordion}>
+        <ul className={styles.accordion}>
             {accordionDataText.map((item, index) => (
-                <div key={index} className={styles.accordionBox}>
+                <li key={index} className={styles.accordionBox}>
                     <button
                         className={`${styles.accordionItem} ${
                             activeAccordion === index ? styles.accordionItemFocus : ''
@@ -26,9 +26,9 @@ const MoreInfoAccordion = () => {
                         <h3>{item.title}</h3>
                         <p>{item.text}</p>
                     </div>
-                </div>
+                </li>
             ))}
-        </div>
+        </ul>
     )
 }
 

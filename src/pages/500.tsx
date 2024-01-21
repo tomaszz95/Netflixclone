@@ -1,17 +1,20 @@
 import Head from 'next/head'
 
-import Page500View from '../components/errorPages/Page500View'
+import ErrorPage from '../components/errorPages/ErrorPage'
 
-const Page404 = () => {
+const ErrorPage500 = () => {
     return (
         <>
             <Head>
                 <title>500 error | Netflix</title>
                 <meta name="description" content="500 error page" />
             </Head>
-            <Page500View />
+            <ErrorPage
+                errorTitle="Something went wrong :<"
+                errorText="Sorry, we're having trouble with your request. You'll find lots to explore on the home page."
+            />
         </>
     )
 }
 
-export default Page404
+export default ErrorPage500

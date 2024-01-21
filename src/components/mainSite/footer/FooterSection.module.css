@@ -8,14 +8,14 @@
 }
 
 .question,
-.links a {
+.links li {
     margin-bottom: 1.1em;
-    color: rgba(255, 255, 255, 0.7);
     text-decoration: underline;
     cursor: pointer;
 }
 
 .question {
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1.5em;
 }
 
@@ -27,21 +27,8 @@
 }
 
 .links a {
-    font-size: 0.875rem;
-}
-
-.select {
-    margin-right: 1em;
-    padding: 0.5em;
-    background-color: var(--light-black);
-    color: var(--pure-white);
-    border-radius: 5px;
-}
-
-.language {
-    margin-top: 1.4em;
-    font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
 }
 
 @media (min-width: 1200px) {
@@ -60,16 +47,6 @@
     }
 
     .links a {
-        font-size: var(--size-xxxs);
-    }
-
-    .select {
-        margin-right: 2em;
-        padding: 0.65em 1em;
-        font-size: var(--size-xxxs);
-    }
-
-    .language {
         font-size: var(--size-xxxs);
     }
 }

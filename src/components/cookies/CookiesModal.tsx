@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import ModalText from './ModalText'
 import ModalMoreInfo from './ModalMoreInfo'
 import CookiesPortal from './CookiesPortal'
-import CloseModalButton from './CloseModalButton'
+import CloseModalCloseButton from './CloseModalCloseButton'
 import CookiesModalButtons from './CookiesModalButtons'
 
 import { createCookie, getCookie } from '../../helpers/localStorageFunctions'
@@ -56,7 +56,7 @@ const CookiesModal = () => {
                             onOpenMoreInfo={openMoreInfo}
                         />
                     </div>
-                    <CloseModalButton onClick={rejectCookies} />
+                    <CloseModalCloseButton onClick={rejectCookies} />
                 </div>
             )}
 

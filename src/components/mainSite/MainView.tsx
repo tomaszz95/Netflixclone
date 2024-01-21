@@ -2,11 +2,12 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import Router from 'next/router'
 
-import HeaderSection from './HeaderSection'
-import HeroSection from './HeroSection'
-import CentralSection from './CentralSection'
-import QuestionSection from './QuestionSection'
-import FooterSection from './FooterSection'
+import HeaderSection from './header/HeaderSection'
+import HeroSection from './header/HeroSection'
+import CentralSection from './main/CentralSection'
+import QuestionSection from './main/QuestionSection'
+import FooterSection from './footer/FooterSection'
+import { mainSiteSectionData } from '../../constans/mainSite'
 
 import styles from './MainView.module.css'
 
@@ -27,10 +28,11 @@ const MainView = () => {
                 <HeroSection />
             </header>
             <main className={styles.main}>
-                <CentralSection sectionCount="1" />
-                <CentralSection sectionCount="2" />
-                <CentralSection sectionCount="3" />
-                <CentralSection sectionCount="4" />
+                <ul className={styles.list}>
+                    {mainSiteSectionData.map((section, index) => (
+                        <CentralSection key={index} sectionCount={index} sectionData={section} />
+                    ))}
+                </ul>
                 <QuestionSection />
             </main>
             <footer className={styles.footer}>

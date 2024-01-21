@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import Image from 'next/image'
 
+import HEADER_IMG from '../../../assets/photos/header.jpg'
 import MembershipEmail from './MembershipEmail'
 
 import styles from './HeroSection.module.css'
@@ -26,12 +27,11 @@ const HeroSection = () => {
         <section className={styles.heroSection}>
             <div className={styles.heroShadow}></div>
             <Image
-                src="/photos/header.jpg"
+                src={HEADER_IMG}
                 alt="Netflix hero image with most known films and series in the background"
                 width="1800"
-                height="1800"
                 className={styles.heroImage}
-                priority={true}
+                priority
             />
             <div className={styles.heroContent}>
                 <div className={styles.heroText}>

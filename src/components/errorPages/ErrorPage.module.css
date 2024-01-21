@@ -22,10 +22,11 @@
     flex-direction: column;
     width: 100%;
     height: calc(100vh - 70px);
-    background-image: url('/photos/500image.png');
+    background-image: url('/photos/404image.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
 }
 
 .shadow {
@@ -47,7 +48,6 @@
 
 .text {
     color: var(--pure-white);
-    text-align: center;
     z-index: 2;
 }
 
@@ -101,7 +101,7 @@
     }
 
     .netflixLogo {
-        margin-left: 2em;
+        margin-left: 5em;
         width: 130px;
     }
 

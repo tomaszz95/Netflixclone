@@ -3,13 +3,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import Router from 'next/router'
 
-import { loginEmailsActions } from '../../store/login-emails'
+import { loginEmailsActions } from '../../../store/login-emails'
 import styles from './MembershipEmail.module.css'
 
 const MembershipEmail = () => {
     const [inputEmail, setInputEmail] = useState('')
     const [isValid, setIsValid] = useState(false)
     const [isFirstTry, setIsFirstTry] = useState(true)
+    const [registerState, setRegisterState] = useState({
+        isRegistering: false,
+        buttonText: '',
+        routerPath: '',
+    })
     const [isRegistering, setIsRegistering] = useState(false)
     const [buttonText, setButtonText] = useState('')
     const inputElement = useRef<HTMLInputElement | null>(null)
@@ -25,25 +30,37 @@ const MembershipEmail = () => {
             paymentData === null &&
             isLoggedIn === 'true'
         ) {
-            setIsRegistering(true)
-            setButtonText('Restart Your Membership')
+            setRegisterState({
+                isRegistering: true,
+                buttonText: 'Restart Your Membership',
+                routerPath: '/signup/plan',
+            })
         } else if (
             loginEmailsData.startSignUpEmail !== null &&
             loginEmailsData.signUpEmail === null &&
             loginEmailsData.signInEmail === null &&
             isLoggedIn === 'false'
         ) {
-            setIsRegistering(true)
-            setButtonText('Finish Sign Up')
+            setRegisterState({
+                isRegistering: true,
+                buttonText: 'Finish Sign Up',
+                routerPath: '/signup/regform',
+            })
         } else if (paymentData !== null && paymentData.userPaid && isLoggedIn === 'true') {
-            setIsRegistering(true)
-            setButtonText('Complete the initial settings')
+            setRegisterState({
+                isRegistering: true,
+                buttonText: 'Complete the initial settings',
+                routerPath: '/simpleSetup/orderfinal',
+            })
         } else if (
             (paymentData !== null && !paymentData.userPaid && loginEmailsData.signUpEmail !== null) ||
             (loginEmailsData.signInEmail !== null && isLoggedIn === 'true')
         ) {
-            setIsRegistering(true)
-            setButtonText('Choose your plan')
+            setRegisterState({
+                isRegistering: true,
+                buttonText: 'Choose your plan',
+                routerPath: '/signup/paymentPicker',
+            })
         }
     }, [loginEmailsData, paymentData])
 
@@ -100,17 +117,7 @@ const MembershipEmail = () => {
                 <button
                     type="button"
                     aria-label="Go back to register"
-                    onClick={() => {
-                        if (buttonText === 'Finish Sign Up') {
-                            Router.push(`/signup/regform`)
-                        } else if (buttonText === 'Restart Your Membership') {
-                            Router.push(`/signup/plan`)
-                        } else if (buttonText === 'Complete the initial settings') {
-                            Router.push(`/simpleSetup/orderfinal`)
-                        } else if (buttonText === 'Choose your plan') {
-                            Router.push(`/signup/paymentPicker`)
-                        }
-                    }}
+                    onClick={() => Router.push(`${registerState.routerPath}`)}
                     className={`${styles.button} ${styles.buttonFinish}`}
                 >
                     {buttonText} &gt;

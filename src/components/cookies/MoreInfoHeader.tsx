@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import CloseModalButton from './CloseModalButton'
+import CloseModalCloseButton from './CloseModalCloseButton'
 
 import NETFLIX_LOGO from '../../assets/photos/netflixLogo.png'
 import styles from './MoreInfoHeader.module.css'
@@ -12,7 +12,7 @@ const MoreInfoHeader: React.FC<ComponentType> = ({ onCloseMoreInfo }) => {
             <Image src={NETFLIX_LOGO} alt="Netflix Logo icon" width="95" className={styles.netflixLogo} />
             <div className={styles.infoHeaderBox}>
                 <h2>Privacy preference center</h2>
-                <CloseModalButton onClick={onCloseMoreInfo} />
+                <CloseModalCloseButton onClick={onCloseMoreInfo} />
             </div>
         </div>
     )

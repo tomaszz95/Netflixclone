@@ -1,4 +1,4 @@
-import MembershipEmail from './MembershipEmail'
+import MembershipEmail from '../header/MembershipEmail'
 import QuestionsAccordion from './QuestionsAccordion'
 
 import styles from './QuestionSection.module.css'
