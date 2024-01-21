@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Router from 'next/router'
 import { useRouter } from 'next/router'
 
+import NETFLIX_LOGO from '../../assets/photos/netflixLogo.png'
 import LoginFooter from '../login/LoginFooter'
 
 import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
@@ -36,7 +37,12 @@ const LogLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
                 <section className={styles.login}>
                     <div className={styles.content}>
                         <Link href="/">
-                            <Image src="/photos/netflixLogo.png" alt="Netflix Logo" width="100" height="40" />
+                            <Image
+                                src={NETFLIX_LOGO}
+                                alt="Netflix Logo icon"
+                                width="120"
+                                className={styles.netflixLogo}
+                            />
                         </Link>
                         {isLoginPage ? (
                             <></>
