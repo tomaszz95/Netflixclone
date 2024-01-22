@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import SignupLayout from '../../components/layouts/SignupLayout'
+import SignupLayout from '../../components/layouts/SignupLayout/SignupLayout'
 import RegformView from '../../components/signup/RegformView'
 
 import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
