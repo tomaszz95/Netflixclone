@@ -62,11 +62,11 @@
     }
 
     .loginBg {
-        background-image: url('../../../public/photos/header.jpg');
+        background-image: url('../../../../public/photos/header.jpg');
     }
 
     .logoutBg {
-        background-image: url('../../../public/photos/loginTheCrown.jpg');
+        background-image: url('../../../../public/photos/loginTheCrown.jpg');
     }
 
     .login {
