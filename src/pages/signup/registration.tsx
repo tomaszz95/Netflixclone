@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
-import RegistrationView from '../../components/signup/RegistrationView'
+import RegistrationView from '../../components/signup/registration/RegistrationView'
 import SignupLayout from '../../components/layouts/SignupLayout/SignupLayout'
 
-import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../components/layouts/ReactProviderCookiesData'
 
 const RegistrationPage = () => {
     return (

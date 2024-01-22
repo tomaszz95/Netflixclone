@@ -2,7 +2,7 @@ import { ThunkDispatch } from '@reduxjs/toolkit'
 import auth from '../../firebase'
 import { signOut } from 'firebase/auth'
 import { isLoggedInActions } from '../store/loggedin'
-import { deleteCookie } from '../helpers/localStorageFunctions'
+import { deleteCookie } from '../components/utils/localStorageFunctions'
 
 type DispatchType = ThunkDispatch<any, any, any>
 

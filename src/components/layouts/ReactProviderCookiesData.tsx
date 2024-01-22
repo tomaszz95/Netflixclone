@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
-import { paymentActions } from '../store/payment'
-import { loginEmailsActions } from '../store/login-emails'
-import { isLoggedInActions } from '../store/loggedin'
+import { paymentActions } from '../../store/payment'
+import { loginEmailsActions } from '../../store/login-emails'
+import { isLoggedInActions } from '../../store/loggedin'
 
 type ChildrenLayoutType = {
     children: React.ReactNode

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import PlanFormView from '../../components/signup/PlanFormView'
+import PlanFormView from '../../components/signup/plan/PlanFormView'
 import SignupLayout from '../../components/layouts/SignupLayout/SignupLayout'
 
 import WithoutAuth from '../../components/layouts/WithoutAuth'

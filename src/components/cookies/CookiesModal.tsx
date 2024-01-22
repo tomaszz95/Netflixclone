@@ -6,7 +6,7 @@ import CookiesPortal from './CookiesPortal'
 import CloseModalCloseButton from './CloseModalCloseButton'
 import CookiesModalButtons from './CookiesModalButtons'
 
-import { createCookie, getCookie } from '../../helpers/localStorageFunctions'
+import { createCookie, getCookie } from '../utils/localStorageFunctions'
 import styles from './CookiesModal.module.css'
 
 const CookiesModal = () => {

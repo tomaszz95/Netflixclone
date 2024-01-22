@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import ManageProfilesView from '../../../components/profile/ManageProfilesView'
 
-import ReactProviderCookiesData from '../../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../../components/layouts/ReactProviderCookiesData'
 import WithoutAuth from '../../../components/layouts/WithoutAuth'
 
 const ManageProfileSite = () => {

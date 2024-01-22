@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getCookie } from '../../../helpers/localStorageFunctions'
+import { getCookie } from '../../utils/localStorageFunctions'
 import { useRouter } from 'next/router'
 
 import HeaderMobileView from './mobile/HeaderMobileView'

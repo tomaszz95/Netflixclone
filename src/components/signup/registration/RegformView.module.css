@@ -31,88 +31,6 @@
     width: 100%;
 }
 
-.formBox {
-    width: 100%;
-    margin: 1em 0;
-}
-
-.formContent {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-}
-
-.emailInput,
-.passwordInput {
-    padding: 1.4em 1em 0.7em;
-    border-radius: 5px;
-    background-color: var(--pure-white);
-    border: 1px solid var(--light-grey);
-    color: var(--grey);
-    font-weight: 500;
-}
-
-.emailLabel,
-.passwordLabel {
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    width: 100%;
-    color: var(--light-grey);
-    font-size: var(--size-xxxs);
-    transition:
-        transform 0.2s,
-        top 0.2s,
-        left 0.2s;
-}
-
-.emailInput:focus + .emailLabel,
-.passwordInput:focus + .passwordLabel,
-.notEmpty + .emailLabel,
-.notEmpty + .passwordLabel {
-    transform: scale(0.75);
-    top: 3%;
-    left: -8%;
-}
-
-.emailInput:focus,
-.passwordInput:focus {
-    border: 1px solid var(--grey);
-    outline: none;
-}
-
-.emailInput.wrongInput,
-.passwordInput.wrongInput {
-    border: 1px solid var(--call-to-action-hover);
-}
-
-.emailInput.valid,
-.passwordInput.valid {
-    border: 1px solid var(--darker-green);
-}
-
-.error.wrongInput {
-    display: flex;
-}
-
-.error {
-    justify-content: flex-start;
-    align-items: center;
-    display: none;
-    margin-top: 0.5em;
-}
-
-.error img {
-    margin-right: 0.5em;
-}
-
-.error span {
-    color: var(--call-to-action-hover);
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
 .submitBtn {
     width: 100%;
     padding: 0.7em;
@@ -127,6 +45,12 @@
 
 .submitBtn:hover {
     background-color: var(--call-to-action-hover);
+}
+
+.submitBtn:disabled {
+    background-color: var(--pure-black);
+    cursor: auto;
+    pointer-events: none;
 }
 
 .newsletterForm {
@@ -201,23 +125,6 @@
 
     .text {
         font-size: 1.2rem;
-    }
-
-    .emailLabel,
-    .passwordLabel {
-        top: 26%;
-        font-size: var(--size-m);
-    }
-
-    .emailInput:focus + .emailLabel,
-    .passwordInput:focus + .passwordLabel,
-    .notEmpty + .emailLabel,
-    .notEmpty + .passwordLabel {
-        top: 2%;
-    }
-
-    .error span {
-        font-size: 0.9rem;
     }
 
     .newsletterInput::after {

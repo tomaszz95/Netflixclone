@@ -9,9 +9,9 @@ import SearchPageView from '../../../components/search/SearchPageView'
 
 import { searchByInput } from '../../api/searchByInput'
 import { pathnameActions } from '../../../store/pathname'
-import { getCookie } from '../../../helpers/localStorageFunctions'
+import { getCookie } from '../../../components/utils/localStorageFunctions'
 import { fetchedMainSingleObj } from '../../../types/types'
-import ReactProviderCookiesData from '../../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../../components/layouts/ReactProviderCookiesData'
 import WithoutAuth from '../../../components/layouts/WithoutAuth'
 
 const SearchPage = () => {

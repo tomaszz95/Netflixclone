@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Router from 'next/router'
 import { useRouter } from 'next/router'
 
-import ReactProviderCookiesData from '../../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../ReactProviderCookiesData'
 import styles from './SignupLayout.module.css'
 import SignupLayoutHeader from './SignupLayoutHeader'
 import SignupLayoutFooter from './SignupLayoutFooter'

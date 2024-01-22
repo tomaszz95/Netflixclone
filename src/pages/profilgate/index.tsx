@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import ChooseUserView from '../../components/users/ChooseUserView'
-import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../components/layouts/ReactProviderCookiesData'
 
 import WithoutAuth from '../../components/layouts/WithoutAuth'
 

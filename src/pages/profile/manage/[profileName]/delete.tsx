@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 import DeleteProfileView from '../../../../components/profile/editProfile/DeleteProfileView'
 
-import ReactProviderCookiesData from '../../../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../../../components/layouts/ReactProviderCookiesData'
 import WithoutAuth from '../../../../components/layouts/WithoutAuth'
 
 const DeleteProfileSite = () => {

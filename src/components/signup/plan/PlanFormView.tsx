@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Router from 'next/router'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
-import { paymentActions } from '../../store/payment'
+import { paymentActions } from '../../../store/payment'
 import PlanFormOffer from './PlanFormOffer'
 import PlanFormChoice from './PlanFormChoice'
 

@@ -1,4 +1,4 @@
-import { limitTextToTwoSentences } from '../../../helpers/helpersFunctions'
+import { limitTextToTwoSentences } from '../../utils/helpersFunctions'
 import { singleSeriesItem, singleMoviesItem } from '../../../types/types'
 import styles from './SingleMainHero.module.css'
 

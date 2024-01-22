@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { capitalizeFirstLetter } from '../../../../helpers/helpersFunctions'
+import { capitalizeFirstLetter } from '../../../utils/helpersFunctions'
 import styles from './PlanDetails.module.css'
 
 type ComponentType = {

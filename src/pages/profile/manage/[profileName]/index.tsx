@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import SingleProfileManage from '../../../../components/profile/editProfile/SingleProfileManage'
 
 import WithoutAuth from '../../../../components/layouts/WithoutAuth'
-import ReactProviderCookiesData from '../../../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../../../components/layouts/ReactProviderCookiesData'
 
 const ManageProfileSite = () => {
     const [queryRouter, setQueryRouter] = useState('')

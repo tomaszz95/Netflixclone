@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import NETFLIX_LOGO from '../../../assets/photos/netflixLogo.png'
 import LoginFooter from '../../login/LoginFooter'
 
-import ReactProviderCookiesData from '../../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../ReactProviderCookiesData'
 import styles from './LogLayout.module.css'
 
 type ChildrenLayoutType = {

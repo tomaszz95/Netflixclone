@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Router from 'next/router'
-import REG_LOGO from '../../assets/photos/registrationLogo.png'
+import REG_LOGO from '../../../assets/photos/registrationLogo.png'
 
 import styles from './RegistrationView.module.css'
 
