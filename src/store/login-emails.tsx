@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { createCookie, getCookie } from '../helpers/localStorageFunctions'
+import { createCookie, getCookie } from '../components/utils/localStorageFunctions'
 
 type initialType = {
     startSignUpEmail: string | null

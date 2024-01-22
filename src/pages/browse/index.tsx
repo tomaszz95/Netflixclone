@@ -4,7 +4,7 @@ import LoggedMainSiteView from '../../components/loggedMainSite/LoggedMainSiteVi
 
 import { getAllAPIFetchedData } from '../api/fetchMainSitesApiData'
 import { fetchedMainWholeObj } from '../../types/types'
-import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../components/layouts/ReactProviderCookiesData'
 import WithoutAuth from '../../components/layouts/WithoutAuth'
 
 type ComponentType = {

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import EditProfileImage from '../editProfile/EditProfileImage'
 
 import useLogoutHandler from '../../../hooks/useLogoutHandler'
-import { createCookie } from '../../../helpers/localStorageFunctions'
+import { createCookie } from '../../utils/localStorageFunctions'
 import styles from './YourAccountHeader.module.css'
 
 const YourAccountHeader = () => {

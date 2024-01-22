@@ -18,7 +18,7 @@ const SignupLayoutHeader: React.FC<ComponentType> = ({ isLogOut }) => {
         <header className={styles.header}>
             <div className={styles.headerContainer}>
                 <Link href="/">
-                    <Image src={NETFLIX_LOGO} alt="Netflix Logo" width={60} />
+                    <Image src={NETFLIX_LOGO} alt="Netflix Logo" width={120} />
                 </Link>
                 {isLogOut ? (
                     <Link

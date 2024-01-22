@@ -3,7 +3,7 @@ import Head from 'next/head'
 import CookiesModal from '../components/cookies/CookiesModal'
 import MainView from '../components/mainSite/MainView'
 
-import ReactProviderCookiesData from '../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../components/layouts/ReactProviderCookiesData'
 
 const HomePage = () => {
     return (

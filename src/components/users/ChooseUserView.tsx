@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import Router from 'next/router'
 
-import { createCookie } from '../../helpers/localStorageFunctions'
+import { createCookie } from '../utils/localStorageFunctions'
 import styles from './ChooseUserView.module.css'
 
 const ChooseUserView = () => {

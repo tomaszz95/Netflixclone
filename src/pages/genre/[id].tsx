@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react'
 import SingleGenreView from '../../components/singleGenre/SingleGenreView'
 
 import getGenreData from '../api/fetchSingleGenreData'
-import ReactProviderCookiesData from '../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../components/layouts/ReactProviderCookiesData'
 import { fetchedMainSingleObj } from '../../types/types'
 import { allFetchedGenres } from '../../constans/siteText'
 import WithoutAuth from '../../components/layouts/WithoutAuth'
-import { getGenreName } from '../../helpers/helpersFunctions'
+import { getGenreName } from '../../components/utils/helpersFunctions'
 
 type ComponentType = {
     fetchedData: fetchedMainSingleObj[]

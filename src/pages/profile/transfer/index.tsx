@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import TransferProfileView from '../../../components/profile/transferProfile/TransferProfileView'
 
-import ReactProviderCookiesData from '../../../helpers/ReactProviderCookiesData'
+import ReactProviderCookiesData from '../../../components/layouts/ReactProviderCookiesData'
 import WithoutAuth from '../../../components/layouts/WithoutAuth'
 
 const TransferProfileSite = () => {

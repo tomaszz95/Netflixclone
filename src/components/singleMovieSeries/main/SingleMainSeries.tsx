@@ -1,5 +1,5 @@
-import { generateRandomDescription } from '../../../helpers/helpersFunctions'
-import { getRandomMinutes } from '../../../helpers/helpersFunctions'
+import { generateRandomDescription } from '../../utils/helpersFunctions'
+import { getRandomMinutes } from '../../utils/helpersFunctions'
 import { seasonsDataType } from '../../../types/types'
 import styles from './SingleMainSeries.module.css'
 
