@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
-import SignupLayout from '../../components/layouts/SignupLayout'
+import SignupLayout from '../../components/layouts/SignupLayout/SignupLayout'
 import ChooseMoviesView from '../../components/simpleSetup/ChooseMoviesView'
 
 import { getOptions } from '../../lib/toFetchDataObjects'

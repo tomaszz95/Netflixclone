@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import LogoutView from '../../components/login/LogoutView'
-import LogLayout from '../../components/layouts/LogLayout'
+import LogLayout from '../../components/layouts/LogLayout/LogLayout'
 
 const LogoutPage = () => {
     return (

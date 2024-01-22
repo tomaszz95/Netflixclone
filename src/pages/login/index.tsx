@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import LoginView from '../../components/login/LoginView'
-import LogLayout from '../../components/layouts/LogLayout'
+import LogLayout from '../../components/layouts/LogLayout/LogLayout'
 
 const LoginPage = () => {
     return (

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import SignupLayout from '../../components/layouts/SignupLayout'
+import SignupLayout from '../../components/layouts/SignupLayout/SignupLayout'
 import PaypalView from '../../components/payOptions/PaypalView'
 
 import WithoutAuth from '../../components/layouts/WithoutAuth'

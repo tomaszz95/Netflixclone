@@ -19,3 +19,14 @@ export const footerMainSiteLinks: string[] = [
     'Only on Netflix',
     'Ad Choices',
 ]
+
+export const footerSignupSiteLinks: string[] = [
+    'FAQ',
+    'Help Center',
+    'Netflix Shop',
+    'Terms of Use',
+    'Privacy',
+    'Cookie Preferences',
+    'Corporate Information',
+    'Ad Choices',
+]
