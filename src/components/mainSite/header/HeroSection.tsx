@@ -17,7 +17,7 @@ const HeroSection = () => {
             (loginEmailsData.startSignUpEmail !== null ||
                 loginEmailsData.signUpEmail !== null ||
                 loginEmailsData.signInEmail !== null) &&
-            !isLoggedIn
+            isLoggedIn
         ) {
             setIsRegistering(true)
         }

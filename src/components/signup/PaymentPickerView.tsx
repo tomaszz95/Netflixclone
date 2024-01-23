@@ -1,7 +1,9 @@
 import Router from 'next/router'
+import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
+import LOCK_ICON from '../../assets/icons/lockIcon2.png'
 import { paymentActions } from '../../store/payment'
 import styles from './PaymentPickerView.module.css'
 
@@ -22,10 +24,10 @@ const PaymentPickerView = () => {
             <p className={styles.textBold}>Cancel easily online.</p>
             <div className={styles.encryptedBox}>
                 <p className={styles.encrypted}>End-to-end encrypted</p>
-                <img src="/icons/lockIcon2.png" alt="" className={styles.lockIconEncrypted} />
+                <Image src={LOCK_ICON} alt="" className={styles.lockIconEncrypted} width={16} height={16} />
             </div>
             <button
-                type="submit"
+                type="button"
                 aria-label="Click to pay by card or debit card"
                 className={styles.button}
                 onClick={() => {

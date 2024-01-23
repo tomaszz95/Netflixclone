@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
-import PlanFormTable from './PlanFormTable'
+import PlanFormTable from './planformTable/PlanFormTable'
 
 import styles from './PlanFormChoice.module.css'
+import PlanFormLabel from './PlanFormLabel'
 
 type ComponentType = { onSelectPlan: (plan: string) => void }
 
@@ -17,42 +18,24 @@ const PlanFormChoice: React.FC<ComponentType> = ({ onSelectPlan }) => {
     return (
         <div className={styles.container}>
             <div className={styles.inputs}>
-                <label htmlFor="basic" className={`${styles.label} ${selectedPlan === 'basic' ? styles.chosen : ''}`}>
-                    <input
-                        type="radio"
-                        id="basic"
-                        checked={selectedPlan === 'basic'}
-                        onChange={() => handlePlanChange('basic')}
-                        className={styles.input}
-                    />
-                    <span className={styles.labelText}>Basic</span>
-                </label>
-                <label
-                    htmlFor="standard"
-                    className={`${styles.label} ${selectedPlan === 'standard' ? styles.chosen : ''}`}
-                >
-                    <input
-                        type="radio"
-                        id="standard"
-                        checked={selectedPlan === 'standard'}
-                        onChange={() => handlePlanChange('standard')}
-                        className={styles.input}
-                    />
-                    <span className={styles.labelText}>Standard</span>
-                </label>
-                <label
-                    htmlFor="premium"
-                    className={`${styles.label} ${selectedPlan === 'premium' ? styles.chosen : ''}`}
-                >
-                    <input
-                        type="radio"
-                        id="premium"
-                        checked={selectedPlan === 'premium'}
-                        onChange={() => handlePlanChange('premium')}
-                        className={styles.input}
-                    />
-                    <span className={styles.labelText}>Premium</span>
-                </label>
+                <PlanFormLabel
+                    id="basic"
+                    label="Basic"
+                    onHandlePlanChange={handlePlanChange}
+                    selectedPlan={selectedPlan}
+                />
+                <PlanFormLabel
+                    id="standard"
+                    label="Standard"
+                    onHandlePlanChange={handlePlanChange}
+                    selectedPlan={selectedPlan}
+                />
+                <PlanFormLabel
+                    id="premium"
+                    label="Premium"
+                    onHandlePlanChange={handlePlanChange}
+                    selectedPlan={selectedPlan}
+                />
             </div>
             <PlanFormTable type={selectedPlan} />
         </div>

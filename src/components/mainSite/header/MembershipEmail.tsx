@@ -15,8 +15,6 @@ const MembershipEmail = () => {
         buttonText: '',
         routerPath: '',
     })
-    const [isRegistering, setIsRegistering] = useState(false)
-    const [buttonText, setButtonText] = useState('')
     const inputElement = useRef<HTMLInputElement | null>(null)
 
     const loginEmailsData = useSelector<any, any>((state) => state.loginEmails)
@@ -113,14 +111,14 @@ const MembershipEmail = () => {
 
     return (
         <div className={styles.membershipBox}>
-            {isRegistering ? (
+            {registerState.isRegistering ? (
                 <button
                     type="button"
                     aria-label="Go back to register"
                     onClick={() => Router.push(`${registerState.routerPath}`)}
                     className={`${styles.button} ${styles.buttonFinish}`}
                 >
-                    {buttonText} &gt;
+                    {registerState.buttonText} &gt;
                 </button>
             ) : (
                 <>

@@ -22,7 +22,7 @@ const HeaderSection = () => {
 
     return (
         <section className={styles.header}>
-            <Image src={NETFLIX_LOGO} alt="Netflix Logo icon" width="120" className={styles.netflixLogo} />
+            <Image src={NETFLIX_LOGO} alt="Netflix Logo icon" width="120" height={70} className={styles.netflixLogo} />
             <div className={styles.headerBox}>
                 <SelectLanguage style="black" />
                 {isLogged ? (
