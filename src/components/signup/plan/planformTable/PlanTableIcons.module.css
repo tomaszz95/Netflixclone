@@ -1,0 +1,19 @@
+.tableCell {
+    font-weight: 600;
+    text-align: center;
+    color: #737373;
+}
+
+@media (min-width: 786px) {
+    .tableCell {
+        margin-left: 0.4em;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 786px) {
+    .tableCell {
+        margin-left: 0.6em;
+        font-size: 1.2rem;
+    }
+}

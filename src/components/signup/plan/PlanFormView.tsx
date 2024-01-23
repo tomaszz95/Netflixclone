@@ -56,7 +56,7 @@ const PlanFormView = () => {
                     Only people who live with you may use your account. Watch on 4 different devices at the same time
                     with Premium, 2 with Standard and 1 with Basic.
                 </p>
-                <button type="submit" aria-label="Next step" className={styles.button} onClick={confirmHandler}>
+                <button type="button" aria-label="Next step" className={styles.button} onClick={confirmHandler}>
                     Next
                 </button>
             </div>

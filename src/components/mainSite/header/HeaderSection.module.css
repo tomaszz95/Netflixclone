@@ -45,6 +45,7 @@
 
     .header img {
         scale: 2;
+        width: auto;
     }
 
     .signBtn {

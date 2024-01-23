@@ -13,51 +13,6 @@
     z-index: 100;
 }
 
-.label {
-    position: relative;
-    min-width: 33.3333%;
-    padding: 1.6em 0.4em;
-    margin: 0 0.3em;
-    text-align: center;
-    background-color: var(--call-to-action);
-    color: var(--pure-white);
-    font-weight: 600;
-    font-size: 1.05rem;
-    opacity: 0.6;
-    transition: opacity 0.2s;
-}
-
-.label.chosen {
-    opacity: 1;
-}
-
-.input {
-    display: none;
-    pointer-events: none;
-}
-
-.labelText {
-    pointer-events: none;
-}
-
-.labelText::after {
-    position: absolute;
-    top: 98%;
-    left: 50%;
-    display: block;
-    transform: translateX(-50%);
-    border-left: 18px solid transparent;
-    border-right: 18px solid transparent;
-    border-top: 18px solid var(--call-to-action);
-    content: '';
-    opacity: 0;
-    transform: opacity 0.2s;
-}
-
-.label.chosen .labelText::after {
-    opacity: 1;
-}
-
 @media (min-width: 786px) {
     .container {
         margin-top: 1em;
