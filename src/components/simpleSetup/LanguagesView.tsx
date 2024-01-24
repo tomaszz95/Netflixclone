@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import Image from 'next/image'
 import Router from 'next/router'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
+import CHECK_ICON from '../../assets/icons/checkSignBlack.png'
 import { paymentActions } from '../../store/payment'
-import { inputsLanguagesData } from '../../constans/siteText'
+import { inputsLanguagesData } from '../../constans/simpleSetup'
 import styles from './LanguagesView.module.css'
 
 const LanguagesView = () => {
@@ -37,7 +39,7 @@ const LanguagesView = () => {
             </div>
             <div className={styles.languageContainer}>
                 <div className={styles.firstLanguage}>
-                    <img src="/icons/checkSignBlack.png" alt="" />
+                    <Image src={CHECK_ICON} alt="" />
                     <span>English</span>
                 </div>
                 <ul className={styles.inputs}>
@@ -53,7 +55,7 @@ const LanguagesView = () => {
                 </ul>
                 <div className={styles.submitBtnBox}>
                     <button
-                        type="submit"
+                        type="button"
                         aria-label="Go next after choosing languages"
                         className={styles.submitBtn}
                         onClick={submitData}

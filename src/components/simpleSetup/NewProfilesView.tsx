@@ -3,6 +3,8 @@ import Router from 'next/router'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
+import ADDUSER_ICON from '../../assets/icons/adduserSetupIcon.png'
+import USER_ICON from '../../assets/icons/userSetupIcon.png'
 import NewProfileInput from './NewProfilesInput'
 
 import { paymentActions } from '../../store/payment'
@@ -53,36 +55,20 @@ const NewProfilesView = () => {
             <div className={styles.inputContent}>
                 <div className={styles.inputOwner}>
                     <span className={styles.inputTitle}>Your profile</span>
-                    <NewProfileInput id="ownerInput" icon="/icons/userSetupIcon.png" checkInputHandler={checkInput} />
+                    <NewProfileInput id="ownerInput" icon={USER_ICON} checkInputHandler={checkInput} />
                 </div>
                 <div className={styles.inputAdditional}>
                     <span className={styles.inputTitle}>Add profiles?</span>
-                    <NewProfileInput
-                        id="personInput1"
-                        icon="/icons/adduserSetupIcon.png"
-                        checkInputHandler={checkInput}
-                    />
-                    <NewProfileInput
-                        id="personInput2"
-                        icon="/icons/adduserSetupIcon.png"
-                        checkInputHandler={checkInput}
-                    />
-                    <NewProfileInput
-                        id="personInput3"
-                        icon="/icons/adduserSetupIcon.png"
-                        checkInputHandler={checkInput}
-                    />
-                    <NewProfileInput
-                        id="personInput4"
-                        icon="/icons/adduserSetupIcon.png"
-                        checkInputHandler={checkInput}
-                    />
+                    <NewProfileInput id="personInput1" icon={ADDUSER_ICON} checkInputHandler={checkInput} />
+                    <NewProfileInput id="personInput2" icon={ADDUSER_ICON} checkInputHandler={checkInput} />
+                    <NewProfileInput id="personInput3" icon={ADDUSER_ICON} checkInputHandler={checkInput} />
+                    <NewProfileInput id="personInput4" icon={ADDUSER_ICON} checkInputHandler={checkInput} />
                 </div>
                 <p className={styles.warning}>
                     Only people who live with you may use your account. Learn more by reading our regulations.
                 </p>
                 <button
-                    type="submit"
+                    type="button"
                     aria-label="Go next after choosing people"
                     className={styles.submitBtn}
                     onClick={submitData}
