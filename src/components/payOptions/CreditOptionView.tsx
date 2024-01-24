@@ -1,8 +1,12 @@
+import Image from 'next/image'
 import { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import Router from 'next/router'
 
+import QUESTION_ICON from '../../assets/icons/questionIcon.png'
+import CARD_ICON from '../../assets/icons/cardIcon.png'
+import X_ICON from '../../assets/icons/xicon.png'
 import AcceptTerms from './AcceptTerms'
 import ChangePlanButton from './ChangePlanButton'
 
@@ -182,14 +186,14 @@ const CreditOptionView = () => {
                         <label htmlFor="cardNumber" className={styles.cardNumberLabel}>
                             Card number
                         </label>
-                        <img src="/icons/cardIcon.png" alt="" className={styles.cardNumberIcon} />
+                        <Image src={CARD_ICON} alt="" className={styles.cardNumberIcon} />
                     </div>
                     <div
                         className={`${styles.error} ${
                             !cardNumberInput.isFirstTry && !cardNumberInput.isValid ? styles.wrongInput : ''
                         }`}
                     >
-                        <img src="/icons/xicon.png" alt="" />
+                        <Image src={X_ICON} alt="" />
                         <p>Please enter a card number.</p>
                     </div>
                 </div>
@@ -223,7 +227,7 @@ const CreditOptionView = () => {
                                 !expirationDateInput.isFirstTry && !expirationDateInput.isValid ? styles.wrongInput : ''
                             }`}
                         >
-                            <img src="/icons/xicon.png" alt="" />
+                            <Image src={X_ICON} alt="" />
                             <p>Please enter an expiration date.</p>
                         </div>
                     </div>
@@ -247,14 +251,14 @@ const CreditOptionView = () => {
                             <label htmlFor="cardCVV" className={styles.cardCVVLabel}>
                                 CVV
                             </label>
-                            <img src="/icons/questionIcon.png" alt="" className={styles.cardNumberIcon} />
+                            <Image src={QUESTION_ICON} alt="" className={styles.cardNumberIcon} />
                         </div>
                         <div
                             className={`${styles.error} ${
                                 !cvvInput.isFirstTry && !cvvInput.isValid ? styles.wrongInput : ''
                             }`}
                         >
-                            <img src="/icons/xicon.png" alt="" />
+                            <Image src={X_ICON} alt="" />
                             <p>Please enter a CVV.</p>
                         </div>
                     </div>
@@ -287,7 +291,7 @@ const CreditOptionView = () => {
                             !firstNameInput.isFirstTry && !firstNameInput.isValid ? styles.wrongInput : ''
                         }`}
                     >
-                        <img src="/icons/xicon.png" alt="" />
+                        <Image src={X_ICON} alt="" />
                         <p>Please enter a first name.</p>
                     </div>
                 </div>
@@ -318,7 +322,7 @@ const CreditOptionView = () => {
                             !lastNameInput.isFirstTry && !lastNameInput.isValid ? styles.wrongInput : ''
                         }`}
                     >
-                        <img src="/icons/xicon.png" alt="" />
+                        <Image src={X_ICON} alt="" />
                         <p>Please enter a last name.</p>
                     </div>
                 </div>

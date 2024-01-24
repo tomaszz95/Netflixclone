@@ -14,26 +14,6 @@ export const footerLoggedMainSiteLinks: string[] = [
     'Ad Choices',
 ]
 
-export const inputsDeviceSurveyData = [
-    { id: 'tv', icon: '/icons/tvSetupIcon.png', title: 'TV', text: 'Smart or internet connected TVs' },
-    {
-        id: 'phone',
-        icon: '/icons/mobileSetupIcon.png',
-        title: 'Phone or Tablet',
-        text: 'Download the Netflix app to enjoy',
-    },
-    { id: 'computer', icon: '/icons/laptopSetupIcon.png', title: 'Computer', text: 'Desktop or laptop' },
-    { id: 'console', icon: '/icons/consoleSetupIcon.png', title: 'Game Console', text: 'Connected to the internet' },
-    {
-        id: 'streaming',
-        icon: '/icons/deviceSetupIcon.png',
-        title: 'Streaming Device',
-        text: 'Connects your TV to the internet',
-    },
-    { id: 'cable', icon: '/icons/cableSetupIcon.png', title: 'Cable Set Top Box', text: 'From your cable provider' },
-    { id: 'else', icon: '', title: 'Something Else', text: 'Enjoy Netflix with other internet-connected devices' },
-]
-
 export const initialInputNamesValues = [
     {
         id: 'ownerInput',

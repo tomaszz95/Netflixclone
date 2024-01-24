@@ -90,7 +90,7 @@ const GiftView = () => {
                 Redeem Gift Code
             </button>
             <p className={styles.botCheck}>
-                This page is protected by Google reCAPTCHA to ensure you're not a bot.{' '}
+                This page is protected by Google reCAPTCHA to ensure you're not a bot.
                 {!showBotText && (
                     <button
                         type="button"
