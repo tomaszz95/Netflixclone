@@ -1,9 +1,10 @@
+import Image from 'next/image'
 import { useState, useRef } from 'react'
 
 import styles from './NewProfileInput.module.css'
 
 type ComponentType = {
-    icon: string
+    icon: any
     id: string
     checkInputHandler: (id: string, value: string) => void
 }
@@ -21,7 +22,7 @@ const NewProfileInput: React.FC<ComponentType> = ({ icon, id, checkInputHandler 
 
     return (
         <div className={styles.inputBox}>
-            <img src={icon} alt="" className={styles.inputIcon} />
+            <Image src={icon} alt="" className={styles.inputIcon} />
             <div className={styles.inputForm}>
                 <input
                     type="text"
