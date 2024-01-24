@@ -6,7 +6,7 @@ import { ThunkDispatch } from '@reduxjs/toolkit'
 import DeviceSurveyInput from './DeviceSurveyInput'
 
 import { paymentActions } from '../../store/payment'
-import { inputsDeviceSurveyData } from '../../constans/siteText'
+import { inputsDeviceSurveyData } from '../../constans/simpleSetup'
 import styles from './DeviceSurveyView.module.css'
 
 const DeviceSurveyView = () => {
@@ -52,7 +52,7 @@ const DeviceSurveyView = () => {
                     ))}
                 </div>
                 <button
-                    type="submit"
+                    type="button"
                     aria-label="Go next after choosing device button"
                     className={styles.submitBtn}
                     onClick={submitData}

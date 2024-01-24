@@ -55,7 +55,7 @@ const PaymentPickerView = () => {
                 <span className={styles.buttonIcon}>&gt;</span>
             </button>
             <button
-                type="submit"
+                type="button"
                 aria-label="Click to pay by mobile bill"
                 className={styles.button}
                 onClick={() => {
@@ -75,7 +75,7 @@ const PaymentPickerView = () => {
                 <span className={styles.buttonIcon}>&gt;</span>
             </button>
             <button
-                type="submit"
+                type="button"
                 aria-label="Click to pay by PayPal"
                 className={styles.button}
                 onClick={() => {
@@ -95,7 +95,7 @@ const PaymentPickerView = () => {
                 <span className={styles.buttonIcon}>&gt;</span>
             </button>
             <button
-                type="submit"
+                type="button"
                 aria-label="Click to pay by Gift Code"
                 className={styles.button}
                 onClick={() => {
