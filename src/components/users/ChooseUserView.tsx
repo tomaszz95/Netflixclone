@@ -1,9 +1,10 @@
 import { useSelector } from 'react-redux'
-import Link from 'next/link'
 import Router from 'next/router'
 
 import { createCookie } from '../utils/localStorageFunctions'
 import styles from './ChooseUserView.module.css'
+import ChooseUserItem from './ChooseUserItem'
+import ChooseUserConsts from './ChooseUserConsts'
 
 const ChooseUserView = () => {
     const paymentData = useSelector<any, any>((state) => state.payment)
@@ -20,49 +21,17 @@ const ChooseUserView = () => {
             {paymentData ? (
                 <ul className={styles.list}>
                     {paymentData.selectedNames.map((user: string) => {
-                        if (user !== null) {
-                            return (
-                                <Link
-                                    href="/browse"
-                                    id={user}
-                                    key={user}
-                                    className={styles.listLink}
-                                    onClick={chosenUser}
-                                >
-                                    <li className={styles.listItem}>
-                                        <img
-                                            src="https://occ-0-5273-41.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
-                                            alt=""
-                                        />
-                                        <span>{user}</span>
-                                    </li>
-                                </Link>
-                            )
-                        }
+                        if (user === null) return
+
+                        return <ChooseUserItem user={user} key={user} onChosenUser={chosenUser} />
                     })}
-                    <Link href="/kids" id="kids" className={styles.listLink} onClick={chosenUser}>
-                        <li className={styles.listItem}>
-                            <img
-                                src="https://occ-0-5273-41.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABcENEq3AWngawcvIFgivpRF0Wx5gW-LVuNdof8gYEbtGtft04ORrv_UDixUwcbH1PpV3k16HITdmAnDgXwneLsz2WZuyDuHk5Xpb.png?r=f55"
-                                alt=""
-                            />
-                            <span>Kids</span>
-                        </li>
-                    </Link>
-                    <Link href="/profile/addprofile" className={styles.addProfileLink}>
-                        <li className={styles.addProfileItem}>
-                            <div>
-                                <img src="/icons/roundedplusIcon.png" alt="" />
-                            </div>
-                            <span>Add Profile</span>
-                        </li>
-                    </Link>
+                    <ChooseUserConsts onChosenUser={chosenUser} />
                 </ul>
             ) : (
                 <p className={styles.loading}>Loading data...</p>
             )}
             <button
-                type="submit"
+                type="button"
                 aria-label="Manage profiles button"
                 className={styles.submitBtn}
                 onClick={() => Router.push('/profile/manage')}
