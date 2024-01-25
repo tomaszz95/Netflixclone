@@ -1,21 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { createCookie, getCookie } from '../components/utils/localStorageFunctions'
-
-type initialType = {
-    startSignUpEmail: string | null
-    signUpEmail: string | null
-    signInEmail: string | null
-}
-
-const initialState: initialType = {
-    startSignUpEmail: null,
-    signUpEmail: null,
-    signInEmail: null,
-}
+import { initialLoginStateValues } from '../constans/initialStoreValues'
 
 const loginEmailsSlice = createSlice({
     name: 'loginEmails',
-    initialState: initialState,
+    initialState: initialLoginStateValues,
 
     reducers: {
         createEmailsAtLoadingPage(_, action) {

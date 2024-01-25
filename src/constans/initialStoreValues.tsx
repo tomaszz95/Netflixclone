@@ -1,4 +1,4 @@
-import { initialPaymentType } from './types'
+import { initialEmailType, initialPaymentType } from '../types/storeTypes'
 
 export const initialPaymentStateValues: initialPaymentType = {
     userEmail: null,
@@ -10,4 +10,10 @@ export const initialPaymentStateValues: initialPaymentType = {
     selectedNames: [],
     selectedMovies: [],
     isFullySet: false,
+}
+
+export const initialLoginStateValues: initialEmailType = {
+    startSignUpEmail: null,
+    signUpEmail: null,
+    signInEmail: null,
 }

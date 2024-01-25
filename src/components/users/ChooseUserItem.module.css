@@ -1,0 +1,32 @@
+.listLink {
+    width: 24%;
+}
+
+.listItem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.listItem img {
+    border-radius: 5px;
+    width: 100%;
+    border: 3px solid transparent;
+    transition: border 0.3s;
+    border-radius: 5px;
+}
+
+.listLink:hover .listItem img {
+    border: 3px solid var(--pure-white);
+}
+
+.listItem span {
+    margin-top: 0.4em;
+    transition: color 0.3s;
+    text-align: center;
+    color: var(--light-grey);
+}
+
+.listLink:hover .listItem span {
+    color: var(--pure-white);
+}

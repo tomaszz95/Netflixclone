@@ -3,35 +3,26 @@ import { useEffect, useState } from 'react'
 
 import SignupLayout from '../../components/layouts/SignupLayout/SignupLayout'
 import ChooseMoviesView from '../../components/simpleSetup/ChooseMoviesView'
+import { simpleSetupFetch } from '../../components/utils/simpleSetupFetch'
+import { fixSimpleSetupData } from '../../lib/fixSimpleSetupData'
 
-import { getOptions } from '../../lib/toFetchDataObjects'
-import { fetchedContentType, fetchedMoviesPropsData } from '../../types/types'
+import { fullMoviesDataType, fullSeriesDataType, fetchedMoviesPropsData } from '../../types/simpleSetupTypes'
 
-const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData }) => {
+type ComponentType = {
+    moviesData: fullMoviesDataType
+    seriesData: fullSeriesDataType
+    error: string
+}
+
+const ChooseMoviesPage: React.FC<ComponentType> = ({ moviesData, seriesData, error }) => {
     const [fetchedContentObjects, setfetchedContentObjects] = useState<fetchedMoviesPropsData[]>([])
 
     useEffect(() => {
-        let linksArray: fetchedMoviesPropsData[] = []
+        if (error) return
 
-        for (const key in moviesData.results) {
-            if (moviesData.results.hasOwnProperty(key)) {
-                const movie = moviesData.results[key]
-                const posterPath = movie.poster_path
-                const movieTitle = movie.title
-                linksArray.push({ posterPath, movieTitle })
-            }
-        }
+        const fetchedFixedData = fixSimpleSetupData(moviesData, seriesData)
 
-        for (const key in seriesData.results) {
-            if (seriesData.results.hasOwnProperty(key)) {
-                const series = seriesData.results[key]
-                const posterPath = series.poster_path
-                const movieTitle = series.name
-                linksArray.push({ posterPath, movieTitle })
-            }
-        }
-
-        setfetchedContentObjects(linksArray)
+        setfetchedContentObjects(fetchedFixedData)
     }, [])
 
     return (
@@ -41,7 +32,7 @@ const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData
                 <meta name="description" content="Choose your favorite movies and series" />
             </Head>
             <SignupLayout>
-                <ChooseMoviesView fetchedContent={fetchedContentObjects} />
+                {error ? <p>{error}</p> : <ChooseMoviesView fetchedContent={fetchedContentObjects} />}
             </SignupLayout>
         </>
     )
@@ -50,31 +41,20 @@ const ChooseMoviesPage: React.FC<fetchedContentType> = ({ moviesData, seriesData
 export default ChooseMoviesPage
 
 export async function getStaticProps() {
-    try {
-        const moviesResponse = await fetch(
-            'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
-            getOptions,
-        )
-        const moviesData = await moviesResponse.json()
+    const data = await simpleSetupFetch()
 
-        const seriesResponse = await fetch(
-            'https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1',
-            getOptions,
-        )
-        const seriesData = await seriesResponse.json()
-
+    if (data.message) {
         return {
             props: {
-                moviesData,
-                seriesData,
+                error: data.message,
             },
         }
-    } catch (error) {
-        return {
-            props: {
-                moviesData: error,
-                seriesData: error,
-            },
-        }
+    }
+
+    return {
+        props: {
+            moviesData: data.moviesData,
+            seriesData: data.seriesData,
+        },
     }
 }

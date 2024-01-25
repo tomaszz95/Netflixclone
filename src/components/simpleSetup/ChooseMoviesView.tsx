@@ -1,26 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Router from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
 import { paymentActions } from '../../store/payment'
-import { fetchedMoviesPropsData } from '../../types/types'
+import { fetchedMoviesPropsData } from '../../types/simpleSetupTypes'
 import styles from './ChooseMoviesView.module.css'
+import { capitalizeFirstLetter } from '../utils/helpersFunctions'
+import ChooseMoviesItem from './ChooseMoviesItem'
 
 const ChooseMoviesView: React.FC<{ fetchedContent: fetchedMoviesPropsData[] }> = ({ fetchedContent }) => {
-    const [selectedName, setSelectedName] = useState('')
     const [selectedMovies, setSelectedMovies] = useState<string[]>([])
 
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
     const selectedNames = useSelector<any, any>((state) => state.payment.selectedNames)
 
-    useEffect(() => {
-        if (selectedNames.length > 0) {
-            const selectedName = `${selectedNames[0].charAt(0).toUpperCase()}${selectedNames[0].slice(1)}`
+    let selectedName
 
-            setSelectedName(selectedName)
-        }
-    }, [selectedNames])
+    if (selectedNames.length > 0) {
+        selectedName = capitalizeFirstLetter(selectedNames[0])
+    }
 
     const addMovie = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (selectedMovies.includes(e.target.id)) {
@@ -52,34 +51,18 @@ const ChooseMoviesView: React.FC<{ fetchedContent: fetchedMoviesPropsData[] }> =
                 <div className={styles.moviesContainer}>
                     <ul className={styles.moviesBox}>
                         {fetchedContent.map((movieLink) => (
-                            <li key={movieLink.movieTitle} className={styles.inputsItem}>
-                                <input
-                                    type="checkbox"
-                                    id={movieLink.movieTitle}
-                                    onChange={addMovie}
-                                    className={styles.input}
-                                />
-                                <label htmlFor={movieLink.movieTitle} className={styles.label}>
-                                    <img
-                                        src={`https://image.tmdb.org/t/p/original/${movieLink.posterPath}`}
-                                        alt="Poster of movie"
-                                        className={styles.posterImg}
-                                    />
-                                    <div
-                                        className={`${styles.checkedBox} ${
-                                            selectedMovies.includes(movieLink.movieTitle) ? styles.checked : ''
-                                        }`}
-                                    >
-                                        <img src="/icons/thumbIcon.png" alt="" className={styles.thumbIcon} />
-                                    </div>
-                                </label>
-                            </li>
+                            <ChooseMoviesItem
+                                key={movieLink.posterPath}
+                                movieLink={movieLink}
+                                onAddMovieHandler={addMovie}
+                                selectedMovies={selectedMovies}
+                            />
                         ))}
                     </ul>
 
                     <div className={styles.submitBtnBox}>
                         <button
-                            type="submit"
+                            type="button"
                             aria-label="Go next after choosing 3 movies"
                             className={styles.submitBtn}
                             onClick={submitData}
