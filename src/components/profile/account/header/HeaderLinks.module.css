@@ -1,0 +1,52 @@
+.profileLinkContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileBoxFlex {
+    display: flex;
+    align-items: center;
+    padding: 0.2em 1em;
+    cursor: pointer;
+}
+
+.profileBoxFlex img {
+    width: 38px;
+    height: 38px;
+}
+
+.profileBoxFlex:first-child {
+    margin-top: 0.8em;
+}
+
+.profileLink,
+.profileLinkOut {
+    font-weight: 500;
+    color: var(--pure-white);
+    font-size: 0.85rem;
+}
+
+.profileBoxFlex:hover .profileLink,
+.profileLinkOut:hover {
+    text-decoration: underline;
+}
+
+.profileBoxFlexIcon {
+    margin-right: 1.4em;
+    transform: scale(0.65);
+}
+
+.line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 0.5em 0;
+    background-color: var(--light-grey);
+}
+
+.profileLinkOut:last-child {
+    align-self: center;
+    padding: 0.5em 0 1em;
+    font-weight: 700;
+    font-size: 0.9rem;
+}

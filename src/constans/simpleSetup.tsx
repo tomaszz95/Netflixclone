@@ -61,3 +61,26 @@ export const inputsLanguagesData = [
     '日本語',
     '粵語',
 ]
+
+export const initialInputNamesValues = [
+    {
+        id: 'ownerInput',
+        value: '',
+    },
+    {
+        id: 'personInput1',
+        value: '',
+    },
+    {
+        id: 'personInput2',
+        value: '',
+    },
+    {
+        id: 'personInput3',
+        value: '',
+    },
+    {
+        id: 'personInput4',
+        value: '',
+    },
+]

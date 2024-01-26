@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
-import { footerLoggedMainSiteLinks } from '../../../constans/siteText'
+import FACEBOOK_ICON from '../../../assets/icons/facebookIcon.png'
+import INSTAGRAM_ICON from '../../../assets/icons/instagramIcon.png'
+import TWITTER_ICON from '../../../assets/icons/twitterIcon.png'
+import YOUTUBE_ICON from '../../../assets/icons/youtubeIcon.png'
+import { footerLoggedMainSiteLinks } from '../../../constans/footer'
 import styles from './LoggedFooterSections.module.css'
 
 const LoggedFooterSections = () => {
@@ -17,16 +22,16 @@ const LoggedFooterSections = () => {
         <div className={styles.footer}>
             <div className={styles.iconBox}>
                 <Link href="#" className={styles.icon}>
-                    <img src="/icons/facebookIcon.png" alt="" />
+                    <Image src={FACEBOOK_ICON} alt="" />
                 </Link>
                 <Link href="#" className={styles.icon}>
-                    <img src="/icons/instagramIcon.png" alt="" />
+                    <Image src={INSTAGRAM_ICON} alt="" />
                 </Link>
                 <Link href="#" className={styles.icon}>
-                    <img src="/icons/twitterIcon.png" alt="" />
+                    <Image src={TWITTER_ICON} alt="" />
                 </Link>
                 <Link href="#" className={styles.icon}>
-                    <img src="/icons/youtubeIcon.png" alt="" />
+                    <Image src={YOUTUBE_ICON} alt="" />
                 </Link>
             </div>
             <div className={styles.links}>

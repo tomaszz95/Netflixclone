@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import Router from 'next/router'
 
 import { cancelMembership } from '../../../../helpers/dummyActionFunctions'
+import MainAnchorLink from './MainAnchorLink'
 import styles from './MembershipBox.module.css'
 
 type ComponentType = {
@@ -21,20 +21,10 @@ const MembershipBox: React.FC<ComponentType> = ({ isNumberVerify, userEmail }) =
                         <p>Phone: +123 456 789</p>
                     </div>
                     <div className={styles.mailLinks}>
-                        <Link href="#" className={styles.memberLink}>
-                            <p>Change email</p> <span>&gt;</span>
-                        </Link>
-                        <Link href="#" className={styles.memberLink}>
-                            <p>Change password</p> <span>&gt;</span>
-                        </Link>
-                        <Link href="#" className={styles.memberLink}>
-                            <p>Change phone number</p> <span>&gt;</span>
-                        </Link>
-                        {!isNumberVerify && (
-                            <Link href="#" className={styles.memberLink}>
-                                <p>Verify phone number</p> <span>&gt;</span>
-                            </Link>
-                        )}
+                        <MainAnchorLink link="#" linkName="Change email" />
+                        <MainAnchorLink link="#" linkName="Change password" />
+                        <MainAnchorLink link="#" linkName="Change phone number" />
+                        {!isNumberVerify && <MainAnchorLink link="#" linkName="Verify phone number" />}
                     </div>
                 </div>
                 <div className={styles.cardBox}>
@@ -49,24 +39,14 @@ const MembershipBox: React.FC<ComponentType> = ({ isNumberVerify, userEmail }) =
                         <p>Your next billing date is December 31, 2023.</p>
                     </div>
                     <div className={styles.cardLinks}>
-                        <Link href="#" className={styles.memberLink}>
-                            <p>Manage payment info</p> <span>&gt;</span>
-                        </Link>
-                        <Link href="#" className={styles.memberLink}>
-                            <p>Add backup payment method</p> <span>&gt;</span>
-                        </Link>
-                        <Link href="#" className={styles.memberLink}>
-                            <p>Billing details</p> <span>&gt;</span>
-                        </Link>
+                        <MainAnchorLink link="#" linkName="Manage payment info" />
+                        <MainAnchorLink link="#" linkName="Add backup payment method" />
+                        <MainAnchorLink link="#" linkName="Billing details" />
                     </div>
                 </div>
                 <div className={styles.giftBox}>
-                    <Link href="#" className={styles.memberLink}>
-                        <p>Redeem gift card or promo code</p> <span>&gt;</span>
-                    </Link>
-                    <Link href="#" className={styles.memberLink}>
-                        <p>Where to buy gift cards</p> <span>&gt;</span>
-                    </Link>
+                    <MainAnchorLink link="#" linkName="Redeem gift card or promo code" />
+                    <MainAnchorLink link="#" linkName="Where to buy gift cards" />
                 </div>
             </div>
             <button

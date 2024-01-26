@@ -8,7 +8,7 @@ import USER_ICON from '../../assets/icons/userSetupIcon.png'
 import NewProfileInput from './NewProfilesInput'
 
 import { paymentActions } from '../../store/payment'
-import { initialInputNamesValues } from '../../constans/siteText'
+import { initialInputNamesValues } from '../../constans/simpleSetup'
 import styles from './NewProfilesView.module.css'
 
 const NewProfilesView = () => {

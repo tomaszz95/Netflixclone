@@ -49,25 +49,6 @@
     transform: rotate(-90deg) scale(1.2) translateY(-14%);
 }
 
-.moreInfoBoxInfo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1.5em 0 0 5em;
-    padding-bottom: 1.5em;
-    border-bottom: 1px solid var(--dark-grey);
-}
-
-.moreInfoBoxInput {
-    width: 28px;
-    height: 28px;
-    margin-right: 1em;
-}
-
-.moreInfoBoxText {
-    font-size: 0.9rem;
-}
-
 @media (min-width: 786px) {
     .moreInfoBoxInfo {
         margin: 1.5em 0 0 5.5em;

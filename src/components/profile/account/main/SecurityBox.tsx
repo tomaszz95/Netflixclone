@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import MainAnchorLink from './MainAnchorLink'
 
 import styles from './SecurityBox.module.css'
 
@@ -10,15 +10,9 @@ const SecurityBox = () => {
                 Control access to this account, view the most recently active devices and more.
             </p>
             <div className={styles.linkBox}>
-                <Link href="#" className={styles.memberLink}>
-                    <p>Manage access and devices</p> <span>&gt;</span>
-                </Link>
-                <Link href="#" className={styles.memberLink}>
-                    <p>Sign out of all devices</p> <span>&gt;</span>
-                </Link>
-                <Link href="#" className={styles.memberLink}>
-                    <p>Download your personal information</p> <span>&gt;</span>
-                </Link>
+                <MainAnchorLink link="#" linkName="Manage access and devices" />
+                <MainAnchorLink link="#" linkName="Sign out of all devices" />
+                <MainAnchorLink link="#" linkName="Download your personal information" />
             </div>
         </section>
     )

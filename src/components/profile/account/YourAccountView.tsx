@@ -1,5 +1,5 @@
 import LoggedFooterSections from '../../loggedMainSite/footer/LoggedFooterSection'
-import YourAccountHeader from './YourAccountHeader'
+import YourAccountHeader from './header/YourAccountHeader'
 import YourAccountMain from './YourAccountMain'
 
 import styles from './YourAccountView.module.css'
