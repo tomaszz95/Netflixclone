@@ -1,7 +1,7 @@
 import AutoplaysSection from './AutoplaysSection'
 import MaturitySection from './MaturitySection'
 
-import { inputsLanguagesData } from '../../../constans/siteText'
+import { inputsLanguagesData } from '../../../constans/simpleSetup'
 import styles from './EditProfileForm.module.css'
 import AdultInput from './AdultInput'
 
