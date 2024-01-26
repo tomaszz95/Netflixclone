@@ -15,7 +15,8 @@
 .planBox {
     display: flex;
     align-items: center;
-    margin-top: 0.6em;
+    justify-content: flex-end;
+    margin: 1em 0;
     padding-bottom: 0.5em;
     border-bottom: 1px solid var(--dark-grey);
 }
@@ -62,7 +63,6 @@
     }
 
     .planBox {
-        margin-top: 1em;
         border-bottom: none;
     }
 
@@ -105,7 +105,6 @@
 
     .planBox {
         width: 61%;
-        margin-top: 1em;
         border-bottom: none;
     }
 

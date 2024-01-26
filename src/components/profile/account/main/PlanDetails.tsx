@@ -1,7 +1,9 @@
-import Link from 'next/link'
+import Image from 'next/image'
 
+import HD_ICON from '../../../../assets/icons/hdIcon.png'
 import { capitalizeFirstLetter } from '../../../utils/helpersFunctions'
 import styles from './PlanDetails.module.css'
+import MainAnchorLink from './MainAnchorLink'
 
 type ComponentType = {
     plan: string
@@ -15,11 +17,9 @@ const PlanDetails: React.FC<ComponentType> = ({ plan }) => {
             <h2 className={styles.title}>PLAN DETAILS</h2>
             <div className={styles.planBox}>
                 <span>{planType}</span>
-                <img src="/icons/hdIcon.png" alt="" />
+                <Image src={HD_ICON} alt="" />
             </div>
-            <Link href="#" className={styles.memberLink}>
-                <p>Change plan</p> <span>&gt;</span>
-            </Link>
+            <MainAnchorLink link="#" linkName="Change plan" />
         </section>
     )
 }

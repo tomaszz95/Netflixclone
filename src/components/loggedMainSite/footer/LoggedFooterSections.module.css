@@ -20,6 +20,11 @@
     margin: 1em;
 }
 
+.icon a {
+    width: auto;
+    height: auto;
+}
+
 .links {
     display: grid;
     grid-template-columns: 1fr 1fr;

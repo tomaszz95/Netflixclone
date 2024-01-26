@@ -47,24 +47,6 @@
     margin-bottom: 1em;
 }
 
-.memberLink {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.2em;
-    padding-bottom: 0.8em;
-    border-bottom: 1px solid var(--dark-grey);
-}
-
-.memberLink:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.memberLink:hover p {
-    text-decoration: underline;
-}
-
 .cardBox {
     margin-top: 2em;
 }
@@ -142,25 +124,6 @@
 
     .mailData p {
         margin-bottom: 0.6em;
-    }
-
-    .memberLink {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        width: 100%;
-        margin-bottom: 0.6em;
-        padding-bottom: 0;
-        border-bottom: none;
-    }
-
-    .memberLink p {
-        text-align: right;
-        color: var(--light-blue);
-    }
-
-    .memberLink span {
-        display: none;
     }
 
     .cardBox {

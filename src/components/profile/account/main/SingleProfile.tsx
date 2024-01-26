@@ -1,10 +1,9 @@
 import { useState } from 'react'
 
 import EditProfileImage from '../../editProfile/EditProfileImage'
-import SingleProfileMoreInfo from './SingleProfileMoreInfo'
 
+import SingleProfileList from './SingleProfileList'
 import { capitalizeFirstLetter } from '../../../utils/helpersFunctions'
-import { singleProfileMoreInfoTexts, singleProfileKidsMoreInfoTexts } from '../../../../constans/siteText'
 import styles from './SingleProfile.module.css'
 
 type ComponentType = {
@@ -33,33 +32,7 @@ const SingleProfile: React.FC<ComponentType> = ({ profilName }) => {
                     <span className={styles.profilArrowIcon}>&gt;</span>
                 </button>
             </div>
-            {moreInfoVisible && (
-                <div className={styles.moreInfo}>
-                    {profilName === 'kids'
-                        ? singleProfileKidsMoreInfoTexts.map((prop) => {
-                              return (
-                                  <SingleProfileMoreInfo
-                                      key={prop.moreInfoProperty}
-                                      moreInfoProperty={prop.moreInfoProperty}
-                                      moreInfoText={prop.moreInfoText}
-                                      moreInfoLink={prop.moreInfoLink}
-                                  />
-                              )
-                          })
-                        : singleProfileMoreInfoTexts.map((prop) => (
-                              <SingleProfileMoreInfo
-                                  key={prop.moreInfoProperty}
-                                  moreInfoProperty={prop.moreInfoProperty}
-                                  moreInfoText={prop.moreInfoText}
-                                  moreInfoLink={prop.moreInfoLink}
-                              />
-                          ))}
-                    <div className={styles.moreInfoBoxInfo}>
-                        <input type="checkbox" className={styles.moreInfoBoxInput} />
-                        <label className={styles.moreInfoBoxText}>Reduce animation effect when navigating on TV.</label>
-                    </div>
-                </div>
-            )}
+            {moreInfoVisible && <SingleProfileList profilName={profilName} />}
         </>
     )
 }

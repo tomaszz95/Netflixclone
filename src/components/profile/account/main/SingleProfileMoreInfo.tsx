@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import MainAnchorLink from './MainAnchorLink'
 
 import styles from './SingleProfileMoreInfo.module.css'
 
@@ -15,9 +15,7 @@ const SingleProfileMoreInfo: React.FC<ComponentType> = ({ moreInfoProperty, more
                 <span className={styles.moreInfoBoxProperty}>{moreInfoProperty}</span>
                 <span className={styles.moreInfoBoxText}>{moreInfoText}</span>
             </div>
-            <Link href="#" className={styles.moreInfoBoxLink}>
-                {moreInfoLink}
-            </Link>
+            <MainAnchorLink link="#" linkName={moreInfoLink} notArrow={true} />
         </div>
     )
 }

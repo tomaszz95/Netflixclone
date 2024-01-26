@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import MainAnchorLink from './MainAnchorLink'
 
 import styles from './SettingsBox.module.css'
 
@@ -7,15 +7,9 @@ const SettingsBox = () => {
         <section className={styles.section}>
             <h2 className={styles.title}>SETTINGS</h2>
             <div className={styles.linkBox}>
-                <Link href="#" className={styles.memberLink}>
-                    <p>Turn off profile transfers</p> <span>&gt;</span>
-                </Link>
-                <Link href="#" className={styles.memberLink}>
-                    <p>Test participation</p> <span>&gt;</span>
-                </Link>
-                <Link href="#" className={styles.memberLink}>
-                    <p>Manage download devices</p> <span>&gt;</span>
-                </Link>
+                <MainAnchorLink link="#" linkName="Turn off profile transfer" />
+                <MainAnchorLink link="#" linkName="Test participation" />
+                <MainAnchorLink link="#" linkName="Manage download devices" />
             </div>
         </section>
     )

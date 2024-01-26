@@ -21,19 +21,6 @@
     margin-top: 1em;
 }
 
-.memberLink {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0.8em 0;
-    padding: 1em 0 0.4em;
-    border-top: 1px solid var(--light-grey);
-}
-
-.memberLink:hover p {
-    text-decoration: underline;
-}
-
 @media (min-width: 786px) {
     .section {
         display: flex;
@@ -56,23 +43,6 @@
 
     .text {
         width: 330px;
-    }
-
-    .memberLink {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        padding: 0;
-        border-top: none;
-    }
-
-    .memberLink p {
-        text-align: right;
-        color: var(--light-blue);
-    }
-
-    .memberLink span {
-        display: none;
     }
 }
 

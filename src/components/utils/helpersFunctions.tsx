@@ -1,6 +1,6 @@
 import { allFetchedGenres } from '../../constans/siteText'
 
-export const getCurrentMonth = () => {
+export const getCurrentDate = () => {
     const months = [
         'January',
         'February',
