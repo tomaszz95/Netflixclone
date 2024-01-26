@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import Image from 'next/image'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import Router from 'next/router'
 
+import USER_ICON from '../../assets/icons/defaultUser.png'
 import { paymentActions } from '../../store/payment'
 import styles from './AddProfileView.module.css'
 
@@ -40,11 +42,7 @@ const AddProfileView = () => {
                 <p className={styles.text}>Add a profile for another person watching Netflix.</p>
                 <div className={styles.line} />
                 <div className={styles.inputBox}>
-                    <img
-                        src="https://occ-0-5273-41.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
-                        alt=""
-                        className={styles.inputBoxIcon}
-                    />
+                    <Image src={USER_ICON} alt="" className={styles.inputBoxIcon} />
                     <div className={styles.inputContent}>
                         <div className={styles.inputNameBox}>
                             <input
