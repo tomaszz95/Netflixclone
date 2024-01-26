@@ -1,3 +1,4 @@
+import { changeMaturitySettings } from '../../../helpers/dummyActionFunctions'
 import styles from './MaturitySection.module.css'
 
 type ComponentType = {
@@ -25,9 +26,7 @@ const MaturitySection: React.FC<ComponentType> = ({ profilName }) => {
                 type="button"
                 aria-label="Edit maturity settings"
                 className={styles.button}
-                onClick={() => {
-                    console.log('Should change restrictions.. Omitted in the demo version')
-                }}
+                onClick={changeMaturitySettings}
             >
                 Edit
             </button>

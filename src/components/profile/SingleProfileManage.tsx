@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
-import { paymentActions } from '../../../store/payment'
-import EditProfileButtons from './EditProfileButtons'
-import EditProfileForm from './EditProfileForm'
-import EditProfileImage from './EditProfileImage'
+import { paymentActions } from '../../store/payment'
+import EditProfileButtons from './editProfile/EditProfileButtons'
+import EditProfileForm from './editProfile/EditProfileForm'
+import EditProfileImage from './editProfile/EditProfileImage'
 
 import styles from './SingleProfileManage.module.css'
 
@@ -37,7 +37,7 @@ const SingleProfileManage: React.FC<ComponentType> = ({ profilName }) => {
             [name]: value,
         }))
     }
-
+ 
     const handleSubmit = () => {
         if (formData.selectedName.trim().length > 0) {
             dispatch(paymentActions.editProfilInfo(formData))

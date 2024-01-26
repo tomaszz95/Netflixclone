@@ -1,0 +1,60 @@
+.gameBox {
+    margin-top: 1.5em;
+}
+
+.gameBoxInput {
+    width: 100%;
+    padding: 0.4em 0.6em;
+    margin-bottom: 0.4em;
+    border: 1px solid transparent;
+    color: var(--pure-white);
+    background-color: var(--lighter-black);
+    transition: border 0.3s;
+}
+
+.gameBoxInput::placeholder {
+    color: var(--pure-white);
+}
+
+.gameBoxText {
+    margin-bottom: 1em;
+    font-size: 0.8rem;
+}
+
+.gameBoxCounter {
+    display: block;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.gameBoxCounter.good {
+    color: var(--success-color);
+}
+
+.gameBoxCounter.wrong {
+    color: var(--call-to-action);
+}
+
+.gameBoxSpan {
+    display: block;
+    margin-bottom: 0.4em;
+    color: var(--dark-grey);
+}
+
+@media (min-width: 786px) {
+    .gameBoxInput {
+        padding: 0.5em 0.6em;
+    }
+
+    .gameBoxSpan {
+        margin-bottom: 0.6em;
+    }
+
+    .gameBoxText {
+        font-size: 0.9rem;
+    }
+
+    .gameBoxCounter {
+        font-size: 1rem;
+    }
+}

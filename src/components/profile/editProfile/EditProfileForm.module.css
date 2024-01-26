@@ -9,8 +9,7 @@
     background-color: var(--light-grey);
 }
 
-.nameInput,
-.gameBoxInput {
+.nameInput {
     width: 100%;
     padding: 0.4em 0.6em;
     margin-bottom: 0.4em;
@@ -20,8 +19,7 @@
     transition: border 0.3s;
 }
 
-.nameInput::placeholder,
-.gameBoxInput::placeholder {
+.nameInput::placeholder {
     color: var(--pure-white);
 }
 
@@ -46,8 +44,7 @@
     margin-top: 1em;
 }
 
-.selectBoxSpan,
-.gameBoxSpan {
+.selectBoxSpan {
     display: block;
     margin-bottom: 0.4em;
     color: var(--dark-grey);
@@ -60,53 +57,20 @@
     background-color: var(--lighter-black);
 }
 
-.gameBox {
-    margin-top: 1.5em;
-}
-
-.gameBoxText {
-    margin-bottom: 1em;
-    font-size: 0.8rem;
-}
-
-.gameBoxCounter {
-    display: block;
-    font-size: 0.9rem;
-    text-align: right;
-}
-
-.gameBoxCounter.good {
-    color: var(--success-color);
-}
-
-.gameBoxCounter.wrong {
-    color: var(--call-to-action);
-}
-
 @media (min-width: 786px) {
     .line {
         margin: 1em 0;
     }
 
-    .nameInput,
-    .gameBoxInput {
+    .nameInput {
         padding: 0.5em 0.6em;
     }
 
-    .selectBoxSpan,
-    .gameBoxSpan {
+    .selectBoxSpan {
         margin-bottom: 0.6em;
     }
 
     .selectBoxSelect {
         padding: 0.4em;
-    }
-
-    .gameBoxText {
-        font-size: 0.9rem;
-    }
-
-    .gameBoxCounter {
-        font-size: 1rem;
     }
 }
