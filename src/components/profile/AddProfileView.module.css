@@ -44,6 +44,7 @@
 
 .inputBoxIcon {
     width: 100px;
+    height: auto;
     margin-right: 1.2em;
     border-radius: 5px;
 }

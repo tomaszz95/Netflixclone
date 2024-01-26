@@ -5,6 +5,7 @@
 
 .listItem,
 .addProfileItem {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,6 +14,7 @@
 .listItem img {
     border-radius: 5px;
     width: 100%;
+    height: auto;
     border: 3px solid transparent;
     transition: border 0.3s;
     border-radius: 5px;
@@ -35,6 +37,28 @@
     color: var(--pure-white);
 }
 
+.editBcg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 78%;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+.editBcg img {
+    height: 100%;
+    width: 100%;
+    max-height: 40px;
+    max-width: 40px;
+    pointer-events: none;
+}
+
 .addProfileItem div {
     transition: background-color 0.3s;
 }
@@ -50,4 +74,16 @@
     margin: 0 auto;
     width: 100%;
     height: auto;
+}
+
+@media (min-width: 450px) {
+    .editBcg {
+        height: 82%;
+    }
+}
+
+@media (min-width: 600px) {
+    .editBcg {
+        height: 144px;
+    }
 }

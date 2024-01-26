@@ -1,13 +1,21 @@
 import { useSelector } from 'react-redux'
 import Router from 'next/router'
 
-import { createCookie } from '../utils/localStorageFunctions'
-import styles from './ChooseUserView.module.css'
-import ChooseUserItem from './ChooseUserItem'
-import ChooseUserConsts from './ChooseUserConsts'
+import { createCookie } from '../../utils/localStorageFunctions'
+import styles from './UserView.module.css'
+import UserItem from './UserItem'
+import UserConsts from './UserConsts'
 
-const ChooseUserView = () => {
+type ComponentType = {
+    manage: boolean
+}
+
+const UserView: React.FC<ComponentType> = ({ manage }) => {
     const paymentData = useSelector<any, any>((state) => state.payment)
+
+    const title = manage ? 'Manage Profiles:' : "Who's watching?"
+    const buttonLink = manage ? '/profilgate' : '/profile/manage'
+    const buttonText = manage ? 'Done' : 'Manage profiles'
 
     const chosenUser = (e: React.MouseEvent<HTMLAnchorElement>) => {
         const anchorElement = e.currentTarget as HTMLAnchorElement
@@ -17,15 +25,15 @@ const ChooseUserView = () => {
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.title}>Who's watching?</h1>
+            <h1 className={styles.title}>{title}</h1>
             {paymentData ? (
                 <ul className={styles.list}>
                     {paymentData.selectedNames.map((user: string) => {
                         if (user === null) return
 
-                        return <ChooseUserItem user={user} key={user} onChosenUser={chosenUser} />
+                        return <UserItem manage={manage} user={user} key={user} onChosenUser={chosenUser} />
                     })}
-                    <ChooseUserConsts onChosenUser={chosenUser} />
+                    <UserConsts onChosenUser={chosenUser} manage={manage} />
                 </ul>
             ) : (
                 <p className={styles.loading}>Loading data...</p>
@@ -34,12 +42,12 @@ const ChooseUserView = () => {
                 type="button"
                 aria-label="Manage profiles button"
                 className={styles.submitBtn}
-                onClick={() => Router.push('/profile/manage')}
+                onClick={() => Router.push(buttonLink)}
             >
-                Manage profiles
+                {buttonText}
             </button>
         </div>
     )
 }
 
-export default ChooseUserView
+export default UserView
