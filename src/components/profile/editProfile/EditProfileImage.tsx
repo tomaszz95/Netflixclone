@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import USER_ICON from '../../../assets/icons/defaultUser.png'
+import KIDS_ICON from '../../../assets/icons/kidsUser.png'
 import styles from './EditProfileImage.module.css'
 
 type ComponentType = {
@@ -8,17 +11,9 @@ const EditProfileImage: React.FC<ComponentType> = ({ profilName }) => {
     return (
         <>
             {profilName === 'kids' ? (
-                <img
-                    src="https://occ-0-5273-41.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABcENEq3AWngawcvIFgivpRF0Wx5gW-LVuNdof8gYEbtGtft04ORrv_UDixUwcbH1PpV3k16HITdmAnDgXwneLsz2WZuyDuHk5Xpb.png?r=f55"
-                    alt=""
-                    className={styles.avatarImg}
-                />
+                <Image src={KIDS_ICON} alt="" className={styles.avatarImg} />
             ) : (
-                <img
-                    src="https://occ-0-5273-41.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
-                    alt=""
-                    className={styles.avatarImg}
-                />
+                <Image src={USER_ICON} alt="" className={styles.avatarImg} />
             )}
         </>
     )

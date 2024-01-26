@@ -32,3 +32,10 @@ export const setGamingAccount = () => {
     console.log('Profile created!')
     console.log('Functionality omitted in the demo version')
 }
+
+export const changeMaturitySettings = () => {
+    console.log('Change maturity settings...')
+    console.log('Changing...')
+    console.log('Done.')
+    console.log('Functionality omitted in the demo version')
+}

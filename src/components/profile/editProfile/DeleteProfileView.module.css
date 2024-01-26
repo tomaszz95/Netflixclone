@@ -42,8 +42,10 @@
 }
 
 .imgBox span {
+    text-align: center;
     margin: 0.5em 1em 0 0;
     color: var(--light-grey);
+    line-height: 100%;
 }
 
 .text {
@@ -59,7 +61,7 @@
 .button {
     width: 100%;
     max-width: 130px;
-    padding: 0.5em 0.8em;
+    padding: 0.6em 0.8em;
     font-size: 0.9rem;
     border-radius: 3px;
     background-color: transparent;
