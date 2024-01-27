@@ -1,5 +1,8 @@
 import { useState } from 'react'
+import Image from 'next/image'
 
+import CLOSE_ICON from '../../../assets/icons/closeWhite.png'
+import PLUS_ICON from '../../../assets/icons/plusIcon.png'
 import { questionAccordionData } from '../../../constans/mainSite'
 import styles from './QuestionsAccordion.module.css'
 
@@ -21,9 +24,9 @@ const QuestionsAccordion = () => {
                         {item.question}
                         <span className={styles.accordionIcon}>
                             {activeAccordion === index ? (
-                                <img src="./icons/closeWhite.png" />
+                                <Image src={CLOSE_ICON} alt="" />
                             ) : (
-                                <img src="./icons/plusIcon.png" />
+                                <Image src={PLUS_ICON} alt="" />
                             )}
                         </span>
                     </button>
