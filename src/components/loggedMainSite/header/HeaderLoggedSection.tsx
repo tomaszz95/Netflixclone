@@ -9,7 +9,7 @@ import HeaderTabletsView from './tablet/HeaderTabletsView'
 import styles from './HeaderLoggedSection.module.css'
 
 type ComponentType = {
-    windowWidth?: number
+    windowWidth: number
 }
 
 const HeaderLoggedSection: React.FC<ComponentType> = ({ windowWidth }) => {
