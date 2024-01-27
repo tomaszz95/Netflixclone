@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
+import Image from 'next/image'
 
+import NETFLIX_LOGO from '../../../../assets/photos/netflixLogo.png'
 import HeaderTabletsNav from './HeaderTabletsNav'
 import HeaderTabletsProfile from './HeaderTabletsProfile'
 
@@ -36,7 +38,7 @@ const HeaderTabletsView: React.FC<ComponentType> = ({ chosenUser, query }) => {
         <div className={styles.wrapper}>
             <div className={styles.navBox}>
                 <Link href={`${chosenUser === 'kids' ? '/kids' : '/browse'}`}>
-                    <img src="/photos/netflixLogo.png" alt="Netflix Logo" className={styles.netflixLogo} />
+                    <Image src={NETFLIX_LOGO} alt="Netflix Logo" className={styles.netflixLogo} />
                 </Link>
                 <HeaderTabletsNav chosenUser={chosenUser} onOpenNav={openNavHandler} navActive={navActive} />
             </div>

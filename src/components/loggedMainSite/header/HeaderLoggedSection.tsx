@@ -8,27 +8,19 @@ import HeaderTabletsView from './tablet/HeaderTabletsView'
 
 import styles from './HeaderLoggedSection.module.css'
 
-const HeaderLoggedSection = () => {
-    const [windowWidth, setWindowWidth] = useState(0)
+type ComponentType = {
+    windowWidth: number
+}
+
+const HeaderLoggedSection: React.FC<ComponentType> = ({ windowWidth }) => {
     const [chosenUser, setChosenUser] = useState('')
     const router = useRouter()
 
     useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth)
-        }
-
-        handleResize()
-        window.addEventListener('resize', handleResize)
-
         const user = getCookie('chosenUser')
 
         if (user !== null) {
             setChosenUser(user)
-        }
-
-        return () => {
-            window.removeEventListener('resize', handleResize)
         }
     }, [])
 

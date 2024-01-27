@@ -16,10 +16,6 @@ const HeaderMobileProfile: React.FC<ComponentType> = ({ chosenUser }) => {
     const [chosenUserState, setChosenUserState] = useState('')
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
-    const handleLogout = () => {
-        useLogoutHandler(dispatch)
-    }
-
     useEffect(() => {
         if (chosenUser !== '') {
             setChosenUserState(chosenUser.charAt(0).toUpperCase() + chosenUser.slice(1))
@@ -44,7 +40,7 @@ const HeaderMobileProfile: React.FC<ComponentType> = ({ chosenUser }) => {
                 <Link href="#" className={styles.profileLink}>
                     Help Center
                 </Link>
-                <Link href="/logout" className={styles.profileLink} onClick={handleLogout}>
+                <Link href="/logout" className={styles.profileLink} onClick={() => useLogoutHandler(dispatch)}>
                     Sign Out of Netflix
                 </Link>
             </div>

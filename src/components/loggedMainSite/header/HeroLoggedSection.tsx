@@ -1,11 +1,17 @@
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 
+import SOUND_ICON from '../../../assets/icons/soundIcon.png'
+import NOSOUND__ICON from '../../../assets/icons/nosoundIcon.png'
+import INFO_ICON from '../../../assets/icons/infoIcon.png'
+import PLAY_ICON from '../../../assets/icons/playIcon.png'
+
 import getHeroHandler from '../../../pages/api/fetchHeroApiData'
 import { getCookie } from '../../utils/localStorageFunctions'
 import { limitTextToTwoSentences } from '../../utils/helpersFunctions'
 import { heroMoviesFetchedData } from '../../../types/types'
 import styles from './HeroLoggedSection.module.css'
+import Image from 'next/image'
 
 const HeroLoggedSection = () => {
     const [seriesSingleData, setSeriesSingleData] = useState<heroMoviesFetchedData>({
@@ -31,6 +37,7 @@ const HeroLoggedSection = () => {
 
         if (!isMounted.current) {
             isMounted.current = true
+
             const fetchDataFunc = async () => {
                 const fetchedData = await getHeroHandler(location.pathname, cookiesUser)
                 if (fetchedData) {
@@ -69,7 +76,7 @@ const HeroLoggedSection = () => {
                         className={styles.playBtn}
                         aria-label="Play series button"
                     >
-                        <img src="/icons/playIcon.png" alt="" />
+                        <Image src={PLAY_ICON} alt="" />
                         <span>Play</span>
                     </Link>
                     <Link
@@ -77,7 +84,7 @@ const HeroLoggedSection = () => {
                         className={styles.moreInfoBtn}
                         aria-label="Go to more info site"
                     >
-                        <img src="/icons/infoIcon.png" alt="" />
+                        <Image src={INFO_ICON} alt="" />
                         <span>More Info</span>
                     </Link>
                 </div>
@@ -88,11 +95,7 @@ const HeroLoggedSection = () => {
                     aria-label="Turn off / turn on voice"
                     onClick={() => setIsSoundOn(!isSoundOn)}
                 >
-                    {isSoundOn ? (
-                        <img src="/icons/soundIcon.png" alt="" />
-                    ) : (
-                        <img src="/icons/nosoundIcon.png" alt="" />
-                    )}
+                    {isSoundOn ? <Image src={SOUND_ICON} alt="" /> : <Image src={NOSOUND__ICON} alt="" />}
                 </button>
                 <div className={styles.soundBoxContent}>
                     <span className={styles.soundBoxText}>{chosenUser === 'kids' ? '7+' : '16+'}</span>

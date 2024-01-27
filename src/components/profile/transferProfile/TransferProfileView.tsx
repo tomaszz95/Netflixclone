@@ -2,27 +2,25 @@ import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import Link from 'next/link'
 
+import { footerTransferProfileSiteLinks } from '../../../constans/footer'
 import useLogoutHandler from '../../../hooks/useLogoutHandler'
 import TransferProfileMain from './TransferProfileMain'
-
+import NETFLIX_LOGO from '../../../assets/photos/netflixLogo.png'
 import styles from './TransferProfileView.module.css'
+import Image from 'next/image'
 
 const TransferProfileView = () => {
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
-
-    const handleLogout = () => {
-        useLogoutHandler(dispatch)
-    }
 
     return (
         <main className={styles.main}>
             <header className={styles.header}>
                 <div className={styles.headerContainer}>
                     <Link href="/">
-                        <img src="/photos/netflixLogo.png" alt="Netflix Logo" />
+                        <Image src={NETFLIX_LOGO} alt="Netflix Logo" />
                     </Link>
 
-                    <Link href="/logout" className={styles.loginLink} onClick={handleLogout}>
+                    <Link href="/logout" className={styles.loginLink} onClick={() => useLogoutHandler(dispatch)}>
                         Sign Out
                     </Link>
                 </div>
@@ -36,14 +34,11 @@ const TransferProfileView = () => {
                         Question? Contact us.
                     </a>
                     <div className={styles.links}>
-                        <a href="#">FAQ</a>
-                        <a href="#">Help Center</a>
-                        <a href="#">Netflix Shop</a>
-                        <a href="#">Terms of Use</a>
-                        <a href="#">Privacy</a>
-                        <a href="#">Cookie Preferences</a>
-                        <a href="#">Corporate Information</a>
-                        <a href="#">Ad Choices</a>
+                        {footerTransferProfileSiteLinks.map((link) => (
+                            <a href="#" key={link}>
+                                {link}
+                            </a>
+                        ))}
                     </div>
                 </div>
             </footer>

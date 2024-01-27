@@ -22,6 +22,10 @@ const LogLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
     const paymentData = useSelector<any, any>((state) => state.payment)
 
     useEffect(() => {
+        if (router.pathname === '/logout') {
+            return
+        }
+
         if (isLoggedIn === 'true' && paymentData !== null && paymentData.isFullySet) {
             Router.push('/profilgate')
         }
@@ -39,6 +43,7 @@ const LogLayout: React.FC<ChildrenLayoutType> = ({ children }) => {
                         <Link href="/">
                             <Image
                                 src={NETFLIX_LOGO}
+                                priority
                                 alt="Netflix Logo icon"
                                 width="120"
                                 className={styles.netflixLogo}

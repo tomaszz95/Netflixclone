@@ -30,44 +30,38 @@ const HeaderDesktopView: React.FC<ComponentType> = ({ chosenUser, query }) => {
         }
     }
 
-    const handleBlur = () => {
-        setIsInputOpen(false)
-    }
-
     return (
         <div className={styles.wrapper}>
             <HeaderDesktopNav chosenUser={chosenUser} />
-            {
-                <div className={styles.searchBox}>
-                    {!router.pathname.includes('genre') &&
-                        !router.pathname.includes('movie') &&
-                        !router.pathname.includes('series') && (
-                            <div className={styles.searchContent}>
-                                <input
-                                    type="text"
-                                    id="searchInput"
-                                    placeholder="Movie or series title.."
-                                    className={`${styles.searchInput} ${isInputOpen ? styles.active : ''}`}
-                                    aria-label="Search bar"
-                                    ref={refInput}
-                                    onBlur={handleBlur}
-                                    onChange={handleInputChange}
-                                    value={inputSearchValue}
-                                />
-                                )
-                                <button
-                                    className={styles.searchButton}
-                                    type="button"
-                                    aria-label="Click to open search bar"
-                                    onClick={openInputHandler}
-                                >
-                                    <img src="/icons/magnifierIcon.png" />
-                                </button>
-                            </div>
-                        )}
-                    <HeaderDesktopProfile chosenUser={chosenUser} />
-                </div>
-            }
+            <div className={styles.searchBox}>
+                {!router.pathname.includes('genre') &&
+                    !router.pathname.includes('movie') &&
+                    !router.pathname.includes('series') && (
+                        <div className={styles.searchContent}>
+                            <input
+                                type="text"
+                                id="searchInput"
+                                placeholder="Movie or series title.."
+                                className={`${styles.searchInput} ${isInputOpen ? styles.active : ''}`}
+                                aria-label="Search bar"
+                                ref={refInput}
+                                onBlur={() => setIsInputOpen(false)}
+                                onChange={handleInputChange}
+                                value={inputSearchValue}
+                            />
+
+                            <button
+                                className={styles.searchButton}
+                                type="button"
+                                aria-label="Click to open search bar"
+                                onClick={openInputHandler}
+                            >
+                                <img src="/icons/magnifierIcon.png" />
+                            </button>
+                        </div>
+                    )}
+                <HeaderDesktopProfile chosenUser={chosenUser} />
+            </div>
         </div>
     )
 }

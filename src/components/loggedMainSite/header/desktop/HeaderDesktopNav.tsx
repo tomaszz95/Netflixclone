@@ -1,5 +1,6 @@
 import Link from 'next/link'
-
+import Image from 'next/image'
+import NETFLIX_LOGO from '../../../../assets/photos/netflixLogo.png'
 import styles from './HeaderDesktopNav.module.css'
 
 type ComponentType = { chosenUser: string }
@@ -8,7 +9,7 @@ const HeaderDesktopNav: React.FC<ComponentType> = ({ chosenUser }) => {
     return (
         <div className={styles.navBox}>
             <Link href={`${chosenUser === 'kids' ? '/kids' : '/browse'}`} className={styles.profileLink}>
-                <img src="/photos/netflixLogo.png" alt="Netflix Logo" className={styles.netflixLogo} />
+                <Image src={NETFLIX_LOGO} alt="Netflix Logo" className={styles.netflixLogo} />
             </Link>
             <Link href={`${chosenUser === 'kids' ? '/kids' : '/browse'}`} className={styles.profileLink}>
                 Home

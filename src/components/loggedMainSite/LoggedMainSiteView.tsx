@@ -51,7 +51,7 @@ const LoggedMainSiteView: React.FC<ComponentType> = ({ fetchedData }) => {
     return (
         <>
             <header className={styles.header}>
-                <HeaderLoggedSection />
+                <HeaderLoggedSection windowWidth={windowWidth} />
                 {windowWidth < 1200 ? '' : <HeroLoggedSection />}
             </header>
             <main className={styles.main}>

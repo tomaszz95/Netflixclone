@@ -1,4 +1,3 @@
-import { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import { signInWithEmailAndPassword } from 'firebase/auth'
@@ -10,170 +9,120 @@ import { loginEmailsActions } from '../../store/login-emails'
 import LoginFormHelpers from './LoginFormHelpers'
 
 import styles from './LoginView.module.css'
+import { useSignupInput } from '../../hooks/useSignupInput'
+import { hasMinAndMaxLength, isEmailValidFunc, isPasswordValidFunc } from '../utils/signupValidation'
+import RegistrationInput from '../signup/registration/RegistrationInput'
 
 const LoginView = () => {
-    const [inputEmail, setInputEmail] = useState('')
-    const [isEmailValid, setIsEmailValid] = useState(false)
-    const [isFirstEmailTry, setIsFirstEmailTry] = useState(true)
-    const [firebaseError, setFirebaseError] = useState('')
+    const {
+        value: emailValue,
+        handleInputChange: handleEmailChange,
+        handleInputBlur: handleEmailBlur,
+        handleErrorText: handleErrorEmailText,
+        errorText: emailErrorText,
+        hasError: emailHasError,
+    } = useSignupInput('', (value: string) => isEmailValidFunc(value) && hasMinAndMaxLength(value, 5, 50))
 
-    const [inputPassword, setInputPassword] = useState('')
-    const [isPasswordValid, setIsPasswordValid] = useState(false)
-    const [isFirstPasswordTry, setIsFirstPasswordTry] = useState(true)
-
-    const emailInputElement = useRef<HTMLInputElement | null>(null)
-    const passwordInputElement = useRef<HTMLInputElement | null>(null)
+    const {
+        value: passwordValue,
+        handleInputChange: handlePasswordChange,
+        handleInputBlur: handlePasswordBlur,
+        handleErrorText: handleErrorPasswordText,
+        errorText: passwordErrorText,
+        hasError: passwordHasError,
+    } = useSignupInput('', (value: string) => isPasswordValidFunc(value) && hasMinAndMaxLength(value, 6, 30))
 
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
 
-    const isEmailValidFunc = () => {
-        setIsFirstEmailTry(false)
+    function handleSubmit(event: React.FormEvent) {
+        event.preventDefault()
 
-        if (
-            emailInputElement.current !== null &&
-            emailInputElement.current.value !== '' &&
-            emailInputElement.current.value.length < 50 &&
-            emailInputElement.current.value.length > 5 &&
-            /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(emailInputElement.current.value)
-        ) {
-            setIsEmailValid(true)
-            return true
-        } else {
-            setIsEmailValid(false)
-            return false
-        }
-    }
-
-    const isPasswordValidFunc = () => {
-        setIsFirstPasswordTry(false)
-
-        if (
-            passwordInputElement.current !== null &&
-            passwordInputElement.current.value !== '' &&
-            passwordInputElement.current.value.length < 60 &&
-            passwordInputElement.current.value.length > 4
-        ) {
-            setIsPasswordValid(true)
-            return true
-        } else {
-            setIsPasswordValid(false)
-            return false
-        }
-    }
-
-    const changeInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.type === 'email') {
-            setInputEmail(e.target.value)
-        } else if (e.target.type === 'password') {
-            setInputPassword(e.target.value)
+        if (emailHasError && passwordHasError) {
+            handleErrorPasswordText('Please enter a valid password!')
+            handleErrorEmailText('Please enter a valid email address!')
+            return
+        } else if (emailHasError) {
+            return handleErrorEmailText('Please enter a valid email address!')
+        } else if (passwordHasError) {
+            return handleErrorPasswordText('Please enter a valid password!')
+        } else if (emailValue === '' && passwordValue === '') {
+            handleErrorEmailText('Email cannot be empty!')
+            handleErrorPasswordText('Password cannot be empty!')
+            return
+        } else if (passwordValue === '') {
+            return handleErrorPasswordText('Password cannot be empty!')
+        } else if (emailValue === '') {
+            return handleErrorEmailText('Email cannot be empty!')
         }
 
-        if (!isFirstEmailTry && e.target.type === 'email') {
-            isEmailValidFunc()
-        } else if (!isFirstPasswordTry && e.target.type === 'password') {
-            isPasswordValidFunc()
-        }
-    }
+        signInWithEmailAndPassword(auth, emailValue, passwordValue)
+            .then((userCredential) => {
+                const userEmail = userCredential.user.email
+                if (userEmail) {
+                    Router.push(`/`)
+                    dispatch(loginEmailsActions.createEmailsCookie({ emailFunction: 'signInEmail', email: userEmail }))
+                    dispatch(isLoggedInActions.createLoggedCookie('true'))
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                const errorCode = error.code
 
-    const submitData = async (e: React.MouseEvent) => {
-        e.preventDefault()
+                if (errorCode === 'auth/user-not-found') {
+                    handleErrorEmailText('The username is incorrect!')
+                } else if (errorCode === 'auth/too-many-requests') {
+                    handleErrorEmailText('You send too many requests, try again later!')
+                } else {
+                    handleErrorEmailText('')
+                }
 
-        const isEmailValidNow = isEmailValidFunc()
-        const isPasswordValidNow = isPasswordValidFunc()
-
-        if (isEmailValidNow && isPasswordValidNow) {
-            signInWithEmailAndPassword(auth, inputEmail, inputPassword)
-                .then((userCredential) => {
-                    const userEmail = userCredential.user.email
-                    if (userEmail) {
-                        Router.push(`/`)
-                        dispatch(
-                            loginEmailsActions.createEmailsCookie({ emailFunction: 'signInEmail', email: userEmail }),
-                        )
-                        dispatch(isLoggedInActions.createLoggedCookie('true'))
-                    }
-                })
-                .catch((error) => {
-                    if (!error.code) {
-                        const errorMessage = error.message.charAt(0).toUpperCase() + error.message.slice(1)
-
-                        setFirebaseError(errorMessage)
-                        return
-                    }
-
-                    if (error.code.includes('credentials')) {
-                        setFirebaseError('Please enter a valid credentials!')
-                    } else if (error.code.includes('many')) {
-                        setFirebaseError('Too many requests, try again later!')
-                    } else if (error.code.includes('internal-error')) {
-                        setFirebaseError('Our server have some problems. Please try again later.')
-                    }
-                })
-        }
+                if (errorCode === 'auth/wrong-password') {
+                    handleErrorPasswordText('The password is incorrect!')
+                } else if (errorCode === 'auth/too-many-requests') {
+                    handleErrorPasswordText('You send too many requests, try again later!')
+                } else {
+                    handleErrorPasswordText('')
+                }
+            })
     }
 
     return (
         <div className={styles.content}>
             <h1 className={styles.title}>Sign In</h1>
-            <form className={styles.form}>
-                <div className={styles.formBox}>
-                    <div className={styles.formContent}>
-                        <input
-                            type="email"
-                            autoComplete="email"
-                            spellCheck="false"
-                            id="userId"
-                            minLength={5}
-                            maxLength={50}
-                            className={`${styles.emailInput} ${inputEmail !== '' ? styles.notEmpty : ''} ${
-                                !isFirstEmailTry && !isEmailValid ? styles.wrongInput : ''
-                            }`}
-                            ref={emailInputElement}
-                            onChange={changeInputValue}
-                            value={inputEmail}
-                        />
-                        <label htmlFor="userId" className={styles.emailLabel}>
-                            Email or phone number
-                        </label>
-                    </div>
-                    <span className={`${styles.error} ${!isFirstEmailTry && !isEmailValid ? styles.wrongInput : ''}`}>
-                        Please enter a valid email or phone number
-                    </span>
-                </div>
-                <div className={styles.formBox}>
-                    <div className={styles.formContent}>
-                        <input
-                            type="password"
-                            autoComplete="email"
-                            spellCheck="false"
-                            id="userPassword"
-                            className={`${styles.passwordInput} ${inputPassword !== '' ? styles.notEmpty : ''} ${
-                                !isFirstPasswordTry && !isPasswordValid ? styles.wrongInput : ''
-                            }`}
-                            minLength={4}
-                            maxLength={60}
-                            ref={passwordInputElement}
-                            onChange={changeInputValue}
-                            value={inputPassword}
-                        />
-                        <label htmlFor="userPassword" className={styles.passwordLabel}>
-                            Password
-                        </label>
-                    </div>
-                    <span
-                        className={`${styles.error} ${
-                            !isFirstPasswordTry && !isPasswordValid ? styles.wrongInput : ''
-                        }`}
-                    >
-                        Your password must contain between 4 and 60 characters.
-                    </span>
-                </div>
-                <button type="submit" className={styles.sumbitBtn} onClick={submitData} aria-label="Click to Sign In">
+            <form className={styles.form} onSubmit={handleSubmit}>
+                <RegistrationInput
+                    withoutIcon={true}
+                    label="Email"
+                    id="email"
+                    error={emailHasError}
+                    type="email"
+                    name="email"
+                    onBlur={handleEmailBlur}
+                    onChange={handleEmailChange}
+                    value={emailValue}
+                    errorText={emailErrorText === '' ? 'Please enter a valid email address!' : emailErrorText}
+                />
+                <RegistrationInput
+                    withoutIcon={true}
+                    label="Password"
+                    id="userPassword"
+                    type="password"
+                    name="password"
+                    onBlur={handlePasswordBlur}
+                    onChange={handlePasswordChange}
+                    value={passwordValue}
+                    error={passwordHasError}
+                    errorText={passwordErrorText === '' ? 'Please enter a valid password!' : passwordErrorText}
+                />
+
+                <button
+                    type="submit"
+                    className={styles.sumbitBtn}
+                    aria-label="Click to Sign In"
+                    disabled={emailValue === '' || passwordValue === ''}
+                >
                     Sign In
                 </button>
-                <span className={`${styles.errorGeneral} ${firebaseError !== '' ? styles.wrongInput : ''}`}>
-                    {firebaseError}
-                </span>
             </form>
             <LoginFormHelpers />
         </div>
