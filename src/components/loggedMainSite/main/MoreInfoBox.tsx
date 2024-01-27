@@ -1,8 +1,16 @@
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 import Router from 'next/router'
 
+import SOUNDOFF_ICON from '../../../assets/icons/nosoundIcon.png'
+import SOUNDON_ICON from '../../../assets/icons/soundIcon.png'
+import THUMB_ICON from '../../../assets/icons/thumbIcon.png'
+import GREENTHUMB_ICON from '../../../assets/icons/greenThumbIcon.png'
+import CHECK_ICON from '../../../assets/icons/greenCheckIcon.png'
+import PLUS_ICON from '../../../assets/icons/plusIcon.png'
+import PLAY_ICON from '../../../assets/icons/playIcon.png'
 import { paymentActions } from '../../../store/payment'
 import { fetchedMainSingleObj } from '../../../types/types'
 import styles from './MoreInfoBox.module.css'
@@ -24,12 +32,9 @@ const MoreInfoBox: React.FC<ComponentType> = ({ singleItem }) => {
             setIsInList(true)
         }
 
-        generateRandomNumber()
+        const randomNum = Math.floor(Math.random() * 100)
+        setRandomNumber(randomNum)
     }, [])
-
-    const likeButton = () => {
-        setLike(!like)
-    }
 
     const myList = () => {
         if (isInList) {
@@ -51,13 +56,6 @@ const MoreInfoBox: React.FC<ComponentType> = ({ singleItem }) => {
         }
 
         setIsInList(!isInList)
-    }
-
-    const generateRandomNumber = () => {
-        const min = 1
-        const max = 100
-        const randomNum = Math.floor(Math.random() * (max - min + 1)) + min
-        setRandomNumber(randomNum)
     }
 
     const getClassName = (number: number | null): string => {
@@ -83,25 +81,21 @@ const MoreInfoBox: React.FC<ComponentType> = ({ singleItem }) => {
                         aria-label="Play video button"
                         onClick={() => Router.push(`/movie/${singleItem.movieId}`)}
                     >
-                        <img src="/icons/playIcon.png" />
+                        <Image src={PLAY_ICON} alt="" />
                     </button>
                     <button
                         className={`${isInList ? styles.isInList : ''} ${styles.addListBtn}`}
                         aria-label="Add to my list button"
                         onClick={myList}
                     >
-                        {isInList ? (
-                            <img src="/icons/greenCheckIcon.png" alt="" />
-                        ) : (
-                            <img src="/icons/plusIcon.png" alt="" />
-                        )}
+                        {isInList ? <Image src={CHECK_ICON} alt="" /> : <Image src={PLUS_ICON} alt="" />}
                     </button>
                     <button
                         className={`${like ? styles.isLiked : ''} ${styles.likeBtn}`}
                         aria-label="Add like button"
-                        onClick={likeButton}
+                        onClick={() => setLike(!like)}
                     >
-                        {like ? <img src="/icons/greenThumbIcon.png" /> : <img src="/icons/thumbIcon.png" />}
+                        {like ? <Image src={GREENTHUMB_ICON} alt="" /> : <Image src={THUMB_ICON} alt="" />}
                     </button>
                 </div>
                 <button
@@ -109,11 +103,7 @@ const MoreInfoBox: React.FC<ComponentType> = ({ singleItem }) => {
                     aria-label="Turn off / turn on voice"
                     onClick={voiceButtonHandler}
                 >
-                    {isSoundOn ? (
-                        <img src="/icons/soundIcon.png" alt="" />
-                    ) : (
-                        <img src="/icons/nosoundIcon.png" alt="" />
-                    )}
+                    {isSoundOn ? <Image src={SOUNDON_ICON} alt="" /> : <Image src={SOUNDOFF_ICON} alt="" />}
                 </button>
             </div>
             <div className={styles.textRow}>
