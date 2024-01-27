@@ -9,7 +9,7 @@ import HeaderTabletsView from './tablet/HeaderTabletsView'
 import styles from './HeaderLoggedSection.module.css'
 
 type ComponentType = {
-    windowWidth: number
+    windowWidth?: number
 }
 
 const HeaderLoggedSection: React.FC<ComponentType> = ({ windowWidth }) => {
@@ -26,9 +26,9 @@ const HeaderLoggedSection: React.FC<ComponentType> = ({ windowWidth }) => {
 
     return (
         <section className={styles.header}>
-            {windowWidth < 786 ? (
+            {windowWidth && windowWidth < 786 ? (
                 <HeaderMobileView chosenUser={chosenUser} query={router.query.query} />
-            ) : windowWidth < 1200 ? (
+            ) : windowWidth && windowWidth < 1200 ? (
                 <HeaderTabletsView chosenUser={chosenUser} query={router.query.query} />
             ) : (
                 <HeaderDesktopView chosenUser={chosenUser} query={router.query.query} />

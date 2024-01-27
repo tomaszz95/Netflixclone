@@ -7,7 +7,6 @@ import MainViewSearchSection from './MainViewSearchSection'
 
 import { fetchedMainSingleObj } from '../../types/types'
 import styles from './SearchPageView.module.css'
-import useWindowWidth from '../../hooks/useWindowWidth'
 
 type ComponentType = {
     fetchedData: fetchedMainSingleObj[]
@@ -15,7 +14,6 @@ type ComponentType = {
 
 const SearchPageView: React.FC<ComponentType> = ({ fetchedData }) => {
     const [loadingText, setLoadingText] = useState('Loading...')
-    const windowWidth = useWindowWidth()
     const router = useRouter()
 
     useEffect(() => {
@@ -35,7 +33,7 @@ const SearchPageView: React.FC<ComponentType> = ({ fetchedData }) => {
     return (
         <>
             <header className={styles.header}>
-                <HeaderLoggedSection windowWidth={windowWidth} />
+                <HeaderLoggedSection/>
             </header>
             <main className={styles.main}>
                 {fetchedData.length === 0 ? (
