@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import useWindowWidth from '../../hooks/useWindowWidth'
 
 import LoggedFooterSections from '../loggedMainSite/footer/LoggedFooterSection'
 import HeaderLoggedSection from '../loggedMainSite/header/HeaderLoggedSection'
@@ -8,6 +9,7 @@ import styles from './SingleTitleView.module.css'
 
 const SingleTitleView = ({ fetchedData }: any) => {
     const [isLoading, setIsLoading] = useState(true)
+    const windowWidth = useWindowWidth()
 
     useEffect(() => {
         if (fetchedData === null || fetchedData === undefined) {
@@ -20,7 +22,7 @@ const SingleTitleView = ({ fetchedData }: any) => {
     return (
         <>
             <header className={styles.header}>
-                <HeaderLoggedSection />
+                <HeaderLoggedSection windowWidth={windowWidth} />
             </header>
             <main className={styles.main}>
                 {isLoading ? (
