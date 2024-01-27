@@ -1,0 +1,16 @@
+.infoBoxSingle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.infoBoxImg {
+    width: 26px;
+    height: 26px;
+    margin-right: 1.5em;
+}
+
+.infoBoxText {
+    font-weight: 400;
+    font-size: 1.1rem;
+}

@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Image from 'next/image'
 
+import NETFLIX_LOGO from '../../../../assets/photos/netflixLogo.png'
+import BURGER_ICON from '../../../../assets/icons/burgerIcon.png'
 import HeaderMobileBurgerNav from './HeaderMobileBurgerNav'
 import HeaderMobileProfile from './HeaderMobileProfile'
 
@@ -42,7 +45,7 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser, query }) => {
                     className={styles.burgerBtn}
                     onClick={() => setIsNavVisible(!isNavVisible)}
                 >
-                    <img src="/icons/burgerIcon.png" alt="" className={styles.burgerImg} />
+                    <Image src={BURGER_ICON} alt="" className={styles.burgerImg} />
                 </button>
                 <div
                     className={`${styles.navWrapper} ${isNavVisible ? styles.visible : ''}`}
@@ -70,7 +73,7 @@ const HeaderMobileView: React.FC<ComponentType> = ({ chosenUser, query }) => {
                     </nav>
                 </div>
                 <Link href={`${chosenUser === 'kids' ? '/kids' : '/browse'}`}>
-                    <img src="/photos/netflixLogo.png" alt="Netflix Logo" className={styles.netflixLogo} />
+                    <Image src={NETFLIX_LOGO} alt="Netflix Logo" className={styles.netflixLogo} />
                 </Link>
             </div>
             {!router.pathname.includes('genre') && !router.pathname.includes('[movieType]') && (

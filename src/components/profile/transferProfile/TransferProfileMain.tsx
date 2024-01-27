@@ -4,9 +4,13 @@ import Link from 'next/link'
 
 import EditProfileImage from '../editProfile/EditProfileImage'
 
+import GLASSES_ICON from '../../../assets/icons/glassesIcon.png'
+import ACC_ICON from '../../../assets/icons/accountRedIcon.png'
+import PASTE_ICON from '../../../assets/icons/pasteIcon.png'
 import { profileTransferHandler } from '../../../helpers/dummyActionFunctions'
 import { getCookie } from '../../utils/localStorageFunctions'
 import styles from './TransferProfileMain.module.css'
+import InfoBoxItem from './InfoBoxItem'
 
 const TransferProfileMain = () => {
     const [chosenUser, setChosenUser] = useState('')
@@ -48,24 +52,18 @@ const TransferProfileMain = () => {
             </Link>
             <div className={styles.infoBox}>
                 <h3 className={styles.infoBoxTitle}>We made it easy to transfer this profile</h3>
-                <div className={styles.infoBoxSingle}>
-                    <img src="/icons/glassesIcon.png" alt="" className={styles.infoBoxImg} />
-                    <p className={styles.infoBoxText}>
-                        Transfer recommendations, viewing history, My List, saved games, settings and more
-                    </p>
-                </div>
-                <div className={styles.infoBoxSingle}>
-                    <img src="/icons/accountRedIcon.png" alt="" className={styles.infoBoxImg} />
-                    <p className={styles.infoBoxText}>
-                        Transfer recommendations, viewing history, My List, saved games, settings and more
-                    </p>
-                </div>
-                <div className={styles.infoBoxSingle}>
-                    <img src="/icons/pasteIcon.png" alt="" className={styles.infoBoxImg} />
-                    <p className={styles.infoBoxText}>
-                        Transfer recommendations, viewing history, My List, saved games, settings and more
-                    </p>
-                </div>
+                <InfoBoxItem
+                    icon={GLASSES_ICON}
+                    text="Transfer recommendations, viewing history, My List, saved games, settings and more"
+                />
+                <InfoBoxItem
+                    icon={ACC_ICON}
+                    text="Transfer recommendations, viewing history, My List, saved games, settings and more"
+                />
+                <InfoBoxItem
+                    icon={PASTE_ICON}
+                    text="Transfer recommendations, viewing history, My List, saved games, settings and more"
+                />
                 <p className={styles.greyText}>*Saved games will not be included in the backup copy.</p>
             </div>
         </div>

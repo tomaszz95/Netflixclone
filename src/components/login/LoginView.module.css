@@ -13,85 +13,9 @@
     width: 100%;
 }
 
-.formBox {
-    margin-bottom: 0.8em;
-    width: 100%;
-}
-
-.formContent {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-}
-
-.emailInput,
-.passwordInput {
-    padding: 1.4em 1em 0.7em;
-    font-weight: 600;
-    background-color: var(--grey);
-    border-radius: 5px;
-    border: none;
-    color: var(--pure-white);
-}
-
-.emailLabel,
-.passwordLabel {
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    width: 100%;
-    color: var(--light-grey);
-    font-size: var(--size-xxxs);
-    transition:
-        transform 0.2s,
-        top 0.2s,
-        left 0.2s,
-        background-color 0.2s;
-}
-
-.emailInput:focus + .emailLabel,
-.passwordInput:focus + .passwordLabel,
-.notEmpty + .emailLabel,
-.notEmpty + .passwordLabel {
-    transform: scale(0.75);
-    top: 2%;
-    left: -8%;
-}
-
-.emailInput:focus,
-.passwordInput:focus {
-    background-color: rgb(73, 71, 71);
-    outline: none;
-}
-
-.emailInput.wrongInput,
-.passwordInput.wrongInput {
-    border-bottom: 2px solid var(--error-color);
-}
-
-.error.wrongInput,
-.errorGeneral.wrongInput {
-    display: block;
-}
-
-.error,
-.errorGeneral {
-    display: none;
-    margin-top: 0.5em;
-    font-size: 0.825rem;
-    color: var(--error-color);
-}
-
-.errorGeneral {
-    margin-top: 0.8em;
-    font-size: 1rem;
-    text-align: center;
-}
-
 .sumbitBtn {
     width: 100%;
-    margin-top: 0.8em;
+    margin: 0.8em 0 1.2em;
     padding: 0.9em;
     font-size: var(--size-xxxs);
     border-radius: 5px;
@@ -105,12 +29,10 @@
     background-color: var(--call-to-action-hover);
 }
 
-.inputBox input.valid {
-    border: 2px solid var(--success-color) !important;
-}
-
-.inputBox input.error {
-    border: 2px solid var(--call-to-action) !important;
+.sumbitBtn:disabled {
+    background-color: var(--lighter-black);
+    cursor: auto;
+    pointer-events: none;
 }
 
 @media (min-width: 786px) {
@@ -129,10 +51,6 @@
         font-size: var(--size-l);
     }
 
-    .formBox {
-        margin-bottom: 1em;
-    }
-
     .sumbitBtn {
         padding: 0.5em 1em;
         font-size: 1.2rem;
@@ -141,7 +59,13 @@
 
 @media (min-width: 1200px) {
     .content {
+        width: 500px;
         padding: 3em 4.5em;
-        margin-bottom: 9.5em;
+        margin-bottom: 10em;
+    }
+
+    .sumbitBtn {
+        padding: 0.55em 1em;
+        font-size: 1.3rem;
     }
 }

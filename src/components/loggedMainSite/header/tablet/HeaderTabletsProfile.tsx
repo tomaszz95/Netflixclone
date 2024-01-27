@@ -24,10 +24,6 @@ const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, 
 
     const { inputSearchValue, refInput, handleInputChange } = useSearchInput({ chosenUser, query })
 
-    const handleLogout = () => {
-        useLogoutHandler(dispatch)
-    }
-
     useEffect(() => {
         if (chosenUser !== '') {
             setChosenUserState(chosenUser.charAt(0).toUpperCase() + chosenUser.slice(1))
@@ -79,7 +75,7 @@ const HeaderTabletsProfile: React.FC<ComponentType> = ({ chosenUser, onOpenNav, 
                     <Link href="#" className={styles.profileLink}>
                         Help Center
                     </Link>
-                    <Link href="/logout" className={styles.profileLink} onClick={handleLogout}>
+                    <Link href="/logout" className={styles.profileLink} onClick={() => useLogoutHandler(dispatch)}>
                         Sign Out of Netflix
                     </Link>
                 </div>

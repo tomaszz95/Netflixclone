@@ -9,9 +9,18 @@ type ComponentType = {
     errorText: string
     value: string
     emailErrorText: string
+    withoutIcon?: boolean
 }
 
-const RegistrationInput: React.FC<ComponentType & any> = ({ label, id, error, errorText, value, ...props }) => {
+const RegistrationInput: React.FC<ComponentType & any> = ({
+    label,
+    id,
+    error,
+    errorText,
+    value,
+    withoutIcon,
+    ...props
+}) => {
     const errorFromFirebase = !errorText.includes('Please enter') && errorText !== ''
 
     return (
@@ -29,7 +38,7 @@ const RegistrationInput: React.FC<ComponentType & any> = ({ label, id, error, er
             </div>
             {(error || errorFromFirebase) && (
                 <div className={styles.errorBox}>
-                    <Image src={X_ICON} alt="Close icon" width={16} />
+                    {!withoutIcon && <Image src={X_ICON} alt="Close icon" width={16} />}
                     <span>{errorText}</span>
                 </div>
             )}

@@ -79,3 +79,19 @@
         font-size: 0.9rem;
     }
 }
+
+@media (min-width: 1200px) {
+    .label {
+        top: 26%;
+        font-size: var(--size-m);
+    }
+
+    .input:focus + .label,
+    .notEmpty {
+        top: 2%;
+    }
+
+    .errorBox span {
+        font-size: 1rem;
+    }
+}

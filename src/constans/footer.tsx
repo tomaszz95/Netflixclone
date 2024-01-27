@@ -46,3 +46,14 @@ export const footerLoggedMainSiteLinks: string[] = [
     'Contact Us',
     'Ad Choices',
 ]
+
+export const footerTransferProfileSiteLinks: string[] = [
+    'FAQ',
+    'Help Center',
+    'Netflix Shop',
+    'Terms of Use',
+    'Privacy',
+    'Cookie Preferences',
+    'Corporate Information',
+    'Ad Choices',
+]

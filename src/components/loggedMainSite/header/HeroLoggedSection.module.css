@@ -70,6 +70,7 @@
 .playBtn img,
 .moreInfoBtn img {
     width: 30px;
+    height: auto;
     margin-right: 0.5em;
 }
 

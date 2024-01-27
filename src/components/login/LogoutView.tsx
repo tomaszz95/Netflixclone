@@ -22,7 +22,7 @@ const LogoutView = () => {
                 </p>
                 <p className={styles.text}>You’ll be redirected to Netflix.com in 30 seconds.</p>
                 <button
-                    type="submit"
+                    type="button"
                     className={styles.logoutBtn}
                     onClick={() => Router.push(`/`)}
                     aria-label="Click to go to homepage"
