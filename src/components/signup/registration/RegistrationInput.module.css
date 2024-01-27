@@ -82,8 +82,8 @@
 
 @media (min-width: 1200px) {
     .label {
-        top: 26%;
-        font-size: var(--size-m);
+        top: 27%;
+        font-size: 1.15rem;
     }
 
     .input:focus + .label,

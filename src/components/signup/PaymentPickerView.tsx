@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from '@reduxjs/toolkit'
 
+import FULLLOCK_ICON from '../../assets/icons/lockIcon.png'
 import LOCK_ICON from '../../assets/icons/lockIcon2.png'
 import { paymentActions } from '../../store/payment'
 import styles from './PaymentPickerView.module.css'
@@ -16,7 +17,7 @@ const PaymentPickerView = () => {
 
     return (
         <div className={styles.container}>
-            <img src="/icons/lockIcon.png" alt="" className={styles.lockIcon} />
+            <Image src={FULLLOCK_ICON} alt="" className={styles.lockIcon} />
             <span className={styles.step}>STEP 3 OF 3</span>
             <h1 className={styles.title}>Choose how to pay</h1>
             <p className={styles.text}>Your payment is encrypted and you can change how you pay anytime.</p>

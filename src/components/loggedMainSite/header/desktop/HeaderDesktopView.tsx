@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-
+import Image from 'next/image'
 import HeaderDesktopNav from './HeaderDesktopNav'
 import HeaderDesktopProfile from './HeaderDesktopProfile'
-
+import MAGNIFIER_ICON from '../../../../assets/icons/magnifierIcon.png'
 import useSearchInput from '../../../../hooks/useSearchInput'
 import styles from './HeaderDesktopView.module.css'
 
@@ -56,7 +56,7 @@ const HeaderDesktopView: React.FC<ComponentType> = ({ chosenUser, query }) => {
                                 aria-label="Click to open search bar"
                                 onClick={openInputHandler}
                             >
-                                <img src="/icons/magnifierIcon.png" />
+                                <Image src={MAGNIFIER_ICON} alt="" />
                             </button>
                         </div>
                     )}
