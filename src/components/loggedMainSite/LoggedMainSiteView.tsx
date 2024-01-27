@@ -10,29 +10,18 @@ import LoggedFooterSections from './footer/LoggedFooterSection'
 
 import { pathnameActions } from '../../store/pathname'
 import { fetchedMainWholeObj } from '../../types/types'
+
 import styles from './LoggedMainSiteView.module.css'
+import useWindowWidth from '../../hooks/useWindowWidth'
 
 type ComponentType = {
     fetchedData: fetchedMainWholeObj
 }
 
 const LoggedMainSiteView: React.FC<ComponentType> = ({ fetchedData }) => {
-    const [windowWidth, setWindowWidth] = useState(0)
+    const windowWidth = useWindowWidth()
     const router = useRouter()
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
-
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth)
-        }
-
-        handleResize()
-        window.addEventListener('resize', handleResize)
-
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
 
     useEffect(() => {
         if (router.pathname === '/browse') {
