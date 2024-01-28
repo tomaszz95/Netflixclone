@@ -31,9 +31,9 @@
 -   responsive / SEO
 
 <div align='center'>
-<img src='./src/assets/readme/photo1.jpg'>
-<img src='./src/assets/readme/photo2.jpg'>
-<img src='./src/assets/readme/photo3.jpg'>
-<img src='./src/assets/readme/photo4.jpg'>
-<img src='./src/assets/readme/photo5.jpg'>
+ <img src='./src/assets/readme/photo1.jpg'>
+ <img src='./src/assets/readme/photo2.jpg'>
+ <img src='./src/assets/readme/photo3.jpg'>
+ <img src='./src/assets/readme/photo4.jpg'>
+ <img src='./src/assets/readme/photo5.jpg'>
 </div>
