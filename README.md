@@ -1,6 +1,6 @@
 <h1>Netflix clone</h1>
 
-<p>Hello, I present to you my Netflix clone project. The project is created in NextJS using a small amount of React Redux, Firebase and written in Typescript. The page is fully responsive - for mobiles, tablets and desktops. The app is 'cloning' the Netflix site - I used the TMDB database, which is not as detailed as the Netflix one, this means no videos, no detailed information about individual episodes of series or other detailed data. The application contains many sub-pages, starting from the main view, through the whole process of logging in and registering, selecting a profile and editing it, up to the main page of series, movies and individual sub-pages. Due to the nature of the app I used different icons, used some dummy texts and this is not a 'pixel perfect' clone - mainly due to a different api, which dictates a different placement of for example series and movie posters (netflix has them horizontally, tmdb vertically, also another data).</p>
+<p>Hello, I present to you my Netflix clone project. The project is created in Next.js using a small amount of React Redux, Firebase and written in Typescript. The page is fully responsive - for mobiles, tablets and desktops. The app is 'cloning' the Netflix site - I used the TMDB database, which is not as detailed as the Netflix one, this means no videos, no detailed information about individual episodes of series or other detailed data. The application contains many sub-pages, starting from the main view, through the whole process of logging in and registering, selecting a profile and editing it, up to the main page of series, movies and individual sub-pages. Due to the nature of the app I used different icons, used some dummy texts and this is not a 'pixel perfect' clone - mainly due to a different api, which dictates a different placement of for example series and movie posters (netflix has them horizontally, tmdb vertically, also another data).</p>
 
 <p>I encourage you to check the website - uploaded to netlifly <a href='https://netflixcloneen.vercel.app'>Netflix Clone</a></p>
 
@@ -24,9 +24,9 @@
 <h2>🛠 Tools and Technologies</h2>
 
 <ul>
-  <li>NextJS</li>
-  <li>ReactJS</li>
+  <li>React</li>
   <li>React Redux</li>
+  <li>Next.js</li>
   <li>TypeScript</li>
   <li>JavaScript</li>
   <li>Firebase</li>
